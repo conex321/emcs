@@ -1,0 +1,436 @@
+{
+  "navigation": {
+    "brand": {
+      "name": "EMCS",
+      "fullName": "Excellence Maple Canadian School",
+      "logo": "/images/logo-shield.png",
+      "tagline": "Ontario Ministry Inspected School • BSID: 665588",
+      "href": "/"
+    },
+    "storefronts": {
+      "nonCredit": {
+        "id": "non-credit",
+        "label": "Practice Courses",
+        "href": "/non-credit",
+        "color": {
+          "primary": "#2F80ED",
+          "secondary": "#1A5DC9",
+          "light": "#E3F2FD",
+          "text": "#FFFFFF"
+        },
+        "description": "Self-paced video lessons and activities for extra practice. No assessments, no credits—just learning.",
+        "disclaimer": "No tests, no assessments, no report card, no OSSD credit",
+        "grades": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+        "subjects": ["Math", "Science", "English", "Language", "Arts", "Health", "Social Studies", "French"],
+        "features": [
+          "High-quality video lessons",
+          "Interactive practice activities",
+          "Homework exercises",
+          "Self-paced learning",
+          "12-month access"
+        ],
+        "pricing": {
+          "startingAt": 75,
+          "currency": "CAD",
+          "displayText": "Starting at $75 CAD"
+        },
+        "gradeGroups": {
+          "elementary": {
+            "label": "Elementary (Grades 1-5)",
+            "grades": ["1", "2", "3", "4", "5"],
+            "icon": "school",
+            "price": "$75 CAD per subject"
+          },
+          "middle": {
+            "label": "Middle School (Grades 6-8)",
+            "grades": ["6", "7", "8"],
+            "icon": "menu_book",
+            "price": "$75-150 CAD per subject"
+          },
+          "secondary": {
+            "label": "High School (Grades 9-12)",
+            "grades": ["9", "10", "11", "12"],
+            "icon": "graduation_cap",
+            "price": "$75-150 CAD per course"
+          }
+        }
+      },
+      "credit": {
+        "id": "credit",
+        "label": "Credit Courses",
+        "href": "/credit",
+        "color": {
+          "primary": "#F2C94C",
+          "secondary": "#D4AF37",
+          "light": "#FFF8E1",
+          "text": "#1B4332"
+        },
+        "description": "Earn official OSSD credits recognized by universities worldwide. Live classes with Ontario Certified Teachers.",
+        "badge": "Ministry Inspected • BSID: 665588",
+        "grades": ["9", "10", "11", "12"],
+        "subjects": ["Math", "Science", "English", "Business", "Social Sciences", "Arts", "French"],
+        "features": [
+          "Ministry of Education inspected (BSID: 665588)",
+          "Ontario Certified Teachers (OCT)",
+          "Live classes via Zoom",
+          "Official transcripts and report cards",
+          "Credits count toward OSSD graduation",
+          "Direct transcript delivery to OUAC/OCAS"
+        ],
+        "schedule": {
+          "hoursPerWeek": 6,
+          "daysPerWeek": 3,
+          "hoursPerSession": 2,
+          "displayText": "Live classes: 6 hrs/week"
+        },
+        "pricing": {
+          "startingAt": 3500,
+          "currency": "CAD",
+          "displayText": "From $3,500 CAD per year"
+        },
+        "evaluation": {
+          "termWork": 70,
+          "finalExam": 30
+        }
+      },
+      "primaryFoundation": {
+        "id": "primary-foundation",
+        "label": "Elementary Foundation",
+        "href": "/programs/elementary",
+        "color": {
+          "primary": "#27AE60",
+          "secondary": "#1E8449",
+          "light": "#E8F5E9",
+          "text": "#FFFFFF"
+        },
+        "description": "Build essential academic skills aligned with the Ontario Curriculum for Grades 1-5.",
+        "badge": "Aligned with Ontario Curriculum",
+        "grades": ["1", "2", "3", "4", "5"],
+        "subjects": ["Mathematics", "Language", "The Arts", "Science & Technology", "Health & Physical Education", "Social Studies", "French as a Second Language"],
+        "options": {
+          "selfLearning": {
+            "label": "Self-Learning",
+            "description": "100% Self-Paced | No Ontario Student Record",
+            "pricing": {
+              "perSubject": 75,
+              "frenchPerSubject": 150,
+              "regularPrice": 150,
+              "entranceTest": 50,
+              "registration": 35,
+              "ontarioRecordAddon": 250
+            },
+            "features": [
+              "All learning materials provided",
+              "Student and parent login credentials",
+              "24/7 access to course content",
+              "Learn at your own pace"
+            ]
+          },
+          "teacherLed": {
+            "label": "Teacher-Led",
+            "description": "Ontario Student Record | Live Classes with Canadian Teachers",
+            "pricing": {
+              "coreSubjects": 3500,
+              "frenchAddon": 2000,
+              "entranceTest": 50,
+              "registration": 100
+            },
+            "schedule": {
+              "hoursPerWeek": 6,
+              "options": ["3 days per week", "2 days per week"],
+              "duration": "39 weeks (September 5, 2026 – May 30, 2027)"
+            },
+            "features": [
+              "All learning materials provided",
+              "Student and parent login credentials",
+              "Live online classes with Ontario Certified Teachers",
+              "All required assessments and evaluations",
+              "Official Ontario academic report card upon completion"
+            ]
+          }
+        }
+      }
+    },
+    "secondaryLinks": [
+      {
+        "label": "About",
+        "href": "/about",
+        "dropdown": null
+      },
+      {
+        "label": "Programs",
+        "href": "#",
+        "dropdown": [
+          {
+            "label": "Elementary (Grades 1-5)",
+            "href": "/programs/elementary",
+            "description": "Ontario Primary Foundation Program",
+            "icon": "school"
+          },
+          {
+            "label": "Middle School (Grades 6-8)",
+            "href": "/non-credit/grade/6",
+            "description": "Practice courses for middle school",
+            "icon": "menu_book"
+          },
+          {
+            "label": "High School Credit (Grades 9-12)",
+            "href": "/credit",
+            "description": "Earn official OSSD credits",
+            "icon": "graduation_cap"
+          },
+          {
+            "label": "Practice Courses",
+            "href": "/non-credit",
+            "description": "Self-paced learning for all grades",
+            "icon": "play_circle"
+          },
+          {
+            "label": "OSSD Requirements",
+            "href": "/ossd-requirements",
+            "description": "Ontario graduation requirements",
+            "icon": "certificate"
+          }
+        ]
+      },
+      {
+        "label": "International Students",
+        "href": "/admissions/international",
+        "dropdown": null
+      },
+      {
+        "label": "Support",
+        "href": "#",
+        "dropdown": [
+          {
+            "label": "FAQ",
+            "href": "/faq"
+          },
+          {
+            "label": "Contact Us",
+            "href": "/contact"
+          },
+          {
+            "label": "Student Support",
+            "href": "/student-support"
+          },
+          {
+            "label": "Tuition & Fees",
+            "href": "/tuition"
+          }
+        ]
+      }
+    ],
+    "utilityNav": {
+      "language": {
+        "current": "EN",
+        "options": [
+          {
+            "code": "en",
+            "label": "English",
+            "flag": "CA"
+          },
+          {
+            "code": "vi",
+            "label": "Tiếng Việt",
+            "flag": "VN"
+          }
+        ]
+      },
+      "auth": {
+        "login": {
+          "label": "Login",
+          "href": "/login",
+          "variant": "text"
+        },
+        "register": {
+          "label": "Get Started",
+          "href": "/register",
+          "variant": "primary"
+        }
+      },
+      "cart": {
+        "label": "Cart",
+        "href": "/cart",
+        "icon": "shopping_cart",
+        "showBadge": true
+      }
+    },
+    "mobileMenu": {
+      "breakpoint": 768,
+      "layout": "fullscreen",
+      "showStorefrontTabs": true,
+      "primaryActions": ["register", "login"],
+      "showLanguageToggle": true
+    }
+  },
+  "subjects": {
+    "default": ["Math", "Science", "English"],
+    "elementary": ["Mathematics", "Language", "The Arts", "Science & Technology", "Health & Physical Education", "Social Studies"],
+    "elementaryWithFrench": ["Mathematics", "Language", "The Arts", "Science & Technology", "Health & Physical Education", "Social Studies", "French as a Second Language"],
+    "config": {
+      "Math": {
+        "icon": "calculate",
+        "color": "#6366F1",
+        "slug": "math"
+      },
+      "Mathematics": {
+        "icon": "calculate",
+        "color": "#6366F1",
+        "slug": "mathematics"
+      },
+      "Science": {
+        "icon": "science",
+        "color": "#10B981",
+        "slug": "science"
+      },
+      "Science & Technology": {
+        "icon": "science",
+        "color": "#10B981",
+        "slug": "science-technology"
+      },
+      "English": {
+        "icon": "menu_book",
+        "color": "#F59E0B",
+        "slug": "english"
+      },
+      "Language": {
+        "icon": "menu_book",
+        "color": "#F59E0B",
+        "slug": "language"
+      },
+      "The Arts": {
+        "icon": "palette",
+        "color": "#EC4899",
+        "slug": "arts"
+      },
+      "Health & Physical Education": {
+        "icon": "fitness_center",
+        "color": "#EF4444",
+        "slug": "health-pe"
+      },
+      "Social Studies": {
+        "icon": "public",
+        "color": "#8B5CF6",
+        "slug": "social-studies"
+      },
+      "French as a Second Language": {
+        "icon": "translate",
+        "color": "#0EA5E9",
+        "slug": "french"
+      },
+      "French": {
+        "icon": "translate",
+        "color": "#0EA5E9",
+        "slug": "french"
+      }
+    }
+  },
+  "grades": {
+    "all": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    "elementary": ["1", "2", "3", "4", "5"],
+    "elementaryWithFrench": ["4", "5"],
+    "middle": ["6", "7", "8"],
+    "highSchool": ["9", "10", "11", "12"],
+    "labels": {
+      "1": "Grade 1",
+      "2": "Grade 2",
+      "3": "Grade 3",
+      "4": "Grade 4",
+      "5": "Grade 5",
+      "6": "Grade 6",
+      "7": "Grade 7",
+      "8": "Grade 8",
+      "9": "Grade 9",
+      "10": "Grade 10",
+      "11": "Grade 11",
+      "12": "Grade 12"
+    },
+    "shortLabels": {
+      "1": "Gr 1",
+      "2": "Gr 2",
+      "3": "Gr 3",
+      "4": "Gr 4",
+      "5": "Gr 5",
+      "6": "Gr 6",
+      "7": "Gr 7",
+      "8": "Gr 8",
+      "9": "Gr 9",
+      "10": "Gr 10",
+      "11": "Gr 11",
+      "12": "Gr 12"
+    }
+  },
+  "routes": {
+    "nonCredit": {
+      "landing": "/non-credit",
+      "grade": "/non-credit/grade/:grade",
+      "subject": "/non-credit/grade/:grade/:subject",
+      "course": "/non-credit/course/:courseCode"
+    },
+    "credit": {
+      "landing": "/credit",
+      "grade": "/credit/grade/:grade",
+      "subject": "/credit/grade/:grade/:subject",
+      "course": "/credit/course/:courseCode"
+    },
+    "primaryFoundation": {
+      "landing": "/programs/elementary",
+      "grade": "/programs/elementary/grade/:grade"
+    },
+    "cart": "/cart",
+    "checkout": "/checkout",
+    "dashboard": "/dashboard",
+    "tuition": "/tuition"
+  },
+  "trustIndicators": [
+    {
+      "label": "Ministry Inspected",
+      "value": "BSID: 665588",
+      "icon": "verified"
+    },
+    {
+      "label": "Years of Experience",
+      "value": "Since 2010",
+      "icon": "history"
+    },
+    {
+      "label": "Students Worldwide",
+      "value": "130+ Countries",
+      "icon": "public"
+    },
+    {
+      "label": "Course Completion",
+      "value": "4 weeks to 12 months",
+      "icon": "schedule"
+    },
+    {
+      "label": "Teacher Support",
+      "value": "Within 48 hours",
+      "icon": "support_agent"
+    },
+    {
+      "label": "Transcript Delivery",
+      "value": "Direct to OUAC/OCAS",
+      "icon": "send"
+    }
+  ],
+  "accreditation": {
+    "title": "Ministry Inspected Private School",
+    "bsid": "665588",
+    "statement": "EMCS is inspected by the Ontario Ministry of Education and authorized to grant credits toward the Ontario Secondary School Diploma (OSSD).",
+    "details": "Our credits hold the same value as those earned in traditional Ontario day schools and are recognized by all Canadian colleges and universities. Transcripts are sent directly to OUAC, OCAS, and educational institutions worldwide.",
+    "ibWorldSchool": true,
+    "ibProgram": "Diploma Programme"
+  },
+  "universities": [
+    "University of Toronto",
+    "McGill University",
+    "University of Waterloo",
+    "Western University",
+    "University of British Columbia",
+    "McMaster University",
+    "Queen's University",
+    "York University"
+  ]
+}

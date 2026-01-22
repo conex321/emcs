@@ -1,0 +1,441 @@
+/* ========================================
+   Grade Page Styles
+   ======================================== */
+
+.grade-page {
+    min-height: 100vh;
+    background: var(--bg-secondary);
+}
+
+/* Grade Navigation Bar */
+.grade-nav-bar {
+    background: white;
+    border-bottom: 1px solid var(--color-neutral-200);
+    position: sticky;
+    top: 65px;
+    z-index: 100;
+}
+
+.grade-tabs {
+    display: flex;
+    gap: var(--space-1);
+    padding: var(--space-3) 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.grade-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.grade-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 40px;
+    padding: 0 var(--space-4);
+    background: var(--color-neutral-100);
+    color: var(--color-neutral-700);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.grade-tab:hover {
+    background: var(--color-neutral-200);
+}
+
+.grade-tab.active {
+    background: var(--storefront-color, var(--color-brand));
+    color: white;
+}
+
+/* Hero */
+.grade-hero {
+    background: linear-gradient(135deg, var(--storefront-color) 0%, color-mix(in srgb, var(--storefront-color) 70%, black) 100%);
+    color: white;
+    padding: var(--space-12) 0;
+}
+
+.grade-hero .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    opacity: 0.8;
+}
+
+.grade-hero .breadcrumb a {
+    color: white;
+    text-decoration: none;
+}
+
+.grade-hero .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.grade-hero h1 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-3);
+}
+
+.grade-hero .hero-subtitle {
+    font-size: var(--text-lg);
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+/* Subject Navigation */
+.subject-nav {
+    background: white;
+    border-bottom: 1px solid var(--color-neutral-200);
+    padding: var(--space-4) 0;
+}
+
+.subject-tabs {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+}
+
+.subject-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    background: transparent;
+    border: 2px solid var(--color-neutral-300);
+    border-radius: var(--radius-full);
+    color: var(--color-neutral-700);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.subject-tab:hover {
+    border-color: var(--storefront-color);
+    color: var(--storefront-color);
+}
+
+.subject-tab.active {
+    background: var(--storefront-color);
+    border-color: var(--storefront-color);
+    color: white;
+}
+
+/* Grade Content */
+.grade-content {
+    padding: var(--space-12) 0;
+}
+
+/* Bundle Card */
+.bundle-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFFDE7 100%);
+    border: 2px solid var(--color-accent);
+    position: relative;
+}
+
+.bundle-badge {
+    position: absolute;
+    top: -12px;
+    left: var(--space-6);
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-accent);
+    color: var(--color-brand-dark);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-full);
+}
+
+.bundle-info {
+    flex: 1;
+}
+
+.bundle-info h3 {
+    margin-bottom: var(--space-1);
+    color: var(--color-brand);
+}
+
+.bundle-info p {
+    color: var(--color-neutral-600);
+    margin: 0;
+}
+
+.bundle-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-1);
+}
+
+.original-price,
+.list-price {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-500);
+    text-decoration: line-through;
+}
+
+.bundle-price,
+.current-price {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-brand);
+}
+
+/* Courses Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+/* Course Card */
+.course-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-4);
+}
+
+.course-card .storefront-badge {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-2);
+}
+
+.course-card .storefront-badge.credit {
+    background: #F2C94C;
+    color: #1B4332;
+}
+
+.course-card .storefront-badge.non-credit {
+    background: #2F80ED;
+    color: white;
+}
+
+.course-type {
+    font-size: var(--text-xs);
+    color: var(--color-neutral-500);
+    background: var(--color-neutral-100);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+}
+
+.course-title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-1);
+    color: var(--color-brand);
+}
+
+.course-code {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-500);
+    margin-bottom: var(--space-4);
+}
+
+.course-meta {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+}
+
+.meta-icon {
+    font-size: var(--text-base);
+}
+
+.course-prereq {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+    margin-bottom: var(--space-3);
+}
+
+.course-disclaimer {
+    font-size: var(--text-xs);
+    color: var(--color-neutral-500);
+    padding: var(--space-2);
+    background: var(--color-neutral-100);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-4);
+}
+
+.course-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    margin-top: auto;
+}
+
+.course-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.course-actions .btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* No Courses */
+.no-courses {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-12);
+    background: white;
+    border-radius: var(--radius-xl);
+}
+
+/* Cross-sell */
+.cross-sell {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-6);
+    background: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+}
+
+.cross-sell-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.cross-sell-content {
+    flex: 1;
+}
+
+.cross-sell-content h4 {
+    margin-bottom: var(--space-1);
+}
+
+.cross-sell-content p {
+    color: var(--color-neutral-600);
+    margin: 0;
+}
+
+.cross-sell .btn-outline {
+    border: 2px solid var(--storefront-color);
+    color: var(--storefront-color);
+    background: transparent;
+    white-space: nowrap;
+}
+
+.cross-sell .btn-outline:hover {
+    background: var(--storefront-color);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .courses-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .grade-nav-bar {
+        top: 60px;
+    }
+
+    .grade-hero h1 {
+        font-size: var(--text-2xl);
+    }
+
+    .bundle-card {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-4);
+    }
+
+    .bundle-pricing {
+        align-items: center;
+    }
+
+    .bundle-badge {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .bundle-card .btn {
+        width: 100%;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cross-sell {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-4);
+    }
+
+    .cross-sell .btn {
+        width: 100%;
+    }
+
+    .course-actions {
+        flex-direction: column;
+    }
+
+    .course-actions .btn {
+        width: 100%;
+    }
+
+    .subject-tabs {
+        padding-bottom: var(--space-2);
+    }
+}
+
+@media (max-width: 480px) {
+    .grade-hero {
+        padding: var(--space-8) 0;
+    }
+
+    .grade-content {
+        padding: var(--space-8) 0;
+    }
+
+    .course-card {
+        padding: var(--space-4);
+    }
+
+    .course-meta {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+}

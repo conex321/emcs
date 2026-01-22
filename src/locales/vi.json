@@ -1,0 +1,1444 @@
+{
+    "hero": {
+        "badge": "Trường được Bộ Giáo dục Ontario kiểm định • BSID: 665588",
+        "title": "Con đường đến với",
+        "titleHighlight": "Nền Giáo dục Canada",
+        "subtitle": "Xây dựng nền tảng học tập từ Lớp 1 hoặc lấy Bằng Tốt nghiệp Trung học Ontario (OSSD) 100% trực tuyến từ bất cứ đâu trên thế giới. Học theo tốc độ của riêng bạn với Giáo viên Ontario Được Chứng nhận.",
+        "cta1": "Bắt đầu hành trình",
+        "cta2": "Khám phá chương trình"
+    },
+    "stats": {
+        "ministryInspected": "Được Bộ kiểm định",
+        "bsid": "BSID: 665588",
+        "yearsExperience": "Từ năm 2010",
+        "studentsWorldwide": "130+ Quốc gia",
+        "courseCompletion": "4 tuần đến 12 tháng",
+        "teacherSupport": "Trong vòng 48 giờ",
+        "transcriptDelivery": "Gửi trực tiếp đến OUAC/OCAS",
+        "students": "Học sinh đã đăng ký",
+        "courses": "Khóa học có sẵn",
+        "teachers": "Giáo viên được chứng nhận",
+        "rate": "Tỷ lệ tốt nghiệp",
+        "universityAcceptance": "Tỷ lệ Đậu Đại học",
+        "fastestCompletion": "Hoàn thành Nhanh nhất",
+        "accessAnywhere": "Truy cập Mọi nơi"
+    },
+    "trustIndicators": {
+        "ministryInspected": "Được Bộ kiểm định",
+        "bsid": "BSID: 665588",
+        "yearsExperience": "Năm kinh nghiệm",
+        "since": "Từ năm 2010",
+        "studentsWorldwide": "Học sinh Toàn cầu",
+        "countries": "130+ Quốc gia",
+        "courseCompletion": "Hoàn thành Khóa học",
+        "completionTime": "4 tuần đến 12 tháng",
+        "teacherSupport": "Hỗ trợ Giáo viên",
+        "responseTime": "Trong vòng 48 giờ",
+        "transcriptDelivery": "Gửi Bảng điểm",
+        "directTo": "Gửi trực tiếp đến OUAC/OCAS"
+    },
+    "programPathways": {
+        "title": "Lộ trình Chương trình",
+        "subtitle": "Chọn con đường học tập phù hợp với mục tiêu của bạn",
+        "elementary": {
+            "title": "Nền tảng Tiểu học (Lớp 1-5)",
+            "desc": "Xây dựng kỹ năng học thuật thiết yếu theo Chương trình Ontario. Hoàn hảo cho học sinh quốc tế chuẩn bị học tập tại Canada hoặc gia đình cần hỗ trợ học tập theo chương trình chuẩn.",
+            "price": "Bắt đầu: $75 CAD mỗi môn",
+            "cta": "Khám phá Chương trình Tiểu học"
+        },
+        "middle": {
+            "title": "Trung học Cơ sở (Lớp 6-8)",
+            "desc": "Củng cố nền tảng cho thành công ở trung học phổ thông với các khóa học theo chương trình Ontario.",
+            "cta": "Khám phá Trung học Cơ sở"
+        },
+        "highSchool": {
+            "title": "Trung học Phổ thông Tín chỉ (Lớp 9-12)",
+            "desc": "Kiếm tín chỉ OSSD chính thức được các trường đại học trên toàn thế giới công nhận. Lớp học trực tiếp với Giáo viên Ontario Được Chứng nhận.",
+            "price": "Từ $3,500 CAD mỗi năm",
+            "cta": "Khám phá Khóa học Tín chỉ"
+        },
+        "practice": {
+            "title": "Khóa học Thực hành (Tất cả các Lớp)",
+            "desc": "Bài giảng video tự định tiến độ và các hoạt động để luyện tập thêm. Không đánh giá, không tín chỉ—chỉ học tập.",
+            "price": "Bắt đầu từ $75 CAD",
+            "cta": "Khám phá Khóa học Thực hành"
+        }
+    },
+    "why": {
+        "title": "Tại sao chọn EMCS?",
+        "subtitle": "Chúng tôi giúp nền giáo dục Canada trở nên dễ tiếp cận, linh hoạt và được hỗ trợ—dù bạn ở đâu trên thế giới.",
+        "card1": {
+            "title": "Học Từ Mọi Nơi",
+            "desc": "Học từ Việt Nam, Canada, hoặc bất cứ đâu trên toàn cầu. Bạn chỉ cần kết nối internet. Không cần giấy phép du học cho các khóa học trực tuyến."
+        },
+        "card2": {
+            "title": "Lịch Của Bạn, Tốc Độ Của Bạn",
+            "desc": "Bắt đầu bất cứ lúc nào—chúng tôi mở đăng ký liên tục quanh năm. Hoàn thành khóa học nhanh nhất trong 4 tuần hoặc tối đa 12 tháng."
+        },
+        "card3": {
+            "title": "Giáo viên Ontario Được Chứng nhận",
+            "desc": "Tất cả khóa học tín chỉ được giảng dạy bởi giáo viên có tư cách tốt với Hội đồng Giáo viên Ontario (OCT), với kinh nghiệm giảng dạy thực tế."
+        },
+        "card4": {
+            "title": "Bằng cấp Được Công nhận Toàn cầu",
+            "desc": "Tín chỉ OSSD của chúng tôi có giá trị như những tín chỉ kiếm được tại các trường Ontario truyền thống—được công nhận bởi các trường đại học tại Canada, Mỹ, Anh, Úc và trên toàn thế giới."
+        }
+    },
+    "courses": {
+        "title": "Khóa học",
+        "subtitle": "Duyệt qua danh mục đầy đủ các khóa học theo chương trình Ontario",
+        "grade1": "Lớp 1",
+        "grade2": "Lớp 2",
+        "grade3": "Lớp 3",
+        "grade4": "Lớp 4",
+        "grade5": "Lớp 5",
+        "grade6": "Lớp 6",
+        "grade7": "Lớp 7",
+        "grade8": "Lớp 8",
+        "grade9": "Lớp 9",
+        "grade10": "Lớp 10",
+        "grade11": "Lớp 11",
+        "grade12": "Lớp 12",
+        "viewOutline": "Đề cương khóa học",
+        "addToCart": "Thêm vào giỏ",
+        "university": "Đại học",
+        "college": "Cao đẳng",
+        "mixed": "Hỗn hợp",
+        "open": "Mở",
+        "prereq": "Điều kiện tiên quyết",
+        "notFound": "Không tìm thấy khóa học",
+        "notFoundDesc": "Mã khóa học bạn đang tìm kiếm không tồn tại trong danh mục của chúng tôi.",
+        "back": "Quay lại Khóa học"
+    },
+    "cta": {
+        "title": "Sẵn sàng Bắt đầu Hành trình Giáo dục Canada?",
+        "subtitle": "Tham gia cùng học sinh từ hơn 130 quốc gia đang học với EMCS. Đăng ký ngay và truy cập khóa học trong vòng 24-48 giờ.",
+        "button": "Bắt đầu Ngay"
+    },
+    "home": {
+        "howItWorks": {
+            "title": "Cách thức Hoạt động",
+            "subtitle": "Bắt đầu rất đơn giản—đăng ký ngay hôm nay và bắt đầu học trong vòng 24-48 giờ.",
+            "step1": {
+                "title": "1. Đăng ký Bất cứ lúc nào",
+                "desc": "Đăng ký 365 ngày một năm. Không hạn chót, không danh sách chờ. Đăng ký liên tục nghĩa là bạn bắt đầu khi bạn sẵn sàng."
+            },
+            "step2": {
+                "title": "2. Học theo Tốc độ Của bạn",
+                "desc": "Truy cập tài liệu khóa học 24/7. Nền tảng không đồng bộ của chúng tôi phù hợp với lịch trình của bạn—học khi thuận tiện cho bạn."
+            },
+            "step3": {
+                "title": "3. Nhận Hỗ trợ Giáo viên",
+                "desc": "Giáo viên Ontario Được Chứng nhận trả lời câu hỏi trong vòng 48 giờ. Giờ văn phòng có sẵn để được hỗ trợ thời gian thực."
+            },
+            "step4": {
+                "title": "4. Nhận Bằng cấp",
+                "desc": "Tín chỉ xuất hiện trên bảng điểm Ontario chính thức. Điểm được gửi trực tiếp đến OUAC, OCAS và trường của bạn."
+            }
+        },
+        "popularCourses": {
+            "title": "Các Khóa học Phổ biến Nhất",
+            "subtitle": "Tham gia cùng hàng nghìn học sinh trong các khóa học tiên quyết quan trọng này.",
+            "viewOutline": "Xem Đề cương",
+            "viewAll": "Xem Tất cả 170+ Khóa học"
+        },
+        "universityAcceptance": {
+            "title": "Sinh viên Tốt nghiệp của Chúng tôi Theo học tại các Trường Hàng đầu Thế giới",
+            "subtitle": "Bằng cấp OSSD được công nhận toàn cầu. Học sinh của chúng tôi đã được nhận vào các trường đại học tại Canada, Hoa Kỳ, Vương quốc Anh, Úc và hơn thế nữa."
+        },
+        "lms3d": {
+            "title": "Trải nghiệm Nền tảng Học tập",
+            "subtitle": "Khám phá các tính năng LMS tương tác của chúng tôi",
+            "browsing": {
+                "title": "Duyệt & Đăng ký Khóa học",
+                "desc": "Duyệt hơn 170 khóa học và đăng ký ngay chỉ với vài cú click"
+            },
+            "learning": {
+                "title": "Học tập Video Tương tác",
+                "desc": "Tham gia với các bài giảng video, câu hỏi và hoạt động thực hành"
+            },
+            "progress": {
+                "title": "Theo dõi Tiến độ",
+                "desc": "Giám sát điểm số, tỷ lệ hoàn thành và các cột mốc học tập theo thời gian thực"
+            },
+            "support": {
+                "title": "Hỗ trợ Giáo viên 24/7",
+                "desc": "Nhận trợ giúp mọi lúc với chat trực tiếp và nhắn tin từ giáo viên được chứng nhận"
+            }
+        },
+        "featuredPrograms": {
+            "title": "Chương trình Nổi bật",
+            "primaryFoundation": {
+                "badge": "MỚI",
+                "title": "Chương trình Nền tảng Tiểu học Ontario",
+                "desc": "Lớp 1-5 theo Chương trình Ontario. Hai lộ trình có sẵn:",
+                "selfLearning": "Tự Học: Từ $75 CAD mỗi môn",
+                "teacherLed": "Có Giáo viên Hướng dẫn: $3,500 CAD mỗi năm",
+                "cta": "Tìm hiểu thêm về Chương trình Tiểu học"
+            }
+        }
+    },
+    "accreditation": {
+        "title": "Trường Tư thục Được Bộ Kiểm định",
+        "statement": "EMCS được kiểm định bởi Bộ Giáo dục Ontario và được phép cấp tín chỉ hướng tới Bằng Tốt nghiệp Trung học Ontario (OSSD).",
+        "bsid": "BSID: 665588",
+        "details": "Tín chỉ của chúng tôi có giá trị như những tín chỉ kiếm được tại các trường Ontario truyền thống và được công nhận bởi tất cả các trường cao đẳng và đại học Canada. Bảng điểm được gửi trực tiếp đến OUAC, OCAS và các cơ sở giáo dục trên toàn thế giới."
+    },
+    "nav": {
+        "home": "Trang chủ",
+        "about": "Giới thiệu",
+        "programs": "Chương trình",
+        "admissions": "Tuyển sinh",
+        "courses": "Khóa học",
+        "support": "Hỗ trợ học sinh",
+        "contact": "Liên hệ",
+        "login": "Đăng nhập",
+        "register": "Đăng ký ngay",
+        "international": "Học sinh quốc tế",
+        "ossd": "Yêu cầu OSSD",
+        "faq": "FAQ",
+        "elementary": "Tiểu học (Lớp 1-5)",
+        "middleSchool": "Trung học Cơ sở (Lớp 6-8)",
+        "highSchoolCredit": "Trung học Tín chỉ (Lớp 9-12)",
+        "practiceCourses": "Khóa học Thực hành",
+        "tuition": "Học phí & Chi phí"
+    },
+    "footer": {
+        "tagline": "Xuất sắc trong Giáo dục Trực tuyến Canada",
+        "quickLinks": "Chương trình",
+        "resources": "Tài nguyên",
+        "about": "Giới thiệu",
+        "connect": "Kết nối",
+        "copyright": "© 2026 EMCS. Đã đăng ký bản quyền.",
+        "privacy": "Chính sách bảo mật",
+        "terms": "Điều khoản dịch vụ",
+        "refund": "Chính sách Hoàn tiền",
+        "ossd": "Yêu cầu OSSD",
+        "faq": "FAQ",
+        "blog": "Blog",
+        "studentSupport": "Hỗ trợ Học sinh",
+        "accreditationBadge": "Trường được Bộ Giáo dục Ontario kiểm định | BSID: 665588"
+    },
+    "about": {
+        "title": "Về EMCS",
+        "subtitle": "Excellence Maple Canadian School",
+        "whoWeAre": {
+            "title": "Chúng tôi là ai",
+            "content": "Excellence Maple Canadian School (EMCS), hoạt động với tên Toronto Academy of English, Mathematics and Coding (EMC), là trường tư thục được Bộ kiểm định, được phép bởi Bộ Giáo dục Ontario cấp tín chỉ OSSD. Chúng tôi cung cấp giáo dục chất lượng cao cho học sinh từ Lớp 1-12 dựa trên Chương trình Ontario chính thức. Là Trường Thế giới IB cho Chương trình Tú tài, chúng tôi duy trì các tiêu chuẩn cao nhất trong việc giảng dạy chương trình và hỗ trợ học sinh.",
+            "bsid": "BSID: 665588 | Được kiểm định bởi Bộ Giáo dục Ontario"
+        },
+        "story": "Câu chuyện của chúng tôi",
+        "storyText": "EMCS được thành lập với sứ mệnh mang nền giáo dục Canada đẳng cấp thế giới đến với học sinh trên toàn cầu. Chúng tôi nhận ra rằng địa lý không bao giờ nên là rào cản cho giáo dục chất lượng. Kể từ khi thành lập, chúng tôi đã giúp hàng nghìn học sinh kiếm tín chỉ trung học Ontario, hoàn thành OSSD và được nhận vào các trường đại học hàng đầu trên toàn thế giới.",
+        "mission": "Sứ mệnh của chúng tôi",
+        "missionText": "Cung cấp giáo dục theo chương trình Ontario linh hoạt, chất lượng cao giúp học sinh đạt được mục tiêu học tập và được nhận vào các trường đại học hàng đầu trên toàn thế giới. Chúng tôi phấn đấu truyền cảm hứng và trang bị cho học sinh tư duy và kỹ năng cần thiết để trở thành người học suốt đời độc lập, tận tâm đóng góp tích cực cho cộng đồng và hơn thế nữa.",
+        "philosophy": {
+            "title": "Triết lý Giảng dạy",
+            "content": "Dẫn dắt bởi phương châm 'Dạy bằng tình yêu. Học cho cuộc sống', chúng tôi tận tâm nuôi dưỡng một cộng đồng năng động của những cá nhân cam kết học tập suốt đời. Chúng tôi thể hiện các giá trị và nguyên tắc cơ bản chuẩn bị cho học sinh thành công trong giáo dục đại học và hơn thế nữa."
+        },
+        "accreditation": "Kiểm định & Công nhận",
+        "accreditationText": "Chúng tôi là trường tư thục được Bộ kiểm định, được phép bởi Bộ Giáo dục Ontario cấp tín chỉ Bằng Tốt nghiệp Trung học Ontario (OSSD).",
+        "accreditationDetails": {
+            "ministryInspection": "Kiểm định Bộ Ontario",
+            "bsid": "BSID: 665588",
+            "ibWorld": "Trường Thế giới IB",
+            "ibProgram": "Chương trình Tú tài",
+            "creditRecognition": "Công nhận Tín chỉ",
+            "creditDetails": "Như các trường Ontario truyền thống",
+            "transcriptDelivery": "Gửi Bảng điểm",
+            "transcriptDetails": "Gửi trực tiếp đến OUAC, OCAS, các trường đại học"
+        },
+        "whatThisMeans": {
+            "title": "Điều này Có nghĩa gì",
+            "point1": "OSSD của chúng tôi là bằng tốt nghiệp giống hệt như được cấp bởi các trường Ontario truyền thống",
+            "point2": "Tín chỉ được công nhận bởi tất cả các trường cao đẳng và đại học Canada",
+            "point3": "Học sinh quốc tế có thể kiếm bằng cấp Canada mà không cần giấy phép du học",
+            "point4": "Điểm được gửi trực tiếp đến OUAC và OCAS cho các đơn xin học sau trung học"
+        },
+        "team": {
+            "title": "Đội ngũ Lãnh đạo",
+            "subtitle": "Các nhà giáo dục tận tâm cam kết cho sự thành công của bạn",
+            "roles": {
+                "principal": "Hiệu trưởng",
+                "director": "Giám đốc Học vụ",
+                "success": "Trưởng ban Thành công Học sinh",
+                "tech": "Giám đốc Công nghệ"
+            }
+        },
+        "values": {
+            "excellence": {
+                "title": "Xuất sắc",
+                "desc": "Chúng tôi duy trì các tiêu chuẩn cao nhất trong việc giảng dạy chương trình, đánh giá và hỗ trợ học sinh."
+            },
+            "accessibility": {
+                "title": "Tiếp cận",
+                "desc": "Giáo dục chất lượng nên có sẵn cho tất cả học sinh, bất kể vị trí địa lý hay hoàn cảnh."
+            },
+            "innovation": {
+                "title": "Đổi mới",
+                "desc": "Chúng tôi tận dụng công nghệ để tạo ra trải nghiệm học tập hấp dẫn và hiệu quả chuẩn bị cho học sinh tương lai."
+            },
+            "support": {
+                "title": "Hỗ trợ",
+                "desc": "Mỗi học sinh nhận được sự hướng dẫn cá nhân hóa trong suốt hành trình giáo dục."
+            }
+        },
+        "missionStatement": {
+            "title": "Sứ mệnh của Chúng tôi",
+            "content": "Toronto Academy of EMC phấn đấu truyền cảm hứng và trang bị cho học sinh tư duy và kỹ năng cần thiết để trở thành người học suốt đời độc lập, tận tâm đóng góp tích cực cho cộng đồng và hơn thế nữa."
+        },
+        "principalMessage": {
+            "title": "Thông điệp của Hiệu trưởng",
+            "content": "Khi năm học kết thúc, tôi muốn gửi lời cảm ơn chân thành đến học sinh, giảng viên và nhân viên của chúng tôi cho một năm học tập và phát triển tuyệt vời. Mỗi ngày tôi có đặc quyền chứng kiến học sinh của chúng tôi vượt qua những thử thách mới và kiên trì, khi họ hướng tới mục tiêu học tập và nguyện vọng nghề nghiệp."
+        }
+    },
+    "programs": {
+        "title": "Chương trình của Chúng tôi",
+        "subtitle": "Nhiều lộ trình đến với nền giáo dục Canada—chọn lộ trình phù hợp với mục tiêu của bạn",
+        "comparison": {
+            "program": "Chương trình",
+            "grades": "Lớp",
+            "format": "Hình thức",
+            "credential": "Bằng cấp",
+            "priceRange": "Mức giá"
+        },
+        "primarySelfLearning": {
+            "name": "Nền tảng Tiểu học (Tự Học)",
+            "grades": "1-5",
+            "format": "100% Tự Định Tiến Độ",
+            "credential": "Chứng nhận Hoàn thành",
+            "price": "$75-150 CAD/môn"
+        },
+        "primaryTeacherLed": {
+            "name": "Nền tảng Tiểu học (Có Giáo viên)",
+            "grades": "1-5",
+            "format": "Lớp Trực tuyến Trực tiếp",
+            "credential": "Phiếu điểm Ontario",
+            "price": "$3,500 CAD/năm"
+        },
+        "middleSchool": {
+            "name": "Thực hành Trung học Cơ sở",
+            "grades": "6-8",
+            "format": "Tự Định Tiến Độ",
+            "credential": "Không có bằng cấp chính thức",
+            "price": "$75-150 CAD/môn"
+        },
+        "highSchoolCredit": {
+            "name": "Trung học Tín chỉ",
+            "grades": "9-12",
+            "format": "Trực tiếp + Tự Định Tiến Độ",
+            "credential": "Tín chỉ OSSD",
+            "price": "$3,500+ CAD/năm"
+        },
+        "highSchoolPractice": {
+            "name": "Thực hành Trung học",
+            "grades": "9-12",
+            "format": "100% Tự Định Tiến Độ",
+            "credential": "Không có tín chỉ OSSD",
+            "price": "$75-150 CAD/khóa"
+        },
+        "whichProgram": {
+            "title": "Chương trình nào Phù hợp với Bạn?",
+            "elementary": {
+                "title": "Cho Học sinh Tiểu học (Lớp 1-5):",
+                "selfLearning": "Muốn học theo chương trình chuẩn mà không cần đánh giá?",
+                "selfLearningAnswer": "Chương trình Tự Học",
+                "teacherLed": "Cần hồ sơ học tập Ontario chính thức?",
+                "teacherLedAnswer": "Chương trình Có Giáo viên"
+            },
+            "highSchool": {
+                "title": "Cho Học sinh Trung học (Lớp 9-12):",
+                "credit": "Cần tín chỉ hướng tới OSSD?",
+                "creditAnswer": "Khóa học Tín chỉ",
+                "practice": "Muốn luyện tập thêm hoặc ôn thi?",
+                "practiceAnswer": "Khóa học Thực hành"
+            },
+            "international": {
+                "title": "Cho Học sinh Quốc tế:",
+                "preparing": "Chuẩn bị cho trung học Canada?",
+                "preparingAnswer": "Chương trình Nền tảng Tiểu học",
+                "earning": "Lấy OSSD từ nước ngoài?",
+                "earningAnswer": "Khóa học Tín chỉ (không cần giấy phép du học)"
+            }
+        }
+    },
+    "primaryFoundation": {
+        "title": "Chương trình Nền tảng Tiểu học Ontario",
+        "subtitle": "Xây dựng Nền tảng Học thuật Thiết yếu cho Lớp 1-5",
+        "badge": "Theo Chương trình Ontario",
+        "overview": {
+            "title": "Tổng quan Chương trình",
+            "content": "Chương trình này hỗ trợ học sinh Lớp 1-5 xây dựng nền tảng học thuật thiết yếu theo Chương trình Ontario. Các môn học chính bao gồm Tiếng Anh (Ngôn ngữ), Toán học, Khoa học, Xã hội học, Nghệ thuật, và Giáo dục Thể chất & Sức khỏe.",
+            "french": "Tiếng Pháp như Ngôn ngữ thứ hai được giới thiệu bắt đầu từ Lớp 4.",
+            "purpose": "Chuẩn bị học sinh cho việc học tiếp trong hệ thống giáo dục Ontario thông qua lộ trình học tập rõ ràng, có cấu trúc và vững chắc về mặt học thuật. Học sinh học tất cả các môn bằng tiếng Anh, hỗ trợ phát triển ngôn ngữ và tiếp xúc sớm với môi trường học tập quốc tế."
+        },
+        "selfLearning": {
+            "title": "Lựa chọn 1: Chương trình Chuẩn bị Học thuật (Tự Học)",
+            "badge": "100% Tự Định Tiến Độ | Không có Hồ sơ Học sinh Ontario",
+            "whatsIncluded": {
+                "title": "Bao gồm những gì:",
+                "materials": "Tất cả tài liệu học tập được cung cấp",
+                "credentials": "Tài khoản đăng nhập cho học sinh và phụ huynh",
+                "access": "Truy cập nội dung khóa học 24/7",
+                "pace": "Học theo tốc độ của riêng bạn"
+            },
+            "important": "Chương trình này không bao gồm đánh giá, kiểm tra, hoặc hồ sơ học tập Ontario. Nó được thiết kế cho:",
+            "idealFor": {
+                "practice": "Luyện tập thêm song song với trường học thông thường",
+                "summer": "Học hè để tiến bộ",
+                "homeschool": "Hỗ trợ chương trình học tại nhà",
+                "international": "Học sinh quốc tế chuẩn bị cho học tập tại Canada"
+            },
+            "pricing": {
+                "title": "Mức giá (với giảm giá khuyến mãi 50%):",
+                "grade1to3": "Lớp 1-3: 6 môn",
+                "grade4to5": "Lớp 4-5: 6 môn + Tiếng Pháp",
+                "regular": "Giá Thường",
+                "discounted": "Giá Khuyến mãi",
+                "perSubject": "$75 CAD mỗi môn",
+                "french": "Tiếng Pháp như Ngôn ngữ thứ hai",
+                "frenchPrice": "$150 CAD"
+            },
+            "subjects": {
+                "title": "Các Môn học Có sẵn:",
+                "math": "Toán học (Tiếng Anh)",
+                "language": "Ngôn ngữ (Tiếng Anh)",
+                "arts": "Nghệ thuật (Tiếng Anh)",
+                "science": "Khoa học & Công nghệ (Tiếng Anh)",
+                "health": "Giáo dục Thể chất & Sức khỏe (Tiếng Anh)",
+                "social": "Xã hội học (Tiếng Anh)",
+                "french": "Tiếng Pháp như Ngôn ngữ thứ hai (Tiếng Pháp) - Chỉ Lớp 4-5"
+            },
+            "fees": {
+                "title": "Phí Bổ sung:",
+                "entrance": "Phí Thi Đầu vào: $50 CAD (không hoàn lại)",
+                "registration": "Phí Đăng ký: $35 CAD (không hoàn lại)"
+            },
+            "optionalRecord": "Nếu cần hồ sơ học tập Ontario chính thức, phí bổ sung $250 CAD áp dụng cho mỗi khóa học ngoài giá khuyến mãi.",
+            "cta": "Đăng ký Chương trình Tự Học"
+        },
+        "teacherLed": {
+            "title": "Lựa chọn 2: Chương trình Ontario Chính thức (Có Giáo viên)",
+            "badge": "Hồ sơ Học sinh Ontario | Lớp Trực tiếp với Giáo viên Canada",
+            "whatsIncluded": {
+                "title": "Bao gồm những gì:",
+                "materials": "Tất cả tài liệu học tập được cung cấp",
+                "credentials": "Tài khoản đăng nhập cho học sinh và phụ huynh",
+                "live": "Lớp học trực tuyến trực tiếp với Giáo viên Ontario Được Chứng nhận",
+                "assessments": "Tất cả đánh giá và kiểm tra yêu cầu",
+                "reportCard": "Phiếu điểm học tập Ontario chính thức khi hoàn thành"
+            },
+            "schedule": {
+                "title": "Lựa chọn Lịch học:",
+                "option1": "6 giờ mỗi tuần trong 3 ngày, HOẶC",
+                "option2": "6 giờ mỗi tuần trong 2 ngày"
+            },
+            "duration": "Thời gian Chương trình: 5 tháng 9, 2026 – 30 tháng 5, 2027 (39 tuần)",
+            "requirements": {
+                "title": "Yêu cầu:",
+                "assessments": "Học sinh phải hoàn thành tất cả các đánh giá yêu cầu",
+                "deadline": "Học sinh phải hoàn thành chương trình trước ngày 30 tháng 5, 2027"
+            },
+            "pricing": {
+                "title": "Mức giá:",
+                "core": "Các Môn Chính (6 môn)",
+                "corePrice": "$3,500 mỗi năm",
+                "french": "Tiếng Pháp như Ngôn ngữ thứ hai (1 giờ/tuần)",
+                "frenchPrice": "$2,000 mỗi năm (bổ sung)",
+                "entrance": "Phí Thi Đầu vào",
+                "entrancePrice": "$50 (không hoàn lại)",
+                "registration": "Phí Đăng ký",
+                "registrationPrice": "$100 (không hoàn lại)"
+            },
+            "coreSubjects": {
+                "title": "Các Môn Chính (Giảng dạy bằng Tiếng Anh):",
+                "list": ["Toán học", "Ngôn ngữ", "Nghệ thuật", "Khoa học & Công nghệ", "Giáo dục Thể chất & Sức khỏe", "Xã hội học"]
+            },
+            "frenchNote": "Tiếng Pháp như Ngôn ngữ thứ hai: Giảng dạy bằng Tiếng Pháp bởi Giáo viên Canada (Lớp 4-5)",
+            "cta": "Đăng ký Chương trình Có Giáo viên"
+        },
+        "comparison": {
+            "title": "Tóm tắt So sánh Chương trình",
+            "feature": "Tính năng",
+            "selfLearning": "Tự Học",
+            "teacherLed": "Có Giáo viên",
+            "materials": "Tài liệu Học tập",
+            "included": "Bao gồm",
+            "access": "Truy cập Khóa học 24/7",
+            "yes": "Có",
+            "recordingsAvailable": "Có (có video ghi lại)",
+            "assessments": "Đánh giá",
+            "none": "Không",
+            "required": "Yêu cầu",
+            "liveClasses": "Lớp Trực tiếp",
+            "hoursPerWeek": "6 giờ/tuần",
+            "teacherSupportLabel": "Hỗ trợ Giáo viên",
+            "limited": "Hạn chế",
+            "directAccess": "Truy cập trực tiếp",
+            "reportCard": "Phiếu điểm Ontario",
+            "notIncluded": "Không bao gồm*",
+            "startAnytime": "Bắt đầu Bất cứ lúc nào",
+            "septemberStart": "Bắt đầu tháng 9",
+            "completionDeadline": "Hạn Hoàn thành",
+            "flexible": "Linh hoạt",
+            "deadline": "30 tháng 5, 2027",
+            "bestFor": "Phù hợp Nhất Cho",
+            "practiceHomeschool": "Luyện tập, hỗ trợ học tại nhà",
+            "officialCredential": "Bằng cấp chính thức",
+            "recordNote": "*Hồ sơ học tập Ontario có sẵn với phí bổ sung $250/khóa"
+        },
+        "disclaimers": {
+            "selfLearning": {
+                "title": "Xin Lưu ý:",
+                "content": "Hoàn thành các khóa Tự Học sẽ KHÔNG kiếm được hồ sơ học tập Ontario trừ khi phí bổ sung $250 mỗi khóa được thanh toán. Chương trình này được thiết kế cho luyện tập và tiếp xúc chương trình, không phải cấp bằng chính thức.",
+                "idealFor": "Khóa học Tự Học lý tưởng cho:",
+                "items": [
+                    "Học tập bổ sung song song với trường học thông thường",
+                    "Hỗ trợ chương trình học tại nhà",
+                    "Học sinh quốc tế chuẩn bị cho học tập tại Canada",
+                    "Học hè và xây dựng kỹ năng"
+                ]
+            },
+            "teacherLed": {
+                "content": "Học sinh đăng ký chương trình Có Giáo viên sẽ nhận được phiếu điểm học tập Ontario chính thức khi hoàn thành thành công tất cả các yêu cầu chương trình. Phiếu điểm này được cấp bởi EMCS như một trường tư thục được Bộ kiểm định và có thể được sử dụng cho chuyển trường và lập kế hoạch học tập."
+            }
+        },
+        "cta": {
+            "title": "Bắt đầu Xây dựng Nền tảng Giáo dục Canada cho Con Bạn",
+            "subtitle": "Chương trình Nền tảng Tiểu học của chúng tôi chuẩn bị học sinh cho thành công trong hệ thống giáo dục Ontario và hơn thế nữa.",
+            "selfLearning": "Đăng ký Tự Học",
+            "teacherLed": "Đăng ký Có Giáo viên",
+            "advisor": "Nói chuyện với Cố vấn"
+        },
+        "grades": {
+            "grade1": {
+                "title": "Lớp 1",
+                "focus": "Xây dựng kỹ năng đọc viết và tính toán cơ bản thông qua các hoạt động hấp dẫn, phù hợp với độ tuổi."
+            },
+            "grade2": {
+                "title": "Lớp 2",
+                "focus": "Mở rộng khả năng đọc hiểu, lý luận toán học, và khám phá khoa học."
+            },
+            "grade3": {
+                "title": "Lớp 3",
+                "focus": "Củng cố kỹ năng học tập độc lập và khám phá môn học sâu hơn."
+            },
+            "grade4": {
+                "title": "Lớp 4",
+                "focus": "Giới thiệu Tiếng Pháp như Ngôn ngữ thứ hai. Xây dựng tư duy phản biện và kỹ năng nghiên cứu."
+            },
+            "grade5": {
+                "title": "Lớp 5",
+                "focus": "Chuẩn bị học sinh cho bước chuyển sang trung học cơ sở với kỹ năng giải quyết vấn đề và giao tiếp nâng cao."
+            }
+        }
+    },
+    "creditCourses": {
+        "title": "Khóa học Tín chỉ Trung học Ontario",
+        "subtitle": "Kiếm tín chỉ OSSD chính thức được các trường đại học trên toàn thế giới công nhận",
+        "badge": "Được Bộ Giáo dục Phê duyệt | BSID: 665588",
+        "why": {
+            "title": "Tại sao Chọn Khóa học Tín chỉ EMCS?",
+            "ministryInspected": "Được Bộ Kiểm định: Được phép bởi Bộ Giáo dục Ontario (BSID: 665588)",
+            "certifiedTeachers": "Giáo viên Ontario Được Chứng nhận: Tất cả khóa học được giảng dạy bởi giáo viên có tư cách tốt với Hội đồng Giáo viên Ontario (OCT)",
+            "sameCredits": "Tín chỉ Như Trường Truyền thống: Tín chỉ của chúng tôi có giá trị như những tín chỉ kiếm được tại các trường Ontario truyền thống",
+            "directTranscript": "Gửi Bảng điểm Trực tiếp: Điểm được gửi trực tiếp đến OUAC, OCAS và trường của bạn",
+            "globallyRecognized": "Được Công nhận Toàn cầu: Bằng cấp OSSD được chấp nhận bởi các trường đại học tại Canada, Mỹ, Anh, Úc và trên toàn thế giới"
+        },
+        "format": {
+            "title": "Hình thức Khóa học",
+            "liveClasses": {
+                "title": "Lớp Trực tuyến Trực tiếp:",
+                "zoom": "Buổi học Zoom tương tác với giáo viên được chứng nhận",
+                "hours": "Tổng cộng 6 giờ mỗi tuần",
+                "smallGroups": "Nhóm nhỏ để được quan tâm cá nhân",
+                "recordings": "Bài giảng được ghi lại để xem lại"
+            },
+            "selfPaced": {
+                "title": "Thành phần Tự Định Tiến Độ:",
+                "access": "Truy cập tài liệu khóa học 24/7",
+                "practice": "Bài tập thực hành và bài tập về nhà",
+                "complete": "Hoàn thành bài tập theo lịch của bạn"
+            },
+            "assessments": {
+                "title": "Đánh giá:",
+                "quizzes": "Câu hỏi và bài kiểm tra trong suốt khóa học",
+                "assignments": "Bài tập lớn và dự án",
+                "final": "Kỳ thi cuối kỳ có giám sát (30% điểm cuối)"
+            }
+        },
+        "evaluation": {
+            "title": "Cấu trúc Đánh giá",
+            "termWork": "Bài tập Học kỳ (bài tập, kiểm tra, dự án)",
+            "termWeight": "70%",
+            "finalExam": "Kỳ thi Cuối kỳ (có giám sát)",
+            "finalWeight": "30%"
+        },
+        "whatsIncluded": {
+            "title": "Bao gồm những gì",
+            "items": [
+                "Buổi học Zoom trực tiếp với Giáo viên Ontario Được Chứng nhận",
+                "Video ghi lại bài giảng",
+                "Tất cả tài liệu và nguồn lực khóa học",
+                "Bài tập thực hành và bài tập về nhà",
+                "Câu hỏi và bài kiểm tra đơn vị",
+                "Kỳ thi cuối kỳ (có giám sát)",
+                "Bảng điểm Ontario chính thức",
+                "Phiếu điểm",
+                "THƯỞNG: Khóa học thực hành không tín chỉ liên quan MIỄN PHÍ"
+            ]
+        },
+        "pathways": {
+            "grade9": {
+                "title": "Lớp 9 - Nền tảng",
+                "desc": "Xây dựng kỹ năng thiết yếu qua các môn học chính với các khóa học không phân luồng được thiết kế cho tất cả người học."
+            },
+            "grade10": {
+                "title": "Lớp 10 - Trọng tâm Học thuật",
+                "desc": "Đào sâu hiểu biết với các khóa học cấp độ học thuật chuẩn bị cho bạn học tiếp cao hơn."
+            },
+            "grade11": {
+                "title": "Lớp 11 - Tiền Đại học",
+                "desc": "Các khóa chuẩn bị đại học và cao đẳng để xây dựng lộ trình đến thành công sau trung học."
+            },
+            "grade12": {
+                "title": "Lớp 12 - Chuẩn bị Đại học",
+                "desc": "Hoàn thành các yêu cầu OSSD với các khóa học được thiết kế cho đơn xin đại học trực tiếp."
+            }
+        },
+        "cta": {
+            "title": "Sẵn sàng Kiếm Tín chỉ Ontario?",
+            "subtitle": "Tham gia cùng hàng nghìn học sinh trên toàn thế giới đang lấy OSSD với EMCS.",
+            "browse": "Duyệt Khóa học Tín chỉ",
+            "counselor": "Nói chuyện với Cố vấn",
+            "info": "Yêu cầu Thông tin"
+        }
+    },
+    "practiceCourses": {
+        "label": "Không Tín chỉ | Thực hành & Chuẩn bị",
+        "title": "Khóa học Thực hành Không Tín chỉ",
+        "subtitle": "Xây dựng kỹ năng theo tốc độ của riêng bạn với video bài giảng hấp dẫn và hoạt động thực hành",
+        "disclaimer": "Xin Lưu ý: Các khóa học này KHÔNG kiếm được tín chỉ trung học Ontario. Việc hoàn thành sẽ KHÔNG xuất hiện trên bất kỳ bảng điểm hoặc hồ sơ học tập nào.",
+        "whatAre": {
+            "title": "Khóa học Thực hành là gì?",
+            "content": "Khóa học thực hành cung cấp tài liệu học tập theo chương trình chuẩn để xây dựng kỹ năng và luyện tập thêm. Chúng được thiết kế cho học sinh muốn học mà không có áp lực của đánh giá hoặc điểm số.",
+            "notTitle": "Các khóa học này KHÔNG:",
+            "notItems": [
+                "Có tín chỉ",
+                "Được đánh giá hoặc chấm điểm",
+                "Được ghi trên bảng điểm",
+                "Là bằng cấp Ontario chính thức"
+            ],
+            "areTitle": "Các khóa học này LÀ:",
+            "areItems": [
+                "Theo chương trình chuẩn",
+                "Tự định tiến độ",
+                "Có sẵn 24/7",
+                "Hoàn hảo cho luyện tập và chuẩn bị"
+            ]
+        },
+        "whatsIncluded": {
+            "title": "Bao gồm những gì",
+            "items": [
+                "Video bài giảng chất lượng cao",
+                "Hoạt động thực hành tương tác",
+                "Bài tập về nhà",
+                "Học tự định tiến độ",
+                "Truy cập 12 tháng"
+            ]
+        },
+        "whatsNotIncluded": {
+            "title": "KHÔNG bao gồm những gì",
+            "items": [
+                "Bài kiểm tra hoặc đánh giá",
+                "Phiếu điểm hoặc bảng điểm",
+                "Tín chỉ OSSD Ontario",
+                "Giảng dạy trực tiếp với giáo viên",
+                "Bài tập được chấm điểm"
+            ]
+        },
+        "perfectFor": {
+            "title": "Hoàn hảo Cho",
+            "practice": "Luyện tập Thêm: Bổ sung cho bài tập trường học thông thường",
+            "summer": "Học Hè: Tiến bộ trước năm học mới",
+            "homeschool": "Hỗ trợ Học tại Nhà: Tài nguyên theo chương trình Ontario",
+            "exam": "Chuẩn bị Thi: Ôn tập và củng cố kiến thức",
+            "international": "Học sinh Quốc tế: Chuẩn bị cho học tập tại Canada",
+            "skill": "Xây dựng Kỹ năng: Học theo tốc độ của riêng bạn mà không có áp lực"
+        },
+        "pricing": {
+            "title": "Mức giá",
+            "elementary": "Tiểu học (Lớp 1-5): $75 CAD mỗi môn",
+            "middle": "Trung học Cơ sở (Lớp 6-8): $75-150 CAD mỗi môn",
+            "highSchool": "Trung học Phổ thông (Lớp 9-12): $75-150 CAD mỗi khóa"
+        },
+        "gradeGroups": {
+            "elementary": {
+                "title": "Tiểu học (Lớp 1-5)",
+                "desc": "Học tập vui vẻ, tương tác với video hấp dẫn và hoạt động thực hành theo Chương trình Ontario."
+            },
+            "middle": {
+                "title": "Trung học Cơ sở (Lớp 6-8)",
+                "desc": "Xây dựng nền tảng vững chắc cho thành công ở trung học phổ thông với phạm vi môn học toàn diện."
+            },
+            "highSchool": {
+                "title": "Trung học Phổ thông (Lớp 9-12)",
+                "desc": "Thực hành và củng cố các khái niệm chương trình Ontario để chuẩn bị cho khóa học tín chỉ hoặc bổ sung cho việc học."
+            }
+        },
+        "crossSell": {
+            "title": "Muốn kiếm tín chỉ Ontario?",
+            "content": "Khóa học Tín chỉ của chúng tôi bao gồm giảng dạy trực tiếp với Giáo viên Ontario Được Chứng nhận, đánh giá chính thức, và bảng điểm được các trường đại học trên toàn thế giới công nhận.",
+            "cta": "Xem Khóa học Tín chỉ"
+        },
+        "criticalDisclaimer": {
+            "title": "QUAN TRỌNG: Tuyên bố Miễn trừ Khóa học Không Tín chỉ",
+            "content": "Hoàn thành khóa học thực hành sẽ KHÔNG kiếm được tín chỉ trung học hoặc hồ sơ học tập Ontario. Các khóa học này được thiết kế chỉ để học tập và luyện tập.",
+            "notInclude": "Khóa học thực hành KHÔNG bao gồm:",
+            "items": [
+                "Đánh giá hoặc điểm số chính thức",
+                "Phiếu điểm hoặc bảng điểm",
+                "Tín chỉ OSSD Ontario",
+                "Công nhận của đại học/cao đẳng"
+            ],
+            "redirect": "Nếu bạn cần tín chỉ chính thức, vui lòng đăng ký Khóa học Tín chỉ của chúng tôi."
+        },
+        "cta": {
+            "title": "Bắt đầu Thực hành Ngay Hôm Nay",
+            "subtitle": "Chọn lớp và bắt đầu hành trình học tự định tiến độ.",
+            "browse": "Duyệt Khóa học Thực hành",
+            "needCredits": "Cần Tín chỉ Thay thế? Xem Khóa học Tín chỉ"
+        }
+    },
+    "international": {
+        "title": "Học sinh Quốc tế",
+        "subtitle": "Nhận bằng cấp giáo dục Canada từ Việt Nam hoặc bất cứ đâu trên thế giới",
+        "badge": "Không Cần Giấy Phép Du Học cho Khóa học Trực tuyến",
+        "noPermit": "Không Cần Giấy Phép Du Học",
+        "noPermitDesc": "Học các khóa EMCS trực tuyến mà không cần giấy phép du học Canada",
+        "why": {
+            "title": "Tại sao Chọn EMCS?",
+            "studyAnywhere": {
+                "title": "Học Từ Mọi Nơi",
+                "desc": "Học từ Việt Nam, Trung Quốc, Ấn Độ, hoặc bất kỳ quốc gia nào trên thế giới—bạn chỉ cần truy cập internet."
+            },
+            "noStudyPermit": {
+                "title": "Không Cần Giấy Phép Du Học",
+                "desc": "Học các khóa EMCS trực tuyến mà không cần giấy phép du học Canada. Học từ nhà tại quốc gia của bạn."
+            },
+            "authenticCredentials": {
+                "title": "Bằng cấp Canada Chính quy",
+                "desc": "Kiếm Bằng Tốt nghiệp Trung học Ontario (OSSD) hoặc hồ sơ học tập tiểu học chính thức—cùng bằng cấp được cấp bởi các trường Ontario truyền thống."
+            },
+            "universityPrep": {
+                "title": "Chuẩn bị Đại học",
+                "desc": "Đáp ứng yêu cầu nhập học của các trường đại học hàng đầu trên toàn thế giới. OSSD của chúng tôi được công nhận toàn cầu như một bằng cấp đầu vào hợp lệ."
+            }
+        },
+        "benefits": {
+            "title": "Lợi ích cho Học sinh Quốc tế",
+            "globalAccess": "Truy cập Toàn cầu: Học từ mọi nơi có internet",
+            "noVisa": "Không Cần Visa: Khóa học trực tuyến không yêu cầu giấy phép du học",
+            "costSavings": "Tiết kiệm Chi phí: Không chi phí đi lại, ăn ở, hoặc sinh hoạt",
+            "flexibleSchedule": "Lịch Linh hoạt: Học theo múi giờ của bạn",
+            "sameCredential": "Cùng Bằng cấp: OSSD giống hệt như các trường Ontario trực tiếp",
+            "directApplications": "Nộp đơn Trực tiếp: Điểm được gửi đến OUAC/OCAS",
+            "universityRecognition": "Công nhận Đại học: Được chấp nhận bởi các trường hàng đầu trên toàn thế giới",
+            "anywhere": {
+                "title": "Học Từ Mọi Nơi",
+                "desc": "Học từ Việt Nam, Trung Quốc, Ấn Độ, hoặc bất kỳ quốc gia nào trên thế giới."
+            },
+            "noPermit": {
+                "title": "Không Cần Giấy Phép",
+                "desc": "Tham gia khóa học mà không cần giấy phép du học Canada."
+            },
+            "diploma": {
+                "title": "Bằng Canada Chính quy",
+                "desc": "Kiếm Bằng Tốt nghiệp Trung học Ontario (OSSD) chính thức."
+            },
+            "university": {
+                "title": "Chuẩn bị Đại học",
+                "desc": "Đáp ứng yêu cầu nhập học của các trường đại học hàng đầu trên toàn thế giới."
+            }
+        },
+        "pathwayAdvantages": {
+            "title": "Ưu điểm Lộ trình",
+            "migration": {
+                "title": "Cân nhắc Di cư",
+                "desc": "Lý tưởng cho học sinh có kế hoạch di cư đến Canada, Anh, Mỹ, Úc, hoặc các quốc gia khác. Bằng cấp Canada được đánh giá cao trên toàn cầu."
+            },
+            "universityAdmission": {
+                "title": "Nhập học Đại học",
+                "desc": "Bằng tốt nghiệp trung học Canada (OSSD) được công nhận bởi các trường đại học và cao đẳng hàng đầu toàn cầu như một bằng cấp đầu vào hợp lệ."
+            },
+            "efficientCompletion": {
+                "title": "Hoàn thành Hiệu quả",
+                "desc": "Không giống các chương trình mất hai năm, yêu cầu OSSD có thể hoàn thành trong vòng 12 tháng với việc học chuyên cần."
+            },
+            "assessmentStructure": {
+                "title": "Cấu trúc Đánh giá",
+                "desc": "Các khóa học của chúng tôi được đánh giá qua 70% bài tập học kỳ và 30% kỳ thi cuối—không có kỳ thi đơn lẻ đặt cược cao quyết định tương lai của bạn."
+            }
+        },
+        "howTo": {
+            "title": "Cách Bắt đầu",
+            "subtitle": "Hành trình đến với bằng cấp Canada qua 5 bước đơn giản",
+            "step1": "Khám phá Chương trình - Duyệt danh mục khóa học và chọn lộ trình",
+            "step2": "Thêm vào Giỏ - Chọn khóa học và hoàn thành đăng ký",
+            "step3": "Hoàn thành Thanh toán - Thanh toán học phí và chi phí an toàn",
+            "step4": "Nộp Hồ sơ - Cung cấp CMND và hồ sơ học tập để xác minh",
+            "step5": "Bắt đầu Học - Truy cập khóa học trong vòng 24-48 giờ"
+        },
+        "step1": "Khám phá Chương trình",
+        "step2": "Thêm vào Giỏ",
+        "step3": "Hoàn thành Thanh toán",
+        "step4": "Nộp Hồ sơ",
+        "step5": "Bắt đầu Học!",
+        "programsForInternational": {
+            "title": "Chương trình cho Học sinh Quốc tế",
+            "elementary": {
+                "title": "Nền tảng Tiểu học (Lớp 1-5)",
+                "selfLearning": {
+                    "title": "Lựa chọn Tự Học:",
+                    "desc": "Hoàn hảo để tiếp xúc chương trình và luyện tập",
+                    "price": "Từ $75 CAD mỗi môn",
+                    "note": "Không yêu cầu đánh giá"
+                },
+                "teacherLed": {
+                    "title": "Lựa chọn Có Giáo viên:",
+                    "desc": "Hồ sơ học tập Ontario chính thức",
+                    "price": "$3,500 CAD mỗi năm + phí",
+                    "note": "Lớp trực tiếp với giáo viên Canada"
+                }
+            },
+            "highSchool": {
+                "title": "Trung học Tín chỉ (Lớp 9-12)",
+                "features": [
+                    "Tín chỉ OSSD chính thức",
+                    "Giáo viên Ontario Được Chứng nhận",
+                    "Bảng điểm gửi đến OUAC/OCAS",
+                    "Liên hệ để biết mức giá"
+                ]
+            }
+        },
+        "tuition": {
+            "title": "Học phí cho Học sinh Quốc tế",
+            "subtitle": "Mức giá minh bạch không có phí ẩn",
+            "perCourse": {
+                "title": "Phí Mỗi Khóa",
+                "subtitle": "Bao gồm khóa học tín chỉ đầy đủ",
+                "features": [
+                    "Khóa học tín chỉ đầy đủ",
+                    "Tất cả tài liệu khóa học bao gồm",
+                    "Hỗ trợ giáo viên bao gồm",
+                    "Truy cập khóa học 12 tháng",
+                    "Bảng điểm chính thức bao gồm",
+                    "Kỳ thi có giám sát bao gồm"
+                ]
+            },
+            "package": {
+                "title": "Gói OSSD",
+                "bestValue": "Giá trị Nhất",
+                "contactQuote": "Liên hệ để nhận báo giá tùy chỉnh",
+                "features": [
+                    "Kế hoạch tín chỉ tùy chỉnh theo nhu cầu",
+                    "Hỗ trợ cố vấn hướng dẫn",
+                    "Hỗ trợ nộp đơn đại học",
+                    "Hỗ trợ ưu tiên",
+                    "Chuẩn bị OSSLT",
+                    "Giảm giá số lượng có sẵn"
+                ]
+            }
+        },
+        "vietnamese": {
+            "title": "Dành cho Học sinh và Gia đình Việt Nam",
+            "subtitle": "For Vietnamese Students and Families",
+            "content": "Chúng tôi hiểu rằng quyết định giáo dục liên quan đến cả gia đình. Đội ngũ của chúng tôi sẵn sàng cung cấp thông tin bằng tiếng Việt và trả lời câu hỏi từ cả học sinh và phụ huynh.",
+            "considerations": {
+                "title": "Những điều cần cân nhắc chính cho gia đình Việt Nam:",
+                "cost": "Minh bạch Tổng Chi phí: Tất cả chi phí được nêu rõ—không có phí ẩn",
+                "pathways": "Lộ trình Sau Tốt nghiệp: OSSD mở cửa đến các trường đại học Canada và cơ hội di cư",
+                "communication": "Liên lạc Gia đình: Cập nhật tiến độ thường xuyên cho phụ huynh",
+                "timezone": "Linh hoạt Múi giờ: Học không đồng bộ phù hợp với lịch trình Việt Nam"
+            },
+            "cta": "Liên hệ Bằng Tiếng Việt"
+        },
+        "cta": {
+            "title": "Sẵn sàng Bắt đầu Hành trình Giáo dục Canada?",
+            "subtitle": "Tham gia cùng học sinh từ hơn 130 quốc gia đang lấy bằng cấp Canada với EMCS.",
+            "apply": "Bắt đầu Đơn Đăng ký",
+            "info": "Yêu cầu Thông tin",
+            "advisor": "Nói chuyện với Cố vấn"
+        }
+    },
+    "ossd": {
+        "title": "Yêu cầu OSSD",
+        "subtitle": "Những gì bạn cần để tốt nghiệp với Bằng Tốt nghiệp Trung học Ontario",
+        "overview": {
+            "totalCredits": "Tổng Tín chỉ",
+            "totalCreditsValue": "30",
+            "compulsoryCredits": "Tín chỉ Bắt buộc",
+            "compulsoryCreditsValue": "18",
+            "optionalCredits": "Tín chỉ Tự chọn",
+            "optionalCreditsValue": "12",
+            "literacyRequirement": "Yêu cầu Đọc viết",
+            "literacyValue": "OSSLT hoặc OSSLC",
+            "communityInvolvement": "Phục vụ Cộng đồng",
+            "communityValue": "40 giờ",
+            "onlineLearning": "Học Trực tuyến",
+            "onlineValue": "Tối thiểu 2 tín chỉ"
+        },
+        "total": "Tổng Tín chỉ Yêu cầu",
+        "compulsory": "Tín chỉ Bắt buộc",
+        "optional": "Tín chỉ Tự chọn",
+        "literacy": "Bài kiểm tra Đọc viết (OSSLT)",
+        "community": "Giờ Cộng đồng",
+        "compulsoryTitle": "18 Tín chỉ Bắt buộc",
+        "compulsorySubtitle": "Các môn học yêu cầu cho tất cả học sinh tốt nghiệp OSSD",
+        "table": {
+            "subject": "Môn học",
+            "credits": "Tín chỉ",
+            "notes": "Ghi chú",
+            "total": "Tổng cộng"
+        },
+        "subjects": {
+            "english": "Tiếng Anh",
+            "math": "Toán học",
+            "science": "Khoa học",
+            "history": "Lịch sử Canada",
+            "geography": "Địa lý Canada",
+            "arts": "Nghệ thuật",
+            "pe": "Giáo dục Thể chất & Sức khỏe",
+            "french": "Tiếng Pháp (Ngôn ngữ thứ hai)",
+            "career": "Nghiên cứu Nghề nghiệp",
+            "civics": "Công dân",
+            "group": "Nhóm 1, 2, hoặc 3"
+        },
+        "notes": {
+            "english": "1 tín chỉ mỗi lớp (9, 10, 11, 12)",
+            "math": "Ít nhất 1 tín chỉ ở Lớp 11 hoặc 12",
+            "history": "Lớp 10",
+            "geography": "Lớp 9",
+            "arts": "Âm nhạc, Mỹ thuật, Kịch, hoặc Múa",
+            "group": "Bổ sung từ các nhóm quy định"
+        },
+        "additional": {
+            "title": "Yêu cầu Bổ sung",
+            "subtitle": "Ngoài các tín chỉ, bạn cũng phải hoàn thành:",
+            "osslt": {
+                "title": "Bài kiểm tra Đọc viết Trung học Ontario (OSSLT)",
+                "desc": "Phải hoàn thành thành công OSSLT hoặc Khóa học Đọc viết Trung học Ontario (OSSLC)."
+            },
+            "hours": {
+                "title": "40 Giờ Phục vụ Cộng đồng",
+                "desc": "Hoàn thành 40 giờ phục vụ cộng đồng trước khi tốt nghiệp."
+            },
+            "online": {
+                "title": "Yêu cầu Học Trực tuyến",
+                "desc": "Tối thiểu 2 tín chỉ học trực tuyến (được đáp ứng qua các khóa học EMCS)."
+            }
+        },
+        "howEmcsHelps": {
+            "title": "EMCS Giúp Bạn Tốt nghiệp Như Thế Nào",
+            "items": [
+                "Lập Kế hoạch Khóa học: Cố vấn hướng dẫn giúp bạn chọn đúng khóa học",
+                "Theo dõi Tín chỉ: Giám sát tiến độ hướng tới yêu cầu tốt nghiệp",
+                "Quản lý Bảng điểm: Hồ sơ chính thức được duy trì và gửi đến các trường đại học",
+                "Chuẩn bị OSSLT: Hỗ trợ cho yêu cầu bài kiểm tra đọc viết",
+                "Giờ Cộng đồng: Hướng dẫn hoàn thành yêu cầu tình nguyện"
+            ]
+        },
+        "cta": {
+            "title": "Sẵn sàng Bắt đầu Hành trình OSSD?",
+            "subtitle": "Cố vấn hướng dẫn của chúng tôi có thể giúp bạn lập kế hoạch tốt nghiệp.",
+            "button": "Liên hệ Cố vấn"
+        }
+    },
+    "support": {
+        "title": "Hỗ trợ Học sinh",
+        "subtitle": "Chúng tôi ở đây để hỗ trợ bạn từng bước trên hành trình giáo dục",
+        "services": {
+            "academic": {
+                "title": "Hỗ trợ Học tập",
+                "desc": "Nhận trợ giúp từ giáo viên trong vòng 48 giờ sau khi gửi câu hỏi.",
+                "features": [
+                    "Hỏi đáp với giáo viên qua nhắn tin khóa học",
+                    "Phản hồi và hướng dẫn bài tập",
+                    "Tài nguyên và tài liệu thực hành thêm",
+                    "Giờ văn phòng để được hỗ trợ thời gian thực"
+                ]
+            },
+            "guidance": {
+                "title": "Tư vấn Hướng nghiệp",
+                "desc": "Hỗ trợ 1-1 về chọn khóa học, lập kế hoạch tín chỉ và yêu cầu tốt nghiệp.",
+                "features": [
+                    "Kế hoạch tín chỉ cá nhân",
+                    "Đề xuất khóa học",
+                    "Theo dõi tốt nghiệp",
+                    "Lập kế hoạch lộ trình học tập"
+                ]
+            },
+            "university": {
+                "title": "Nộp đơn Đại học",
+                "desc": "Hỗ trợ chuyên gia điều hướng nộp đơn OUAC, OCAS và đại học quốc tế.",
+                "features": [
+                    "Hỗ trợ nộp đơn OUAC/OCAS",
+                    "Hướng dẫn bài luận cá nhân",
+                    "Hỗ trợ đăng ký học bổng",
+                    "Gửi bảng điểm trực tiếp"
+                ]
+            },
+            "tech": {
+                "title": "Hỗ trợ Kỹ thuật",
+                "desc": "Trợ giúp về nền tảng học tập, giám sát thi và các vấn đề kỹ thuật.",
+                "features": [
+                    "Đào tạo và hướng dẫn nền tảng",
+                    "Hỗ trợ kỹ thuật thi",
+                    "Hỗ trợ tài khoản",
+                    "Tài nguyên kỹ thuật 24/7"
+                ]
+            }
+        },
+        "responseTimes": {
+            "title": "Thời gian Phản hồi",
+            "teacherQuestions": "Câu hỏi Giáo viên: Trong vòng 48 giờ",
+            "assignmentGrading": "Chấm Bài tập: Trong vòng 5-7 ngày làm việc",
+            "administrative": "Yêu cầu Hành chính: Trong vòng 24-48 giờ",
+            "technical": "Hỗ trợ Kỹ thuật: Trong vòng 24 giờ"
+        },
+        "howTo": {
+            "title": "Cách Nhận Hỗ trợ",
+            "subtitle": "Nhiều cách để liên hệ khi bạn cần trợ giúp",
+            "email": {
+                "title": "Email Giáo viên",
+                "desc": "Sử dụng hệ thống nhắn tin trong khóa học để đặt câu hỏi trực tiếp."
+            },
+            "book": {
+                "title": "Đặt lịch với Cố vấn",
+                "desc": "Lên lịch cuộc gọi video với cố vấn hướng dẫn để được hỗ trợ cá nhân."
+            },
+            "chat": {
+                "title": "Trò chuyện Trực tiếp",
+                "desc": "Nhận câu trả lời ngay lập tức từ đội ngũ hỗ trợ trong giờ làm việc."
+            }
+        },
+        "cta": {
+            "title": "Cần Trợ giúp Ngay?",
+            "subtitle": "Đội ngũ của chúng tôi sẵn sàng hỗ trợ bạn với bất kỳ câu hỏi hoặc lo ngại nào.",
+            "button": "Liên hệ Hỗ trợ"
+        }
+    },
+    "faq": {
+        "title": "Câu hỏi Thường gặp",
+        "subtitle": "Tìm câu trả lời cho các câu hỏi phổ biến về chương trình của chúng tôi",
+        "categories": {
+            "general": "Câu hỏi Chung",
+            "credit": "Khóa học Tín chỉ",
+            "primary": "Chương trình Nền tảng Tiểu học (Lớp 1-5)",
+            "nonCredit": "Khóa học Thực hành Không Tín chỉ",
+            "international": "Học sinh Quốc tế",
+            "technical": "Yêu cầu Kỹ thuật"
+        },
+        "q1": "EMCS có được kiểm định không?",
+        "a1": "Có, EMCS là trường tư thục được Bộ kiểm định, được phép bởi Bộ Giáo dục Ontario cấp tín chỉ OSSD. BSID của chúng tôi là 665588. Tín chỉ của chúng tôi có giá trị như những tín chỉ kiếm được tại các trường Ontario truyền thống.",
+        "q2": "Khi nào tôi có thể bắt đầu?",
+        "a2": "Chúng tôi mở đăng ký liên tục quanh năm. Bạn có thể đăng ký bất cứ lúc nào và thường bắt đầu khóa học trong vòng 24-48 giờ.",
+        "q3": "Tôi có bao lâu để hoàn thành một khóa học?",
+        "a3": "Bạn có tối đa 12 tháng từ khi đăng ký để hoàn thành mỗi khóa học, mặc dù hầu hết học sinh hoàn thành trong 3-4 tháng. Tùy chọn nhanh cho phép hoàn thành trong vòng 4 tuần.",
+        "q4": "Tín chỉ EMCS có giống tín chỉ trung học Ontario thông thường không?",
+        "a4": "Có. Tín chỉ của chúng tôi giống hệt như những tín chỉ kiếm được tại các trường Ontario truyền thống. Chúng xuất hiện trên bảng điểm Ontario chính thức và được công nhận bởi tất cả các trường cao đẳng và đại học Canada.",
+        "q5": "Có kỳ thi cuối kỳ không?",
+        "a5": "Có, tất cả khóa học tín chỉ yêu cầu kỳ thi cuối kỳ có giám sát chiếm 30% điểm số. Bạn có thể thi trực tuyến với giám thị từ xa hoặc tại trung tâm khảo thí được chấp thuận.",
+        "q6": "Làm sao để điểm của tôi được gửi đến đại học?",
+        "a6": "Chúng tôi gửi điểm giữa kỳ và cuối kỳ trực tiếp đến OUAC, OCAS và trường của bạn. Chỉ cần cung cấp số đơn xin của bạn qua hệ thống yêu cầu bảng điểm.",
+        "q7": "Tôi có thể chuyển tín chỉ từ trường khác không?",
+        "a7": "Có! Chúng tôi chấp nhận tín chỉ chuyển tiếp từ Ontario và các trường Canada khác. Học sinh quốc tế cũng có thể được đánh giá bảng điểm để quy đổi tín chỉ.",
+        "q8": "Sự khác biệt giữa Tự Học và Có Giáo viên là gì?",
+        "a8": "Tự Học cung cấp quyền truy cập tài liệu theo chương trình chuẩn để luyện tập—không đánh giá, không phiếu điểm, không tương tác giáo viên. Có Giáo viên bao gồm lớp trực tuyến trực tiếp với giáo viên Canada, đánh giá yêu cầu, và phiếu điểm học tập Ontario chính thức.",
+        "q9": "Chương trình Tự Học có cung cấp tín chỉ không?",
+        "a9": "Không. Chương trình Nền tảng Tiểu học Tự Học không cung cấp tín chỉ OSSD (chỉ áp dụng cho Lớp 9-12) hoặc hồ sơ học tập Ontario. Để có hồ sơ chính thức, hãy chọn tùy chọn Có Giáo viên hoặc thêm tiện ích bổ sung Hồ sơ Học tập Ontario ($250 mỗi khóa) vào đăng ký Tự Học.",
+        "q10": "Chương trình Nền tảng Tiểu học có được kiểm định không?",
+        "a10": "EMCS là trường tư thục được Bộ Giáo dục Ontario kiểm định. Chương trình Nền tảng Tiểu học Có Giáo viên bao gồm phiếu điểm học tập Ontario chính thức. Chương trình Tự Học cung cấp tài liệu thực hành theo chương trình chuẩn mà không có bằng cấp chính thức.",
+        "q11": "Khóa học thực hành có cho tín chỉ không?",
+        "a11": "Không. Khóa học thực hành được thiết kế chỉ để xây dựng kỹ năng và luyện tập thêm. Chúng KHÔNG kiếm được tín chỉ trung học Ontario và sẽ KHÔNG xuất hiện trên bất kỳ bảng điểm hoặc hồ sơ học tập nào. Nếu bạn cần tín chỉ, vui lòng đăng ký Khóa học Tín chỉ của chúng tôi.",
+        "q12": "Khóa học thực hành bao gồm những gì?",
+        "a12": "Video bài giảng, hoạt động thực hành tương tác, và bài tập về nhà. Không có bài kiểm tra, không điểm số, không đánh giá, và không giảng dạy giáo viên.",
+        "q13": "Tôi có cần giấy phép du học không?",
+        "a13": "Không. Bạn có thể học các khóa EMCS trực tuyến từ bất cứ đâu trên thế giới mà không cần giấy phép du học Canada.",
+        "q14": "OSSD của tôi có được công nhận quốc tế không?",
+        "a14": "Có. Bằng Tốt nghiệp Trung học Ontario (OSSD) được công nhận bởi các trường đại học trên toàn thế giới, bao gồm các tổ chức tại Canada, Hoa Kỳ, Vương quốc Anh, Úc và nhiều quốc gia khác.",
+        "q15": "Tôi cần công nghệ gì?",
+        "a15": "Bạn cần máy tính hoặc máy tính bảng có truy cập internet, webcam cho kỳ thi có giám sát, và phần mềm cơ bản như trình duyệt web và trình đọc PDF. Không yêu cầu mua phần mềm đặc biệt.",
+        "cta": {
+            "title": "Vẫn còn câu hỏi?",
+            "subtitle": "Đội ngũ của chúng tôi ở đây để giúp đỡ. Liên hệ và chúng tôi sẽ phản hồi trong vòng 24 giờ.",
+            "button": "Liên hệ"
+        }
+    },
+    "tuition": {
+        "title": "Học phí & Chi phí",
+        "subtitle": "Mức giá minh bạch không có chi phí ẩn",
+        "elementary": {
+            "title": "Chương trình Tiểu học (Lớp 1-5)",
+            "selfLearning": {
+                "title": "Chương trình Tự Học",
+                "grade1to3": "Lớp 1-3: Các Môn Chính (mỗi môn)",
+                "grade4to5": "Lớp 4-5: Các Môn Chính (mỗi môn)",
+                "french": "Lớp 4-5: Tiếng Pháp như Ngôn ngữ thứ hai",
+                "regular": "Giá Thường",
+                "discounted": "Giá Khuyến mãi",
+                "regularPrice": "$150 CAD",
+                "discountedPrice": "$75 CAD",
+                "frenchRegular": "$300 CAD",
+                "frenchDiscounted": "$150 CAD",
+                "fees": {
+                    "entrance": "Thi Đầu vào: $50 CAD (không hoàn lại)",
+                    "registration": "Đăng ký: $35 CAD (không hoàn lại)"
+                },
+                "optionalAddon": "Tiện ích Bổ sung Tùy chọn: Hồ sơ Học tập Ontario: +$250 CAD mỗi khóa"
+            },
+            "teacherLed": {
+                "title": "Chương trình Có Giáo viên",
+                "core": "Các Môn Chính (6 môn, cả năm)",
+                "corePrice": "$3,500",
+                "french": "Tiếng Pháp như Ngôn ngữ thứ hai (bổ sung)",
+                "frenchPrice": "$2,000",
+                "entranceFee": "Phí Thi Đầu vào",
+                "entrancePrice": "$50 (không hoàn lại)",
+                "registrationFee": "Phí Đăng ký",
+                "registrationPrice": "$100 (không hoàn lại)"
+            }
+        },
+        "middle": {
+            "title": "Trung học Cơ sở (Lớp 6-8)",
+            "practice": "Khóa học Thực hành: $75-150 CAD mỗi môn"
+        },
+        "highSchool": {
+            "title": "Trung học Phổ thông (Lớp 9-12)",
+            "credit": {
+                "title": "Khóa học Tín chỉ",
+                "domestic": "Trong nước (Công dân/Thường trú Canada)",
+                "visa": "Học sinh Visa (tại Canada)",
+                "international": "Học sinh Quốc tế",
+                "contact": "Liên hệ chúng tôi",
+                "fees": {
+                    "entrance": "Thi Đầu vào: $50 CAD (không hoàn lại)",
+                    "registration": "Đăng ký: $100 CAD (không hoàn lại)"
+                },
+                "included": {
+                    "title": "Bao gồm trong học phí:",
+                    "items": [
+                        "Tất cả tài liệu khóa học",
+                        "Hỗ trợ giáo viên",
+                        "Truy cập khóa học 12 tháng",
+                        "Bảng điểm chính thức",
+                        "Phiếu điểm",
+                        "Kỳ thi có giám sát"
+                    ]
+                }
+            },
+            "practice": {
+                "title": "Khóa học Thực hành (Không Tín chỉ)",
+                "price": "$75-150 CAD"
+            }
+        },
+        "whatsIncluded": {
+            "title": "Bao gồm những gì",
+            "allPrograms": {
+                "title": "Tất cả Chương trình Bao gồm:",
+                "items": [
+                    "Tài liệu và nguồn lực khóa học",
+                    "Truy cập nền tảng 24/7",
+                    "Hỗ trợ kỹ thuật"
+                ]
+            },
+            "creditAdditional": {
+                "title": "Khóa học Tín chỉ Còn Bao gồm:",
+                "items": [
+                    "Giảng dạy trực tiếp với giáo viên OCT",
+                    "Đánh giá và chấm điểm",
+                    "Bảng điểm chính thức",
+                    "Điểm gửi đến OUAC/OCAS",
+                    "Kỳ thi có giám sát"
+                ]
+            }
+        },
+        "paymentMethods": {
+            "title": "Phương thức Thanh toán",
+            "methods": [
+                "Thẻ Tín dụng/Ghi nợ (Visa, Mastercard)",
+                "Chuyển khoản Ngân hàng",
+                "Flywire (cho thanh toán quốc tế, hỗ trợ Alipay, WeChat)"
+            ]
+        },
+        "refundPolicy": {
+            "title": "Chính sách Hoàn tiền",
+            "content": "Điều kiện hoàn tiền phụ thuộc vào tiến độ khóa học. Vui lòng liên hệ đội ngũ tuyển sinh để biết chi tiết về chính sách hoàn tiền."
+        },
+        "cta": {
+            "title": "Sẵn sàng Đăng ký?",
+            "subtitle": "Bắt đầu hành trình giáo dục Canada ngay hôm nay.",
+            "button": "Duyệt Chương trình"
+        }
+    },
+    "contact": {
+        "title": "Liên hệ",
+        "subtitle": "Chúng tôi ở đây để giúp đỡ với bất kỳ câu hỏi nào",
+        "address": "Địa chỉ",
+        "phone": "Điện thoại",
+        "email": "Email",
+        "hours": "Giờ làm việc",
+        "hoursValue": "Thứ Hai - Thứ Sáu, 9:00 AM - 5:00 PM EST",
+        "formName": "Họ tên của bạn",
+        "formEmail": "Email của bạn",
+        "formPhone": "Số điện thoại (tùy chọn)",
+        "formCountry": "Quốc gia",
+        "formMessage": "Tin nhắn của bạn",
+        "formSubmit": "Gửi tin nhắn",
+        "messageHeader": "Gửi tin nhắn cho chúng tôi",
+        "subject": "Chủ đề",
+        "subjectPlaceholder": "Chọn chủ đề...",
+        "topics": {
+            "general": "Yêu cầu Chung",
+            "enrollment": "Đăng ký Khóa học",
+            "transfer": "Chuyển Tín chỉ",
+            "technical": "Hỗ trợ Kỹ thuật",
+            "guidance": "Tư vấn Hướng nghiệp",
+            "international": "Học sinh Quốc tế",
+            "primary": "Chương trình Nền tảng Tiểu học",
+            "other": "Khác"
+        },
+        "departments": {
+            "title": "Liên hệ Bộ phận",
+            "admissions": "Tuyển sinh",
+            "support": "Hỗ trợ Học sinh",
+            "guidance": "Hướng nghiệp",
+            "technical": "Kỹ thuật",
+            "responseTime": "Thời gian Phản hồi",
+            "within24": "Trong vòng 24 giờ",
+            "within48": "Trong vòng 48 giờ"
+        },
+        "follow": "Theo dõi chúng tôi"
+    },
+    "storefront": {
+        "nonCredit": {
+            "label": "Không tín chỉ",
+            "title": "Khóa học Thực hành Không Tín chỉ",
+            "subtitle": "Xây dựng kỹ năng theo tốc độ của bạn với video bài giảng hấp dẫn và hoạt động thực hành.",
+            "disclaimer": "Không có bài kiểm tra, không đánh giá, không phiếu điểm, không tín chỉ OSSD",
+            "startingAt": "Bắt đầu từ",
+            "browseCta": "Duyệt theo Lớp",
+            "creditLink": "Đang tìm Khóa học Tín chỉ?",
+            "whatsIncluded": "Bao gồm những gì",
+            "perfectFor": "Hoàn hảo cho:",
+            "notIncluded": "KHÔNG bao gồm:",
+            "needCredit": "Cần tín chỉ Ontario? Duyệt Khóa học Tín chỉ →",
+            "startLearning": "Bắt đầu Thực hành Ngay",
+            "startLearningSubtitle": "Chọn lớp và bắt đầu hành trình học tự định tiến độ.",
+            "startGrade1": "Bắt đầu với Lớp 1",
+            "haveQuestions": "Có câu hỏi?",
+            "features": {
+                "videoLessons": "Video Bài giảng",
+                "videoLessonsDesc": "Video hướng dẫn chất lượng cao cho mọi chủ đề",
+                "practiceActivities": "Hoạt động Thực hành",
+                "practiceActivitiesDesc": "Bài tập tương tác với phản hồi ngay lập tức",
+                "homework": "Bài tập về nhà",
+                "homeworkDesc": "Bài tập để củng cố kiến thức",
+                "selfPaced": "Tự Định Tiến Độ",
+                "selfPacedDesc": "Học mọi lúc, mọi nơi, theo tốc độ của riêng bạn"
+            },
+            "gradeGroups": {
+                "elementary": "Tiểu học (Lớp 1-5)",
+                "elementaryDesc": "Học tập vui vẻ, tương tác với video hấp dẫn và hoạt động thực hành",
+                "middle": "Trung học Cơ sở (Lớp 6-8)",
+                "middleDesc": "Xây dựng nền tảng vững chắc cho thành công ở trung học phổ thông",
+                "secondary": "Trung học Phổ thông (Lớp 9-12)",
+                "secondaryDesc": "Thực hành và củng cố các khái niệm chương trình Ontario"
+            },
+            "perfectForItems": {
+                "practice": "Luyện tập thêm song song với trường học thông thường",
+                "summer": "Học hè để tiến bộ",
+                "homeschool": "Hỗ trợ chương trình học tại nhà",
+                "international": "Học sinh quốc tế chuẩn bị cho học tập tại Canada"
+            },
+            "notIncludedItems": {
+                "tests": "Bài kiểm tra hoặc đánh giá",
+                "reports": "Phiếu điểm hoặc bảng điểm",
+                "credit": "Tín chỉ OSSD Ontario",
+                "live": "Giảng dạy trực tiếp với giáo viên"
+            }
+        },
+        "credit": {
+            "label": "Tín chỉ",
+            "labelFull": "Tín chỉ Ontario",
+            "ministryApproved": "Được Bộ Giáo dục Phê duyệt",
+            "title": "Khóa học Tín chỉ Trung học Ontario",
+            "subtitle": "Kiếm tín chỉ OSSD chính thức được các trường đại học trên toàn thế giới công nhận. Lớp trực tiếp với Giáo viên Ontario Được Chứng nhận.",
+            "hrsPerWeek": "giờ/tuần",
+            "ossdCredit": "Tín chỉ OSSD",
+            "fromPrice": "Từ $3,500 CAD",
+            "browseCta": "Duyệt theo Lớp",
+            "nonCreditLink": "Chỉ cần Thực hành? Xem Không tín chỉ",
+            "whyEmcs": "Tại sao chọn Khóa học Tín chỉ EMCS?",
+            "whatsIncluded": "Bao gồm những gì",
+            "schedule": "Lịch học",
+            "hoursWeek": "giờ/tuần",
+            "daysWeek": "ngày/tuần",
+            "hoursSession": "giờ/buổi",
+            "scheduleDesc": "3 ngày/tuần × 2 giờ/ngày",
+            "smallGroups": "Nhóm nhỏ để được quan tâm cá nhân",
+            "browseGrade": "Duyệt theo Lớp",
+            "browseGradeSubtitle": "Chọn lớp để xem các khóa học tín chỉ có sẵn",
+            "universityPrep": "Chuẩn bị Đại học",
+            "preUniversity": "Tiền Đại học",
+            "academicFocus": "Trọng tâm Học thuật",
+            "foundation": "Nền tảng",
+            "viewCourses": "Xem Khóa học →",
+            "freeBundle": "Khóa học Thực hành MIỄN PHÍ Đi kèm",
+            "freeBundleDesc": "Mỗi lần mua khóa học tín chỉ đều bao gồm quyền truy cập MIỄN PHÍ vào khóa học thực hành không tín chỉ liên quan. Bắt đầu thực hành trong khi chờ lớp học trực tiếp!",
+            "readyToEarn": "Sẵn sàng Kiếm Tín chỉ Ontario?",
+            "readyToEarnSubtitle": "Tham gia cùng hàng nghìn học sinh trên toàn thế giới đang lấy OSSD với EMCS.",
+            "viewGrade12": "Xem Khóa học Lớp 12",
+            "speakCounselor": "Nói chuyện với Cố vấn",
+            "features": {
+                "ministryApproved": "Được Bộ Kiểm định",
+                "ministryApprovedDesc": "Được phép bởi Bộ Giáo dục Ontario (BSID: 665588)",
+                "certifiedTeachers": "Giáo viên Được Chứng nhận",
+                "certifiedTeachersDesc": "Tất cả khóa học được giảng dạy bởi Giáo viên Ontario Được Chứng nhận (OCT)",
+                "liveClasses": "Lớp học Trực tiếp",
+                "liveClassesDesc": "Buổi học Zoom tương tác với hướng dẫn thời gian thực",
+                "officialTranscripts": "Bảng điểm Chính thức",
+                "officialTranscriptsDesc": "Phiếu điểm và bảng điểm cho đơn xin học đại học"
+            },
+            "included": {
+                "liveZoom": "Buổi học Zoom trực tiếp với giáo viên được chứng nhận",
+                "replays": "Xem lại bài giảng đã ghi",
+                "assignments": "Bài tập thực hành",
+                "quizzes": "Câu hỏi và bài kiểm tra",
+                "finalExam": "Kỳ thi cuối kỳ",
+                "transcript": "Bảng điểm chính thức",
+                "reportCard": "Phiếu điểm",
+                "freeNonCredit": "MIỄN PHÍ: Khóa học thực hành không tín chỉ liên quan"
+            }
+        },
+        "grade": {
+            "kindergarten": "Mẫu giáo",
+            "grade": "Lớp",
+            "allSubjects": "Tất cả Môn học",
+            "creditCourses": "Khóa học Tín chỉ",
+            "programs": "Chương trình",
+            "earnCredits": "Kiếm tín chỉ trung học Ontario với hướng dẫn trực tuyến trực tiếp",
+            "buildFoundations": "Xây dựng nền tảng vững chắc với video bài giảng tự định tiến độ và thực hành",
+            "completeProgramSave": "Tiết kiệm",
+            "completeProgram": "Hoàn thành",
+            "program": "Chương trình",
+            "includesAll": "Bao gồm tất cả",
+            "selfPaced": "Học tự định tiến độ",
+            "addBundle": "Thêm Gói vào Giỏ",
+            "liveOnline": "Trực tuyến trực tiếp",
+            "videoLessons": "Video bài giảng",
+            "practiceActivities": "Hoạt động thực hành",
+            "prereq": "Điều kiện tiên quyết:",
+            "noCredit": "Không kiểm tra, không tín chỉ OSSD",
+            "viewDetails": "Xem Chi tiết",
+            "addToCart": "Thêm vào Giỏ",
+            "noCourses": "Không tìm thấy khóa học cho lựa chọn này.",
+            "needPractice": "Cần thực hành thêm?",
+            "needPracticeDesc": "Xem các khóa học không tín chỉ để học tự định tiến độ và hoạt động thực hành.",
+            "viewNonCredit": "Xem Không tín chỉ",
+            "readyForCredit": "Sẵn sàng kiếm tín chỉ Ontario?",
+            "readyForCreditDesc": "Khóa học tín chỉ của chúng tôi bao gồm hướng dẫn trực tiếp, đánh giá và bảng điểm chính thức.",
+            "viewCredit": "Xem Khóa học Tín chỉ"
+        },
+        "cart": {
+            "title": "Giỏ Hàng",
+            "emptyTitle": "Giỏ hàng của bạn Trống",
+            "emptySubtitle": "Thêm khóa học để bắt đầu hành trình học tập.",
+            "browseNonCredit": "Duyệt Khóa học Thực hành",
+            "browseCredit": "Duyệt Khóa học Tín chỉ",
+            "course": "khóa học",
+            "courses": "khóa học",
+            "inYourCart": "trong giỏ hàng",
+            "remove": "Xóa",
+            "creditMeta": "Trực tuyến trực tiếp • Tín chỉ Ontario",
+            "nonCreditMeta": "Tự định tiến độ • Chỉ thực hành • Không tín chỉ OSSD",
+            "bonusIncluded": "TẶNG KÈM",
+            "free": "MIỄN PHÍ",
+            "upgradeTitle": "Nâng cấp lên Tín chỉ",
+            "upgradeDesc": "Muốn kiếm tín chỉ Ontario? Nâng cấp khóa học không tín chỉ và nhận bảng điểm chính thức và phiếu điểm.",
+            "viewCredit": "Xem Khóa học Tín chỉ",
+            "orderSummary": "Tóm tắt Đơn hàng",
+            "enterCoupon": "Nhập mã giảm giá",
+            "apply": "Áp dụng",
+            "subtotal": "Tạm tính",
+            "discount": "Giảm giá",
+            "bonusCourses": "Khóa học Tặng kèm",
+            "total": "Tổng cộng",
+            "proceedToCheckout": "Tiến hành Thanh toán",
+            "secureCheckout": "Thanh toán an toàn với mã hóa SSL",
+            "continueShopping": "Tiếp tục Mua sắm",
+            "accepted": "Chấp nhận: Visa, Mastercard, Flywire"
+        },
+        "checkout": {
+            "steps": {
+                "cart": "Giỏ hàng",
+                "details": "Chi tiết",
+                "payment": "Thanh toán",
+                "confirmation": "Xác nhận"
+            },
+            "parentInfo": "Thông tin Chủ Tài khoản",
+            "accountHolder": "Thông tin chủ tài khoản",
+            "firstName": "Họ",
+            "lastName": "Tên",
+            "email": "Email",
+            "phone": "Điện thoại",
+            "country": "Quốc gia",
+            "province": "Tỉnh/Bang",
+            "other": "Khác",
+            "studentInfo": "Thông tin Học sinh",
+            "studentFirstName": "Họ Học sinh",
+            "studentLastName": "Tên Học sinh",
+            "dateOfBirth": "Ngày sinh",
+            "currentGrade": "Lớp Hiện tại",
+            "currentSchool": "Trường Hiện tại (tùy chọn)",
+            "selectGrade": "Chọn lớp...",
+            "paymentMethod": "Phương thức Thanh toán",
+            "creditDebitCard": "Thẻ Tín dụng/Ghi nợ",
+            "flywireOptions": "Chuyển khoản / Alipay / WeChat (qua Flywire)",
+            "cardNumber": "Số Thẻ",
+            "expiry": "Hết hạn",
+            "cvv": "CVV",
+            "nameOnCard": "Tên trên Thẻ",
+            "flywireRedirect": "Bạn sẽ được chuyển hướng đến Flywire để hoàn tất thanh toán quốc tế.",
+            "bankTransfer": "Chuyển khoản Ngân hàng",
+            "internationalCard": "Thẻ Tín dụng Quốc tế",
+            "agreeTerms": "Tôi đồng ý với Điều khoản Dịch vụ và Chính sách Bảo mật",
+            "acknowledgeNonCredit": "Tôi hiểu rằng khóa học thực hành không tín chỉ KHÔNG bao gồm đánh giá, điểm số, hoặc hồ sơ học tập Ontario. Chúng chỉ dành để thực hành.",
+            "acknowledgeSelfLearning": "Tôi hiểu rằng khóa học Nền tảng Tiểu học Tự Học KHÔNG bao gồm hồ sơ học tập Ontario trừ khi tiện ích bổ sung tùy chọn được mua.",
+            "securePayment": "Thanh toán của bạn an toàn và được mã hóa",
+            "paymentSuccess": "Thanh toán Thành công!",
+            "orderNumber": "Đơn hàng",
+            "confirmationEmail": "Email xác nhận đã được gửi đến",
+            "whatsNext": "Bước Tiếp theo?",
+            "forCreditCourses": "Đối với Khóa học Tín chỉ:",
+            "creditStep1": "Kiểm tra email để nhận lịch học Zoom",
+            "creditStep2": "Tham gia buổi định hướng trong vòng 48 giờ",
+            "creditStep3": "Gặp giáo viên được chứng nhận của bạn",
+            "creditStep4": "Truy cập tài liệu khóa học trong cổng học sinh",
+            "forNonCreditCourses": "Đối với Khóa học Thực hành / Tự Học:",
+            "nonCreditStep1": "Đăng nhập vào cổng học sinh",
+            "nonCreditStep2": "Bắt đầu học ngay lập tức",
+            "nonCreditStep3": "Theo dõi tiến độ trong bảng điều khiển",
+            "forTeacherLedPrimary": "Đối với Nền tảng Tiểu học Có Giáo viên:",
+            "teacherLedStep1": "Kiểm tra email để nhận lịch học và hướng dẫn",
+            "teacherLedStep2": "Chuẩn bị cho ngày bắt đầu chương trình (5 tháng 9, 2026)",
+            "teacherLedStep3": "Truy cập tài liệu học tập qua cổng học sinh",
+            "goToDashboard": "Đến Bảng điều khiển",
+            "browseMore": "Duyệt Thêm Chương trình",
+            "backToCart": "Quay lại Giỏ hàng",
+            "back": "Quay lại",
+            "continue": "Tiếp tục",
+            "processing": "Đang xử lý...",
+            "pay": "Thanh toán"
+        }
+    }
+}

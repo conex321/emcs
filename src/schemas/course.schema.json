@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emcs.ca/schemas/course.json",
+  "title": "EMCS Course Schema",
+  "description": "Schema for both Credit and Non-credit course definitions",
+  "type": "object",
+  "required": [
+    "id",
+    "code",
+    "title",
+    "grade",
+    "subject",
+    "storefront",
+    "overview",
+    "learningOutcomes",
+    "product"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique course identifier (UUID)",
+      "pattern": "^[a-f0-9-]{36}$"
+    },
+    "code": {
+      "type": "string",
+      "description": "Course code (Ontario code for credit, internal for non-credit)",
+      "examples": ["MHF4U", "NC-G3-MATH-101"]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 100,
+      "examples": ["Advanced Functions", "Grade 3 Math Foundations"]
+    },
+    "grade": {
+      "type": "string",
+      "enum": ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    "subject": {
+      "type": "string",
+      "enum": ["Math", "Science", "English"]
+    },
+    "storefront": {
+      "type": "string",
+      "enum": ["credit", "non-credit"],
+      "description": "Which storefront this course belongs to"
+    },
+    "ontarioCode": {
+      "type": ["string", "null"],
+      "description": "Official Ontario curriculum code (credit courses only)",
+      "pattern": "^[A-Z]{3}[0-9][A-Z]$",
+      "examples": ["MHF4U", "ENG4U", "SBI4U"]
+    },
+    "courseType": {
+      "type": ["string", "null"],
+      "enum": ["University", "University/College", "College", "Workplace", "Open", null],
+      "description": "Ontario pathway designation (credit courses only)"
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": { "type": "string" },
+          "title": { "type": "string" },
+          "required": { "type": "boolean" },
+          "alternatives": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "description": "List of prerequisite courses"
+    },
+    "overview": {
+      "type": "string",
+      "minLength": 100,
+      "maxLength": 1000,
+      "description": "Course description for parents/students"
+    },
+    "learningOutcomes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 20
+      },
+      "description": "What students will learn/achieve"
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "description"],
+        "properties": {
+          "unitNumber": { "type": "integer", "minimum": 1 },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "hours": { "type": "number", "minimum": 1 },
+          "topics": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "ontarioCurriculumRef": {
+            "type": "string",
+            "description": "Reference to Ontario curriculum expectation codes"
+          }
+        }
+      }
+    },
+    "creditStatus": {
+      "type": "object",
+      "properties": {
+        "isCredit": { "type": "boolean" },
+        "creditValue": {
+          "type": "number",
+          "enum": [0, 0.5, 1],
+          "description": "Ontario credit value (0 for non-credit)"
+        },
+        "ossdEligible": { "type": "boolean" },
+        "disclaimer": {
+          "type": ["string", "null"],
+          "description": "Required disclaimer text for non-credit courses"
+        }
+      },
+      "required": ["isCredit", "creditValue", "ossdEligible"]
+    },
+    "delivery": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["live-online", "self-paced", "hybrid"]
+        },
+        "platform": {
+          "type": "string",
+          "enum": ["Zoom", "LMS", "Both"],
+          "description": "Primary delivery platform"
+        },
+        "schedule": {
+          "type": "object",
+          "properties": {
+            "hoursPerWeek": { "type": ["number", "null"] },
+            "daysPerWeek": { "type": ["integer", "null"] },
+            "hoursPerSession": { "type": ["number", "null"] },
+            "totalWeeks": { "type": ["integer", "null"] },
+            "totalHours": { "type": "number" },
+            "flexibleSchedule": { "type": "boolean" }
+          }
+        },
+        "includes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "video-lessons",
+              "live-sessions",
+              "homework",
+              "practice-activities",
+              "quizzes",
+              "assignments",
+              "tests",
+              "final-exam",
+              "report-card",
+              "certificate"
+            ]
+          }
+        }
+      },
+      "required": ["method", "includes"]
+    },
+    "product": {
+      "type": "object",
+      "required": ["sku", "pricing"],
+      "properties": {
+        "sku": {
+          "type": "string",
+          "description": "Product SKU for e-commerce"
+        },
+        "pricing": {
+          "type": "object",
+          "required": ["listPrice", "currency"],
+          "properties": {
+            "listPrice": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Display price before discounts"
+            },
+            "basePrice": {
+              "type": "number",
+              "description": "Actual base price (may differ from list for marketing)"
+            },
+            "currency": {
+              "type": "string",
+              "enum": ["CAD", "USD"],
+              "default": "CAD"
+            },
+            "discountable": { "type": "boolean", "default": true },
+            "maxDiscountPercent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        },
+        "upgradePath": {
+          "type": ["object", "null"],
+          "description": "For non-credit courses: path to credit version",
+          "properties": {
+            "targetCourseId": { "type": "string" },
+            "upgradeFee": { "type": "number" },
+            "upgradeDisclaimer": { "type": "string" }
+          }
+        },
+        "bundleIncludes": {
+          "type": "array",
+          "description": "For credit courses: related non-credit courses included free",
+          "items": {
+            "type": "object",
+            "properties": {
+              "courseId": { "type": "string" },
+              "priceOverride": { "type": "number", "default": 0 }
+            }
+          }
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "thumbnail": { "type": "string", "format": "uri" },
+        "heroImage": { "type": "string", "format": "uri" },
+        "previewVideo": { "type": "string", "format": "uri" },
+        "syllabusPdf": { "type": "string", "format": "uri" }
+      }
+    },
+    "seo": {
+      "type": "object",
+      "properties": {
+        "metaTitle": { "type": "string", "maxLength": 60 },
+        "metaDescription": { "type": "string", "maxLength": 160 },
+        "keywords": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "canonicalUrl": { "type": "string", "format": "uri" }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "archived"],
+      "default": "draft"
+    },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}
