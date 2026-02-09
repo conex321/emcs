@@ -176,7 +176,8 @@
                 "teacherLed": "Có Giáo viên Hướng dẫn: $3,500 CAD mỗi năm",
                 "cta": "Tìm hiểu thêm về Chương trình Tiểu học"
             }
-        }
+        },
+        "viewMore": "Xem thêm"
     },
     "accreditation": {
         "title": "Trường Tư thục Được Bộ Kiểm định",
@@ -188,11 +189,13 @@
         "home": "Trang chủ",
         "about": "Giới thiệu",
         "programs": "Chương trình",
+        "program": "Chương trình",
         "admissions": "Tuyển sinh",
         "courses": "Khóa học",
         "support": "Hỗ trợ học sinh",
         "contact": "Liên hệ",
         "login": "Đăng nhập",
+        "loginPortals": "Đăng nhập",
         "register": "Đăng ký ngay",
         "international": "Học sinh quốc tế",
         "ossd": "Yêu cầu OSSD",
@@ -201,7 +204,10 @@
         "middleSchool": "Trung học Cơ sở (Lớp 6-8)",
         "highSchoolCredit": "Trung học Tín chỉ (Lớp 9-12)",
         "practiceCourses": "Khóa học Thực hành",
-        "tuition": "Học phí & Chi phí"
+        "tuition": "Học phí & Chi phí",
+        "studentPortal": "Cổng Học sinh",
+        "parentPortal": "Cổng Phụ huynh",
+        "agentPortal": "Cổng Đại lý/Trường học"
     },
     "footer": {
         "tagline": "Xuất sắc trong Giáo dục Trực tuyến Canada",
@@ -294,6 +300,23 @@
     "programs": {
         "title": "Chương trình của Chúng tôi",
         "subtitle": "Nhiều lộ trình đến với nền giáo dục Canada—chọn lộ trình phù hợp với mục tiêu của bạn",
+        "academicPrep": {
+            "name": "Chương trình Chuẩn bị Học thuật",
+            "shortName": "Chuẩn bị Học thuật",
+            "tagline": "Tự học để thực hành và làm giàu kiến thức",
+            "description": "Xây dựng nền tảng vững chắc với bài giảng video và hoạt động tương tác",
+            "delivery": "Tự Học qua Nền tảng LMS",
+            "gradeRange": "Lớp 1-12"
+        },
+        "officialOntario": {
+            "name": "Chương trình Chính thức Ontario",
+            "shortName": "Chính thức Ontario",
+            "tagline": "Kiếm tín chỉ OSSD chính thức",
+            "description": "Lớp học trực tiếp với Giáo viên Ontario Được Chứng nhận",
+            "delivery": "Lớp học Trực tiếp với Giáo viên Ontario Được Chứng nhận",
+            "gradeRange": "Lớp 1-12",
+            "badge": "Phổ biến Nhất"
+        },
         "comparison": {
             "program": "Chương trình",
             "grades": "Lớp",
@@ -1218,6 +1241,44 @@
             "within48": "Trong vòng 48 giờ"
         },
         "follow": "Theo dõi chúng tôi"
+    },
+    "gradePage": {
+        "title": "Chương trình Lớp {grade}",
+        "subtitle": "Chọn chương trình phù hợp với mục tiêu học tập của bạn. Cả hai tùy chọn đều được điều chỉnh theo Chương trình Ontario.",
+        "viewFullYear": "Giá Trọn Năm",
+        "viewSingleCourse": "Giá Từng Môn",
+        "allSubjects": "Tất cả 6 Môn",
+        "fullYearPackage": "Gói Trọn Năm",
+        "perSubject": "mỗi môn",
+        "forAllSubjects": "cho tất cả 6 môn",
+        "subjectsIncluded": "Các Môn Bao gồm:",
+        "whatYouGet": "Những gì Bạn Nhận được:",
+        "linkToSingleCourse": "Để xem giá từng môn, nhấp vào đây →",
+        "mostPopular": "Phổ biến Nhất",
+        "enrollment": {
+            "enrollFullYear": "Đăng ký Trọn Năm",
+            "enrollCourse": "Đăng ký Môn Học"
+        },
+        "programSchedule": "Lịch Chương trình",
+        "individualCourses": "Các Môn Học Riêng lẻ - Lớp {grade}",
+        "chooseSpecific": "Chọn các môn học cụ thể phù hợp với nhu cầu của bạn"
+    },
+    "portals": {
+        "student": {
+            "title": "Cổng Học sinh",
+            "description": "Truy cập LMS cho học sinh đã đăng ký",
+            "comingSoon": "Sắp ra mắt - Truy cập LMS học sinh"
+        },
+        "parent": {
+            "title": "Cổng Phụ huynh",
+            "description": "Đăng ký và theo dõi tiến độ học sinh",
+            "comingSoon": "Sắp ra mắt - Đăng ký và theo dõi tiến độ học sinh"
+        },
+        "agent": {
+            "title": "Cổng Đại lý/Trường học",
+            "description": "Biểu mẫu đăng ký đối tác và theo dõi hoa hồng",
+            "comingSoon": "Sắp ra mắt - Biểu mẫu đăng ký đối tác"
+        }
     },
     "storefront": {
         "nonCredit": {

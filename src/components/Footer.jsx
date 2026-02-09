@@ -54,24 +54,18 @@ function Footer() {
                 <div className="footer-links">
                     {/* Programs Column */}
                     <div className="footer-column">
-                        <h4>{t('nav.courses')}</h4>
+                        <h4>{t('nav.program')}</h4>
                         <ul>
                             <li>
-                                <Link to="/programs/elementary" className="footer-storefront-link elementary">
-                                    <span className="storefront-indicator" style={{ background: '#27AE60' }}></span>
-                                    Elementary (Grades 1-5)
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/credit" className="footer-storefront-link credit">
-                                    <span className="storefront-indicator" style={{ background: '#D4AF37' }}></span>
-                                    {t('storefront.credit.label')} (Grades 9-12)
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/non-credit" className="footer-storefront-link non-credit">
+                                <Link to="/academic-prep" className="footer-storefront-link elementary">
                                     <span className="storefront-indicator" style={{ background: '#2F80ED' }}></span>
-                                    Practice Courses
+                                    Academic Preparation Program
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/official-ontario" className="footer-storefront-link credit">
+                                    <span className="storefront-indicator" style={{ background: '#D4AF37' }}></span>
+                                    Official Ontario Program
                                 </Link>
                             </li>
                             <li><Link to="/ossd-requirements">{t('footer.ossd')}</Link></li>

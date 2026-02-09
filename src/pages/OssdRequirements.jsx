@@ -319,7 +319,7 @@ function OssdRequirements() {
                     <p>{t('ossd.cta.subtitle')}</p>
                     <div className="cta-buttons">
                         <Link to="/contact" className="btn btn-accent btn-lg">{t('ossd.cta.button')}</Link>
-                        <Link to="/credit" className="btn btn-secondary btn-lg">Browse Courses</Link>
+                        <Link to="/official-ontario" className="btn btn-secondary btn-lg">Browse Courses</Link>
                     </div>
                 </div>
             </section>

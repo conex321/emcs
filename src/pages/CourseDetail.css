@@ -41,7 +41,7 @@
 /* Sidebar */
 .course-sidebar {
     position: sticky;
-    top: 100px;
+    top: calc(var(--header-height) + 1.75rem);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -137,7 +137,8 @@
 .outline-table-wrapper {
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .outline-table {
@@ -277,6 +278,13 @@
 }
 
 /* Responsive */
+@media (max-width: 1100px) and (min-width: 901px) {
+    .course-layout {
+        grid-template-columns: 240px 1fr;
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 900px) {
     .course-layout {
         grid-template-columns: 1fr;
@@ -285,5 +293,15 @@
     .course-sidebar {
         display: none;
         /* Hide sidebar on mobile, maybe add a dropdown later */
+    }
+}
+
+@media (max-width: 640px) {
+    .evaluation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
     }
 }

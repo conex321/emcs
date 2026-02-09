@@ -1,441 +1,793 @@
-/* ========================================
-   Grade Page Styles
-   ======================================== */
+/* ===================================
+   GradePage - Dual Column Layout
+   =================================== */
 
-.grade-page {
+.grade-page-dual {
     min-height: 100vh;
-    background: var(--bg-secondary);
+    background: var(--color-neutral-50, #f9fafb);
 }
 
-/* Grade Navigation Bar */
-.grade-nav-bar {
-    background: white;
-    border-bottom: 1px solid var(--color-neutral-200);
-    position: sticky;
-    top: 65px;
-    z-index: 100;
-}
-
-.grade-tabs {
-    display: flex;
-    gap: var(--space-1);
-    padding: var(--space-3) 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.grade-tabs::-webkit-scrollbar {
-    display: none;
-}
-
-.grade-tab {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 48px;
-    height: 40px;
-    padding: 0 var(--space-4);
-    background: var(--color-neutral-100);
-    color: var(--color-neutral-700);
-    border-radius: var(--radius-full);
-    font-weight: var(--font-medium);
-    text-decoration: none;
-    white-space: nowrap;
-    transition: all var(--transition-fast);
-}
-
-.grade-tab:hover {
-    background: var(--color-neutral-200);
-}
-
-.grade-tab.active {
-    background: var(--storefront-color, var(--color-brand));
-    color: white;
-}
-
-/* Hero */
+/* Grade Hero */
 .grade-hero {
-    background: linear-gradient(135deg, var(--storefront-color) 0%, color-mix(in srgb, var(--storefront-color) 70%, black) 100%);
+    background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
     color: white;
-    padding: var(--space-12) 0;
-}
-
-.grade-hero .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    margin-bottom: var(--space-4);
-    font-size: var(--text-sm);
-    opacity: 0.8;
-}
-
-.grade-hero .breadcrumb a {
-    color: white;
-    text-decoration: none;
-}
-
-.grade-hero .breadcrumb a:hover {
-    text-decoration: underline;
+    padding: 3rem 0;
+    text-align: center;
 }
 
 .grade-hero h1 {
-    font-size: var(--text-4xl);
-    margin-bottom: var(--space-3);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .grade-hero .hero-subtitle {
-    font-size: var(--text-lg);
+    font-size: 1.125rem;
     opacity: 0.9;
-    max-width: 600px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-/* Subject Navigation */
-.subject-nav {
+/* View Toggle */
+.view-toggle-section {
     background: white;
-    border-bottom: 1px solid var(--color-neutral-200);
-    padding: var(--space-4) 0;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--color-neutral-200, #e5e7eb);
 }
 
-.subject-tabs {
+.view-toggle {
     display: flex;
-    gap: var(--space-2);
-    overflow-x: auto;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.subject-tab {
+.toggle-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-neutral-300, #d1d5db);
+    background: white;
+    color: var(--color-neutral-700, #374151);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    border-color: var(--color-brand, #1B4332);
+    background: var(--color-neutral-50, #f9fafb);
+}
+
+.toggle-btn.active {
+    background: var(--color-brand, #1B4332);
+    color: white;
+    border-color: var(--color-brand, #1B4332);
+}
+
+/* Two Column Comparison */
+.two-column-comparison-section {
+    padding: 3rem 0;
+}
+
+.two-column-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.program-column {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-column:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.program-column.featured {
+    border: 3px solid var(--color-accent, #D4AF37);
+    background: linear-gradient(135deg, #FFF8E1 0%, #ffffff 100%);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--color-accent, #D4AF37);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+/* Program Header */
+.program-header {
+    margin-bottom: 2rem;
+}
+
+.program-badge {
     display: inline-flex;
     align-items: center;
-    padding: var(--space-2) var(--space-4);
-    background: transparent;
-    border: 2px solid var(--color-neutral-300);
-    border-radius: var(--radius-full);
-    color: var(--color-neutral-700);
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
-    font-weight: var(--font-medium);
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all var(--transition-fast);
+    gap: 0.5rem;
+    background: var(--color-neutral-100, #f3f4f6);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-.subject-tab:hover {
-    border-color: var(--storefront-color);
-    color: var(--storefront-color);
+.badge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
 
-.subject-tab.active {
-    background: var(--storefront-color);
-    border-color: var(--storefront-color);
-    color: white;
+.program-header h2 {
+    font-size: 1.75rem;
+    margin: 0.5rem 0;
+    color: var(--color-brand, #1B4332);
 }
 
-/* Grade Content */
-.grade-content {
-    padding: var(--space-12) 0;
+.program-tagline {
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.95rem;
 }
 
-/* Bundle Card */
-.bundle-card {
+/* Pricing Card */
+.pricing-card {
+    background: var(--color-neutral-50, #f9fafb);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.price-display {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid var(--color-neutral-200, #e5e7eb);
+    margin-bottom: 1.5rem;
+}
+
+.per-course-price {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
-    padding: var(--space-6);
-    margin-bottom: var(--space-8);
-    background: linear-gradient(135deg, #FFF8E1 0%, #FFFDE7 100%);
-    border: 2px solid var(--color-accent);
-    position: relative;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.bundle-badge {
-    position: absolute;
-    top: -12px;
-    left: var(--space-6);
-    padding: var(--space-1) var(--space-3);
-    background: var(--color-accent);
-    color: var(--color-brand-dark);
-    font-size: var(--text-sm);
-    font-weight: var(--font-bold);
-    border-radius: var(--radius-full);
+.list-price {
+    text-decoration: line-through;
+    color: var(--color-neutral-500, #6b7280);
+    font-size: 1.25rem;
 }
 
-.bundle-info {
-    flex: 1;
+.sale-price,
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-brand, #1B4332);
 }
 
-.bundle-info h3 {
-    margin-bottom: var(--space-1);
-    color: var(--color-brand);
+.discount-badge {
+    background: #EF4444;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
-.bundle-info p {
-    color: var(--color-neutral-600);
+.price-label {
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Full Year Package */
+.full-year-package {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--color-brand, #1B4332);
+}
+
+.full-year-package.highlighted {
+    background: linear-gradient(135deg, #FFF8E1 0%, #ffffff 100%);
+    border-color: var(--color-accent, #D4AF37);
+}
+
+.full-year-package h3 {
+    font-size: 1.125rem;
+    margin: 0 0 1rem 0;
+    color: var(--color-brand, #1B4332);
+    text-align: center;
+}
+
+.package-price {
+    text-align: center;
+}
+
+.package-price .price {
+    font-size: 2.5rem;
+    display: block;
+}
+
+.package-price .price-label {
+    font-size: 0.875rem;
+    color: var(--color-neutral-600, #6b7280);
+}
+
+/* Subjects Included */
+.subjects-included {
+    margin: 1.5rem 0;
+}
+
+.subjects-included h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.subject-list li {
+    color: var(--color-neutral-700, #374151);
+    font-size: 0.9rem;
+}
+
+/* What You Get */
+.what-you-get {
+    margin: 1.5rem 0;
+}
+
+.what-you-get h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.what-you-get ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-.bundle-pricing {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--space-1);
+.what-you-get li {
+    padding: 0.25rem 0;
+    color: var(--color-neutral-700, #374151);
+    font-size: 0.875rem;
 }
 
-.original-price,
-.list-price {
-    font-size: var(--text-sm);
-    color: var(--color-neutral-500);
-    text-decoration: line-through;
+.what-you-get li::before {
+    content: '✓ ';
+    color: #27AE60;
+    font-weight: bold;
 }
 
-.bundle-price,
-.current-price {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-bold);
-    color: var(--color-brand);
+/* Fees Info */
+.fees-info {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 6px;
+    text-align: center;
 }
 
-/* Courses Grid */
-.courses-grid {
+.fees-info p {
+    margin: 0;
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.875rem;
+}
+
+/* Link to Single Course */
+.link-single-course {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--color-brand, #1B4332);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.link-single-course:hover {
+    color: var(--color-accent, #D4AF37);
+    text-decoration: underline;
+}
+
+/* Schedule Info */
+.schedule-info {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-brand, #1B4332);
+}
+
+/* Single Course Listing */
+.single-course-listing-section {
+    padding: 3rem 0;
+}
+
+.single-course-listing-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--color-neutral-600, #6b7280);
+    margin-bottom: 3rem;
+}
+
+.program-courses-section {
+    margin: 3rem 0;
+}
+
+.program-courses-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--space-6);
-    margin-bottom: var(--space-12);
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+    gap: 1.5rem;
 }
 
-/* Course Card */
 .course-card {
-    display: flex;
-    flex-direction: column;
-    padding: var(--space-6);
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .course-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-.course-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--space-4);
+.course-card h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-brand, #1B4332);
 }
 
-.course-card .storefront-badge {
-    font-size: var(--text-xs);
-    padding: var(--space-1) var(--space-2);
+.course-subject {
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
 }
 
-.course-card .storefront-badge.credit {
-    background: #F2C94C;
-    color: #1B4332;
-}
-
-.course-card .storefront-badge.non-credit {
-    background: #2F80ED;
-    color: white;
-}
-
-.course-type {
-    font-size: var(--text-xs);
-    color: var(--color-neutral-500);
-    background: var(--color-neutral-100);
-    padding: var(--space-1) var(--space-2);
-    border-radius: var(--radius-sm);
-}
-
-.course-title {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-1);
-    color: var(--color-brand);
-}
-
-.course-code {
-    font-size: var(--text-sm);
-    color: var(--color-neutral-500);
-    margin-bottom: var(--space-4);
-}
-
-.course-meta {
-    display: flex;
-    gap: var(--space-4);
-    margin-bottom: var(--space-4);
-}
-
-.meta-item {
+.course-price {
     display: flex;
     align-items: center;
-    gap: var(--space-1);
-    font-size: var(--text-sm);
-    color: var(--color-neutral-600);
+    gap: 0.75rem;
+    margin: 1rem 0;
 }
 
-.meta-icon {
-    font-size: var(--text-base);
-}
-
-.course-prereq {
-    font-size: var(--text-sm);
-    color: var(--color-neutral-600);
-    margin-bottom: var(--space-3);
-}
-
-.course-disclaimer {
-    font-size: var(--text-xs);
-    color: var(--color-neutral-500);
-    padding: var(--space-2);
-    background: var(--color-neutral-100);
-    border-radius: var(--radius-sm);
-    margin-bottom: var(--space-4);
-}
-
-.course-pricing {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-2);
-    margin-bottom: var(--space-4);
-    margin-top: auto;
-}
-
-.course-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-}
-
-.course-actions .btn {
-    flex: 1;
-    min-width: 120px;
-    text-align: center;
-    justify-content: center;
-}
-
-/* No Courses */
 .no-courses {
-    grid-column: 1 / -1;
     text-align: center;
-    padding: var(--space-12);
-    background: white;
-    border-radius: var(--radius-xl);
+    color: var(--color-neutral-600, #6b7280);
+    padding: 2rem;
+    font-style: italic;
 }
 
-/* Cross-sell */
-.cross-sell {
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
-    padding: var(--space-6);
-    background: var(--color-neutral-50);
-    border: 1px solid var(--color-neutral-200);
-}
-
-.cross-sell-icon {
-    font-size: 2.5rem;
-    flex-shrink: 0;
-}
-
-.cross-sell-content {
-    flex: 1;
-}
-
-.cross-sell-content h4 {
-    margin-bottom: var(--space-1);
-}
-
-.cross-sell-content p {
-    color: var(--color-neutral-600);
-    margin: 0;
-}
-
-.cross-sell .btn-outline {
-    border: 2px solid var(--storefront-color);
-    color: var(--storefront-color);
-    background: transparent;
-    white-space: nowrap;
-}
-
-.cross-sell .btn-outline:hover {
-    background: var(--storefront-color);
-    color: white;
-}
-
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 1024px) {
-    .courses-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    .two-column-comparison {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .grade-hero h1 {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .grade-nav-bar {
-        top: 60px;
+    .grade-hero {
+        padding: 2rem 0;
     }
 
     .grade-hero h1 {
-        font-size: var(--text-2xl);
+        font-size: 1.75rem;
     }
 
-    .bundle-card {
+    .view-toggle {
         flex-direction: column;
-        text-align: center;
-        gap: var(--space-4);
-    }
-
-    .bundle-pricing {
-        align-items: center;
-    }
-
-    .bundle-badge {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .bundle-card .btn {
         width: 100%;
     }
 
-    .courses-grid {
+    .toggle-btn {
+        width: 100%;
+    }
+
+    .program-column {
+        padding: 1.5rem;
+    }
+
+    .subject-list {
         grid-template-columns: 1fr;
     }
 
-    .cross-sell {
-        flex-direction: column;
-        text-align: center;
-        gap: var(--space-4);
-    }
-
-    .cross-sell .btn {
-        width: 100%;
-    }
-
-    .course-actions {
-        flex-direction: column;
-    }
-
-    .course-actions .btn {
-        width: 100%;
-    }
-
-    .subject-tabs {
-        padding-bottom: var(--space-2);
+    .course-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .grade-hero {
-        padding: var(--space-8) 0;
+    .program-header h2 {
+        font-size: 1.5rem;
     }
 
-    .grade-content {
-        padding: var(--space-8) 0;
+    .sale-price,
+    .price {
+        font-size: 1.75rem;
     }
 
-    .course-card {
-        padding: var(--space-4);
+    .package-price .price {
+        font-size: 2rem;
     }
 
-    .course-meta {
-        flex-direction: column;
-        gap: var(--space-2);
+    .program-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
     }
+}
+
+/* ===================================
+   Hero Subheading & Tagline (Grades 9-12)
+   =================================== */
+.grade-hero .hero-subheading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
+
+.grade-hero .hero-tagline {
+    font-size: 1.125rem;
+    font-style: italic;
+    opacity: 0.85;
+    margin-top: 0.5rem;
+}
+
+/* ===================================
+   Subjects Table (Grades 1-8)
+   =================================== */
+.subjects-table-wrapper {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+.subjects-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.subjects-table th {
+    background: var(--color-neutral-100, #f3f4f6);
+    padding: 0.625rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-neutral-700, #374151);
+}
+
+.subjects-table td {
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid var(--color-neutral-200, #e5e7eb);
+    color: var(--color-neutral-700, #374151);
+}
+
+.whats-included-note {
+    background: #EBF5FF;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #1E40AF;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+/* Pricing Detail Table */
+.pricing-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-detail-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-neutral-200, #e5e7eb);
+    font-size: 0.9rem;
+}
+
+.pricing-detail-table td:first-child {
+    width: 55%;
+    color: var(--color-neutral-700, #374151);
+}
+
+.pricing-detail-table td:last-child {
+    text-align: right;
+}
+
+.pricing-detail-table .list-price {
+    font-size: 0.9rem;
+}
+
+.pricing-detail-table .sale-price {
+    font-size: 1.1rem;
+}
+
+.pricing-detail-table .discount-badge {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    vertical-align: middle;
+}
+
+/* Program Subtitle */
+.program-subtitle {
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.25rem;
+}
+
+/* ===================================
+   Promo Banner
+   =================================== */
+.promo-banner {
+    background: linear-gradient(135deg, #EF4444, #DC2626);
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 1.5rem 0;
+}
+
+/* ===================================
+   High School Timetable (Grades 9-12)
+   =================================== */
+.hs-timetable-section {
+    padding: 3rem 0;
+}
+
+.hs-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    color: var(--color-neutral-700, #374151);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.program-sub-badge {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-accent, #D4AF37);
+    margin: 0.25rem 0 0.5rem;
+}
+
+/* Timetable Table */
+.timetable-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.timetable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.timetable th {
+    background: var(--color-neutral-100, #f3f4f6);
+    padding: 0.75rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-neutral-700, #374151);
+    white-space: nowrap;
+}
+
+.timetable td {
+    padding: 0.625rem 0.75rem;
+    border-bottom: 1px solid var(--color-neutral-200, #e5e7eb);
+    color: var(--color-neutral-700, #374151);
+}
+
+.timetable .course-code {
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--color-brand, #1B4332);
+}
+
+.timetable .text-center {
+    text-align: center;
+}
+
+.timetable .list-price {
+    text-decoration: line-through;
+    color: var(--color-neutral-500, #6b7280);
+    font-size: 0.875rem;
+}
+
+.timetable .sale-price {
+    color: #EF4444;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.timetable .total-row {
+    background: var(--color-neutral-50, #f9fafb);
+    border-top: 2px solid var(--color-neutral-300, #d1d5db);
+}
+
+.timetable .total-row td {
+    padding: 0.875rem 0.75rem;
+}
+
+/* Discount Tuition Box */
+.discount-tuition-box {
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFF3CD 100%);
+    border: 2px solid var(--color-accent, #D4AF37);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.discount-tuition-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-neutral-700, #374151);
+    margin: 0 0 0.5rem;
+}
+
+.discount-tuition-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-brand, #1B4332);
+    margin: 0 0 0.25rem;
+}
+
+.discount-tuition-schedule {
+    font-size: 0.85rem;
+    color: var(--color-neutral-600, #6b7280);
+    margin: 0;
+}
+
+/* Notes */
+.french-note {
+    background: #EBF5FF;
+    padding: 0.875rem 1.25rem;
+    border-radius: 8px;
+    color: #1E40AF;
+    font-size: 0.875rem;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.discount-note {
+    font-size: 0.85rem;
+    color: var(--color-neutral-600, #6b7280);
+    font-style: italic;
+    margin: 0.5rem 0 1rem;
+    text-align: center;
+}
+
+.grade-note {
+    font-size: 0.875rem;
+    color: var(--color-neutral-700, #374151);
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+}
+
+/* ===================================
+   Comparison Table Section (Grades 9-12)
+   =================================== */
+.comparison-table-section {
+    padding: 3rem 0;
+    background: white;
+}
+
+.comparison-table-section .program-comparison-table {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.comparison-table-section .comparison-title {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.th-subtitle {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--color-neutral-600, #6b7280);
+}
+
+/* ===================================
+   Responsive - Timetable
+   =================================== */
+@media (max-width: 768px) {
+    .timetable {
+        font-size: 0.8rem;
+    }
+
+    .timetable th,
+    .timetable td {
+        padding: 0.5rem;
+    }
+
+    .discount-tuition-price {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .subjects-table th,
+    .subjects-table td {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .timetable {
+        font-size: 0.7rem;
+    }
+
+    .timetable th,
+    .timetable td {
+        padding: 0.35rem 0.25rem;
+    }
+}
+
+/* Error State */
+.grade-page-error {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.grade-page-error h1 {
+    color: var(--color-brand, #1B4332);
+    margin-bottom: 1rem;
 }

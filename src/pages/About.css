@@ -343,6 +343,12 @@
     margin-top: 2px;
 }
 
+@media (max-width: 375px) {
+    .accreditation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Principal Section Removed - Integrated into Team */
 .principal-section {
     display: none;

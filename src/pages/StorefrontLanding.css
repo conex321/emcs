@@ -624,3 +624,16 @@
         font-size: var(--text-2xl);
     }
 }
+
+@media (max-width: 375px) {
+    .schedule-details {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .grade-groups {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

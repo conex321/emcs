@@ -80,7 +80,8 @@
 
 .credits-table {
     padding: 0;
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .credits-table table {
@@ -271,7 +272,7 @@
 
 .elective-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     gap: var(--space-6);
 }
 
@@ -317,7 +318,7 @@
 
 .international-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: var(--space-8);
     margin-bottom: var(--space-10);
 }
@@ -362,7 +363,7 @@
 /* Credit Transfer Section */
 .transfer-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
     gap: var(--space-8);
     margin-top: var(--space-8);
 }
@@ -419,7 +420,7 @@
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: var(--space-8);
 }
 
@@ -503,6 +504,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .overview-cards {
+        margin-top: calc(-1 * var(--space-8));
+    }
+
     .ossd-intro,
     .elective-section,
     .international-section,
@@ -553,5 +558,19 @@
 
     .ossd-cta .btn {
         width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .credits-table th,
+    .credits-table td {
+        padding: var(--space-3) var(--space-2);
+        font-size: var(--text-xs);
+    }
+}
+
+@media (max-width: 375px) {
+    .overview-cards {
+        margin-top: calc(-1 * var(--space-6));
     }
 }

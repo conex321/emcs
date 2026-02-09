@@ -176,7 +176,8 @@
                 "teacherLed": "Live Teacher-Led: $3,500 CAD per year",
                 "cta": "Learn More About Elementary Programs"
             }
-        }
+        },
+        "viewMore": "View More"
     },
     "accreditation": {
         "title": "Ministry Inspected Private School",
@@ -188,11 +189,13 @@
         "home": "Home",
         "about": "About Us",
         "programs": "Programs",
+        "program": "Program",
         "admissions": "Admissions",
         "courses": "Courses",
         "support": "Student Support",
         "contact": "Contact",
         "login": "Login",
+        "loginPortals": "Login",
         "register": "Register Now",
         "international": "International Students",
         "ossd": "OSSD Requirements",
@@ -201,7 +204,10 @@
         "middleSchool": "Middle School (Grades 6-8)",
         "highSchoolCredit": "High School Credit (Grades 9-12)",
         "practiceCourses": "Practice Courses",
-        "tuition": "Tuition & Fees"
+        "tuition": "Tuition & Fees",
+        "studentPortal": "Student Portal",
+        "parentPortal": "Parent Portal",
+        "agentPortal": "Agent/School Portal"
     },
     "footer": {
         "tagline": "Excellence in Canadian Online Education",
@@ -294,6 +300,23 @@
     "programs": {
         "title": "Our Programs",
         "subtitle": "Multiple pathways to Canadian education—choose the one that fits your goals",
+        "academicPrep": {
+            "name": "Academic Preparation Program",
+            "shortName": "Academic Prep",
+            "tagline": "Self-paced learning for practice and enrichment",
+            "description": "Build strong foundations with video lessons and interactive activities",
+            "delivery": "Self-Learning via LMS Platform",
+            "gradeRange": "Grades 1-12"
+        },
+        "officialOntario": {
+            "name": "Official Ontario Program",
+            "shortName": "Official Ontario",
+            "tagline": "Earn official OSSD credits",
+            "description": "Live classes with Ontario Certified Teachers",
+            "delivery": "Live Classes with Ontario Certified Teachers",
+            "gradeRange": "Grades 1-12",
+            "badge": "Most Popular"
+        },
         "comparison": {
             "program": "Program",
             "grades": "Grades",
@@ -1218,6 +1241,44 @@
             "within48": "Within 48 hours"
         },
         "follow": "Follow us"
+    },
+    "gradePage": {
+        "title": "Grade {grade} Programs",
+        "subtitle": "Choose the program that fits your learning goals. Both options are aligned with the Ontario Curriculum.",
+        "viewFullYear": "Full Year Pricing",
+        "viewSingleCourse": "Single Course Pricing",
+        "allSubjects": "All 6 Subjects",
+        "fullYearPackage": "Full Year Package",
+        "perSubject": "per subject",
+        "forAllSubjects": "for all 6 subjects",
+        "subjectsIncluded": "Subjects Included:",
+        "whatYouGet": "What You Get:",
+        "linkToSingleCourse": "For single course pricing, click here →",
+        "mostPopular": "Most Popular",
+        "enrollment": {
+            "enrollFullYear": "Enroll in Full Year",
+            "enrollCourse": "Enroll in Course"
+        },
+        "programSchedule": "Program Schedule",
+        "individualCourses": "Individual Courses - Grade {grade}",
+        "chooseSpecific": "Choose specific subjects that fit your needs"
+    },
+    "portals": {
+        "student": {
+            "title": "Student Portal",
+            "description": "LMS access for enrolled students",
+            "comingSoon": "Coming soon - Student LMS access"
+        },
+        "parent": {
+            "title": "Parent Portal",
+            "description": "Enrollment and student progress tracking",
+            "comingSoon": "Coming soon - Enrollment and student progress"
+        },
+        "agent": {
+            "title": "Agent/School Portal",
+            "description": "Partner enrollment forms and commission tracking",
+            "comingSoon": "Coming soon - Partner enrollment forms"
+        }
     },
     "storefront": {
         "nonCredit": {

@@ -1,0 +1,494 @@
+/* ===================================
+   Program Landing Pages - Shared Styles
+   =================================== */
+
+.program-landing {
+    min-height: 100vh;
+}
+
+/* Program Hero */
+.program-hero {
+    background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+    color: white;
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+
+.program-hero.official {
+    background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+}
+
+.program-badge-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.program-badge-large.official {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.featured-banner {
+    display: inline-block;
+    background: white;
+    color: #D4AF37;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.program-hero h1 {
+    font-size: 2.75rem;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 1.5rem auto;
+    opacity: 0.95;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-features .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.feature-icon {
+    font-size: 1.25rem;
+}
+
+/* Ministry Badge */
+.ministry-badge-section {
+    background: white;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--color-neutral-200, #e5e7eb);
+}
+
+.ministry-badge {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, #FFF8E1 0%, #ffffff 100%);
+    border: 2px solid #D4AF37;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ministry-badge .badge-icon {
+    font-size: 2.5rem;
+    color: #27AE60;
+}
+
+.badge-content h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-brand, #1B4332);
+}
+
+.badge-content p {
+    margin: 0.25rem 0;
+    color: var(--color-neutral-700, #374151);
+}
+
+/* What's Included Section */
+.whats-included-section {
+    background: var(--color-neutral-50, #f9fafb);
+    padding: 4rem 0;
+}
+
+.whats-included-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: 1.5rem;
+}
+
+.included-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.included-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.included-icon {
+    font-size: 2rem;
+    color: #27AE60;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.included-card h3 {
+    font-size: 1.125rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-brand, #1B4332);
+}
+
+.included-card p {
+    margin: 0;
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.95rem;
+}
+
+/* Grade Groups Section */
+.grade-groups-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.grade-groups-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--color-neutral-600, #6b7280);
+    margin-bottom: 3rem;
+}
+
+.grade-groups-expandable {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.grade-group-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.grade-group-card.expanded {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.group-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.group-header:hover {
+    background: var(--color-neutral-50, #f9fafb);
+}
+
+.group-header.official {
+    background: linear-gradient(135deg, #FFF8E1 0%, #ffffff 100%);
+}
+
+.group-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.group-icon {
+    font-size: 2.5rem;
+}
+
+.group-info h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--color-brand, #1B4332);
+}
+
+.group-info p {
+    margin: 0;
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.95rem;
+}
+
+.expand-icon {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--color-neutral-500, #6b7280);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--color-neutral-100, #f3f4f6);
+    transition: all 0.3s ease;
+}
+
+.expand-icon.open {
+    transform: rotate(180deg);
+    background: var(--color-brand, #1B4332);
+    color: white;
+}
+
+/* Group Content */
+.group-content {
+    padding: 0 1.5rem 1.5rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grade-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.grade-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--color-neutral-50, #f9fafb);
+    border: 2px solid var(--grade-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-brand, #1B4332);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.grade-link:hover {
+    background: var(--grade-color);
+    color: white;
+    transform: translateX(4px);
+}
+
+.grade-link.official {
+    border-color: #D4AF37;
+}
+
+.grade-link.official:hover {
+    background: #D4AF37;
+}
+
+.grade-number {
+    font-size: 1rem;
+}
+
+.grade-arrow {
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+}
+
+.grade-link:hover .grade-arrow {
+    transform: translateX(4px);
+}
+
+.group-footer {
+    background: linear-gradient(135deg, #E3F2FD 0%, #ffffff 100%);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+
+.pricing-note {
+    margin: 0;
+    color: var(--color-neutral-700, #374151);
+    font-size: 0.95rem;
+}
+
+/* Key Features Section */
+.key-features-section {
+    background: var(--color-neutral-50, #f9fafb);
+    padding: 4rem 0;
+}
+
+.key-features-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.5rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--color-neutral-600, #6b7280);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+    color: white;
+}
+
+.cta-section.official {
+    background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+}
+
+.cta-card {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-card p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .program-hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-features {
+        gap: 1rem;
+    }
+
+    .ministry-badge {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .included-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-links {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-hero {
+        padding: 3rem 0 2rem;
+    }
+
+    .program-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-features .feature-item {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .group-header {
+        padding: 1rem;
+    }
+
+    .group-icon {
+        font-size: 2rem;
+    }
+
+    .group-info h3 {
+        font-size: 1.1rem;
+    }
+}

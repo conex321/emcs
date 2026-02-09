@@ -1,6 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Header from './components/Header'
-import StorefrontHeader from './components/StorefrontHeader'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -14,12 +13,17 @@ import Contact from './pages/Contact'
 import PrimaryFoundation from './pages/PrimaryFoundation'
 
 // New storefront pages
-import NonCreditLanding from './pages/NonCreditLanding'
-import CreditLanding from './pages/CreditLanding'
+import AcademicPrepLanding from './pages/AcademicPrepLanding'
+import OfficialOntarioLanding from './pages/OfficialOntarioLanding'
 import GradePage from './pages/GradePage'
 import StorefrontCourseDetail from './pages/StorefrontCourseDetail'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
+
+// Portal pages
+import StudentPortal from './pages/portals/StudentPortal'
+import ParentPortal from './pages/portals/ParentPortal'
+import AgentPortal from './pages/portals/AgentPortal'
 
 // Storefront provider
 import { StorefrontProvider } from './context/StorefrontContext'
@@ -28,13 +32,49 @@ function App() {
     return (
         <>
             <Routes>
-                {/* Storefront routes with StorefrontHeader */}
-                <Route path="/non-credit/*" element={
+                {/* Backward compatibility redirects - old routes to new routes */}
+                <Route path="/non-credit" element={<Navigate to="/academic-prep" replace />} />
+                <Route path="/credit" element={<Navigate to="/official-ontario" replace />} />
+
+                {/* New Program Routes - Academic Preparation Program */}
+                <Route path="/academic-prep/*" element={
                     <StorefrontProvider>
-                        <StorefrontHeader />
+                        <Header />
                         <main>
                             <Routes>
-                                <Route path="/" element={<NonCreditLanding />} />
+                                <Route path="/" element={<AcademicPrepLanding />} />
+                                <Route path="/grade/:grade" element={<GradePage />} />
+                                <Route path="/grade/:grade/courses" element={<GradePage />} />
+                                <Route path="/course/:courseCode" element={<StorefrontCourseDetail />} />
+                            </Routes>
+                        </main>
+                        <Footer />
+                    </StorefrontProvider>
+                } />
+
+                {/* New Program Routes - Official Ontario Program */}
+                <Route path="/official-ontario/*" element={
+                    <StorefrontProvider>
+                        <Header />
+                        <main>
+                            <Routes>
+                                <Route path="/" element={<OfficialOntarioLanding />} />
+                                <Route path="/grade/:grade" element={<GradePage />} />
+                                <Route path="/grade/:grade/courses" element={<GradePage />} />
+                                <Route path="/course/:courseCode" element={<StorefrontCourseDetail />} />
+                            </Routes>
+                        </main>
+                        <Footer />
+                    </StorefrontProvider>
+                } />
+
+                {/* Old Storefront routes (kept for backward compatibility) */}
+                <Route path="/non-credit/*" element={
+                    <StorefrontProvider>
+                        <Header />
+                        <main>
+                            <Routes>
+                                <Route path="/" element={<AcademicPrepLanding />} />
                                 <Route path="/grade/:grade" element={<GradePage />} />
                                 <Route path="/course/:courseCode" element={<StorefrontCourseDetail />} />
                             </Routes>
@@ -45,10 +85,10 @@ function App() {
 
                 <Route path="/credit/*" element={
                     <StorefrontProvider>
-                        <StorefrontHeader />
+                        <Header />
                         <main>
                             <Routes>
-                                <Route path="/" element={<CreditLanding />} />
+                                <Route path="/" element={<OfficialOntarioLanding />} />
                                 <Route path="/grade/:grade" element={<GradePage />} />
                                 <Route path="/course/:courseCode" element={<StorefrontCourseDetail />} />
                             </Routes>
@@ -60,7 +100,7 @@ function App() {
                 {/* Cart and Checkout */}
                 <Route path="/cart" element={
                     <StorefrontProvider>
-                        <StorefrontHeader />
+                        <Header />
                         <main>
                             <Cart />
                         </main>
@@ -70,7 +110,7 @@ function App() {
 
                 <Route path="/checkout" element={
                     <StorefrontProvider>
-                        <StorefrontHeader />
+                        <Header />
                         <main>
                             <Checkout />
                         </main>
@@ -94,6 +134,14 @@ function App() {
                                 <Route path="/faq" element={<Faq />} />
                                 <Route path="/contact" element={<Contact />} />
                                 <Route path="/programs/elementary" element={<PrimaryFoundation />} />
+
+                                {/* Program-agnostic grade pages (shows both programs side by side) */}
+                                <Route path="/grade/:grade" element={<GradePage />} />
+
+                                {/* Portal pages */}
+                                <Route path="/portal/student" element={<StudentPortal />} />
+                                <Route path="/portal/parent" element={<ParentPortal />} />
+                                <Route path="/portal/agent" element={<AgentPortal />} />
                             </Routes>
                         </main>
                         <Footer />

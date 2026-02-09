@@ -1,0 +1,74 @@
+/* ===================================
+   Login Portal Dropdown
+   =================================== */
+
+.login-portal-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 280px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    animation: portalDropdownFadeIn 0.15s ease;
+}
+
+@keyframes portalDropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.portal-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.15s ease;
+}
+
+.portal-link:hover {
+    background: var(--color-neutral-50, #f9fafb);
+}
+
+.portal-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.portal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+}
+
+.portal-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-neutral-900, #111827);
+}
+
+.portal-desc {
+    font-size: 0.75rem;
+    color: var(--color-neutral-500, #6b7280);
+}
+
+@media (max-width: 768px) {
+    .login-portal-dropdown {
+        right: auto;
+        left: 0;
+        min-width: 260px;
+    }
+}

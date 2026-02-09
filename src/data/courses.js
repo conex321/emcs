@@ -303,6 +303,17 @@ export const courses = {
     'BEM1O': { code: 'BEM1O', title: 'Building the Entrepreneurial Mindset', grade: '9', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Introduces students to the world of business.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
     'HIF1O': { code: 'HIF1O', title: 'Exploring Family Studies', grade: '9', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Explores, within the context of families, some of the fundamental challenges people face: how to meet basic needs, how to relate to others, how to manage resources, and how to become responsible members of society.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
     'TAS1O': { code: 'TAS1O', title: 'Technology and the Skilled Trades', grade: '9', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'This hands-on course enables students to understand how technological innovations drive the skilled trades and how these trades contribute to the quality of life in Ontario and Canada.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+    'ENG1D': { code: 'ENG1D', title: 'English', grade: '9', type: 'Academic', destination: 'Academic', prerequisite: 'None', description: 'Develops students\' analytical and communication skills through the study of literature, writing, and media texts.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+    'PPL1O': { code: 'PPL1O', title: 'Healthy Active Living Education', grade: '9', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Enables students to develop an understanding of the factors that contribute to healthy development.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+    'ICS1O': { code: 'ICS1O', title: 'Exploring Computer Studies', grade: '9', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Introduces students to computer science concepts including programming fundamentals and computational thinking.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+    'CGC1D': { code: 'CGC1D', title: 'Issues in Canadian Geography', grade: '9', type: 'Academic', destination: 'Academic', prerequisite: 'None', description: 'Examines interrelationships within and between Canada\'s natural and human systems, and how these systems interconnect with those in other parts of the world.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+    'TEJ1O': { code: 'TEJ1O', title: 'Exploring Computer Technology', grade: '9', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Enables students to explore computer technology and develop skills in digital communication and design.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+    'BBI1O': { code: 'BBI1O', title: 'Introduction to Business', grade: '9', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Introduces students to the world of business, including the types of businesses, ethics, and entrepreneurship.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+
+    // --- GRADE 10 (additional) ---
+    'ICS2O': { code: 'ICS2O', title: 'Introduction to Computer Studies', grade: '10', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Introduces students to computer programming and related concepts.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+    'TEJ2O': { code: 'TEJ2O', title: 'Computer Engineering Technology', grade: '10', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Enables students to develop knowledge and skills related to computer engineering and technology systems.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+    'BBI2O': { code: 'BBI2O', title: 'Introduction to Business', grade: '10', type: 'Open', destination: 'Open', prerequisite: 'None', description: 'Introduces students to business concepts including marketing, accounting, and information technology.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
 
     // --- GRADE 8 ---
     'FRA8G': { code: 'FRA8G', title: 'Grade 8 Core French', grade: '8', type: 'Elementary', destination: 'Elementary', prerequisite: 'None', description: 'Focuses on applying vocabulary and writing conventions by exploring topics related to global French-speaking communities.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
@@ -325,5 +336,2509 @@ export const courses = {
     'FRA6G': { code: 'FRA6G', title: 'Grade 6 Core French', grade: '6', type: 'Elementary', destination: 'Elementary', prerequisite: 'None', description: 'Provides students with the opportunity to develop their French language skills through a variety of communicative activities, focusing on listening, speaking, reading, and writing.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
     'LAN6G': { code: 'LAN6G', title: 'Grade 6 Language', grade: '6', type: 'Elementary', destination: 'Elementary', prerequisite: 'None', description: 'Designed to help students improve their English language skills, including reading comprehension, writing, and oral communication, through the study of various literature and styles.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
     'MAT6G': { code: 'MAT6G', title: 'Grade 6 Math', grade: '6', type: 'Elementary', destination: 'Elementary', prerequisite: 'None', description: 'Covers essential mathematical concepts including number sense and numeration, measurement, geometry and spatial sense, patterning and algebra, and data management and probability.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
-    'SOC6G': { code: 'SOC6G', title: 'Grade 6 Social Studies', grade: '6', type: 'Elementary', destination: 'Elementary', prerequisite: 'None', description: 'Students explore the experiences and perspectives of diverse communities in historical and contemporary Canada, including Indigenous and settler communities.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] }
+    'SOC6G': { code: 'SOC6G', title: 'Grade 6 Social Studies', grade: '6', type: 'Elementary', destination: 'Elementary', prerequisite: 'None', description: 'Students explore the experiences and perspectives of diverse communities in historical and contemporary Canada, including Indigenous and settler communities.', units: [], evaluation: { termWork: 70, finalExam: 30 }, resources: [] },
+
+    // --- GRADE 1 - ACADEMIC PREPARATION PROGRAM ---
+    'ACAD-MATH-1': {
+        code: 'ACAD-MATH-1',
+        title: 'Grade 1 Mathematics',
+        grade: '1',
+        program: 'academic-prep',
+        subject: 'Mathematics',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced mathematics course for Grade 1 aligned with Ontario curriculum. Includes video lessons, interactive activities, and homework exercises covering number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Interactive activities', 'Homework exercises', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-LANG-1': {
+        code: 'ACAD-LANG-1',
+        title: 'Grade 1 Language',
+        grade: '1',
+        program: 'academic-prep',
+        subject: 'Language',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced language arts course for Grade 1. Develops reading, writing, speaking, and listening skills through engaging activities aligned with Ontario curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Reading activities', 'Writing practice', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-ARTS-1': {
+        code: 'ACAD-ARTS-1',
+        title: 'Grade 1 The Arts',
+        grade: '1',
+        program: 'academic-prep',
+        subject: 'The Arts',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore visual arts, music, drama, and dance through self-paced activities. Encourages creativity and self-expression aligned with Ontario arts curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Creative activities', 'Art projects', 'Music exploration', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SCI-1': {
+        code: 'ACAD-SCI-1',
+        title: 'Grade 1 Science & Technology',
+        grade: '1',
+        program: 'academic-prep',
+        subject: 'Science & Technology',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Discover the world of science through hands-on activities and video lessons. Topics include life systems, structures and mechanisms, and matter and materials.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Hands-on activities', 'Science experiments', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-HPE-1': {
+        code: 'ACAD-HPE-1',
+        title: 'Grade 1 Health & Physical Education',
+        grade: '1',
+        program: 'academic-prep',
+        subject: 'Health & Physical Education',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Learn about healthy living, active participation, and movement skills through engaging activities that promote physical and mental well-being.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Health lessons', 'Movement activities', 'Wellness topics', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SOC-1': {
+        code: 'ACAD-SOC-1',
+        title: 'Grade 1 Social Studies',
+        grade: '1',
+        program: 'academic-prep',
+        subject: 'Social Studies',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore communities, families, and roles in society. Learn about traditions, rules, and responsibilities through interactive Ontario curriculum-aligned content.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Community studies', 'Interactive activities', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+
+    // --- GRADE 1 - OFFICIAL ONTARIO PROGRAM ---
+    'OFF-MATH-1': {
+        code: 'OFF-MATH-1',
+        title: 'Grade 1 Mathematics',
+        grade: '1',
+        program: 'official-ontario',
+        subject: 'Mathematics',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online mathematics course for Grade 1 with Ontario Certified Teachers. Includes all assessments, evaluations, and official report card. Students learn number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-LANG-1': {
+        code: 'OFF-LANG-1',
+        title: 'Grade 1 Language',
+        grade: '1',
+        program: 'official-ontario',
+        subject: 'Language',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online language arts course with Ontario Certified Teachers. Develops reading, writing, speaking, and listening skills with formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-ARTS-1': {
+        code: 'OFF-ARTS-1',
+        title: 'Grade 1 The Arts',
+        grade: '1',
+        program: 'official-ontario',
+        subject: 'The Arts',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online arts course covering visual arts, music, drama, and dance. Taught by certified teachers with formal evaluations and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SCI-1': {
+        code: 'OFF-SCI-1',
+        title: 'Grade 1 Science & Technology',
+        grade: '1',
+        program: 'official-ontario',
+        subject: 'Science & Technology',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online science course with Ontario Certified Teachers covering life systems, structures, and materials. Includes hands-on activities and formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-HPE-1': {
+        code: 'OFF-HPE-1',
+        title: 'Grade 1 Health & Physical Education',
+        grade: '1',
+        program: 'official-ontario',
+        subject: 'Health & Physical Education',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online health and physical education course. Learn about healthy living, active participation, and movement skills with certified teachers and formal evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SOC-1': {
+        code: 'OFF-SOC-1',
+        title: 'Grade 1 Social Studies',
+        grade: '1',
+        program: 'official-ontario',
+        subject: 'Social Studies',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online social studies course exploring communities, families, and roles in society with Ontario Certified Teachers. Includes formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+
+    // --- GRADE 2 - ACADEMIC PREPARATION PROGRAM ---
+    'ACAD-MATH-2': {
+        code: 'ACAD-MATH-2',
+        title: 'Grade 2 Mathematics',
+        grade: '2',
+        program: 'academic-prep',
+        subject: 'Mathematics',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced mathematics course for Grade 2 aligned with Ontario curriculum. Includes video lessons, interactive activities, and homework exercises covering number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Interactive activities', 'Homework exercises', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-LANG-2': {
+        code: 'ACAD-LANG-2',
+        title: 'Grade 2 Language',
+        grade: '2',
+        program: 'academic-prep',
+        subject: 'Language',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced language arts course for Grade 2. Develops reading, writing, speaking, and listening skills through engaging activities aligned with Ontario curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Reading activities', 'Writing practice', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-ARTS-2': {
+        code: 'ACAD-ARTS-2',
+        title: 'Grade 2 The Arts',
+        grade: '2',
+        program: 'academic-prep',
+        subject: 'The Arts',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore visual arts, music, drama, and dance through self-paced activities. Encourages creativity and self-expression aligned with Ontario arts curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Creative activities', 'Art projects', 'Music exploration', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SCI-2': {
+        code: 'ACAD-SCI-2',
+        title: 'Grade 2 Science & Technology',
+        grade: '2',
+        program: 'academic-prep',
+        subject: 'Science & Technology',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Discover the world of science through hands-on activities and video lessons. Topics include life systems, structures and mechanisms, matter and energy.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Hands-on activities', 'Science experiments', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-HPE-2': {
+        code: 'ACAD-HPE-2',
+        title: 'Grade 2 Health & Physical Education',
+        grade: '2',
+        program: 'academic-prep',
+        subject: 'Health & Physical Education',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Learn about healthy living, active participation, and movement skills through engaging activities that promote physical and mental well-being.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Health lessons', 'Movement activities', 'Wellness topics', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SOC-2': {
+        code: 'ACAD-SOC-2',
+        title: 'Grade 2 Social Studies',
+        grade: '2',
+        program: 'academic-prep',
+        subject: 'Social Studies',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore communities, traditions, and global connections. Learn about diverse cultures and Canadian heritage through interactive Ontario curriculum-aligned content.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Community studies', 'Interactive activities', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+
+    // --- GRADE 2 - OFFICIAL ONTARIO PROGRAM ---
+    'OFF-MATH-2': {
+        code: 'OFF-MATH-2',
+        title: 'Grade 2 Mathematics',
+        grade: '2',
+        program: 'official-ontario',
+        subject: 'Mathematics',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online mathematics course for Grade 2 with Ontario Certified Teachers. Includes all assessments, evaluations, and official report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-LANG-2': {
+        code: 'OFF-LANG-2',
+        title: 'Grade 2 Language',
+        grade: '2',
+        program: 'official-ontario',
+        subject: 'Language',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online language arts course with Ontario Certified Teachers. Develops reading comprehension, writing fluency, and communication skills with formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-ARTS-2': {
+        code: 'OFF-ARTS-2',
+        title: 'Grade 2 The Arts',
+        grade: '2',
+        program: 'official-ontario',
+        subject: 'The Arts',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live arts education with Ontario Certified Teachers. Explore visual arts, music, drama, and dance with formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SCI-2': {
+        code: 'OFF-SCI-2',
+        title: 'Grade 2 Science & Technology',
+        grade: '2',
+        program: 'official-ontario',
+        subject: 'Science & Technology',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online science course with Ontario Certified Teachers. Hands-on experiments and inquiry-based learning with formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-HPE-2': {
+        code: 'OFF-HPE-2',
+        title: 'Grade 2 Health & Physical Education',
+        grade: '2',
+        program: 'official-ontario',
+        subject: 'Health & Physical Education',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live health and physical education course with Ontario Certified Teachers. Promotes healthy living and active participation with formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SOC-2': {
+        code: 'OFF-SOC-2',
+        title: 'Grade 2 Social Studies',
+        grade: '2',
+        program: 'official-ontario',
+        subject: 'Social Studies',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online social studies course exploring communities and traditions with Ontario Certified Teachers. Includes formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 3 - ACADEMIC PREPARATION PROGRAM ---
+    // =========================================================================
+    'ACAD-MATH-3': {
+        code: 'ACAD-MATH-3',
+        title: 'Grade 3 Mathematics',
+        grade: '3',
+        program: 'academic-prep',
+        subject: 'Mathematics',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced mathematics course for Grade 3 aligned with Ontario curriculum. Includes video lessons, interactive activities, and homework exercises covering number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Interactive activities', 'Homework exercises', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-LANG-3': {
+        code: 'ACAD-LANG-3',
+        title: 'Grade 3 Language',
+        grade: '3',
+        program: 'academic-prep',
+        subject: 'Language',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced language arts course for Grade 3. Develops reading, writing, speaking, and listening skills through engaging activities aligned with Ontario curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Reading activities', 'Writing practice', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-ARTS-3': {
+        code: 'ACAD-ARTS-3',
+        title: 'Grade 3 The Arts',
+        grade: '3',
+        program: 'academic-prep',
+        subject: 'The Arts',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore visual arts, music, drama, and dance through self-paced activities. Encourages creativity and self-expression aligned with Ontario arts curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Creative activities', 'Art projects', 'Music exploration', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SCI-3': {
+        code: 'ACAD-SCI-3',
+        title: 'Grade 3 Science & Technology',
+        grade: '3',
+        program: 'academic-prep',
+        subject: 'Science & Technology',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Discover the world of science through hands-on activities and video lessons. Topics include life systems, structures and mechanisms, and matter and materials.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Hands-on activities', 'Science experiments', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-HPE-3': {
+        code: 'ACAD-HPE-3',
+        title: 'Grade 3 Health & Physical Education',
+        grade: '3',
+        program: 'academic-prep',
+        subject: 'Health & Physical Education',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Learn about healthy living, active participation, and movement skills through engaging activities that promote physical and mental well-being.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Health lessons', 'Movement activities', 'Wellness topics', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SOC-3': {
+        code: 'ACAD-SOC-3',
+        title: 'Grade 3 Social Studies',
+        grade: '3',
+        program: 'academic-prep',
+        subject: 'Social Studies',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore communities, heritage, and society. Learn about traditions, governance, and global connections through interactive Ontario curriculum-aligned content.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Community studies', 'Interactive activities', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 3 - OFFICIAL ONTARIO PROGRAM ---
+    // =========================================================================
+    'OFF-MATH-3': {
+        code: 'OFF-MATH-3',
+        title: 'Grade 3 Mathematics',
+        grade: '3',
+        program: 'official-ontario',
+        subject: 'Mathematics',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online mathematics course for Grade 3 with Ontario Certified Teachers. Includes all assessments, evaluations, and official report card. Students learn number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-LANG-3': {
+        code: 'OFF-LANG-3',
+        title: 'Grade 3 Language',
+        grade: '3',
+        program: 'official-ontario',
+        subject: 'Language',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online language arts course with Ontario Certified Teachers. Develops reading, writing, speaking, and listening skills with formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-ARTS-3': {
+        code: 'OFF-ARTS-3',
+        title: 'Grade 3 The Arts',
+        grade: '3',
+        program: 'official-ontario',
+        subject: 'The Arts',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online arts course covering visual arts, music, drama, and dance. Taught by certified teachers with formal evaluations and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SCI-3': {
+        code: 'OFF-SCI-3',
+        title: 'Grade 3 Science & Technology',
+        grade: '3',
+        program: 'official-ontario',
+        subject: 'Science & Technology',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online science course with Ontario Certified Teachers covering life systems, structures, and materials. Includes hands-on activities and formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-HPE-3': {
+        code: 'OFF-HPE-3',
+        title: 'Grade 3 Health & Physical Education',
+        grade: '3',
+        program: 'official-ontario',
+        subject: 'Health & Physical Education',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online health and physical education course. Learn about healthy living, active participation, and movement skills with certified teachers and formal evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SOC-3': {
+        code: 'OFF-SOC-3',
+        title: 'Grade 3 Social Studies',
+        grade: '3',
+        program: 'official-ontario',
+        subject: 'Social Studies',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online social studies course with Ontario Certified Teachers. Learn about communities, heritage, and society with formal assessments and evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 4 - ACADEMIC PREPARATION PROGRAM ---
+    // =========================================================================
+    'ACAD-MATH-4': {
+        code: 'ACAD-MATH-4',
+        title: 'Grade 4 Mathematics',
+        grade: '4',
+        program: 'academic-prep',
+        subject: 'Mathematics',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced mathematics course for Grade 4 aligned with Ontario curriculum. Includes video lessons, interactive activities, and homework exercises covering number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Interactive activities', 'Homework exercises', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-LANG-4': {
+        code: 'ACAD-LANG-4',
+        title: 'Grade 4 Language',
+        grade: '4',
+        program: 'academic-prep',
+        subject: 'Language',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced language arts course for Grade 4. Develops reading, writing, speaking, and listening skills through engaging activities aligned with Ontario curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Reading activities', 'Writing practice', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-ARTS-4': {
+        code: 'ACAD-ARTS-4',
+        title: 'Grade 4 The Arts',
+        grade: '4',
+        program: 'academic-prep',
+        subject: 'The Arts',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore visual arts, music, drama, and dance through self-paced activities. Encourages creativity and self-expression aligned with Ontario arts curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Creative activities', 'Art projects', 'Music exploration', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SCI-4': {
+        code: 'ACAD-SCI-4',
+        title: 'Grade 4 Science & Technology',
+        grade: '4',
+        program: 'academic-prep',
+        subject: 'Science & Technology',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Discover the world of science through hands-on activities and video lessons. Topics include life systems, structures and mechanisms, and matter and materials.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Hands-on activities', 'Science experiments', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-HPE-4': {
+        code: 'ACAD-HPE-4',
+        title: 'Grade 4 Health & Physical Education',
+        grade: '4',
+        program: 'academic-prep',
+        subject: 'Health & Physical Education',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Learn about healthy living, active participation, and movement skills through engaging activities that promote physical and mental well-being.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Health lessons', 'Movement activities', 'Wellness topics', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SOC-4': {
+        code: 'ACAD-SOC-4',
+        title: 'Grade 4 Social Studies',
+        grade: '4',
+        program: 'academic-prep',
+        subject: 'Social Studies',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore communities, heritage, and society. Learn about traditions, governance, and global connections through interactive Ontario curriculum-aligned content.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Community studies', 'Interactive activities', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 4 - OFFICIAL ONTARIO PROGRAM ---
+    // =========================================================================
+    'OFF-MATH-4': {
+        code: 'OFF-MATH-4',
+        title: 'Grade 4 Mathematics',
+        grade: '4',
+        program: 'official-ontario',
+        subject: 'Mathematics',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online mathematics course for Grade 4 with Ontario Certified Teachers. Includes all assessments, evaluations, and official report card. Students learn number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-LANG-4': {
+        code: 'OFF-LANG-4',
+        title: 'Grade 4 Language',
+        grade: '4',
+        program: 'official-ontario',
+        subject: 'Language',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online language arts course with Ontario Certified Teachers. Develops reading, writing, speaking, and listening skills with formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-ARTS-4': {
+        code: 'OFF-ARTS-4',
+        title: 'Grade 4 The Arts',
+        grade: '4',
+        program: 'official-ontario',
+        subject: 'The Arts',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online arts course covering visual arts, music, drama, and dance. Taught by certified teachers with formal evaluations and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SCI-4': {
+        code: 'OFF-SCI-4',
+        title: 'Grade 4 Science & Technology',
+        grade: '4',
+        program: 'official-ontario',
+        subject: 'Science & Technology',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online science course with Ontario Certified Teachers covering life systems, structures, and materials. Includes hands-on activities and formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-HPE-4': {
+        code: 'OFF-HPE-4',
+        title: 'Grade 4 Health & Physical Education',
+        grade: '4',
+        program: 'official-ontario',
+        subject: 'Health & Physical Education',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online health and physical education course. Learn about healthy living, active participation, and movement skills with certified teachers and formal evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SOC-4': {
+        code: 'OFF-SOC-4',
+        title: 'Grade 4 Social Studies',
+        grade: '4',
+        program: 'official-ontario',
+        subject: 'Social Studies',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online social studies course with Ontario Certified Teachers. Learn about communities, heritage, and society with formal assessments and evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 5 - ACADEMIC PREPARATION PROGRAM ---
+    // =========================================================================
+    'ACAD-MATH-5': {
+        code: 'ACAD-MATH-5',
+        title: 'Grade 5 Mathematics',
+        grade: '5',
+        program: 'academic-prep',
+        subject: 'Mathematics',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced mathematics course for Grade 5 aligned with Ontario curriculum. Includes video lessons, interactive activities, and homework exercises covering number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Interactive activities', 'Homework exercises', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-LANG-5': {
+        code: 'ACAD-LANG-5',
+        title: 'Grade 5 Language',
+        grade: '5',
+        program: 'academic-prep',
+        subject: 'Language',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced language arts course for Grade 5. Develops reading, writing, speaking, and listening skills through engaging activities aligned with Ontario curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Reading activities', 'Writing practice', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-ARTS-5': {
+        code: 'ACAD-ARTS-5',
+        title: 'Grade 5 The Arts',
+        grade: '5',
+        program: 'academic-prep',
+        subject: 'The Arts',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore visual arts, music, drama, and dance through self-paced activities. Encourages creativity and self-expression aligned with Ontario arts curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Creative activities', 'Art projects', 'Music exploration', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SCI-5': {
+        code: 'ACAD-SCI-5',
+        title: 'Grade 5 Science & Technology',
+        grade: '5',
+        program: 'academic-prep',
+        subject: 'Science & Technology',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Discover the world of science through hands-on activities and video lessons. Topics include life systems, structures and mechanisms, and matter and materials.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Hands-on activities', 'Science experiments', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-HPE-5': {
+        code: 'ACAD-HPE-5',
+        title: 'Grade 5 Health & Physical Education',
+        grade: '5',
+        program: 'academic-prep',
+        subject: 'Health & Physical Education',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Learn about healthy living, active participation, and movement skills through engaging activities that promote physical and mental well-being.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Health lessons', 'Movement activities', 'Wellness topics', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SOC-5': {
+        code: 'ACAD-SOC-5',
+        title: 'Grade 5 Social Studies',
+        grade: '5',
+        program: 'academic-prep',
+        subject: 'Social Studies',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore communities, heritage, and society. Learn about traditions, governance, and global connections through interactive Ontario curriculum-aligned content.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Community studies', 'Interactive activities', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 5 - OFFICIAL ONTARIO PROGRAM ---
+    // =========================================================================
+    'OFF-MATH-5': {
+        code: 'OFF-MATH-5',
+        title: 'Grade 5 Mathematics',
+        grade: '5',
+        program: 'official-ontario',
+        subject: 'Mathematics',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online mathematics course for Grade 5 with Ontario Certified Teachers. Includes all assessments, evaluations, and official report card. Students learn number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-LANG-5': {
+        code: 'OFF-LANG-5',
+        title: 'Grade 5 Language',
+        grade: '5',
+        program: 'official-ontario',
+        subject: 'Language',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online language arts course with Ontario Certified Teachers. Develops reading, writing, speaking, and listening skills with formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-ARTS-5': {
+        code: 'OFF-ARTS-5',
+        title: 'Grade 5 The Arts',
+        grade: '5',
+        program: 'official-ontario',
+        subject: 'The Arts',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online arts course covering visual arts, music, drama, and dance. Taught by certified teachers with formal evaluations and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SCI-5': {
+        code: 'OFF-SCI-5',
+        title: 'Grade 5 Science & Technology',
+        grade: '5',
+        program: 'official-ontario',
+        subject: 'Science & Technology',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online science course with Ontario Certified Teachers covering life systems, structures, and materials. Includes hands-on activities and formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-HPE-5': {
+        code: 'OFF-HPE-5',
+        title: 'Grade 5 Health & Physical Education',
+        grade: '5',
+        program: 'official-ontario',
+        subject: 'Health & Physical Education',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online health and physical education course. Learn about healthy living, active participation, and movement skills with certified teachers and formal evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SOC-5': {
+        code: 'OFF-SOC-5',
+        title: 'Grade 5 Social Studies',
+        grade: '5',
+        program: 'official-ontario',
+        subject: 'Social Studies',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online social studies course with Ontario Certified Teachers. Learn about communities, heritage, and society with formal assessments and evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 6 - ACADEMIC PREPARATION PROGRAM ---
+    // =========================================================================
+    'ACAD-MATH-6': {
+        code: 'ACAD-MATH-6',
+        title: 'Grade 6 Mathematics',
+        grade: '6',
+        program: 'academic-prep',
+        subject: 'Mathematics',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced mathematics course for Grade 6 aligned with Ontario curriculum. Includes video lessons, interactive activities, and homework exercises covering number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Interactive activities', 'Homework exercises', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-LANG-6': {
+        code: 'ACAD-LANG-6',
+        title: 'Grade 6 Language',
+        grade: '6',
+        program: 'academic-prep',
+        subject: 'Language',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced language arts course for Grade 6. Develops reading, writing, speaking, and listening skills through engaging activities aligned with Ontario curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Reading activities', 'Writing practice', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-ARTS-6': {
+        code: 'ACAD-ARTS-6',
+        title: 'Grade 6 The Arts',
+        grade: '6',
+        program: 'academic-prep',
+        subject: 'The Arts',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore visual arts, music, drama, and dance through self-paced activities. Encourages creativity and self-expression aligned with Ontario arts curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Creative activities', 'Art projects', 'Music exploration', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SCI-6': {
+        code: 'ACAD-SCI-6',
+        title: 'Grade 6 Science & Technology',
+        grade: '6',
+        program: 'academic-prep',
+        subject: 'Science & Technology',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Discover the world of science through hands-on activities and video lessons. Topics include life systems, structures and mechanisms, and matter and materials.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Hands-on activities', 'Science experiments', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-HPE-6': {
+        code: 'ACAD-HPE-6',
+        title: 'Grade 6 Health & Physical Education',
+        grade: '6',
+        program: 'academic-prep',
+        subject: 'Health & Physical Education',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Learn about healthy living, active participation, and movement skills through engaging activities that promote physical and mental well-being.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Health lessons', 'Movement activities', 'Wellness topics', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SOC-6': {
+        code: 'ACAD-SOC-6',
+        title: 'Grade 6 Social Studies',
+        grade: '6',
+        program: 'academic-prep',
+        subject: 'Social Studies',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore communities, heritage, and society. Learn about traditions, governance, and global connections through interactive Ontario curriculum-aligned content.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Community studies', 'Interactive activities', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 6 - OFFICIAL ONTARIO PROGRAM ---
+    // =========================================================================
+    'OFF-MATH-6': {
+        code: 'OFF-MATH-6',
+        title: 'Grade 6 Mathematics',
+        grade: '6',
+        program: 'official-ontario',
+        subject: 'Mathematics',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online mathematics course for Grade 6 with Ontario Certified Teachers. Includes all assessments, evaluations, and official report card. Students learn number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-LANG-6': {
+        code: 'OFF-LANG-6',
+        title: 'Grade 6 Language',
+        grade: '6',
+        program: 'official-ontario',
+        subject: 'Language',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online language arts course with Ontario Certified Teachers. Develops reading, writing, speaking, and listening skills with formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-ARTS-6': {
+        code: 'OFF-ARTS-6',
+        title: 'Grade 6 The Arts',
+        grade: '6',
+        program: 'official-ontario',
+        subject: 'The Arts',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online arts course covering visual arts, music, drama, and dance. Taught by certified teachers with formal evaluations and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SCI-6': {
+        code: 'OFF-SCI-6',
+        title: 'Grade 6 Science & Technology',
+        grade: '6',
+        program: 'official-ontario',
+        subject: 'Science & Technology',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online science course with Ontario Certified Teachers covering life systems, structures, and materials. Includes hands-on activities and formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-HPE-6': {
+        code: 'OFF-HPE-6',
+        title: 'Grade 6 Health & Physical Education',
+        grade: '6',
+        program: 'official-ontario',
+        subject: 'Health & Physical Education',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online health and physical education course. Learn about healthy living, active participation, and movement skills with certified teachers and formal evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SOC-6': {
+        code: 'OFF-SOC-6',
+        title: 'Grade 6 Social Studies',
+        grade: '6',
+        program: 'official-ontario',
+        subject: 'Social Studies',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online social studies course with Ontario Certified Teachers. Learn about communities, heritage, and society with formal assessments and evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 7 - ACADEMIC PREPARATION PROGRAM ---
+    // =========================================================================
+    'ACAD-MATH-7': {
+        code: 'ACAD-MATH-7',
+        title: 'Grade 7 Mathematics',
+        grade: '7',
+        program: 'academic-prep',
+        subject: 'Mathematics',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced mathematics course for Grade 7 aligned with Ontario curriculum. Includes video lessons, interactive activities, and homework exercises covering number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Interactive activities', 'Homework exercises', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-LANG-7': {
+        code: 'ACAD-LANG-7',
+        title: 'Grade 7 Language',
+        grade: '7',
+        program: 'academic-prep',
+        subject: 'Language',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced language arts course for Grade 7. Develops reading, writing, speaking, and listening skills through engaging activities aligned with Ontario curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Reading activities', 'Writing practice', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-ARTS-7': {
+        code: 'ACAD-ARTS-7',
+        title: 'Grade 7 The Arts',
+        grade: '7',
+        program: 'academic-prep',
+        subject: 'The Arts',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore visual arts, music, drama, and dance through self-paced activities. Encourages creativity and self-expression aligned with Ontario arts curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Creative activities', 'Art projects', 'Music exploration', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SCI-7': {
+        code: 'ACAD-SCI-7',
+        title: 'Grade 7 Science & Technology',
+        grade: '7',
+        program: 'academic-prep',
+        subject: 'Science & Technology',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Discover the world of science through hands-on activities and video lessons. Topics include life systems, structures and mechanisms, and matter and materials.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Hands-on activities', 'Science experiments', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-HPE-7': {
+        code: 'ACAD-HPE-7',
+        title: 'Grade 7 Health & Physical Education',
+        grade: '7',
+        program: 'academic-prep',
+        subject: 'Health & Physical Education',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Learn about healthy living, active participation, and movement skills through engaging activities that promote physical and mental well-being.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Health lessons', 'Movement activities', 'Wellness topics', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SOC-7': {
+        code: 'ACAD-SOC-7',
+        title: 'Grade 7 Social Studies',
+        grade: '7',
+        program: 'academic-prep',
+        subject: 'Social Studies',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore communities, heritage, and society. Learn about traditions, governance, and global connections through interactive Ontario curriculum-aligned content.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Community studies', 'Interactive activities', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 7 - OFFICIAL ONTARIO PROGRAM ---
+    // =========================================================================
+    'OFF-MATH-7': {
+        code: 'OFF-MATH-7',
+        title: 'Grade 7 Mathematics',
+        grade: '7',
+        program: 'official-ontario',
+        subject: 'Mathematics',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online mathematics course for Grade 7 with Ontario Certified Teachers. Includes all assessments, evaluations, and official report card. Students learn number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-LANG-7': {
+        code: 'OFF-LANG-7',
+        title: 'Grade 7 Language',
+        grade: '7',
+        program: 'official-ontario',
+        subject: 'Language',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online language arts course with Ontario Certified Teachers. Develops reading, writing, speaking, and listening skills with formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-ARTS-7': {
+        code: 'OFF-ARTS-7',
+        title: 'Grade 7 The Arts',
+        grade: '7',
+        program: 'official-ontario',
+        subject: 'The Arts',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online arts course covering visual arts, music, drama, and dance. Taught by certified teachers with formal evaluations and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SCI-7': {
+        code: 'OFF-SCI-7',
+        title: 'Grade 7 Science & Technology',
+        grade: '7',
+        program: 'official-ontario',
+        subject: 'Science & Technology',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online science course with Ontario Certified Teachers covering life systems, structures, and materials. Includes hands-on activities and formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-HPE-7': {
+        code: 'OFF-HPE-7',
+        title: 'Grade 7 Health & Physical Education',
+        grade: '7',
+        program: 'official-ontario',
+        subject: 'Health & Physical Education',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online health and physical education course. Learn about healthy living, active participation, and movement skills with certified teachers and formal evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SOC-7': {
+        code: 'OFF-SOC-7',
+        title: 'Grade 7 Social Studies',
+        grade: '7',
+        program: 'official-ontario',
+        subject: 'Social Studies',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online social studies course with Ontario Certified Teachers. Learn about communities, heritage, and society with formal assessments and evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 8 - ACADEMIC PREPARATION PROGRAM ---
+    // =========================================================================
+    'ACAD-MATH-8': {
+        code: 'ACAD-MATH-8',
+        title: 'Grade 8 Mathematics',
+        grade: '8',
+        program: 'academic-prep',
+        subject: 'Mathematics',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced mathematics course for Grade 8 aligned with Ontario curriculum. Includes video lessons, interactive activities, and homework exercises covering number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Interactive activities', 'Homework exercises', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-LANG-8': {
+        code: 'ACAD-LANG-8',
+        title: 'Grade 8 Language',
+        grade: '8',
+        program: 'academic-prep',
+        subject: 'Language',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Self-paced language arts course for Grade 8. Develops reading, writing, speaking, and listening skills through engaging activities aligned with Ontario curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Reading activities', 'Writing practice', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-ARTS-8': {
+        code: 'ACAD-ARTS-8',
+        title: 'Grade 8 The Arts',
+        grade: '8',
+        program: 'academic-prep',
+        subject: 'The Arts',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore visual arts, music, drama, and dance through self-paced activities. Encourages creativity and self-expression aligned with Ontario arts curriculum.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Creative activities', 'Art projects', 'Music exploration', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SCI-8': {
+        code: 'ACAD-SCI-8',
+        title: 'Grade 8 Science & Technology',
+        grade: '8',
+        program: 'academic-prep',
+        subject: 'Science & Technology',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Discover the world of science through hands-on activities and video lessons. Topics include life systems, structures and mechanisms, and matter and materials.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Hands-on activities', 'Science experiments', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-HPE-8': {
+        code: 'ACAD-HPE-8',
+        title: 'Grade 8 Health & Physical Education',
+        grade: '8',
+        program: 'academic-prep',
+        subject: 'Health & Physical Education',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Learn about healthy living, active participation, and movement skills through engaging activities that promote physical and mental well-being.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Health lessons', 'Movement activities', 'Wellness topics', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+    'ACAD-SOC-8': {
+        code: 'ACAD-SOC-8',
+        title: 'Grade 8 Social Studies',
+        grade: '8',
+        program: 'academic-prep',
+        subject: 'Social Studies',
+        type: 'Academic Preparation',
+        storefront: 'academic-prep',
+        prerequisite: 'None',
+        description: 'Explore communities, heritage, and society. Learn about traditions, governance, and global connections through interactive Ontario curriculum-aligned content.',
+        delivery: 'Self-Learning via LMS Platform',
+        product: {
+            pricing: {
+                listPrice: 150,
+                basePrice: 75,
+                salePrice: 75,
+                currency: 'CAD'
+            }
+        },
+        features: ['Video lessons', 'Community studies', 'Interactive activities', 'Self-paced learning', '12-month access'],
+        units: [],
+        evaluation: null,
+        resources: []
+    },
+
+    // =========================================================================
+    // --- GRADE 8 - OFFICIAL ONTARIO PROGRAM ---
+    // =========================================================================
+    'OFF-MATH-8': {
+        code: 'OFF-MATH-8',
+        title: 'Grade 8 Mathematics',
+        grade: '8',
+        program: 'official-ontario',
+        subject: 'Mathematics',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online mathematics course for Grade 8 with Ontario Certified Teachers. Includes all assessments, evaluations, and official report card. Students learn number sense, measurement, geometry, patterning, and data management.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-LANG-8': {
+        code: 'OFF-LANG-8',
+        title: 'Grade 8 Language',
+        grade: '8',
+        program: 'official-ontario',
+        subject: 'Language',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online language arts course with Ontario Certified Teachers. Develops reading, writing, speaking, and listening skills with formal assessments and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-ARTS-8': {
+        code: 'OFF-ARTS-8',
+        title: 'Grade 8 The Arts',
+        grade: '8',
+        program: 'official-ontario',
+        subject: 'The Arts',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online arts course covering visual arts, music, drama, and dance. Taught by certified teachers with formal evaluations and report card.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SCI-8': {
+        code: 'OFF-SCI-8',
+        title: 'Grade 8 Science & Technology',
+        grade: '8',
+        program: 'official-ontario',
+        subject: 'Science & Technology',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online science course with Ontario Certified Teachers covering life systems, structures, and materials. Includes hands-on activities and formal assessments.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-HPE-8': {
+        code: 'OFF-HPE-8',
+        title: 'Grade 8 Health & Physical Education',
+        grade: '8',
+        program: 'official-ontario',
+        subject: 'Health & Physical Education',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online health and physical education course. Learn about healthy living, active participation, and movement skills with certified teachers and formal evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    },
+    'OFF-SOC-8': {
+        code: 'OFF-SOC-8',
+        title: 'Grade 8 Social Studies',
+        grade: '8',
+        program: 'official-ontario',
+        subject: 'Social Studies',
+        type: 'Official Ontario Program',
+        storefront: 'official-ontario',
+        prerequisite: 'None',
+        description: 'Live online social studies course with Ontario Certified Teachers. Learn about communities, heritage, and society with formal assessments and evaluations.',
+        delivery: 'Live Classes with Ontario Certified Teachers',
+        schedule: {
+            start: 'September 5, 2026',
+            end: 'May 30, 2027',
+            hoursPerWeek: 6
+        },
+        product: {
+            pricing: {
+                perCourse: 250,
+                currency: 'CAD'
+            }
+        },
+        features: ['Live classes with certified teachers', 'All learning materials', 'Required assessments and evaluations', 'Official Ontario report card'],
+        units: [],
+        evaluation: { termWork: 70, finalExam: 30 },
+        resources: []
+    }
 }

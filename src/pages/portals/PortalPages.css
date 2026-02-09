@@ -1,0 +1,432 @@
+/* ===================================
+   Portal Pages - Shared Styles
+   =================================== */
+
+.portal-page {
+    min-height: 100vh;
+    background: var(--color-neutral-50, #f9fafb);
+}
+
+/* Portal Hero */
+.portal-hero {
+    background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+    color: white;
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+
+.portal-hero.student-portal {
+    background: linear-gradient(135deg, #2F80ED 0%, #1E5BA8 100%);
+}
+
+.portal-hero.parent-portal {
+    background: linear-gradient(135deg, #27AE60 0%, #1E8449 100%);
+}
+
+.portal-hero.agent-portal {
+    background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+}
+
+.portal-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.portal-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.portal-subtitle {
+    font-size: 1.125rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Portal Content */
+.portal-content {
+    padding: 4rem 0;
+}
+
+.portal-card {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.coming-soon-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.portal-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.portal-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-neutral-700, #374151);
+    margin-bottom: 2rem;
+}
+
+/* Portal Tabs */
+.portal-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-neutral-200, #e5e7eb);
+}
+
+.portal-tab {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-neutral-600, #6b7280);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: -2px;
+}
+
+.portal-tab:hover {
+    color: var(--color-brand, #1B4332);
+    background: var(--color-neutral-50, #f9fafb);
+}
+
+.portal-tab.active {
+    color: var(--color-brand, #1B4332);
+    border-bottom-color: var(--color-brand, #1B4332);
+}
+
+/* Tab Content */
+.tab-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Features List */
+.portal-features {
+    margin: 2rem 0;
+}
+
+.portal-features h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--color-neutral-50, #f9fafb);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-list li:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.feature-list li div strong {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.feature-list li div p {
+    margin: 0;
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.95rem;
+}
+
+/* Enrollment Steps */
+.enrollment-steps {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #E3F2FD 0%, #ffffff 100%);
+    border-radius: 12px;
+}
+
+.enrollment-steps h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.steps-list {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+    margin: 0;
+}
+
+.steps-list li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 4rem;
+    margin-bottom: 2rem;
+}
+
+.steps-list li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--color-brand, #1B4332);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.steps-list li strong {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.steps-list li p {
+    margin: 0;
+    color: var(--color-neutral-600, #6b7280);
+}
+
+/* Partnership Benefits */
+.partnership-benefits {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #FFF8E1 0%, #ffffff 100%);
+    border-radius: 12px;
+}
+
+.partnership-benefits h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-brand, #1B4332);
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 1.5rem;
+}
+
+.benefit-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-4px);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+    font-size: 1.125rem;
+    margin: 0.5rem 0;
+    color: var(--color-brand, #1B4332);
+}
+
+.benefit-card p {
+    margin: 0;
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.95rem;
+}
+
+/* Portal CTA */
+.portal-cta {
+    margin: 3rem 0 0;
+    padding: 2rem;
+    background: var(--color-neutral-50, #f9fafb);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.portal-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.cta-text {
+    font-size: 1.125rem;
+    color: var(--color-neutral-700, #374151);
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Portal Info Box */
+.portal-info-box {
+    background: white;
+    border: 2px solid var(--color-neutral-200, #e5e7eb);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.portal-info-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--color-brand, #1B4332);
+}
+
+.portal-info-box p {
+    margin-bottom: 1.5rem;
+    color: var(--color-neutral-700, #374151);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portal-hero {
+        padding: 3rem 0 2rem;
+    }
+
+    .portal-hero h1 {
+        font-size: 2rem;
+    }
+
+    .portal-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .coming-soon-badge {
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .portal-tabs {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .portal-tab {
+        width: 100%;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .feature-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .steps-list li {
+        padding-left: 3rem;
+    }
+
+    .steps-list li::before {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .portal-icon {
+        font-size: 3rem;
+    }
+
+    .portal-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .portal-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .portal-features h3,
+    .enrollment-steps h3,
+    .partnership-benefits h3 {
+        font-size: 1.25rem;
+    }
+}

@@ -1,32 +1,50 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useCart } from '../context/CartContext'
 import LanguageToggle from './LanguageToggle'
+import ProgramDropdown from './ProgramDropdown'
+import CoursesDropdown from './CoursesDropdown'
+import LoginPortalDropdown from './LoginPortalDropdown'
 import './Header.css'
 
 function Header() {
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
+    const { items } = useCart()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const [programsOpen, setProgramsOpen] = useState(false)
-    const dropdownRef = useRef(null)
+    const [activeDropdown, setActiveDropdown] = useState(null) // 'programs' | 'courses' | 'login' | null
+    const programsRef = useRef(null)
+    const coursesRef = useRef(null)
+    const loginRef = useRef(null)
     const location = useLocation()
 
-    // Close dropdown when clicking outside
+    // Calculate cart item count
+    const cartItemCount = items.reduce((sum, item) => sum + item.quantity, 0)
+
+    // Close dropdown when clicking outside any dropdown
     useEffect(() => {
         function handleClickOutside(event) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setProgramsOpen(false)
+            const refs = [programsRef, coursesRef, loginRef]
+            const clickedInsideAny = refs.some(
+                ref => ref.current && ref.current.contains(event.target)
+            )
+            if (!clickedInsideAny) {
+                setActiveDropdown(null)
             }
         }
         document.addEventListener('mousedown', handleClickOutside)
         return () => document.removeEventListener('mousedown', handleClickOutside)
     }, [])
 
-    // Close menus when route changes
+    // Close all menus when route changes
     useEffect(() => {
-        setProgramsOpen(false)
+        setActiveDropdown(null)
         setMobileMenuOpen(false)
     }, [location.pathname])
+
+    function toggleDropdown(name) {
+        setActiveDropdown(prev => prev === name ? null : name)
+    }
 
     const navLinks = [
         { path: '/about', label: t('nav.about') },
@@ -35,6 +53,12 @@ function Header() {
         { path: '/faq', label: t('nav.faq') },
         { path: '/contact', label: t('nav.contact') }
     ]
+
+    const DropdownArrow = ({ isOpen }) => (
+        <svg className={`dropdown-arrow ${isOpen ? 'open' : ''}`} width="10" height="10" viewBox="0 0 10 10">
+            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" fill="none" />
+        </svg>
+    )
 
     return (
         <header className="header">
@@ -45,57 +69,36 @@ function Header() {
                 </Link>
 
                 <nav className={`nav-main ${mobileMenuOpen ? 'active' : ''}`}>
-                    {/* Programs Dropdown */}
-                    <div className="nav-dropdown-wrapper" ref={dropdownRef}>
+                    {/* Program Dropdown - Two Panel */}
+                    <div className="nav-dropdown-wrapper" ref={programsRef}>
                         <button
                             className="nav-link nav-dropdown-trigger"
-                            onClick={() => setProgramsOpen(!programsOpen)}
-                            aria-expanded={programsOpen}
+                            onClick={() => toggleDropdown('programs')}
+                            aria-expanded={activeDropdown === 'programs'}
                         >
-                            {t('nav.courses')}
-                            <svg className={`dropdown-arrow ${programsOpen ? 'open' : ''}`} width="10" height="10" viewBox="0 0 10 10">
-                                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                            </svg>
+                            {t('nav.program', 'Program')}
+                            <DropdownArrow isOpen={activeDropdown === 'programs'} />
                         </button>
-                        {programsOpen && (
-                            <div className="nav-dropdown">
-                                <div className="dropdown-section">
-                                    <Link
-                                        to="/programs/elementary"
-                                        className="dropdown-item storefront-item elementary"
-                                        onClick={() => { setProgramsOpen(false); setMobileMenuOpen(false); }}
-                                    >
-                                        <span className="storefront-dot" style={{ background: '#27AE60' }}></span>
-                                        <div>
-                                            <span className="dropdown-item-title">{i18n.language === 'vi' ? 'Tiểu Học' : 'Elementary'}</span>
-                                            <span className="dropdown-item-desc">{i18n.language === 'vi' ? 'Lớp 1-5 • Tự học & Có giáo viên' : 'Grades 1-5 • Self-Learning & Teacher-Led'}</span>
-                                        </div>
-                                    </Link>
-                                    <Link
-                                        to="/credit"
-                                        className="dropdown-item storefront-item credit"
-                                        onClick={() => { setProgramsOpen(false); setMobileMenuOpen(false); }}
-                                    >
-                                        <span className="storefront-dot" style={{ background: '#D4AF37' }}></span>
-                                        <div>
-                                            <span className="dropdown-item-title">{i18n.language === 'vi' ? 'Có Tín Chỉ' : 'Credit Courses'}</span>
-                                            <span className="dropdown-item-desc">{i18n.language === 'vi' ? 'Lớp 9-12 • Lớp học trực tiếp với giáo viên' : 'Grades 9-12 • Live classes with teacher'}</span>
-                                        </div>
-                                    </Link>
-                                    <Link
-                                        to="/non-credit"
-                                        className="dropdown-item storefront-item non-credit"
-                                        onClick={() => { setProgramsOpen(false); setMobileMenuOpen(false); }}
-                                    >
-                                        <span className="storefront-dot" style={{ background: '#2F80ED' }}></span>
-                                        <div>
-                                            <span className="dropdown-item-title">{i18n.language === 'vi' ? 'Thực Hành' : 'Practice Courses'}</span>
-                                            <span className="dropdown-item-desc">{i18n.language === 'vi' ? 'Tất cả các lớp • Tự học theo tốc độ riêng' : 'All grades • Self-paced learning'}</span>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                        )}
+                        <ProgramDropdown
+                            isOpen={activeDropdown === 'programs'}
+                            onClose={() => setActiveDropdown(null)}
+                        />
+                    </div>
+
+                    {/* Courses Dropdown */}
+                    <div className="nav-dropdown-wrapper" ref={coursesRef}>
+                        <button
+                            className="nav-link nav-dropdown-trigger"
+                            onClick={() => toggleDropdown('courses')}
+                            aria-expanded={activeDropdown === 'courses'}
+                        >
+                            {t('nav.courses', 'Courses')}
+                            <DropdownArrow isOpen={activeDropdown === 'courses'} />
+                        </button>
+                        <CoursesDropdown
+                            isOpen={activeDropdown === 'courses'}
+                            onClose={() => setActiveDropdown(null)}
+                        />
                     </div>
 
                     {navLinks.map(link => (
@@ -112,7 +115,34 @@ function Header() {
 
                 <div className="header-actions">
                     <LanguageToggle />
-                    <Link to="/login" className="btn-login">{t('nav.login')}</Link>
+                    {/* Login Portal Dropdown */}
+                    <div className="nav-dropdown-wrapper" ref={loginRef}>
+                        <button
+                            className="btn-login nav-dropdown-trigger"
+                            onClick={() => toggleDropdown('login')}
+                            aria-expanded={activeDropdown === 'login'}
+                        >
+                            {t('nav.login', 'Login')}
+                            <DropdownArrow isOpen={activeDropdown === 'login'} />
+                        </button>
+                        <LoginPortalDropdown
+                            isOpen={activeDropdown === 'login'}
+                            onClose={() => setActiveDropdown(null)}
+                        />
+                    </div>
+
+                    {/* Shopping Cart */}
+                    <Link to="/cart" className="cart-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        {cartItemCount > 0 && (
+                            <span className="cart-badge">{cartItemCount}</span>
+                        )}
+                    </Link>
+
                     <Link to="/register" className="btn btn-accent btn-sm">{t('nav.register')}</Link>
                 </div>
 
@@ -129,44 +159,49 @@ function Header() {
 
             {mobileMenuOpen && (
                 <div className="mobile-menu">
-                    {/* Storefront Links */}
+                    {/* Program Links */}
                     <div className="mobile-storefronts">
                         <Link
-                            to="/programs/elementary"
+                            to="/academic-prep"
                             className="mobile-storefront-link"
                             onClick={() => setMobileMenuOpen(false)}
-                            style={{ borderColor: '#27AE60' }}
+                            style={{ borderColor: '#2F80ED' }}
                         >
-                            <span className="storefront-icon">🏫</span>
+                            <span className="storefront-icon">📚</span>
                             <div>
-                                <span className="storefront-name">{i18n.language === 'vi' ? 'Tiểu Học' : 'Elementary'}</span>
-                                <span className="storefront-tagline">{i18n.language === 'vi' ? 'Lớp 1-5' : 'Grades 1-5'}</span>
+                                <span className="storefront-name">{t('programs.academicPrep.shortName', 'Academic Prep')}</span>
+                                <span className="storefront-tagline">Grades 1-12</span>
                             </div>
                         </Link>
                         <Link
-                            to="/credit"
+                            to="/official-ontario"
                             className="mobile-storefront-link"
                             onClick={() => setMobileMenuOpen(false)}
                             style={{ borderColor: '#D4AF37' }}
                         >
                             <span className="storefront-icon">🎓</span>
                             <div>
-                                <span className="storefront-name">{i18n.language === 'vi' ? 'Có Tín Chỉ' : 'Credit'}</span>
-                                <span className="storefront-tagline">{i18n.language === 'vi' ? 'Lớp 9-12 Trực tiếp' : 'Grades 9-12 Live'}</span>
+                                <span className="storefront-name">{t('programs.officialOntario.shortName', 'Official Ontario')}</span>
+                                <span className="storefront-tagline">Grades 1-12</span>
                             </div>
                         </Link>
-                        <Link
-                            to="/non-credit"
-                            className="mobile-storefront-link"
-                            onClick={() => setMobileMenuOpen(false)}
-                            style={{ borderColor: '#2F80ED' }}
-                        >
-                            <span className="storefront-icon">🎬</span>
-                            <div>
-                                <span className="storefront-name">{i18n.language === 'vi' ? 'Thực Hành' : 'Practice'}</span>
-                                <span className="storefront-tagline">{i18n.language === 'vi' ? 'Tất cả các lớp' : 'All Grades'}</span>
-                            </div>
-                        </Link>
+                    </div>
+
+                    {/* Browse by Grade */}
+                    <div className="mobile-grades-section">
+                        <span className="mobile-section-label">Browse by Grade</span>
+                        <div className="mobile-grade-pills">
+                            {['1','2','3','4','5','6','7','8','9','10','11','12'].map(g => (
+                                <Link
+                                    key={g}
+                                    to={`/grade/${g}`}
+                                    className="mobile-grade-pill"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    Gr {g}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
 
                     <nav className="mobile-nav">
@@ -181,6 +216,21 @@ function Header() {
                             </NavLink>
                         ))}
                     </nav>
+
+                    {/* Portal Links */}
+                    <div className="mobile-portals">
+                        <span className="mobile-section-label">Login Portals</span>
+                        <Link to="/portal/student" className="mobile-portal-link" onClick={() => setMobileMenuOpen(false)}>
+                            🎓 {t('nav.studentPortal', 'Student Portal')}
+                        </Link>
+                        <Link to="/portal/parent" className="mobile-portal-link" onClick={() => setMobileMenuOpen(false)}>
+                            👨‍👩‍👧 {t('nav.parentPortal', 'Parent Portal')}
+                        </Link>
+                        <Link to="/portal/agent" className="mobile-portal-link" onClick={() => setMobileMenuOpen(false)}>
+                            🏢 {t('nav.agentPortal', 'Agent / School Portal')}
+                        </Link>
+                    </div>
+
                     <div className="mobile-actions">
                         <LanguageToggle />
                         <Link to="/register" className="btn btn-accent" onClick={() => setMobileMenuOpen(false)}>

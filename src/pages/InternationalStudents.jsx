@@ -151,7 +151,7 @@ function InternationalStudents() {
                                     <li key={i}><span className="check">✓</span> {feature}</li>
                                 ))}
                             </ul>
-                            <Link to="/credit" className="btn btn-primary btn-lg">{i18n.language === 'vi' ? 'Xem Khóa Học' : 'Browse Courses'}</Link>
+                            <Link to="/official-ontario" className="btn btn-primary btn-lg">{i18n.language === 'vi' ? 'Xem Khóa Học' : 'Browse Courses'}</Link>
                         </div>
                         <div className="pricing-card card featured">
                             <div className="featured-badge">{t('international.tuition.package.bestValue')}</div>
@@ -207,7 +207,7 @@ function InternationalStudents() {
                     <h2>{t('international.cta.title')}</h2>
                     <p>{t('international.cta.subtitle')}</p>
                     <div className="cta-buttons">
-                        <Link to="/credit" className="btn btn-accent btn-lg">{i18n.language === 'vi' ? 'Xem Khóa Học Có Tín Chỉ' : 'Browse Credit Courses'}</Link>
+                        <Link to="/official-ontario" className="btn btn-accent btn-lg">{i18n.language === 'vi' ? 'Xem Khóa Học Có Tín Chỉ' : 'Browse Credit Courses'}</Link>
                         <Link to="/contact" className="btn btn-secondary btn-lg" style={{ borderColor: 'rgba(255,255,255,0.5)', color: 'white' }}>{t('nav.contact')}</Link>
                     </div>
                 </div>

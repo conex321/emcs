@@ -257,7 +257,7 @@
 .cart-summary {
     padding: var(--space-8);
     position: sticky;
-    top: 100px;
+    top: calc(var(--header-height) + 1.75rem);
 }
 
 .cart-summary h2 {

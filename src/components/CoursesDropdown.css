@@ -1,0 +1,91 @@
+/* ===================================
+   Courses Dropdown
+   =================================== */
+
+.courses-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 280px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    animation: coursesDropdownFadeIn 0.15s ease;
+}
+
+@keyframes coursesDropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.courses-group {
+    margin-bottom: 0.75rem;
+}
+
+.courses-group:last-child {
+    margin-bottom: 0;
+}
+
+.courses-group-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-neutral-500, #9ca3af);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.375rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-neutral-100, #f3f4f6);
+}
+
+.courses-grade-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.courses-grade-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.625rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-neutral-700, #374151);
+    transition: all 0.15s ease;
+}
+
+.courses-grade-link:hover {
+    background: var(--color-neutral-100, #f3f4f6);
+    color: var(--color-brand, #1B4332);
+}
+
+@media (max-width: 768px) {
+    .courses-dropdown {
+        min-width: 240px;
+        left: 0;
+        transform: none;
+    }
+
+    @keyframes coursesDropdownFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

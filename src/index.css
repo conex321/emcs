@@ -5,6 +5,9 @@
 
 /* CSS Custom Properties (Design Tokens) */
 :root {
+  /* Layout */
+  --header-height: 72px;
+
   /* Primary Colors - Deep Forest Green with Gold Accents */
   --color-primary-50: #f0fdf4;
   --color-primary-100: #dcfce7;

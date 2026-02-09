@@ -7,7 +7,171 @@
       "tagline": "Ontario Ministry Inspected School • BSID: 665588",
       "href": "/"
     },
+    "programs": {
+      "menu": {
+        "label": "Program",
+        "type": "two-panel-dropdown",
+        "panels": {
+          "left": {
+            "id": "academic-prep",
+            "title": "Academic Preparation Program",
+            "description": "Self-paced learning for practice and enrichment",
+            "grades": "1-12",
+            "href": "/academic-prep",
+            "color": "#2F80ED"
+          },
+          "right": {
+            "id": "official-ontario",
+            "title": "Official Ontario Program",
+            "description": "Earn official OSSD credits with live classes",
+            "grades": "1-12",
+            "href": "/official-ontario",
+            "color": "#D4AF37",
+            "featured": true
+          }
+        }
+      },
+      "courses": {
+        "label": "Courses",
+        "type": "dropdown",
+        "grades": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+      },
+      "loginPortals": {
+        "label": "Login",
+        "type": "dropdown",
+        "portals": [
+          {
+            "id": "student",
+            "label": "Student Portal",
+            "description": "Access your LMS and courses",
+            "href": "/portal/student",
+            "icon": "school"
+          },
+          {
+            "id": "parent",
+            "label": "Parent Portal",
+            "description": "Enrollment and student progress",
+            "href": "/portal/parent",
+            "icon": "family"
+          },
+          {
+            "id": "agent",
+            "label": "Agent/School Portal",
+            "description": "Partner enrollment forms",
+            "href": "/portal/agent",
+            "icon": "business"
+          }
+        ]
+      }
+    },
     "storefronts": {
+      "academicPrep": {
+        "id": "academic-prep",
+        "label": "Academic Preparation Program",
+        "shortLabel": "Academic Prep",
+        "href": "/academic-prep",
+        "color": {
+          "primary": "#2F80ED",
+          "secondary": "#1A5DC9",
+          "light": "#E3F2FD",
+          "text": "#FFFFFF"
+        },
+        "description": "Build strong foundations in Academic English, mathematics, science, social studies, and essential learning skills. Aligned with Ontario standards, it develops analytical thinking and disciplined study habits, preparing students for a smooth transition into OSSD credit courses or the Ontario Secondary School Diploma (OSSD) program.",
+        "disclaimer": "No tests, no assessments, no report card, no OSSD credit",
+        "grades": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+        "subjects": ["Mathematics", "Language", "The Arts", "Science & Technology", "Health & Physical Education", "Social Studies"],
+        "features": [
+          "High-quality video lessons",
+          "Interactive practice activities",
+          "Homework exercises",
+          "Self-paced learning",
+          "12-month access"
+        ],
+        "pricing": {
+          "startingAt": 75,
+          "currency": "CAD",
+          "displayText": "Starting at $75 CAD"
+        },
+        "gradeGroups": {
+          "elementary": {
+            "label": "Elementary (Grades 1-5)",
+            "grades": ["1", "2", "3", "4", "5"],
+            "icon": "school",
+            "price": "$75 CAD per subject (50% off)"
+          },
+          "middle": {
+            "label": "Middle School (Grades 6-8)",
+            "grades": ["6", "7", "8"],
+            "icon": "menu_book",
+            "price": "$75 CAD per subject (50% off)"
+          },
+          "secondary": {
+            "label": "High School (Grades 9-12)",
+            "grades": ["9", "10", "11", "12"],
+            "icon": "graduation_cap",
+            "price": "$75-150 CAD per course"
+          }
+        }
+      },
+      "officialOntario": {
+        "id": "official-ontario",
+        "label": "Official Ontario Program",
+        "shortLabel": "Official Ontario",
+        "href": "/official-ontario",
+        "color": {
+          "primary": "#F2C94C",
+          "secondary": "#D4AF37",
+          "light": "#FFF8E1",
+          "text": "#1B4332"
+        },
+        "description": "The Official Ontario Program is a fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Aligned with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. With personalized academic guidance and a structured learning environment, students are prepared for university admission in Canada and internationally. Upon successful completion, students earn the Ontario Secondary School Diploma (OSSD).",
+        "badge": "Ministry Inspected • BSID: 665588",
+        "grades": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+        "subjects": ["Mathematics", "Language", "The Arts", "Science & Technology", "Health & Physical Education", "Social Studies", "French"],
+        "features": [
+          "Ministry of Education inspected (BSID: 665588)",
+          "Ontario Certified Teachers (OCT)",
+          "Live classes via Zoom",
+          "Official transcripts and report cards",
+          "Credits count toward OSSD graduation",
+          "Direct transcript delivery to OUAC/OCAS"
+        ],
+        "schedule": {
+          "hoursPerWeek": 6,
+          "daysPerWeek": 3,
+          "hoursPerSession": 2,
+          "displayText": "Live classes: 6 hrs/week"
+        },
+        "pricing": {
+          "startingAt": 250,
+          "currency": "CAD",
+          "displayText": "From $250 CAD per subject"
+        },
+        "evaluation": {
+          "termWork": 70,
+          "finalExam": 30
+        },
+        "gradeGroups": {
+          "elementary": {
+            "label": "Elementary (Grades 1-5)",
+            "grades": ["1", "2", "3", "4", "5"],
+            "icon": "school",
+            "price": "$250 CAD per subject"
+          },
+          "middle": {
+            "label": "Middle School (Grades 6-8)",
+            "grades": ["6", "7", "8"],
+            "icon": "menu_book",
+            "price": "$250 CAD per subject"
+          },
+          "secondary": {
+            "label": "High School (Grades 9-12)",
+            "grades": ["9", "10", "11", "12"],
+            "icon": "graduation_cap",
+            "price": "From $3,500 CAD per year"
+          }
+        }
+      },
       "nonCredit": {
         "id": "non-credit",
         "label": "Practice Courses",
