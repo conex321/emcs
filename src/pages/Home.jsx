@@ -174,6 +174,11 @@ function Home() {
                         <h3 className="comparison-title">{t('home.comparePrograms', 'Compare Programs')}</h3>
                         <div className="comparison-table-wrapper">
                             <table className="comparison-table">
+                                <colgroup>
+                                    <col className="comparison-col-label" />
+                                    <col className="comparison-col-program" />
+                                    <col className="comparison-col-program" />
+                                </colgroup>
                                 <thead>
                                     <tr>
                                         <th></th>
