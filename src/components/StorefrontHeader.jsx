@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useCart } from '../context/CartContext'
 import { useStorefront } from '../context/StorefrontContext'
 import LanguageToggle from './LanguageToggle'
+import Logo from './Logo'
 import './StorefrontHeader.css'
 
 function StorefrontHeader() {
@@ -169,9 +170,8 @@ function StorefrontHeader() {
         <header className="storefront-header">
             <div className="header-container container">
                 {/* Logo */}
-                <Link to="/" className="logo">
-                    <img src="/images/logo-shield.png" alt="EMCS Logo" className="logo-img" />
-                    <span className="logo-text">EMCS</span>
+                <Link to="/" className="logo" aria-label="EMCS home">
+                    <Logo variant="full" />
                 </Link>
 
                 {/* Main Navigation */}

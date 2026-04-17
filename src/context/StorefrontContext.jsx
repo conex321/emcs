@@ -6,8 +6,8 @@ const StorefrontContext = createContext(null)
 
 // Get storefront from path
 function getStorefrontFromPath(pathname) {
-    if (pathname.startsWith('/credit')) return 'credit'
-    if (pathname.startsWith('/non-credit')) return 'non-credit'
+    if (pathname.startsWith('/credit') || pathname.startsWith('/official-ontario')) return 'credit'
+    if (pathname.startsWith('/non-credit') || pathname.startsWith('/academic-prep')) return 'non-credit'
     return null
 }
 

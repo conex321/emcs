@@ -1,0 +1,158 @@
+.middle-school-foundation-page section {
+    padding: 2rem 0;
+}
+
+.msf-hero {
+    background: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+    color: #fff;
+    padding: 3rem 0 !important;
+    text-align: center;
+}
+
+.msf-hero__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.375rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+.msf-hero h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+.msf-hero__tagline {
+    margin: 0;
+    font-size: 1.125rem;
+    opacity: 0.95;
+}
+
+.msf-overview {
+    background: #f8fafc;
+}
+
+.msf-overview h2,
+.msf-pricing h2,
+.msf-grades h2,
+.msf-french h2,
+.msf-upgrade h2 {
+    margin-top: 0;
+    color: var(--color-text, #1a202c);
+}
+
+.msf-overview p {
+    max-width: 56rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted, #475569);
+    margin: 0.5rem 0 0;
+}
+
+.msf-panel-section {
+    background: #fff;
+}
+
+.msf-pricing {
+    background: #f8fafc;
+}
+
+.msf-pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+}
+
+.msf-pricing-table thead th {
+    background: #1e3a8a;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.msf-pricing-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.msf-pricing-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.msf-pricing-table s {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.msf-grade-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.msf-grade-card {
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 8px;
+    border-top: 4px solid #059669;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+}
+
+.msf-grade-card h3 {
+    margin: 0 0 0.5rem;
+    color: var(--color-text, #1a202c);
+}
+
+.msf-grade-card p {
+    margin: 0 0 1rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted, #64748b);
+}
+
+.msf-french,
+.msf-upgrade {
+    background: #fff;
+}
+
+.msf-french p,
+.msf-upgrade p {
+    max-width: 56rem;
+    line-height: 1.7;
+    color: var(--color-text-muted, #475569);
+    margin: 0.5rem 0 0;
+}
+
+.msf-cta {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 0 !important;
+}
+
+.msf-cta h2 {
+    margin: 0 0 0.5rem;
+    color: #fff;
+}
+
+.msf-cta p {
+    margin: 0 0 1.5rem;
+    opacity: 0.9;
+}
+
+.msf-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}

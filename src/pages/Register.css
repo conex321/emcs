@@ -1,0 +1,214 @@
+.register-page {
+    min-height: calc(100vh - var(--header-height, 72px));
+    background: var(--color-neutral-50, #fafafa);
+}
+
+.register-hero {
+    background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+    color: #fff;
+    padding: 3rem 1.5rem 2.5rem;
+}
+
+.register-hero h1 {
+    color: #fff;
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.register-hero p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.register-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(min(320px, 100%), 1fr);
+    align-items: start;
+}
+
+@media (min-width: 900px) {
+    .register-grid {
+        grid-template-columns: 1fr 1.4fr;
+    }
+}
+
+.register-summary {
+    padding: 1.75rem;
+    position: sticky;
+    top: calc(var(--header-height, 72px) + 1rem);
+}
+
+.register-summary h2,
+.register-form h2 {
+    font-family: var(--font-display, 'Outfit', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--color-primary-dark, #1B4332);
+}
+
+.register-preselect {
+    padding: 1rem;
+    border-left: 3px solid #D4AF37;
+    background: #fdf9ec;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1.25rem;
+}
+
+.register-preselect-label,
+.register-cart-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-600, #6b7280);
+    margin: 0 0 0.4rem;
+    font-weight: 600;
+}
+
+.register-preselect-title {
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0 0 0.25rem;
+}
+
+.register-preselect-price {
+    color: var(--color-primary-dark, #1B4332);
+    font-weight: 700;
+    margin: 0;
+}
+
+.register-cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.register-cart-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eef0f5;
+    font-size: 0.95rem;
+}
+
+.register-cart-list li:last-child {
+    border-bottom: none;
+}
+
+.register-empty {
+    padding: 1rem;
+    border: 1px dashed #e5e7eb;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.register-empty p {
+    margin: 0 0 0.75rem;
+    color: var(--color-neutral-600, #6b7280);
+    font-size: 0.9rem;
+}
+
+.register-help {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #eef0f5;
+    font-size: 0.9rem;
+}
+
+.register-help p {
+    margin: 0 0 0.25rem;
+    color: var(--color-neutral-600, #6b7280);
+}
+
+.register-help .auth-link {
+    color: var(--color-primary-dark, #1B4332);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-help .auth-link:hover {
+    text-decoration: underline;
+}
+
+.register-form {
+    padding: 1.75rem;
+}
+
+.register-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    min-width: 0;
+}
+
+.register-form .field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.register-form .field input,
+.register-form .field select {
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.register-form .field input:focus,
+.register-form .field select:focus {
+    outline: none;
+    border-color: var(--color-primary-dark, #1B4332);
+    box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.12);
+}
+
+.register-form .field-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: minmax(min(200px, 100%), 1fr) minmax(min(200px, 100%), 1fr);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .register-form .field-row {
+        grid-template-columns: minmax(min(200px, 100%), 1fr);
+    }
+}
+
+.register-form .field-row .field {
+    margin-bottom: 0;
+}
+
+.register-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.register-disclaimer {
+    margin: 1rem 0 0;
+    font-size: 0.8rem;
+    color: var(--color-neutral-600, #6b7280);
+    text-align: center;
+}
+
+.btn-block {
+    width: 100%;
+}

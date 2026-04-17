@@ -2,6 +2,104 @@
     overflow-x: hidden;
 }
 
+/* V2 Comparison Table */
+.courses-v2-comparison-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.courses-v2-comparison {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    min-width: 780px;
+}
+
+.courses-v2-comparison thead th {
+    background: #1e3a8a;
+    color: #fff;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.courses-v2-comparison tbody td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+}
+
+.courses-v2-comparison tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.courses-v2-comparison tbody tr:hover {
+    background: #eff6ff;
+}
+
+.courses-v2-footnote {
+    font-size: 0.8125rem;
+    color: #64748b;
+    font-style: italic;
+    margin: 1rem 0 2rem;
+    line-height: 1.6;
+}
+
+/* V2 Decision tree */
+.courses-v2-decision-tree {
+    background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
+    padding: 1.75rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #c7d2fe;
+}
+
+.courses-v2-decision-tree h3 {
+    margin: 0 0 1.25rem;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.decision-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: 1.25rem;
+}
+
+.decision-group {
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 8px;
+    border-top: 3px solid #2563eb;
+}
+
+.decision-group h4 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    color: #1e3a8a;
+}
+
+.decision-group ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #475569;
+}
+
+.decision-group ul li {
+    margin-bottom: 0.5rem;
+}
+
+.decision-group ul li strong {
+    color: #1e40af;
+}
+
 /* Courses Hero */
 .courses-hero {
     background: var(--bg-gradient-hero);

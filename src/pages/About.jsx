@@ -4,16 +4,8 @@ import './About.css'
 function About() {
     const { t } = useTranslation()
 
-    const team = [
-        { name: '[Name]', role: t('about.team.roles.principal'), emoji: '👨‍🏫' },
-        { name: '[Name]', role: t('about.team.roles.director'), emoji: '👩‍💼' },
-        { name: '[Name]', role: t('about.team.roles.success'), emoji: '👨‍💻' },
-        { name: '[Name]', role: t('about.team.roles.tech'), emoji: '👩‍💻' }
-    ]
-
     const accreditationItems = [
         { label: t('about.accreditationDetails.ministryInspection'), value: t('about.accreditationDetails.bsid') },
-        { label: t('about.accreditationDetails.ibWorld'), value: t('about.accreditationDetails.ibProgram') },
         { label: t('about.accreditationDetails.creditRecognition'), value: t('about.accreditationDetails.creditDetails') },
         { label: t('about.accreditationDetails.transcriptDelivery'), value: t('about.accreditationDetails.transcriptDetails') }
     ]
@@ -108,7 +100,7 @@ function About() {
             <section className="values-section section">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>Our Values</h2>
+                        <h2>{t('about.values.title', 'Our Values')}</h2>
                     </div>
                     <div className="values-grid">
                         <div className="value-item animate-fade-in-up">
@@ -135,24 +127,6 @@ function About() {
                 </div>
             </section>
 
-            {/* Leadership Team Section */}
-            <section className="team-section section bg-light">
-                <div className="container">
-                    <div className="section-header text-center">
-                        <h2>{t('about.team.title')}</h2>
-                        <p className="section-subtitle">{t('about.team.subtitle')}</p>
-                    </div>
-                    <div className="team-grid">
-                        {team.map((member, index) => (
-                            <div key={index} className="team-card card animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                                <div className="team-avatar">{member.emoji}</div>
-                                <h4>{member.name}</h4>
-                                <p>{member.role}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
         </div>
     )
 }

@@ -2,8 +2,8 @@
   "navigation": {
     "brand": {
       "name": "EMCS",
-      "fullName": "Excellence Maple Canadian School",
-      "logo": "/images/logo-shield.png",
+      "fullName": "Toronto EMCS",
+      "logo": null,
       "tagline": "Ontario Ministry Inspected School • BSID: 665588",
       "href": "/"
     },
@@ -583,9 +583,7 @@
     "title": "Ministry Inspected Private School",
     "bsid": "665588",
     "statement": "EMCS is inspected by the Ontario Ministry of Education and authorized to grant credits toward the Ontario Secondary School Diploma (OSSD).",
-    "details": "Our credits hold the same value as those earned in traditional Ontario day schools and are recognized by all Canadian colleges and universities. Transcripts are sent directly to OUAC, OCAS, and educational institutions worldwide.",
-    "ibWorldSchool": true,
-    "ibProgram": "Diploma Programme"
+    "details": "Our credits hold the same value as those earned in traditional Ontario day schools and are recognized by all Canadian colleges and universities. Transcripts are sent directly to OUAC, OCAS, and educational institutions worldwide."
   },
   "universities": [
     "University of Toronto",

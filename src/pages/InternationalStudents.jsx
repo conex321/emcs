@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import './InternationalStudents.css'
 
 function InternationalStudents() {
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
 
     const steps = [
         { num: 1, icon: '📝', title: t('international.step1') },
@@ -23,23 +23,23 @@ function InternationalStudents() {
     const whyChoose = [
         {
             icon: '✓',
-            title: i18n.language === 'vi' ? 'Được Bộ Giáo Dục Ontario Kiểm Tra' : 'Ontario Ministry Inspected',
-            desc: i18n.language === 'vi' ? 'BSID: 665588 - Học bạ chính thức được các trường đại học toàn cầu công nhận' : 'BSID: 665588 - Official transcripts recognized by universities worldwide'
+            title: t('international.whyChoose.inspected.title', 'Ontario Ministry Inspected'),
+            desc: t('international.whyChoose.inspected.desc', 'BSID: 665588 - Official transcripts recognized by universities worldwide')
         },
         {
             icon: '💻',
-            title: i18n.language === 'vi' ? '100% Trực Tuyến' : '100% Online',
-            desc: i18n.language === 'vi' ? 'Không cần chuyển chỗ ở đến Canada - học từ bất cứ đâu' : 'No relocation to Canada required - study from anywhere'
+            title: t('international.whyChoose.online.title', '100% Online'),
+            desc: t('international.whyChoose.online.desc', 'No relocation to Canada required - study from anywhere')
         },
         {
             icon: '👨‍🏫',
-            title: i18n.language === 'vi' ? 'Lớp Học Trực Tiếp' : 'Live Classes',
-            desc: i18n.language === 'vi' ? '6 giờ/tuần lớp học Zoom với giáo viên có chứng chỉ Ontario' : '6 hours/week live Zoom classes with Ontario Certified Teachers'
+            title: t('international.whyChoose.liveClasses.title', 'Live Classes'),
+            desc: t('international.whyChoose.liveClasses.desc', '6 hours/week live Zoom classes with Ontario Certified Teachers')
         },
         {
             icon: '📤',
-            title: i18n.language === 'vi' ? 'Gửi Hồ Sơ Trực Tiếp' : 'Direct Transcript Delivery',
-            desc: i18n.language === 'vi' ? 'Học bạ chính thức gửi trực tiếp đến các trường đại học' : 'Official transcripts sent directly to universities'
+            title: t('international.whyChoose.transcripts.title', 'Direct Transcript Delivery'),
+            desc: t('international.whyChoose.transcripts.desc', 'Official transcripts sent directly to universities')
         }
     ]
 
@@ -64,7 +64,7 @@ function InternationalStudents() {
             <section className="why-international section">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>{i18n.language === 'vi' ? 'Tại Sao Chọn EMCS?' : 'Why Choose EMCS?'}</h2>
+                        <h2>{t('international.whyChooseTitle', 'Why Choose EMCS?')}</h2>
                     </div>
                     <div className="why-grid">
                         {whyChoose.map((item, index) => (
@@ -83,12 +83,9 @@ function InternationalStudents() {
                 <div className="container">
                     <div className="partnership-card card">
                         <div className="partnership-content">
-                            <h3>{i18n.language === 'vi' ? 'Chương Trình OSSD Liên Kết với Tập Đoàn Giáo Dục Việt Anh' : 'Joint OSSD Program with Viet Anh Education Group'}</h3>
+                            <h3>{t('international.partnership.title', 'Joint OSSD Program with Viet Anh Education Group')}</h3>
                             <p>
-                                {i18n.language === 'vi'
-                                    ? 'EMC đã hợp tác với Tập Đoàn Giáo Dục Việt Anh để giúp học sinh Việt Nam đạt được cả OSSD và Bằng Tốt Nghiệp THPT Việt Nam. Sự hợp tác tiên phong này cho phép học sinh nhận tín chỉ OSSD mà không cần chuyển đến Canada.'
-                                    : 'EMC has partnered with Viet Anh Education Group Corporation to enable students in Vietnam to attain both the OSSD and the Vietnamese High School Diploma. This pioneering collaboration allows students to obtain OSSD credits without relocating to Canada.'
-                                }
+                                {t('international.partnership.desc', 'EMC has partnered with Viet Anh Education Group Corporation to enable students in Vietnam to attain both the OSSD and the Vietnamese High School Diploma. This pioneering collaboration allows students to obtain OSSD credits without relocating to Canada.')}
                             </p>
                         </div>
                     </div>
@@ -99,7 +96,7 @@ function InternationalStudents() {
             <section className="benefits-section section">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>{i18n.language === 'vi' ? 'Lợi Ích Cho Học Sinh Quốc Tế' : 'Benefits for International Students'}</h2>
+                        <h2>{t('international.benefitsTitle', 'Benefits for International Students')}</h2>
                     </div>
                     <div className="benefits-grid">
                         {benefits.map((benefit, index) => (
@@ -151,7 +148,7 @@ function InternationalStudents() {
                                     <li key={i}><span className="check">✓</span> {feature}</li>
                                 ))}
                             </ul>
-                            <Link to="/official-ontario" className="btn btn-primary btn-lg">{i18n.language === 'vi' ? 'Xem Khóa Học' : 'Browse Courses'}</Link>
+                            <Link to="/official-ontario" className="btn btn-primary btn-lg">{t('international.browseCourses', 'Browse Courses')}</Link>
                         </div>
                         <div className="pricing-card card featured">
                             <div className="featured-badge">{t('international.tuition.package.bestValue')}</div>
@@ -174,28 +171,28 @@ function InternationalStudents() {
             <section className="documents-section section bg-light">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>{i18n.language === 'vi' ? 'Hồ Sơ Cần Thiết' : 'Documents Required'}</h2>
+                        <h2>{t('international.documentsTitle', 'Documents Required')}</h2>
                     </div>
                     <div className="documents-grid">
                         <div className="document-card card">
                             <span className="doc-icon">📋</span>
-                            <h4>{i18n.language === 'vi' ? 'Đơn Đăng Ký' : 'Application Form'}</h4>
-                            <p>{i18n.language === 'vi' ? 'Hoàn thành đăng ký trực tuyến' : 'Complete online registration'}</p>
+                            <h4>{t('international.documents.applicationForm.title', 'Application Form')}</h4>
+                            <p>{t('international.documents.applicationForm.desc', 'Complete online registration')}</p>
                         </div>
                         <div className="document-card card">
                             <span className="doc-icon">📄</span>
-                            <h4>{i18n.language === 'vi' ? 'Học Bạ' : 'Transcripts'}</h4>
-                            <p>{i18n.language === 'vi' ? 'Học bạ các năm học trước (bản dịch tiếng Anh)' : 'Previous school transcripts (English translation)'}</p>
+                            <h4>{t('international.documents.transcripts.title', 'Transcripts')}</h4>
+                            <p>{t('international.documents.transcripts.desc', 'Previous school transcripts (English translation)')}</p>
                         </div>
                         <div className="document-card card">
                             <span className="doc-icon">🪪</span>
-                            <h4>{i18n.language === 'vi' ? 'Giấy Tờ Tùy Thân' : 'ID Document'}</h4>
-                            <p>{i18n.language === 'vi' ? 'Hộ chiếu hoặc giấy tờ tùy thân hợp lệ' : 'Passport or valid identification'}</p>
+                            <h4>{t('international.documents.idDocument.title', 'ID Document')}</h4>
+                            <p>{t('international.documents.idDocument.desc', 'Passport or valid identification')}</p>
                         </div>
                         <div className="document-card card">
                             <span className="doc-icon">📝</span>
-                            <h4>{i18n.language === 'vi' ? 'Đánh Giá Tiếng Anh' : 'English Assessment'}</h4>
-                            <p>{i18n.language === 'vi' ? 'Đánh giá trình độ tiếng Anh (nếu cần)' : 'English proficiency assessment (if required)'}</p>
+                            <h4>{t('international.documents.englishAssessment.title', 'English Assessment')}</h4>
+                            <p>{t('international.documents.englishAssessment.desc', 'English proficiency assessment (if required)')}</p>
                         </div>
                     </div>
                 </div>
@@ -207,7 +204,7 @@ function InternationalStudents() {
                     <h2>{t('international.cta.title')}</h2>
                     <p>{t('international.cta.subtitle')}</p>
                     <div className="cta-buttons">
-                        <Link to="/official-ontario" className="btn btn-accent btn-lg">{i18n.language === 'vi' ? 'Xem Khóa Học Có Tín Chỉ' : 'Browse Credit Courses'}</Link>
+                        <Link to="/official-ontario" className="btn btn-accent btn-lg">{t('international.browseCreditCourses', 'Browse Credit Courses')}</Link>
                         <Link to="/contact" className="btn btn-secondary btn-lg" style={{ borderColor: 'rgba(255,255,255,0.5)', color: 'white' }}>{t('nav.contact')}</Link>
                     </div>
                 </div>

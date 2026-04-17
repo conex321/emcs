@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import './CoursesDropdown.css'
 
-const gradeGroups = [
-    { label: 'Elementary', grades: ['1', '2', '3', '4', '5'] },
-    { label: 'Middle School', grades: ['6', '7', '8'] },
-    { label: 'High School', grades: ['9', '10', '11', '12'] }
-]
-
 function CoursesDropdown({ isOpen, onClose }) {
+    const { t } = useTranslation()
+
+    const gradeGroups = [
+        { label: t('nav.gradeGroups.elementary', 'Elementary'), grades: ['1', '2', '3', '4', '5'] },
+        { label: t('nav.gradeGroups.middleSchool', 'Middle School'), grades: ['6', '7', '8'] },
+        { label: t('nav.gradeGroups.highSchool', 'High School'), grades: ['9', '10', '11', '12'] }
+    ]
+
     if (!isOpen) return null
 
     return (
@@ -23,7 +26,7 @@ function CoursesDropdown({ isOpen, onClose }) {
                                 className="courses-grade-link"
                                 onClick={onClose}
                             >
-                                Grade {g}
+                                {t('nav.gradePrefix', 'Grade')} {g}
                             </Link>
                         ))}
                     </div>

@@ -62,7 +62,13 @@
             "desc": "Self-paced video lessons and activities for extra practice. No assessments, no credits—just learning.",
             "price": "Starting at $75 CAD",
             "cta": "Explore Practice Courses"
-        }
+        },
+        "highSchoolAcademicPrep": {
+            "title": "High School Preparation (Grades 9 to 12)",
+            "desc": "Non-credit, skills-based preparation that readies students to upgrade into the Official Ontario Program or into an EAP pathway.",
+            "cta": "Explore Academic Preparation"
+        },
+        "footnote": "Registration and entrance test fees vary by grade band. Grades 1 to 5 have no entrance test fee; Grades 6 to 12 have a $50 CAD entrance test fee. Grades 1 to 8 have a $50 CAD registration fee; Grades 9 to 12 have a $100 CAD registration fee. All fees are non-refundable."
     },
     "why": {
         "title": "Why Choose EMCS?",
@@ -171,13 +177,39 @@
             "primaryFoundation": {
                 "badge": "NEW",
                 "title": "Ontario Primary Foundation Program",
-                "desc": "Grades 1-5 aligned with Ontario Curriculum. Two pathways available:",
+                "desc": "Grades 1 to 5 aligned with Ontario Curriculum. Two pathways available:",
                 "selfLearning": "Self-Learning: From $75 CAD per subject",
                 "teacherLed": "Live Teacher-Led: $3,500 CAD per year",
-                "cta": "Learn More About Elementary Programs"
+                "cta": "Learn More About Elementary Programs",
+                "bullet1": "Academic Preparation (Self-Learning, Non-Ontario student record): From $75 CAD per subject with the 50% promotional discount, or $325 CAD for the full-year 6-subject bundle.",
+                "bullet2": "Upgrade to Ontario Official Program (Ontario student record): $250 CAD per course, or $600 CAD per year for the full 6-subject bundle.",
+                "bullet3": "Live Teacher-Led Primary Foundation (with Ontario report card): $3,500 CAD per year (premium teacher-led pathway)."
+            },
+            "middleSchool": {
+                "badge": "NEW",
+                "title": "Middle School Foundation (Grades 6 to 8)",
+                "desc": "Grades 6 to 8 Ontario Curriculum-aligned preparation with an optional upgrade to an Ontario student record.",
+                "bullet1": "Academic Preparation (Non-Credit): $75 per course (50% off), $325 CAD for the full-year 6-subject bundle.",
+                "bullet2": "Upgrade to Ontario Official Program (Ontario student record): $250 per course, $600 CAD per year.",
+                "bullet3": "Entrance Test Fee: $50 CAD (non-refundable). Registration Fee: $50 CAD.",
+                "cta": "Explore Middle School Foundation"
+            },
+            "highSchool": {
+                "badge": "FLEXIBLE PATHWAYS",
+                "title": "Ontario High School Pathways (Grades 9 to 12)",
+                "tagline": "Flexible Learning Pathways. Learn First. Decide Later. Succeed Safely.",
+                "desc": "Two pathways for Grades 9 to 12, both aligned with the Ontario Curriculum. Start with the Academic Preparation Program for skills and readiness, then upgrade to the Official Ontario Program for credit-bearing courses and the OSSD.",
+                "bullet1": "Academic Preparation Program (Non-Credit): Skills-focused preparation with no Ontario student record.",
+                "bullet2": "Official Ontario Program: Credit-bearing, Ontario student record, leading to the Ontario Secondary School Diploma.",
+                "bullet3": "Registration Fee: $100 CAD. Entrance Test Fee: $50 CAD.",
+                "bullet4": "Grade 9 and Grade 10 = 8-credit one-year programs. Grade 11 and Grade 12 = 7-credit one-year programs.",
+                "cta": "View High School Pathways"
             }
         },
-        "viewMore": "View More"
+        "viewMore": "View More",
+        "heroSubtitleV2": "We offer Ontario Curriculum-aligned learning for students in Grades 1 to 12 through two flexible pathways: Academic Preparation Program (Non-Ontario student record) and Official Ontario Program (Ontario student record). Students may start with preparation learning and upgrade to credit-bearing courses when academically ready.",
+        "taglineLearn": "Learn First. Decide Later. Succeed Safely.",
+        "featuredProgramsTitle": "Featured Programs"
     },
     "accreditation": {
         "title": "Ministry Inspected Private School",
@@ -207,10 +239,43 @@
         "tuition": "Tuition & Fees",
         "studentPortal": "Student Portal",
         "parentPortal": "Parent Portal",
-        "agentPortal": "Agent/School Portal"
+        "agentPortal": "Agent/School Portal",
+        "gradePrefix": "Grade",
+        "gradeAbbrev": "Gr",
+        "gradesRange": "Grades 1-12",
+        "browseByGrade": "Browse by Grade",
+        "viewMore": "View More →",
+        "gradeGroups": {
+            "elementary": "Elementary",
+            "middleSchool": "Middle School",
+            "highSchool": "High School",
+            "elementaryRange": "Elementary (1-5)",
+            "middleSchoolRange": "Middle School (6-8)",
+            "highSchoolRange": "High School (9-12)"
+        },
+        "programDropdown": {
+            "leftTitle": "Academic Preparation Program",
+            "leftSublabel": "Non-Credit | Non-Ontario student record",
+            "leftTagline": "Self-paced preparation. Learn First. Decide Later.",
+            "leftDescription": "The Academic Preparation Program builds strong foundations in Academic English, mathematics, science, social studies, and essential learning skills. Aligned with Ontario standards, it develops analytical thinking and disciplined study habits, preparing students for a smooth transition into OSSD credit courses or the Ontario Secondary School Diploma (OSSD) program.",
+            "rightTitle": "Official Ontario Program",
+            "rightSublabel": "Credit-bearing | Ontario student record",
+            "rightBadge": "Most Popular",
+            "rightTagline": "Earn official OSSD credits. Succeed Safely.",
+            "rightDescription": "The Official Ontario Program is a fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Aligned with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. With personalized academic guidance and a structured learning environment, students are prepared for university admission in Canada and internationally. Upon successful completion, students earn the Ontario Secondary School Diploma (OSSD).",
+            "compareLink": "Compare Both Programs →",
+            "scheduleLink": "View Academic Calendar →",
+            "pricingLink": "See Pricing",
+            "footerTagline": "Flexible Learning Pathways. Learn First. Decide Later. Succeed Safely."
+        },
+        "middleSchoolFoundation": "Middle School Foundation",
+        "highSchoolPathways": "High School Pathways",
+        "tuitionPage": "Tuition & Fees",
+        "academicCalendar": "Academic Calendar",
+        "compareProgramsLink": "Compare Programs"
     },
     "footer": {
-        "tagline": "Excellence in Canadian Online Education",
+        "tagline": "Ontario-accredited online education for students worldwide",
         "quickLinks": "Programs",
         "resources": "Resources",
         "about": "About",
@@ -227,10 +292,10 @@
     },
     "about": {
         "title": "About EMCS",
-        "subtitle": "Excellence Maple Canadian School",
+        "subtitle": "Toronto EMCS",
         "whoWeAre": {
             "title": "Who We Are",
-            "content": "Excellence Maple Canadian School (EMCS), operating as Toronto Academy of English, Mathematics and Coding (EMC), is a Ministry-inspected private school authorized by the Ontario Ministry of Education to grant OSSD credits. We provide high-quality education for students from Grades 1-12 based on the official Ontario Curriculum. As an IB World School for the Diploma Programme, we maintain the highest standards in curriculum delivery and student support.",
+            "content": "EMCS is a Ministry-inspected private school in Toronto, authorized by the Ontario Ministry of Education to grant OSSD credits. We provide high-quality education for students from Grades 1-12 based on the official Ontario Curriculum, with a focus on flexible, online delivery and personalized student support.",
             "bsid": "BSID: 665588 | Inspected by the Ontario Ministry of Education"
         },
         "story": "Our Story",
@@ -246,8 +311,6 @@
         "accreditationDetails": {
             "ministryInspection": "Ontario Ministry Inspection",
             "bsid": "BSID: 665588",
-            "ibWorld": "IB World School",
-            "ibProgram": "Diploma Programme",
             "creditRecognition": "Credit Recognition",
             "creditDetails": "Same as traditional Ontario day schools",
             "transcriptDelivery": "Transcript Delivery",
@@ -259,16 +322,6 @@
             "point2": "Credits are recognized by all Canadian colleges and universities",
             "point3": "International students can earn Canadian credentials without a study permit",
             "point4": "Marks are sent directly to OUAC and OCAS for post-secondary applications"
-        },
-        "team": {
-            "title": "Leadership Team",
-            "subtitle": "Dedicated educators committed to your success",
-            "roles": {
-                "principal": "Principal",
-                "director": "Academic Director",
-                "success": "Student Success Lead",
-                "tech": "Technology Director"
-            }
         },
         "values": {
             "excellence": {
@@ -290,7 +343,7 @@
         },
         "missionStatement": {
             "title": "Our Mission",
-            "content": "Toronto Academy of EMC strives to inspire and equip our students with the necessary mindset and skills to become independent lifelong learners, fully dedicated to making tangible and positive contributions to their communities and beyond."
+            "content": "EMCS strives to inspire and equip our students with the necessary mindset and skills to become independent lifelong learners, fully dedicated to making tangible and positive contributions to their communities and beyond."
         },
         "principalMessage": {
             "title": "Principal's Message",
@@ -474,7 +527,14 @@
             },
             "coreSubjects": {
                 "title": "Core Subjects (Delivered in English):",
-                "list": ["Mathematics", "Language", "The Arts", "Science & Technology", "Health & Physical Education", "Social Studies"]
+                "list": [
+                    "Mathematics",
+                    "Language",
+                    "The Arts",
+                    "Science & Technology",
+                    "Health & Physical Education",
+                    "Social Studies"
+                ]
             },
             "frenchNote": "French as a Second Language: Delivered in French by Canadian Teachers (Grades 4-5)",
             "cta": "Enroll in Teacher-Led Program"
@@ -1260,24 +1320,196 @@
             "enrollCourse": "Enroll in Course"
         },
         "programSchedule": "Program Schedule",
-        "individualCourses": "Individual Courses - Grade {grade}",
-        "chooseSpecific": "Choose specific subjects that fit your needs"
+        "individualCourses": "Individual Courses – Grade {{grade}}",
+        "chooseSpecific": "Choose specific subjects that fit your needs",
+        "invalidGrade": "Invalid Grade",
+        "invalidGradeDesc": "Sorry, we don't have pricing information for grade {{grade}}.",
+        "returnHome": "Return Home",
+        "hsTitle": "ONTARIO CURRICULUM PROGRAMS (Grades 9–12)",
+        "hsSubheading": "Flexible Learning Pathways",
+        "hsTagline": "Learn First. Decide Later. Succeed Safely.",
+        "gradePrograms": "Grade {{grade}} Programs",
+        "heroSubtitle": "Choose the program that fits your learning goals. Both options are aligned with the Ontario Curriculum.",
+        "fullYearPricing": "Full Year Pricing",
+        "singleCoursePricing": "Single Course Pricing",
+        "academicPrepTitle": "Academic Preparation Program (Non-Credit)",
+        "schedule": "Schedule",
+        "thSubject": "Subject",
+        "thLanguage": "Language",
+        "thDeliveryMethod": "Delivery Method",
+        "english": "English",
+        "selfLearningLms": "Self-Learning via LMS Platform",
+        "whatsIncludedLabel": "What's Included:",
+        "whatsIncludedNote": "All learning materials provided · Student and parent login credentials · 24/7 access to course content · Learn at your own pace",
+        "promoBanner": "Enroll now and receive a 50% discount — only ${{price}} for a 1-year program",
+        "registrationFee": "Registration Fee",
+        "entranceTestFee": "Entrance Test Fee",
+        "pricePerCourse": "Price per Course",
+        "fiftyOff": "50% OFF",
+        "fullYear6Subjects": "Full Year (6 subjects)",
+        "singleCoursePricingLink": "For single course pricing, click here →",
+        "enrollNow": "Enroll Now",
+        "upgradeToOfficial": "Upgrade to Official Ontario Program",
+        "ontarioStudentRecord": "(Ontario student record)",
+        "to": "to",
+        "hsIntro": "We offer programs based on the Ontario Curriculum for students in Grades 9–12, with two flexible learning pathways:",
+        "timetableTitle": "Grade {{grade}} Academic Year Timetable & Tuition Fee",
+        "thCourseCode": "Course Code",
+        "thCourseName": "Course Name",
+        "thType": "Type",
+        "thCredit": "Credit",
+        "thPriceCad": "Price (CAD)",
+        "thDiscountCad": "50% Discount (CAD)",
+        "gradeTotal": "Grade {{grade}} Total",
+        "registrationFeeLabel": "Registration Fee:",
+        "entranceTestFeeLabel": "Entrance Test Fee:",
+        "nonRefundable": "(non-refundable)",
+        "officialHsProgram": "Ontario Official High School Program",
+        "studyWithCanadianTeachers": "Study with Canadian Teachers",
+        "thTypeOfCredit": "Type of Credit",
+        "thPricePerCourseCad": "Price per Course (CAD)",
+        "discountedTuition": "Discounted Tuition ({{credits}} credits):",
+        "year": "year",
+        "note": "Note",
+        "comparePrograms": "Compare Programs",
+        "compareThAcademic": "Academic Preparation Program",
+        "compareThAcademicSub": "(Non-Ontario student record)",
+        "compareThOfficial": "Official Ontario Program",
+        "compareThOfficialSub": "(Ontario student record)",
+        "comparePurpose": "Purpose",
+        "comparePurposeAcademic": "Preparation for entry into the Official Ontario Program",
+        "comparePurposeOfficial": "Official Ontario high school program",
+        "compareProgramType": "Program Type",
+        "compareProgramTypeAcademic": "Preparation for credit",
+        "compareProgramTypeOfficial": "Credit-based secondary program",
+        "compareCurriculum": "Curriculum",
+        "compareCurriculumAcademic": "Ontario-aligned",
+        "compareCurriculumOfficial": "Official Ontario Curriculum",
+        "compareAcademicFocus": "Academic Focus",
+        "compareAcademicFocusAcademic": "Math, English, Science, and Social Studies",
+        "compareAcademicFocusOfficial": "Math, English, Science, and Social Studies",
+        "compareAssessment": "Assessment",
+        "compareAssessmentAcademic": "Skill-based feedback",
+        "compareAssessmentOfficial": "Graded courses with records and credits",
+        "compareProgression": "Progression",
+        "compareProgressionAcademic": "Pathway to the Official Ontario Program",
+        "compareProgressionOfficial": "OSSD completion",
+        "compareOutcome": "Outcome",
+        "compareOutcomeAcademic": "Academic readiness",
+        "compareOutcomeOfficial": "OSSD & university preparation",
+        "chooseSpecificSubjects": "Choose specific subjects that fit your needs",
+        "academicPrepSelfPaced": "Academic Preparation Program – Self-Paced Learning",
+        "academicPrepSingleDesc": "Video lessons and interactive activities · ${{price}} per subject (50% off regular price)",
+        "officialOntarioLive": "Official Ontario Program – Live Classes",
+        "officialOntarioSingleDesc": "Live instruction with Ontario Certified Teachers · ${{price}} per subject"
     },
     "portals": {
+        "comingSoon": "Coming Soon",
         "student": {
             "title": "Student Portal",
             "description": "LMS access for enrolled students",
-            "comingSoon": "Coming soon - Student LMS access"
+            "comingSoon": "Coming soon - Student LMS access",
+            "shortDesc": "Access your LMS and courses",
+            "portalTitle": "Student Learning Portal",
+            "portalDesc": "Access your courses, track your progress, submit assignments, and communicate with your teachers—all in one place.",
+            "featuresTitle": "What You'll Be Able To Do:",
+            "feature1Title": "Access Course Materials",
+            "feature1Desc": "View video lessons, download resources, and track your learning path",
+            "feature2Title": "Submit Assignments",
+            "feature2Desc": "Upload homework, quizzes, and projects directly to your teacher",
+            "feature3Title": "Track Progress",
+            "feature3Desc": "Monitor your grades, completion rates, and learning milestones",
+            "feature4Title": "Teacher Communication",
+            "feature4Desc": "Ask questions and get feedback from your Ontario Certified Teachers",
+            "feature5Title": "Join Live Classes",
+            "feature5Desc": "Access Zoom links and class schedules for live instruction",
+            "feature6Title": "View Transcripts",
+            "feature6Desc": "Access your official Ontario transcripts and report cards",
+            "ctaText": "Not enrolled yet? Start your learning journey today.",
+            "browseAcademicPrep": "Browse Academic Prep",
+            "browseOfficialOntario": "Browse Official Ontario",
+            "needHelp": "Need Help?",
+            "needHelpDesc": "If you're already enrolled and need login credentials, please contact our support team:",
+            "contactSupport": "Contact Support"
         },
         "parent": {
             "title": "Parent Portal",
             "description": "Enrollment and student progress tracking",
-            "comingSoon": "Coming soon - Enrollment and student progress"
+            "comingSoon": "Coming soon - Enrollment and student progress",
+            "shortDesc": "Enrollment and student progress",
+            "tabEnrollment": "New Enrollment",
+            "tabLogin": "Existing Account",
+            "enrollTitle": "Enroll Your Child",
+            "enrollDesc": "Register your child for Academic Preparation or Official Ontario Program courses. Track their progress and manage their education all in one place.",
+            "howItWorks": "How It Works:",
+            "step1Title": "Choose a Program",
+            "step1Desc": "Select Academic Prep (self-paced) or Official Ontario (live classes)",
+            "step2Title": "Add Courses to Cart",
+            "step2Desc": "Browse courses by grade and subject, add to cart",
+            "step3Title": "Complete Enrollment Form",
+            "step3Desc": "Provide student information and parent/guardian details",
+            "step4Title": "Submit Payment",
+            "step4Desc": "Pay securely via credit card, bank transfer, or Flywire",
+            "step5Title": "Receive Login Credentials",
+            "step5Desc": "Both parent and student portals within 24-48 hours",
+            "enrollAcademicPrep": "Enroll in Academic Prep",
+            "enrollOfficialOntario": "Enroll in Official Ontario",
+            "loginTitle": "Access Your Account",
+            "loginDesc": "View your child's progress, grades, attendance, and communicate with teachers.",
+            "dashFeaturesTitle": "Parent Dashboard Features:",
+            "dashFeature1Title": "Progress Tracking",
+            "dashFeature1Desc": "Real-time updates on course completion and grades",
+            "dashFeature2Title": "Class Schedule",
+            "dashFeature2Desc": "View upcoming live classes and assignment deadlines",
+            "dashFeature3Title": "Billing Management",
+            "dashFeature3Desc": "View invoices, payment history, and outstanding balances",
+            "dashFeature4Title": "Teacher Communication",
+            "dashFeature4Desc": "Message teachers and receive updates on your child's performance",
+            "dashFeature5Title": "Official Documents",
+            "dashFeature5Desc": "Download transcripts, report cards, and certificates",
+            "dashFeature6Title": "Add More Courses",
+            "dashFeature6Desc": "Enroll in additional courses anytime throughout the year",
+            "needCredentials": "Need Login Credentials?",
+            "needCredentialsDesc": "If you've enrolled but haven't received your login information, please contact us:",
+            "contactSupport": "Contact Support"
         },
         "agent": {
             "title": "Agent/School Portal",
             "description": "Partner enrollment forms and commission tracking",
-            "comingSoon": "Coming soon - Partner enrollment forms"
+            "comingSoon": "Coming soon - Partner enrollment forms",
+            "shortDesc": "Partner enrollment forms",
+            "portalTitle": "Partner Enrollment Portal",
+            "portalDesc": "Streamlined enrollment process for education agents and partner schools. Manage bulk enrollments, track commissions, and support your students' success.",
+            "featuresTitle": "Agent Dashboard Features:",
+            "feature1Title": "Bulk Enrollment Forms",
+            "feature1Desc": "Enroll multiple students at once with streamlined forms and CSV upload",
+            "feature2Title": "Commission Tracking",
+            "feature2Desc": "Real-time visibility into earnings, payouts, and referral status",
+            "feature3Title": "Student Management",
+            "feature3Desc": "View all students you've enrolled, their progress, and enrollment status",
+            "feature4Title": "Analytics Dashboard",
+            "feature4Desc": "Track enrollment trends, popular programs, and student outcomes",
+            "feature5Title": "Promotional Materials",
+            "feature5Desc": "Download brochures, flyers, and marketing assets for your region",
+            "feature6Title": "Dedicated Support",
+            "feature6Desc": "Priority support from our partner relations team",
+            "whyPartner": "Why Partner With EMCS?",
+            "benefit1Title": "Ministry Inspected",
+            "benefit1Desc": "Official Ontario Ministry accreditation (BSID: 665588)",
+            "benefit2Title": "Global Recognition",
+            "benefit2Desc": "OSSD credentials recognized by universities worldwide",
+            "benefit3Title": "Competitive Commissions",
+            "benefit3Desc": "Attractive commission structure for agent partners",
+            "benefit4Title": "Growing Programs",
+            "benefit4Desc": "Grades 1-12 with both Academic Prep and Official Ontario options",
+            "partnerCtaTitle": "Interested in Becoming a Partner?",
+            "partnerCta": "Interested in Becoming a Partner?",
+            "partnerCtaDesc": "Join our network of education agents and partner schools. Help students worldwide access quality Canadian education.",
+            "inquirePartnership": "Inquire About Partnership",
+            "emailPartnership": "Email: partnerships@emcs.ca",
+            "existingPartner": "Existing Partner?",
+            "existingPartnerDesc": "If you're already an approved partner and need login credentials:",
+            "contactPartnerSupport": "Contact Partner Support"
         }
     },
     "storefront": {
@@ -1500,6 +1732,593 @@
             "continue": "Continue",
             "processing": "Processing...",
             "pay": "Pay"
+        },
+        "courseDetail": {
+            "notFound": "Course Not Found",
+            "notFoundDesc": "The course you're looking for doesn't exist.",
+            "browseCourses": "Browse Courses",
+            "kindergarten": "Kindergarten",
+            "creditBadge": "Ontario Credit",
+            "nonCreditBadge": "Non-credit",
+            "creditAssurance": "This course awards 1.0 Ontario high school credit upon successful completion. Transcripts and report cards provided.",
+            "schedule": "Schedule",
+            "factSchedule": "Schedule",
+            "delivery": "Delivery",
+            "factDelivery": "Delivery",
+            "credit": "Credit",
+            "factCredit": "Credit",
+            "liveOnlineZoom": "Live online (Zoom)",
+            "ontarioCredit": "1.0 Ontario Credit",
+            "oneOntarioCredit": "1.0 Ontario Credit",
+            "ontarioCreditBadge": "Ontario Credit",
+            "format": "Format",
+            "factFormat": "Format",
+            "videoAndPractice": "Video + Practice",
+            "videoPlusPractice": "Video + Practice",
+            "pace": "Pace",
+            "factPace": "Pace",
+            "selfPaced": "Self-paced",
+            "access": "Access",
+            "factAccess": "Access",
+            "twelveMonths": "12 months",
+            "hrsPerWeek": "hrs/week",
+            "whatsIncluded": "What's Included:",
+            "prerequisiteLabel": "Prerequisite:",
+            "prerequisite": "Prerequisite:",
+            "viewCart": "View Cart",
+            "addToCart": "Add to Cart",
+            "haveQuestions": "Have Questions?",
+            "upgradeToCredit": "Upgrade to Credit Course →",
+            "upgradeToCreditCourse": "Upgrade to Credit Course →",
+            "overview": "Overview",
+            "curriculum": "Curriculum",
+            "faqs": "FAQs",
+            "courseOverview": "Course Overview",
+            "whatYouLearn": "What You'll Learn",
+            "whatYoullLearn": "What You'll Learn",
+            "teachingApproach": "Teaching Approach",
+            "courseCurriculum": "Course Curriculum",
+            "unit": "Unit",
+            "hours": "hours",
+            "faqsTitle": "Frequently Asked Questions",
+            "faqTitle": "Frequently Asked Questions",
+            "exploreMore": "Explore More {{gradeLabel}} Courses",
+            "viewAllDesc": "View all available {{type}} courses for this grade.",
+            "viewAllCourses": "View All {{gradeLabel}} Courses",
+            "viewAll": "View All {{gradeLabel}} Courses",
+            "creditType": "credit",
+            "nonCreditType": "non-credit",
+            "creditBreadcrumb": "Credit",
+            "nonCreditBreadcrumb": "Non-credit"
         }
+    },
+    "coursePage": {
+        "sections": {
+            "overview": "Overview",
+            "curriculum": "Curriculum",
+            "faqs": "FAQs"
+        },
+        "bonusText": "FREE: Practice course included"
+    },
+    "subjects": {
+        "math": {
+            "name": "Mathematics",
+            "desc": "Number sense, operations, algebra, and problem-solving"
+        },
+        "language": {
+            "name": "Language",
+            "desc": "Reading, writing, speaking, and listening skills"
+        },
+        "science": {
+            "name": "Science & Technology",
+            "desc": "Life systems, matter and energy, structures and mechanisms"
+        },
+        "social": {
+            "name": "Social Studies",
+            "desc": "Heritage, communities, and citizenship"
+        },
+        "arts": {
+            "name": "The Arts",
+            "desc": "Visual arts, music, drama, and dance"
+        },
+        "health": {
+            "name": "Health & Physical Education",
+            "desc": "Active living, movement skills, and healthy choices"
+        },
+        "discountBadge": "50% OFF",
+        "selfPacedVideo": "Self-paced video",
+        "liveClasses": "Live classes",
+        "enroll": "Enroll",
+        "details": "Details",
+        "comingSoon": "Course coming soon"
+    },
+    "activities": {
+        "ui": {
+            "notFound": "Activity not found",
+            "checkAnswer": "Check Answer",
+            "nextQuestion": "Next Question →",
+            "tryAgain": "Try Again",
+            "correctAnswerIs": "The correct answer is: ",
+            "attempt": "Attempt",
+            "listenToQuestion": "Listen to question"
+        }
+    },
+    "academicPrep": {
+        "heroTitle": "Academic Preparation Program (Non-Credit)",
+        "heroDesc": "The Academic Preparation Program (Non-Credit) is designed for students who aspire to pursue a rigorous academic pathway within an international educational framework. The program focuses on establishing strong academic foundations while cultivating analytical thinking, disciplined study habits, and the confidence required to succeed within the Canadian education system. Developed in alignment with Ontario curriculum standards, the program strengthens students' competencies in Academic English, mathematical reasoning, and advanced learning skills. Through personalized learning pathways and close academic mentorship, the program provides a solid transition into OSSD credit courses or EAP programs, preparing students to excel in high-quality, globally oriented academic environments.",
+        "featureVideoLessons": "Video Lessons",
+        "featureSelfPaced": "Self-Paced",
+        "featurePractice": "Practice Activities",
+        "featureAccess": "24/7 Access",
+        "gradeGroupElem": "Elementary (Grades 1-5)",
+        "gradeGroupElemDesc": "Build strong foundations in core subjects",
+        "gradeGroupMiddle": "Middle School (Grades 6-8)",
+        "gradeGroupMiddleDesc": "Prepare for high school success",
+        "gradeGroupHs": "High School (Grades 9-12)",
+        "gradeGroupHsDesc": "Practice and review for credit courses",
+        "whatsIncluded": "What's Included",
+        "included1Title": "Video Lessons",
+        "included1Desc": "High-quality instructional videos covering the Ontario curriculum",
+        "included2Title": "Practice Activities",
+        "included2Desc": "Interactive exercises with immediate feedback",
+        "included3Title": "Homework Exercises",
+        "included3Desc": "Reinforcement activities to build confidence",
+        "included4Title": "Self-Paced Learning",
+        "included4Desc": "Learn anytime, anywhere at your own speed",
+        "included5Title": "12-Month Access",
+        "included5Desc": "Full access to all course materials for 12 months",
+        "included6Title": "Progress Tracking",
+        "included6Desc": "Monitor your learning journey and achievements",
+        "browseByGrade": "Browse by Grade Level",
+        "browseByGradeSubtitle": "Select a grade group to explore available courses",
+        "pricingElem": "💰 <strong>$75 per subject</strong> or <strong>$450 for full year</strong> (all 6 subjects)",
+        "pricingHs": "💰 <strong>$75 per course</strong> or <strong>$450 for full year</strong>",
+        "whyTitle": "Why Choose Academic Preparation?",
+        "keyFeature1Title": "Ontario Curriculum",
+        "keyFeature1Desc": "All content aligned with the official Ontario curriculum standards",
+        "keyFeature2Title": "Learn at Your Pace",
+        "keyFeature2Desc": "No deadlines or schedules—complete courses when it works for you",
+        "keyFeature3Title": "Interactive Content",
+        "keyFeature3Desc": "Engaging video lessons with practice activities and homework",
+        "keyFeature4Title": "Affordable Pricing",
+        "keyFeature4Desc": "Quality education at a fraction of the cost of traditional programs",
+        "ctaTitle": "Ready to Start Learning?",
+        "ctaDesc": "Choose a grade level above to explore courses and start your journey",
+        "ctaBrowseGrades": "Browse All Grades",
+        "ctaBrowseElem": "Browse Elementary (Grades 1-5)",
+        "ctaContact": "Contact Us",
+        "ctaContactUs": "Contact Us",
+        "featurePracticeActivities": "Practice Activities",
+        "featureStartingPrice": "From $75/subject",
+        "pricingHsFullYear": "Full year from",
+        "pricingHsDiscount": "$450",
+        "pricingElemOr": "or",
+        "pricingElemFullYear": "$450 for full year",
+        "pricingElemDiscount": "$75",
+        "pricingElemAll": "(all 6 subjects)"
+    },
+    "officialOntario": {
+        "heroTitle": "Official Ontario Program — Ontario Secondary School Diploma (OSSD)",
+        "heroDesc": "The Ontario Secondary School Diploma (OSSD) Program is a prestigious, fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Delivered in alignment with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. Through personalized academic guidance and a structured learning environment, students are fully prepared for graduation, university admission in Canada and internationally, and long-term success within a globally recognized education system.",
+        "mostPopularChoice": "Most Popular Choice",
+        "featureLiveClasses": "Live Classes",
+        "featureOctTeachers": "OCT Teachers",
+        "featureOfficialCredits": "Official Credits",
+        "featureOssdDiploma": "OSSD Diploma",
+        "ministryTitle": "Ontario Ministry Inspected School",
+        "ministryBsid": "BSID: 665588",
+        "ministryAuth": "Authorized to grant credits toward the Ontario Secondary School Diploma (OSSD)",
+        "whatsIncluded": "What's Included",
+        "included1Title": "Live Online Classes",
+        "included1Desc": "Interactive classes via Zoom with Ontario Certified Teachers",
+        "included2Title": "Official Transcripts",
+        "included2Desc": "Recognized by universities worldwide, sent directly to OUAC/OCAS",
+        "included3Title": "Formal Assessments",
+        "included3Desc": "Tests, assignments, and evaluations count toward your grade",
+        "included4Title": "Report Cards",
+        "included4Desc": "Official Ontario report cards upon course completion",
+        "included5Title": "Learning Materials",
+        "included5Desc": "All textbooks, resources, and course materials provided",
+        "included6Title": "Teacher Support",
+        "included6Desc": "Direct access to your teacher for help and guidance",
+        "browseByGrade": "Browse by Grade Level",
+        "browseByGradeSubtitle": "Select a grade group to explore available courses",
+        "gradeGroupElem": "Elementary (Grades 1-5)",
+        "gradeGroupElemDesc": "Official Ontario elementary education",
+        "gradeGroupMiddle": "Middle School (Grades 6-8)",
+        "gradeGroupMiddleDesc": "Build strong middle school foundations",
+        "gradeGroupHs": "High School (Grades 9-12)",
+        "gradeGroupHsDesc": "Earn official OSSD credits",
+        "pricingHs": "💰 <strong>$700 per course</strong> · Full year from <strong>$3,800</strong>",
+        "pricingElem": "💰 <strong>$250 per subject</strong> or <strong>$600 for full year</strong> (all 6 subjects)",
+        "whyTitle": "Why Choose Official Ontario Program?",
+        "keyFeature1Title": "Earn Real Credits",
+        "keyFeature1Desc": "Official OSSD credits recognized by Canadian and international universities",
+        "keyFeature2Title": "Expert Teachers",
+        "keyFeature2Desc": "Learn from Ontario Certified Teachers with years of teaching experience",
+        "keyFeature3Title": "Structured Learning",
+        "keyFeature3Desc": "Guided curriculum with assignments, tests, and formal evaluations",
+        "keyFeature4Title": "Global Recognition",
+        "keyFeature4Desc": "OSSD diploma accepted by top universities around the world",
+        "ctaTitle": "Ready to Earn Your OSSD?",
+        "ctaDesc": "Choose a grade level above to explore courses and start your journey",
+        "ctaBrowseHs": "Browse High School (Grades 9-12)",
+        "ctaContact": "Contact Us",
+        "ctaContactUs": "Contact Us",
+        "ministryDesc": "Authorized to grant credits toward the Ontario Secondary School Diploma (OSSD)",
+        "pricingHsFullYear": "Full year from",
+        "pricingElemOr": "or",
+        "pricingElemFullYear": "$600 for full year",
+        "pricingElemAll": "(all 6 subjects)"
+    },
+    "middleSchool": {
+        "hero": {
+            "badge": "Grades 6 to 8 Foundation",
+            "title": "Ontario Middle School Foundation Program",
+            "tagline": "Build the bridge from elementary to high school success"
+        },
+        "overview": {
+            "title": "Program Overview",
+            "body": "The Middle School Foundation Program supports Grades 6 to 8 students in consolidating the academic foundations required for a smooth entry into Ontario high school pathways. Delivered on the Academic Preparation platform with an optional upgrade to an Ontario student record, the program emphasizes Academic English, mathematical reasoning, scientific inquiry, and social studies literacy."
+        },
+        "grades": {
+            "grade6": {
+                "title": "Grade 6",
+                "body": "Transition into middle school with stronger reading comprehension, introductory algebraic thinking, scientific investigation, and geography and history units aligned with the Ontario Curriculum."
+            },
+            "grade7": {
+                "title": "Grade 7",
+                "body": "Deepen academic writing, introduce integers and equations, explore ecosystems and structural science, and study Canada's historical and geographical foundations."
+            },
+            "grade8": {
+                "title": "Grade 8",
+                "body": "Prepare for the Grade 9 academic bridge with pre-algebra, analytical writing, optics, water systems, and Canada's history through the 20th century."
+            }
+        },
+        "french": {
+            "title": "French as a Second Language",
+            "body": "French is introduced as a Second Language starting in Grade 6. Students migrating from an international curriculum may request an assessment for placement."
+        },
+        "upgrade": {
+            "title": "Upgrade Path",
+            "body": "Students may begin the year in the Academic Preparation Program and upgrade to the Official Ontario Program (Ontario student record) at any time. The $250 per course upgrade fee applies only to the subjects upgraded; full-year upgrade pricing is $600 for all 6 subjects."
+        },
+        "cta": {
+            "title": "Ready to Build Your Middle School Foundation?",
+            "subtitle": "Choose a pathway and start your Ontario-aligned learning journey today.",
+            "enroll": "Enroll in Academic Prep",
+            "upgrade": "Upgrade to Official Ontario",
+            "contact": "Speak with an Advisor"
+        }
+    },
+    "highSchool": {
+        "hero": {
+            "title": "ONTARIO CURRICULUM PROGRAMS (Grades 9 to 12)",
+            "subtitle": "Flexible Learning Pathways",
+            "tagline": "Learn First. Decide Later. Succeed Safely."
+        },
+        "lede": "We offer programs based on the Ontario Curriculum for students in Grades 9 to 12, with two flexible learning pathways.",
+        "dualCta": {
+            "left": "Start with Preparation",
+            "right": "Earn OSSD Credits"
+        },
+        "pathwayA": {
+            "title": "Academic Preparation Program (Non-Credit)",
+            "description": "The Academic Preparation Program (Non-Credit) is designed for students who aspire to pursue a rigorous academic pathway within an international educational framework. The program focuses on establishing strong academic foundations while cultivating analytical thinking, disciplined study habits, and the confidence required to succeed within the Canadian education system. Developed in alignment with Ontario curriculum standards, the program strengthens students' competencies in Academic English, mathematical reasoning, and advanced learning skills. Through personalized learning pathways and close academic mentorship, the program provides a solid transition into OSSD credit courses or EAP programs, preparing students to excel in high-quality, globally oriented academic environments.",
+            "outcomesTitle": "Outcomes",
+            "outcomes": [
+                "Academic English proficiency",
+                "Mathematical reasoning",
+                "Advanced learning skills",
+                "Transition readiness to OSSD credit courses",
+                "Transition readiness to English for Academic Purposes (EAP) programs"
+            ]
+        },
+        "pathwayB": {
+            "title": "Ontario Secondary School Diploma (OSSD) Program",
+            "description": "The Ontario Secondary School Diploma (OSSD) Program is a prestigious, fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Delivered in alignment with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. Through personalized academic guidance and a structured learning environment, students are fully prepared for graduation, university admission in Canada and internationally, and long-term success within a globally recognized education system.",
+            "outcomesTitle": "Outcomes",
+            "outcomes": [
+                "OSSD graduation",
+                "Ontario transcript",
+                "OUAC and OCAS direct delivery",
+                "Canadian and international university admission readiness"
+            ]
+        },
+        "officialHeading": "Ontario Official High School Program",
+        "officialSubheading": "Study with Canadian Teachers",
+        "tabs": {
+            "grade9": "Grade 9 Timetable",
+            "grade10": "Grade 10 Timetable",
+            "grade11": "Grade 11 Timetable",
+            "grade12": "Grade 12 Timetable"
+        },
+        "grade9Note": "The discounted tuition fee is applicable only to the one-year (8-credit) program. For single-course pricing, please view the individual courses. Students who have completed Grade 8 in their home country are not required to take French as a Second Language. An equivalent credit will be granted.",
+        "grade10Note": "The discounted tuition fee is applicable only to the one-year (8-credit) program. For single-course pricing, please view the individual courses. Students who have completed Grade 9 in their home country are not required to take French as a Second Language (Non-Credit pathway). An equivalent credit will be granted.",
+        "grade11Note": "The discounted tuition fee is applicable only to the one-year (7-credit) program. For single-course pricing, please view the individual courses. Students who have completed Grade 10 in their home country are not required to take French as a Second Language (Non-Credit pathway). An equivalent credit will be granted.",
+        "grade12Note": "MCV4U will be taken after MHF4U is completed. The discounted tuition fee is applicable only to the one-year (7-credit) program. For single-course pricing, please view the individual courses. Students who have completed Grade 10 in their home country are not required to take French as a Second Language (Non-Credit pathway). An equivalent credit will be granted.",
+        "fees": {
+            "registration": "Registration Fee: $100 CAD (non-refundable)",
+            "entranceTest": "Entrance Test Fee: $50 CAD (non-refundable)"
+        },
+        "dualPathway": {
+            "title": "Why the Dual Pathway?",
+            "learnFirst": {
+                "title": "Learn First",
+                "body": "Start in the Academic Preparation Program to validate readiness, build confidence, and pilot the Ontario Curriculum without the pressure of a permanent academic record."
+            },
+            "decideLater": {
+                "title": "Decide Later",
+                "body": "Upgrade to the Official Ontario Program at any point once the student is ready to earn credit and establish an Ontario student record."
+            },
+            "succeedSafely": {
+                "title": "Succeed Safely",
+                "body": "Reduce the risk of a low OSSD transcript grade by demonstrating mastery in the Academic Preparation Program before formalizing a credit."
+            }
+        },
+        "cta": {
+            "advisor": "Speak with an Advisor",
+            "browseCourses": "Browse Grade 9 to 12 Courses",
+            "calendar": "View Academic Calendar"
+        }
+    },
+    "tuitionPage": {
+        "hero": {
+            "title": "Tuition and Fees",
+            "subtitle": "Transparent pricing with no hidden costs"
+        },
+        "tabs": {
+            "elementary": "Elementary (Grades 1 to 5)",
+            "middle": "Middle School (Grades 6 to 8)",
+            "high": "High School (Grades 9 to 12)",
+            "feeSchedule": "Fee Schedule",
+            "payment": "Payment Methods"
+        },
+        "bands": {
+            "elementary": {
+                "heading": "Elementary Pricing (Grades 1 to 5)",
+                "subtitle": "Two pathways: Academic Preparation (self-learning) and an optional Upgrade to the Official Ontario Program (Ontario student record).",
+                "academicPrep": "Academic Preparation (Non-Credit) — $75 per course (50% off $150), $325 CAD for the full-year 6-subject bundle.",
+                "upgrade": "Upgrade to Ontario Official Program — $250 per course, $600 CAD per year (all 6 subjects).",
+                "legacy": "Live Teacher-Led Primary Foundation — $3,500 CAD per year (premium pathway with Ontario report card).",
+                "fees": "Registration Fee: $50 CAD. Entrance Test Fee: waived for Grades 1 to 5."
+            },
+            "middle": {
+                "heading": "Middle School Pricing (Grades 6 to 8)",
+                "subtitle": "Same structure as Elementary, with a $50 CAD entrance test fee.",
+                "academicPrep": "Academic Preparation (Non-Credit) — $75 per course (50% off $150), $325 CAD for the full-year 6-subject bundle.",
+                "upgrade": "Upgrade to Ontario Official Program — $250 per course, $600 CAD per year (all 6 subjects).",
+                "fees": "Registration Fee: $50 CAD. Entrance Test Fee: $50 CAD (non-refundable)."
+            },
+            "high": {
+                "heading": "High School Pricing (Grades 9 to 12)",
+                "subtitle": "Per-course and full-year program pricing for the 8-credit (Grades 9 and 10) and 7-credit (Grades 11 and 12) one-year programs.",
+                "academicPrep": "Academic Preparation (Non-Credit) — From $75 per course (50% off $150).",
+                "official": "Official Ontario Program — Per-course from $700 CAD. Full-year 8-credit program from $3,800 CAD (Grades 9 and 10). Full-year 7-credit program from $3,800 CAD (Grades 11 and 12). Contact admissions for domestic, visa, and international tier quotes.",
+                "fees": "Registration Fee: $100 CAD. Entrance Test Fee: $50 CAD (non-refundable)."
+            }
+        },
+        "feeScheduleHeading": "Consolidated Fee Schedule",
+        "feeScheduleNote": "All fees are non-refundable. Refund eligibility on tuition depends on course progress — contact admissions for details.",
+        "paymentHeading": "Payment Methods",
+        "paymentMethods": [
+            "Credit/Debit Card (Visa, Mastercard)",
+            "Bank Transfer",
+            "Flywire (for international payments, supports Alipay and WeChat Pay)"
+        ],
+        "schedule": "Standard academic year: September 5, 2026 to May 30, 2027 (39 instructional weeks). Continuous enrollment is also available — you may start any day of the year.",
+        "ctaTitle": "Ready to Enroll?",
+        "ctaSubtitle": "Start your Canadian education journey today.",
+        "ctaAcademicPrep": "Browse Academic Prep",
+        "ctaOfficialOntario": "Browse Official Ontario",
+        "ctaContact": "Contact Us"
+    },
+    "schedulePage": {
+        "hero": {
+            "title": "Academic Calendar 2026 to 2027",
+            "subtitle": "September 5, 2026 to May 30, 2027 · 39 instructional weeks"
+        },
+        "overview": {
+            "heading": "Calendar Overview",
+            "start": "Program Start: September 5, 2026",
+            "end": "Program End: May 30, 2027",
+            "winter": "Winter Break: mid-December 2026 to early January 2027",
+            "march": "March Break: mid-March 2027"
+        },
+        "continuousBanner": "Continuous enrollment is still available. You may start any day of the year and complete your course within 12 months.",
+        "assessmentHeading": "Assessment Windows",
+        "assessmentBody": "Official Ontario students complete proctored final examinations (30% of the final grade) during scheduled assessment windows. OSSLT dates are published by the Education Quality and Accountability Office (EQAO) and communicated by EMCS guidance counselors. Midterm mark reports are issued in early February 2027.",
+        "transcriptHeading": "Transcript Delivery Deadlines",
+        "transcriptBody": "OUAC and OCAS applications receive automatic midterm (February 2027) and final (June 2027) mark uploads. International transcripts are released within 10 business days of final grade posting.",
+        "programCardsHeading": "Program-Specific Schedules",
+        "programCards": {
+            "academicPrep": "Academic Preparation Program — Self-paced, 12-month access from enrollment. May begin any day of the year.",
+            "officialHs910": "Official Ontario Program (Grades 9 and 10) — Live 8-credit one-year program, September 5, 2026 to May 30, 2027.",
+            "officialHs1112": "Official Ontario Program (Grades 11 and 12) — Live 7-credit one-year program, September 5, 2026 to May 30, 2027.",
+            "primaryFoundation": "Primary Foundation Teacher-Led — Live 6-hour/week program, September 5, 2026 to May 30, 2027."
+        },
+        "downloadCta": "Download the 2026 to 2027 Academic Calendar (PDF)"
+    },
+    "comparePage": {
+        "hero": {
+            "title": "Academic Preparation Program vs. Official Ontario Program",
+            "subtitle": "Choose the pathway that fits your goals."
+        },
+        "selectorLabel": "Select grade band:",
+        "bands": {
+            "elementary": "Elementary (Grades 1 to 5)",
+            "middle": "Middle School (Grades 6 to 8)",
+            "high": "High School (Grades 9 to 12)"
+        },
+        "rows": {
+            "purpose": {
+                "label": "Purpose",
+                "academic": "Preparation for entry into the Official Ontario Program",
+                "official": "Official Ontario high school program leading to the OSSD"
+            },
+            "record": {
+                "label": "Student Record",
+                "academic": "No Ontario student record",
+                "official": "Ontario student record"
+            },
+            "credential": {
+                "label": "Credential",
+                "academic": "Certificate of Completion",
+                "official": "Ontario Academic Report Card, OSSD credits, OSSD diploma at Grade 12"
+            },
+            "curriculum": {
+                "label": "Curriculum",
+                "academic": "Ontario-aligned",
+                "official": "Official Ontario Curriculum"
+            },
+            "delivery": {
+                "label": "Delivery Method",
+                "academic": "Self-Learning via LMS Platform",
+                "official": "Live online classes with Ontario Certified Teachers plus self-paced components"
+            },
+            "assessment": {
+                "label": "Assessment",
+                "academic": "Skill-based feedback, no grades",
+                "official": "Full assessment with proctored finals, 70% coursework + 30% final examination"
+            },
+            "focus": {
+                "label": "Academic Focus",
+                "academic": "Academic English, mathematical reasoning, scientific literacy, social studies, essential learning skills",
+                "official": "Full Ontario Curriculum across all eight subject groupings"
+            },
+            "progression": {
+                "label": "Progression",
+                "academic": "Upgrade path into the Official Ontario Program at any time",
+                "official": "Direct OSSD completion and OUAC or OCAS application"
+            },
+            "outcome": {
+                "label": "Outcome",
+                "academic": "Academic readiness, EAP pathway readiness",
+                "official": "OSSD graduation, Canadian and international university admission readiness"
+            },
+            "fullYearPriceLow": {
+                "label": "Full Year Price (Grades 1 to 8)",
+                "academic": "$325 CAD",
+                "official": "$600 CAD"
+            },
+            "perCoursePriceLow": {
+                "label": "Per Course Price (Grades 1 to 8)",
+                "academic": "$75 CAD (50% off $150)",
+                "official": "$250 CAD"
+            },
+            "perCoursePriceHigh": {
+                "label": "Per Course Price (Grades 9 to 12)",
+                "academic": "$75 to $150 CAD",
+                "official": "From $700 CAD (contact admissions for tiered rates)"
+            },
+            "registrationFee": {
+                "label": "Registration Fee",
+                "academic": "$50 CAD (Gr 1-8), $100 CAD (Gr 9-12)",
+                "official": "$50 CAD (Gr 1-8), $100 CAD (Gr 9-12)"
+            },
+            "entranceTestFee": {
+                "label": "Entrance Test Fee",
+                "academic": "$0 CAD (Gr 1-5), $50 CAD (Gr 6-12)",
+                "official": "$0 CAD (Gr 1-5), $50 CAD (Gr 6-12)"
+            },
+            "schedule": {
+                "label": "Schedule",
+                "academic": "September 5, 2026 to May 30, 2027 with continuous enrollment",
+                "official": "September 5, 2026 to May 30, 2027"
+            }
+        },
+        "quiz": {
+            "heading": "Not sure? Take our 60-second program quiz",
+            "subtitle": "Answer 4 quick questions and we will recommend the best pathway for your student.",
+            "start": "Start Quiz",
+            "next": "Next",
+            "back": "Back",
+            "result": "Recommendation",
+            "retake": "Retake Quiz",
+            "exploreAcademic": "Explore Academic Preparation Program",
+            "exploreOfficial": "Explore Official Ontario Program",
+            "exploreHighSchool": "Explore High School Pathways",
+            "questions": [
+                {
+                    "q": "What grade is the student entering?",
+                    "options": [
+                        {
+                            "label": "Elementary (1 to 5)",
+                            "value": "elementary"
+                        },
+                        {
+                            "label": "Middle School (6 to 8)",
+                            "value": "middle"
+                        },
+                        {
+                            "label": "High School (9 to 12)",
+                            "value": "high"
+                        }
+                    ]
+                },
+                {
+                    "q": "Is an Ontario student record required for school transfer or university admission?",
+                    "options": [
+                        {
+                            "label": "Yes, required",
+                            "value": "yes"
+                        },
+                        {
+                            "label": "No, not needed right now",
+                            "value": "no"
+                        },
+                        {
+                            "label": "Not sure yet",
+                            "value": "unsure"
+                        }
+                    ]
+                },
+                {
+                    "q": "Has the student already mastered equivalent curriculum in their home country?",
+                    "options": [
+                        {
+                            "label": "Yes, they are ready for credit-bearing work",
+                            "value": "ready"
+                        },
+                        {
+                            "label": "No, they need preparation first",
+                            "value": "prep"
+                        }
+                    ]
+                },
+                {
+                    "q": "What is the primary goal?",
+                    "options": [
+                        {
+                            "label": "Preparation and skill-building",
+                            "value": "prep"
+                        },
+                        {
+                            "label": "Credit-bearing learning with a transcript",
+                            "value": "credit"
+                        },
+                        {
+                            "label": "OSSD graduation and university admission",
+                            "value": "ossd"
+                        }
+                    ]
+                }
+            ],
+            "results": {
+                "academic": {
+                    "title": "Start with the Academic Preparation Program",
+                    "body": "Based on your answers, we recommend beginning with the Academic Preparation Program. You can upgrade to the Official Ontario Program at any time once the student is ready to earn credit."
+                },
+                "official": {
+                    "title": "Enroll in the Official Ontario Program",
+                    "body": "Based on your answers, we recommend the Official Ontario Program so the student earns credit toward the OSSD from day one."
+                },
+                "highSchool": {
+                    "title": "Start with the High School Pathways hub",
+                    "body": "Based on your answers, the student should explore both flexible High School pathways side by side. Visit the High School Pathways page to review the Grades 9 to 12 timetables."
+                }
+            }
+        },
+        "cta": "Speak with an Advisor"
     }
 }

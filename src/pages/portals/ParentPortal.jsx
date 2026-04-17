@@ -24,7 +24,7 @@ function ParentPortal() {
             <div className="portal-content">
                 <div className="container">
                     <div className="portal-card">
-                        <div className="coming-soon-badge">Coming Soon</div>
+                        <div className="coming-soon-badge">{t('portals.comingSoon', 'Coming Soon')}</div>
 
                         {/* Tab Navigation */}
                         <div className="portal-tabs">
@@ -32,46 +32,46 @@ function ParentPortal() {
                                 className={`portal-tab ${activeTab === 'enrollment' ? 'active' : ''}`}
                                 onClick={() => setActiveTab('enrollment')}
                             >
-                                New Enrollment
+                                {t('portals.parent.tabEnrollment', 'New Enrollment')}
                             </button>
                             <button
                                 className={`portal-tab ${activeTab === 'login' ? 'active' : ''}`}
                                 onClick={() => setActiveTab('login')}
                             >
-                                Existing Account
+                                {t('portals.parent.tabLogin', 'Existing Account')}
                             </button>
                         </div>
 
                         {/* Enrollment Tab */}
                         {activeTab === 'enrollment' && (
                             <div className="tab-content">
-                                <h2>Enroll Your Child</h2>
+                                <h2>{t('portals.parent.enrollTitle', 'Enroll Your Child')}</h2>
                                 <p className="portal-description">
-                                    Register your child for Academic Preparation or Official Ontario Program courses. Track their progress and manage their education all in one place.
+                                    {t('portals.parent.enrollDesc', 'Register your child for Academic Preparation or Official Ontario Program courses. Track their progress and manage their education all in one place.')}
                                 </p>
 
                                 <div className="enrollment-steps">
-                                    <h3>How It Works:</h3>
+                                    <h3>{t('portals.parent.howItWorks', 'How It Works:')}</h3>
                                     <ol className="steps-list">
                                         <li>
-                                            <strong>Choose a Program</strong>
-                                            <p>Select Academic Prep (self-paced) or Official Ontario (live classes)</p>
+                                            <strong>{t('portals.parent.step1Title', 'Choose a Program')}</strong>
+                                            <p>{t('portals.parent.step1Desc', 'Select Academic Prep (self-paced) or Official Ontario (live classes)')}</p>
                                         </li>
                                         <li>
-                                            <strong>Add Courses to Cart</strong>
-                                            <p>Browse courses by grade and subject, add to cart</p>
+                                            <strong>{t('portals.parent.step2Title', 'Add Courses to Cart')}</strong>
+                                            <p>{t('portals.parent.step2Desc', 'Browse courses by grade and subject, add to cart')}</p>
                                         </li>
                                         <li>
-                                            <strong>Complete Enrollment Form</strong>
-                                            <p>Provide student information and parent/guardian details</p>
+                                            <strong>{t('portals.parent.step3Title', 'Complete Enrollment Form')}</strong>
+                                            <p>{t('portals.parent.step3Desc', 'Provide student information and parent/guardian details')}</p>
                                         </li>
                                         <li>
-                                            <strong>Submit Payment</strong>
-                                            <p>Pay securely via credit card, bank transfer, or Flywire</p>
+                                            <strong>{t('portals.parent.step4Title', 'Submit Payment')}</strong>
+                                            <p>{t('portals.parent.step4Desc', 'Pay securely via credit card, bank transfer, or Flywire')}</p>
                                         </li>
                                         <li>
-                                            <strong>Receive Login Credentials</strong>
-                                            <p>Both parent and student portals within 24-48 hours</p>
+                                            <strong>{t('portals.parent.step5Title', 'Receive Login Credentials')}</strong>
+                                            <p>{t('portals.parent.step5Desc', 'Both parent and student portals within 24-48 hours')}</p>
                                         </li>
                                     </ol>
                                 </div>
@@ -79,10 +79,10 @@ function ParentPortal() {
                                 <div className="portal-cta">
                                     <div className="cta-buttons">
                                         <Link to="/academic-prep" className="btn btn-primary">
-                                            Enroll in Academic Prep
+                                            {t('portals.parent.enrollAcademicPrep', 'Enroll in Academic Prep')}
                                         </Link>
                                         <Link to="/official-ontario" className="btn btn-accent">
-                                            Enroll in Official Ontario
+                                            {t('portals.parent.enrollOfficialOntario', 'Enroll in Official Ontario')}
                                         </Link>
                                     </div>
                                 </div>
@@ -92,63 +92,63 @@ function ParentPortal() {
                         {/* Login Tab */}
                         {activeTab === 'login' && (
                             <div className="tab-content">
-                                <h2>Access Your Account</h2>
+                                <h2>{t('portals.parent.loginTitle', 'Access Your Account')}</h2>
                                 <p className="portal-description">
-                                    View your child's progress, grades, attendance, and communicate with teachers.
+                                    {t('portals.parent.loginDesc', "View your child's progress, grades, attendance, and communicate with teachers.")}
                                 </p>
 
                                 <div className="portal-features">
-                                    <h3>Parent Dashboard Features:</h3>
+                                    <h3>{t('portals.parent.dashFeaturesTitle', 'Parent Dashboard Features:')}</h3>
                                     <ul className="feature-list">
                                         <li>
                                             <span className="feature-icon">📈</span>
                                             <div>
-                                                <strong>Progress Tracking</strong>
-                                                <p>Real-time updates on course completion and grades</p>
+                                                <strong>{t('portals.parent.dashFeature1Title', 'Progress Tracking')}</strong>
+                                                <p>{t('portals.parent.dashFeature1Desc', 'Real-time updates on course completion and grades')}</p>
                                             </div>
                                         </li>
                                         <li>
                                             <span className="feature-icon">📅</span>
                                             <div>
-                                                <strong>Class Schedule</strong>
-                                                <p>View upcoming live classes and assignment deadlines</p>
+                                                <strong>{t('portals.parent.dashFeature2Title', 'Class Schedule')}</strong>
+                                                <p>{t('portals.parent.dashFeature2Desc', 'View upcoming live classes and assignment deadlines')}</p>
                                             </div>
                                         </li>
                                         <li>
                                             <span className="feature-icon">💳</span>
                                             <div>
-                                                <strong>Billing Management</strong>
-                                                <p>View invoices, payment history, and outstanding balances</p>
+                                                <strong>{t('portals.parent.dashFeature3Title', 'Billing Management')}</strong>
+                                                <p>{t('portals.parent.dashFeature3Desc', 'View invoices, payment history, and outstanding balances')}</p>
                                             </div>
                                         </li>
                                         <li>
                                             <span className="feature-icon">📧</span>
                                             <div>
-                                                <strong>Teacher Communication</strong>
-                                                <p>Message teachers and receive updates on your child's performance</p>
+                                                <strong>{t('portals.parent.dashFeature4Title', 'Teacher Communication')}</strong>
+                                                <p>{t('portals.parent.dashFeature4Desc', "Message teachers and receive updates on your child's performance")}</p>
                                             </div>
                                         </li>
                                         <li>
                                             <span className="feature-icon">📜</span>
                                             <div>
-                                                <strong>Official Documents</strong>
-                                                <p>Download transcripts, report cards, and certificates</p>
+                                                <strong>{t('portals.parent.dashFeature5Title', 'Official Documents')}</strong>
+                                                <p>{t('portals.parent.dashFeature5Desc', 'Download transcripts, report cards, and certificates')}</p>
                                             </div>
                                         </li>
                                         <li>
                                             <span className="feature-icon">🛒</span>
                                             <div>
-                                                <strong>Add More Courses</strong>
-                                                <p>Enroll in additional courses anytime throughout the year</p>
+                                                <strong>{t('portals.parent.dashFeature6Title', 'Add More Courses')}</strong>
+                                                <p>{t('portals.parent.dashFeature6Desc', 'Enroll in additional courses anytime throughout the year')}</p>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
 
                                 <div className="portal-info-box">
-                                    <h3>Need Login Credentials?</h3>
-                                    <p>If you've enrolled but haven't received your login information, please contact us:</p>
-                                    <Link to="/contact" className="btn btn-outline">Contact Support</Link>
+                                    <h3>{t('portals.parent.needCredentials', 'Need Login Credentials?')}</h3>
+                                    <p>{t('portals.parent.needCredentialsDesc', "If you've enrolled but haven't received your login information, please contact us:")}</p>
+                                    <Link to="/contact" className="btn btn-outline">{t('portals.parent.contactSupport', 'Contact Support')}</Link>
                                 </div>
                             </div>
                         )}

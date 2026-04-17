@@ -4,6 +4,7 @@
 
 .program-landing {
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Program Hero */
@@ -491,4 +492,73 @@
     .group-info h3 {
         font-size: 1.1rem;
     }
+}
+
+/* V2: Pricing callout section */
+.pricing-callout-section {
+    padding: 2rem 0;
+    background: #f8fafc;
+}
+
+.pricing-v2-banner {
+    background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
+    color: #78350f;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #fbbf24;
+}
+
+.pricing-v2-upgrade {
+    background: #fff;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid #d4af37;
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--color-text, #1a202c);
+}
+
+/* V2: French exemption callout */
+.french-exemption-section {
+    padding: 2rem 0;
+    background: #fff;
+}
+
+.french-exemption-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+    border: 1px solid #c7d2fe;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.french-exemption-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.french-exemption-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.0625rem;
+    color: var(--color-text, #1a202c);
+}
+
+.french-exemption-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--color-text-muted, #475569);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.french-exemption-card ul li {
+    margin-bottom: 0.375rem;
 }

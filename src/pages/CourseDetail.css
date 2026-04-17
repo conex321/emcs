@@ -1,3 +1,7 @@
+.course-detail-page {
+    overflow-x: hidden;
+}
+
 /* Hero Section */
 .course-hero {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
@@ -255,7 +259,7 @@
 /* FAQ Grid */
 .faq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 1.5rem;
 }
 

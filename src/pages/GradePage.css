@@ -5,6 +5,7 @@
 .grade-page-dual {
     min-height: 100vh;
     background: var(--color-neutral-50, #f9fafb);
+    overflow-x: hidden;
 }
 
 /* Grade Hero */
@@ -70,7 +71,7 @@
 
 .two-column-comparison {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -82,6 +83,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 0;
 }
 
 .program-column:hover {
@@ -587,6 +589,20 @@
     padding: 3rem 0;
 }
 
+/* HS timetables have 6-column tables that need the full container width —
+   stack the two program columns vertically instead of side-by-side.
+   minmax(0, 1fr) allows the column (and its overflowing <table>) to shrink
+   inside the grid container so that the .timetable-wrapper's overflow-x
+   scrollbar can take over on narrow viewports. */
+.hs-timetable-section .two-column-comparison {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+}
+
+.hs-timetable-section .program-column {
+    min-width: 0;
+}
+
 .hs-intro {
     text-align: center;
     max-width: 800px;
@@ -790,4 +806,32 @@
 .grade-page-error h1 {
     color: var(--color-brand, #1B4332);
     margin-bottom: 1rem;
+}
+
+/* V2: Grade 8 transition callout */
+.grade8-transition-section {
+    padding: 1.5rem 0;
+}
+
+.grade8-transition-callout {
+    background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #fbbf24;
+    border-left: 4px solid #d97706;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    color: #78350f;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.grade8-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+/* V2: Schedule strip wrapper on grade pages */
+.grade-schedule-section {
+    padding: 1rem 0 2rem;
 }

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { checkAnswer, getRandomEncouragement } from '../data/activities'
 import './InteractiveActivity.css'
 
 function InteractiveActivity({ activity, onComplete }) {
+    const { t } = useTranslation()
     const [selectedAnswer, setSelectedAnswer] = useState(null)
     const [inputAnswer, setInputAnswer] = useState('')
     const [isSubmitted, setIsSubmitted] = useState(false)
@@ -21,7 +23,7 @@ function InteractiveActivity({ activity, onComplete }) {
     }, [activity?.activityId])
 
     if (!activity) {
-        return <div className="activity-error">Activity not found</div>
+        return <div className="activity-error">{t('activities.ui.notFound', 'Activity not found')}</div>
     }
 
     const handleChoiceSelect = (value) => {
@@ -76,7 +78,7 @@ function InteractiveActivity({ activity, onComplete }) {
         <div className={`interactive-activity ${activity.difficulty}`}>
             {/* Header */}
             <div className="activity-header">
-                <span className="activity-grade">Grade {activity.grade}</span>
+                <span className="activity-grade">{t('nav.gradePrefix', 'Grade') + ' '}{activity.grade}</span>
                 <span className="activity-topic">{activity.topic}</span>
             </div>
 
@@ -107,7 +109,7 @@ function InteractiveActivity({ activity, onComplete }) {
                         <p className="prompt-subtext">{activity.prompt.subtext}</p>
                     )}
                     {activity.prompt.voiceover && (
-                        <button className="voiceover-btn" aria-label="Listen to question">
+                        <button className="voiceover-btn" aria-label={t('activities.ui.listenToQuestion', 'Listen to question')}>
                             🔊
                         </button>
                     )}
@@ -191,30 +193,30 @@ function InteractiveActivity({ activity, onComplete }) {
                         onClick={handleSubmit}
                         disabled={selectedAnswer === null && inputAnswer === ''}
                     >
-                        Check Answer
+                        {t('activities.ui.checkAnswer', 'Check Answer')}
                     </button>
                 ) : result?.correct ? (
                     <button
                         className="btn btn-accent btn-lg"
                         onClick={handleNext}
                     >
-                        Next Question →
+                        {t('activities.ui.nextQuestion', 'Next Question →')}
                     </button>
                 ) : attempts < (activity.feedback.incorrect.showCorrectAfter || 3) ? (
                     <button
                         className="btn btn-secondary btn-lg"
                         onClick={handleTryAgain}
                     >
-                        Try Again
+                        {t('activities.ui.tryAgain', 'Try Again')}
                     </button>
                 ) : (
                     <div className="show-answer">
-                        <p>The correct answer is: <strong>{activity.answer}</strong></p>
+                        <p>{t('activities.ui.correctAnswerIs', 'The correct answer is: ')}<strong>{activity.answer}</strong></p>
                         <button
                             className="btn btn-accent btn-lg"
                             onClick={handleNext}
                         >
-                            Next Question →
+                            {t('activities.ui.nextQuestion', 'Next Question →')}
                         </button>
                     </div>
                 )}
@@ -224,7 +226,7 @@ function InteractiveActivity({ activity, onComplete }) {
             <div className="activity-meta">
                 <span className="meta-skill">{activity.skill}</span>
                 {attempts > 0 && (
-                    <span className="meta-attempts">Attempt {attempts}</span>
+                    <span className="meta-attempts">{t('activities.ui.attempt', 'Attempt')} {attempts}</span>
                 )}
             </div>
         </div>

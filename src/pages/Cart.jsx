@@ -30,13 +30,13 @@ function Cart() {
         setCouponSuccess('')
 
         if (!couponCode.trim()) {
-            setCouponError('Please enter a coupon code')
+            setCouponError(t('cart.enterCouponError', 'Please enter a coupon code'))
             return
         }
 
         const result = applyCoupon(couponCode.trim())
         if (result.success) {
-            setCouponSuccess(`Coupon applied: ${result.coupon.description}`)
+            setCouponSuccess(t('cart.couponApplied', 'Coupon applied: {{description}}', { description: result.coupon.description }))
             setCouponCode('')
         } else {
             setCouponError(result.error)
@@ -129,6 +129,19 @@ function Cart() {
                                 >
                                     {t('storefront.cart.remove')}
                                 </button>
+
+                                {/* V2: Upgrade affordance for non-credit items */}
+                                {item.storefront === 'non-credit' && (
+                                    <div className="cart-upgrade-affordance">
+                                        <span className="cart-upgrade-affordance__badge">
+                                            {t('storefronts.upgradeAffordance.badge', 'UPGRADE AVAILABLE')}
+                                        </span>
+                                        <p>{t('storefronts.upgradeAffordance.text', 'Want to earn Ontario credit for this course? Upgrade to the Official Ontario Program.')}</p>
+                                        <Link to={`/official-ontario/grade/${item.grade}`} className="btn btn-accent btn-sm">
+                                            {t('storefronts.upgradeAffordance.learnMore', 'Learn About Upgrading')} →
+                                        </Link>
+                                    </div>
+                                )}
 
                                 {/* Bundled Items */}
                                 {bundledItems

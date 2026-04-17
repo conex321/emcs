@@ -1275,15 +1275,63 @@
     }
 }
 
+.featured-programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.home-card-tagline {
+    font-weight: 700;
+    color: #78350f;
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+}
+
+.featured-program-card--gold {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+    border-color: #d4af37 !important;
+}
+
+.new-badge--gold {
+    background: #d4af37 !important;
+    color: #fff;
+}
+
+.home-v2-quicklinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.home-quicklink {
+    font-weight: 600;
+    color: #1e40af;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid #c7d2fe;
+    font-size: 0.875rem;
+}
+
+.home-quicklink:hover {
+    background: #eff6ff;
+    border-color: #2563eb;
+}
+
 .featured-program-card {
     position: relative;
-    max-width: 800px;
-    margin: 0 auto;
     padding: var(--space-8);
     border-radius: var(--radius-2xl);
     background: linear-gradient(135deg, #e8f5e9 0%, #fff 100%);
     border: 2px solid #27AE60;
-    text-align: center;
+    text-align: left;
 }
 
 @media (min-width: 768px) {

@@ -1,384 +1,472 @@
 {
-  "storefronts": {
-    "nonCredit": {
-      "label": "Non-credit",
-      "tagline": "Self-Paced Learning",
-      "heroTitle": "Non-credit Learning Programs",
-      "heroSubtitle": "Build skills at your own pace with engaging video lessons and practice activities.",
-      "description": "Self-paced video courses with homework practice",
-      "disclaimer": "This is a non-credit course. No tests, no assessments, no report card, no OSSD credit.",
-      "shortDisclaimer": "No tests, no OSSD credit",
-      "perfectFor": {
-        "title": "Perfect for:",
-        "items": [
-          "Extra practice alongside regular school",
-          "Summer learning to get ahead",
-          "Homeschool curriculum support",
-          "International students preparing for Canadian studies"
-        ]
-      },
-      "whatsIncluded": {
-        "title": "What's included:",
-        "items": [
-          "High-quality video lessons",
-          "Interactive practice activities",
-          "Homework exercises",
-          "Self-paced learning"
-        ]
-      },
-      "whatsNotIncluded": {
-        "title": "What's NOT included:",
-        "items": [
-          "Tests or assessments",
-          "Report cards or transcripts",
-          "Ontario OSSD credit",
-          "Live teacher instruction"
-        ]
-      },
-      "crossSell": "Looking for Ontario credit?",
-      "crossSellCta": "Browse Credit Courses",
-      "pricing": {
-        "startingAt": "Starting at $100 CAD",
-        "limitedOffer": "Limited time offer"
-      }
+    "storefronts": {
+        "nonCredit": {
+            "label": "Non-credit",
+            "tagline": "Self-Paced Learning",
+            "heroTitle": "Non-credit Learning Programs",
+            "heroSubtitle": "Build skills at your own pace with engaging video lessons and practice activities.",
+            "description": "Self-paced video courses with homework practice",
+            "disclaimer": "This is a non-credit course. No tests, no assessments, no report card, no OSSD credit.",
+            "shortDisclaimer": "No tests, no OSSD credit",
+            "perfectFor": {
+                "title": "Perfect for:",
+                "items": [
+                    "Extra practice alongside regular school",
+                    "Summer learning to get ahead",
+                    "Homeschool curriculum support",
+                    "International students preparing for Canadian studies"
+                ]
+            },
+            "whatsIncluded": {
+                "title": "What's included:",
+                "items": [
+                    "High-quality video lessons",
+                    "Interactive practice activities",
+                    "Homework exercises",
+                    "Self-paced learning"
+                ]
+            },
+            "whatsNotIncluded": {
+                "title": "What's NOT included:",
+                "items": [
+                    "Tests or assessments",
+                    "Report cards or transcripts",
+                    "Ontario OSSD credit",
+                    "Live teacher instruction"
+                ]
+            },
+            "crossSell": "Looking for Ontario credit?",
+            "crossSellCta": "Browse Credit Courses",
+            "pricing": {
+                "startingAt": "Starting at $100 CAD",
+                "limitedOffer": "Limited time offer"
+            }
+        },
+        "credit": {
+            "label": "Credit",
+            "tagline": "Ontario Credit Courses",
+            "heroTitle": "Ontario Credit Courses",
+            "heroSubtitle": "Earn official Ontario high school credits through live online classes with certified Canadian teachers.",
+            "description": "Live online classes with certified Canadian teachers",
+            "badge": "Ontario OSSD",
+            "badgeApproved": "Ministry of Education Approved",
+            "features": {
+                "title": "Why EMCS Credit Courses?",
+                "items": [
+                    "Ministry of Education approved (BSID: 665588)",
+                    "Ontario Certified Teachers (OCT)",
+                    "Live classes via Zoom (6 hrs/week)",
+                    "Official transcripts and report cards",
+                    "Credits count toward OSSD graduation",
+                    "Recognized by universities worldwide"
+                ]
+            },
+            "schedule": {
+                "title": "Schedule",
+                "format": "3 days/week x 2 hours/day",
+                "hoursPerWeek": "6 hours/week",
+                "classSize": "Small groups for personalized attention"
+            },
+            "crossSell": "Need practice before credit courses?",
+            "crossSellCta": "Browse Non-credit",
+            "pricing": {
+                "startingAt": "Starting at $3,000 CAD",
+                "liveOnline": "Live online with certified teacher"
+            }
+        },
+        "programFrame": {
+            "nonOntarioRecord": "Non-Ontario student record",
+            "ontarioRecord": "Ontario student record",
+            "nonCreditLabel": "Non-Credit | Non-Ontario student record",
+            "creditLabel": "Credit-bearing | Ontario student record",
+            "upgradeCallout": "UPGRADE to Official Ontario Program (Ontario student record)"
+        },
+        "pricingV2": {
+            "promoBanner": "Enroll now and receive a 50% discount — only $325 for a 1-year program",
+            "perCourseRegular": "$150 per course",
+            "perCourseDiscounted": "$75 per course (50% off)",
+            "fullYearPrep": "$325 per year (all 6 subjects)",
+            "upgradePerCourse": "$250 per course (upgrade to Ontario student record)",
+            "upgradeFullYear": "$600 per year (upgrade to Ontario student record, all 6 subjects)",
+            "legacyTeacherLed": "$3,500 per year — premium Teacher-Led Primary Foundation",
+            "highSchoolOfficial": "From $700 per course · Full-year program from $3,800 · Contact admissions for tiered quotes"
+        },
+        "schedule": {
+            "standard": "Schedule: September 5, 2026 to May 30, 2027 (39 instructional weeks)",
+            "continuous": "Continuous enrollment is also available — start any day of the year."
+        },
+        "gradeGroup": {
+            "elementary": {
+                "title": "Elementary (Grades 1 to 5)",
+                "range": "Gr 1 · Gr 2 · Gr 3 · Gr 4 · Gr 5"
+            },
+            "middle": {
+                "title": "Middle School (Grades 6 to 8)",
+                "range": "Gr 6 · Gr 7 · Gr 8"
+            },
+            "high": {
+                "title": "High School (Grades 9 to 12)",
+                "range": "Gr 9 · Gr 10 · Gr 11 · Gr 12"
+            }
+        },
+        "frenchExemption": {
+            "grade9": "Students who have completed Grade 8 in their home country are not required to take French as a Second Language. An equivalent credit will be granted.",
+            "grade10": "Students who have completed Grade 9 in their home country are not required to take French as a Second Language (Non-Credit pathway). An equivalent credit will be granted.",
+            "grade11": "Students who have completed Grade 10 in their home country are not required to take French as a Second Language (Non-Credit pathway). An equivalent credit will be granted.",
+            "grade12": "Students who have completed Grade 10 in their home country are not required to take French as a Second Language (Non-Credit pathway). An equivalent credit will be granted."
+        },
+        "gradeTotals": {
+            "grade9": "Grade 9 Total (8-credit one-year program)",
+            "grade10": "Grade 10 Total (8-credit one-year program)",
+            "grade11": "Grade 11 Total (7-credit one-year program)",
+            "grade12": "Grade 12 Total (7-credit one-year program)"
+        },
+        "mcv4uSequence": "MCV4U will be taken after MHF4U is completed.",
+        "learnFirst": "Learn First.",
+        "decideLater": "Decide Later.",
+        "succeedSafely": "Succeed Safely.",
+        "taglineStack": "Flexible Learning Pathways. Learn First. Decide Later. Succeed Safely.",
+        "programHint": "Preparation today, recognition tomorrow.",
+        "upgradeAffordance": {
+            "badge": "UPGRADE AVAILABLE",
+            "text": "Want to earn Ontario credit for this course? Upgrade to the Official Ontario Program.",
+            "pricePrefix": "Upgrade for just",
+            "cta": "Upgrade to Credit",
+            "learnMore": "Learn About Upgrading"
+        },
+        "grade8Transition": "Grade 8 students: prepare for the Grade 9 academic bridge. Consider enrolling directly in the Official Ontario Program for Grade 9 to begin earning OSSD credits from day one, or continue with the Academic Preparation Program to validate readiness first.",
+        "gradeGroupPanel": {
+            "leftHeading": "Academic Preparation Program (Non-Ontario student record)",
+            "leftDescription": "The Academic Preparation Program builds strong foundations in Academic English, mathematics, science, social studies, and essential learning skills. Aligned with Ontario standards, it develops analytical thinking and disciplined study habits, preparing students for a smooth transition into OSSD credit courses or the Ontario Secondary School Diploma (OSSD) program.",
+            "leftWhatsIncludedTitle": "What's Included",
+            "leftWhatsIncluded": [
+                "All learning materials provided",
+                "Student and parent login credentials",
+                "24/7 access to course content",
+                "Learn at your own pace"
+            ],
+            "leftCta": "Enroll in Academic Preparation",
+            "rightHeading": "UPGRADE to Official Ontario Program (Ontario student record)",
+            "rightDescription": "The Official Ontario Program is a fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Aligned with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. With personalized academic guidance and a structured learning environment, students are prepared for university admission in Canada and internationally. Upon successful completion, students earn the Ontario Secondary School Diploma (OSSD).",
+            "rightFeatures": [
+                "Ontario student record",
+                "Accredited pathway",
+                "University-aligned",
+                "OSSD pathway"
+            ],
+            "upgradeNote": "Students who started in the Academic Preparation Program may upgrade at any point during the academic year. Previous coursework contributes to the Ontario student record upon upgrade.",
+            "rightCta": "Upgrade to Official Ontario Program",
+            "subjectHeader": "Subject",
+            "languageHeader": "Language",
+            "deliveryHeader": "Delivery Method",
+            "selfLearning": "Self-Learning via LMS Platform",
+            "english": "English"
+        }
     },
-    "credit": {
-      "label": "Credit",
-      "tagline": "Ontario Credit Courses",
-      "heroTitle": "Ontario Credit Courses",
-      "heroSubtitle": "Earn official Ontario high school credits through live online classes with certified Canadian teachers.",
-      "description": "Live online classes with certified Canadian teachers",
-      "badge": "Ontario OSSD",
-      "badgeApproved": "Ministry of Education Approved",
-      "features": {
-        "title": "Why EMCS Credit Courses?",
-        "items": [
-          "Ministry of Education approved (BSID: 665588)",
-          "Ontario Certified Teachers (OCT)",
-          "Live classes via Zoom (6 hrs/week)",
-          "Official transcripts and report cards",
-          "Credits count toward OSSD graduation",
-          "Recognized by universities worldwide"
-        ]
-      },
-      "schedule": {
-        "title": "Schedule",
-        "format": "3 days/week x 2 hours/day",
-        "hoursPerWeek": "6 hours/week",
-        "classSize": "Small groups for personalized attention"
-      },
-      "crossSell": "Need practice before credit courses?",
-      "crossSellCta": "Browse Non-credit",
-      "pricing": {
-        "startingAt": "Starting at $3,000 CAD",
-        "liveOnline": "Live online with certified teacher"
-      }
-    }
-  },
-  "gradePage": {
-    "bundleCard": {
-      "titlePrefix": "Complete Grade",
-      "titleSuffix": "Program",
-      "includes": "Includes all Math, Science, and English courses",
-      "savePrefix": "Save",
-      "saveSuffix": "with bundle"
+    "gradePage": {
+        "bundleCard": {
+            "titlePrefix": "Complete Grade",
+            "titleSuffix": "Program",
+            "includes": "Includes all Math, Science, and English courses",
+            "savePrefix": "Save",
+            "saveSuffix": "with bundle"
+        },
+        "subjectTabs": {
+            "all": "All Subjects",
+            "math": "Math",
+            "science": "Science",
+            "english": "English"
+        }
     },
-    "subjectTabs": {
-      "all": "All Subjects",
-      "math": "Math",
-      "science": "Science",
-      "english": "English"
-    }
-  },
-  "courseCard": {
-    "credit": {
-      "badge": "Ontario Credit",
-      "liveOnline": "Live online",
-      "hoursPerWeek": "6 hrs/week",
-      "withTeacher": "With certified Ontario teacher"
+    "courseCard": {
+        "credit": {
+            "badge": "Ontario Credit",
+            "liveOnline": "Live online",
+            "hoursPerWeek": "6 hrs/week",
+            "withTeacher": "With certified Ontario teacher"
+        },
+        "nonCredit": {
+            "badge": "Non-credit",
+            "selfPaced": "Self-paced",
+            "videoAndPractice": "Video + Practice",
+            "noAssessments": "No tests or assessments"
+        },
+        "labels": {
+            "prerequisite": "Prerequisite",
+            "none": "None",
+            "viewDetails": "View Details",
+            "addToCart": "Add to Cart"
+        }
     },
-    "nonCredit": {
-      "badge": "Non-credit",
-      "selfPaced": "Self-paced",
-      "videoAndPractice": "Video + Practice",
-      "noAssessments": "No tests or assessments"
+    "coursePage": {
+        "creditAssurance": "This course awards 1.0 Ontario high school credit upon successful completion. Transcripts and report cards provided. Recognized by OUAC/OCAS and universities.",
+        "sections": {
+            "overview": "Overview",
+            "curriculum": "Curriculum",
+            "schedule": "Schedule",
+            "teacher": "Your Teacher",
+            "faqs": "FAQs",
+            "reviews": "Reviews"
+        },
+        "quickFacts": {
+            "prerequisite": "Prerequisite",
+            "creditValue": "Credit Value",
+            "duration": "Duration",
+            "schedule": "Schedule",
+            "delivery": "Delivery"
+        },
+        "deliveryMethods": {
+            "liveOnline": "Live online (Zoom)",
+            "selfPaced": "Self-paced"
+        },
+        "included": {
+            "title": "Included with this course",
+            "credit": [
+                "Live Zoom sessions",
+                "Recorded lesson replays",
+                "Practice problem sets",
+                "Quizzes and tests",
+                "Final examination",
+                "Official transcript",
+                "Report card"
+            ],
+            "nonCredit": [
+                "Video lessons",
+                "Practice activities",
+                "Homework exercises"
+            ]
+        },
+        "bonusBadge": "BONUS",
+        "bonusText": "FREE: Practice Course Included"
     },
-    "labels": {
-      "prerequisite": "Prerequisite",
-      "none": "None",
-      "viewDetails": "View Details",
-      "addToCart": "Add to Cart"
-    }
-  },
-  "coursePage": {
-    "creditAssurance": "This course awards 1.0 Ontario high school credit upon successful completion. Transcripts and report cards provided. Recognized by OUAC/OCAS and universities.",
-    "sections": {
-      "overview": "Overview",
-      "curriculum": "Curriculum",
-      "schedule": "Schedule",
-      "teacher": "Your Teacher",
-      "faqs": "FAQs",
-      "reviews": "Reviews"
-    },
-    "quickFacts": {
-      "prerequisite": "Prerequisite",
-      "creditValue": "Credit Value",
-      "duration": "Duration",
-      "schedule": "Schedule",
-      "delivery": "Delivery"
-    },
-    "deliveryMethods": {
-      "liveOnline": "Live online (Zoom)",
-      "selfPaced": "Self-paced"
-    },
-    "included": {
-      "title": "Included with this course",
-      "credit": [
-        "Live Zoom sessions",
-        "Recorded lesson replays",
-        "Practice problem sets",
-        "Quizzes and tests",
-        "Final examination",
-        "Official transcript",
-        "Report card"
-      ],
-      "nonCredit": [
-        "Video lessons",
-        "Practice activities",
-        "Homework exercises"
-      ]
-    },
-    "bonusBadge": "BONUS",
-    "bonusText": "FREE: Practice Course Included"
-  },
-  "cart": {
-    "title": "Shopping Cart",
-    "empty": "Your cart is empty",
-    "emptySubtext": "Add courses to get started",
-    "browseCourses": "Browse Courses",
-    "bundleMessage": {
-      "title": "BONUS INCLUDED",
-      "text": "Your credit course purchase includes FREE access to the related Non-credit practice course. Start practicing right away!"
-    },
-    "upgradePrompt": {
-      "title": "UPGRADE AVAILABLE",
-      "text": "Want to earn Ontario credit for this course?",
-      "cta": "Learn About Upgrading",
-      "pricePrefix": "Upgrade for just"
-    },
-    "coupon": {
-      "placeholder": "Have a coupon code?",
-      "apply": "Apply",
-      "applied": "applied",
-      "remove": "Remove",
-      "invalid": "Invalid coupon code",
-      "expired": "Coupon has expired",
-      "minimum": "Minimum order of {amount} required"
-    },
-    "summary": {
-      "subtotal": "Subtotal",
-      "discount": "Discount",
-      "total": "Total",
-      "proceedToCheckout": "Proceed to Checkout"
-    },
-    "remove": "Remove",
-    "free": "FREE"
-  },
-  "checkout": {
-    "title": "Checkout",
-    "steps": {
-      "cart": "Cart",
-      "details": "Details",
-      "payment": "Payment",
-      "confirmation": "Confirmation"
-    },
-    "parentDetails": {
-      "title": "Parent/Guardian Information",
-      "subtitle": "Account Holder",
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "email": "Email",
-      "phone": "Phone",
-      "country": "Country",
-      "province": "Province/State",
-      "createAccount": "Create an account to track enrollment and progress",
-      "password": "Password",
-      "confirmPassword": "Confirm Password"
-    },
-    "studentDetails": {
-      "title": "Student Information",
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "dateOfBirth": "Date of Birth",
-      "currentGrade": "Current Grade",
-      "previousSchool": "Previous School (optional)"
-    },
-    "payment": {
-      "title": "Payment Method",
-      "cardOption": "Credit/Debit Card",
-      "flywireOption": "Flywire",
-      "flywireSubtext": "International payments - Bank transfer, Alipay",
-      "cardNumber": "Card Number",
-      "expiry": "Expiry",
-      "cvv": "CVV",
-      "nameOnCard": "Name on Card",
-      "saveCard": "Save card for future purchases",
-      "securePayment": "Secure payment. Your card details are encrypted.",
-      "termsAgree": "I agree to the Terms of Service and Privacy Policy",
-      "nonCreditAcknowledge": "I understand non-credit courses do not include assessments or OSSD credit",
-      "payButton": "Pay"
-    },
-    "flywire": {
-      "title": "Flywire International Payment",
-      "redirect": "You will be redirected to Flywire to complete your payment.",
-      "paymentAmount": "Payment Amount",
-      "payableTo": "Payable to: Excellence Maple Canadian School Inc.",
-      "reference": "Reference",
-      "methods": "Available payment methods on Flywire:",
-      "methodsList": [
-        "Bank Transfer",
-        "Alipay",
-        "WeChat Pay",
-        "Credit Card (international)"
-      ],
-      "continueButton": "Continue to Flywire",
-      "differentMethod": "Choose Different Method"
-    },
-    "confirmation": {
-      "title": "Payment Successful",
-      "thankYou": "Thank you!",
-      "orderNumber": "Order",
-      "emailSent": "A confirmation email has been sent to",
-      "whatsNext": "WHAT'S NEXT?",
-      "creditNextSteps": [
-        "Check your email for Zoom class schedule and link",
-        "Join orientation session within 48 hours",
-        "Meet your certified teacher",
-        "Access course materials in the student portal"
-      ],
-      "nonCreditNextSteps": [
-        "Log in to the student portal",
-        "Start learning immediately - courses are self-paced",
-        "Track progress in your dashboard"
-      ],
-      "receipt": {
-        "title": "ORDER RECEIPT",
-        "print": "Print",
-        "orderDate": "Order Date",
-        "orderNumber": "Order Number",
-        "paymentMethod": "Payment Method",
-        "items": "Items",
-        "subtotal": "Subtotal",
-        "discount": "Discount",
-        "totalPaid": "Total Paid"
-      },
-      "buttons": {
-        "dashboard": "Go to Student Dashboard",
-        "browse": "Browse More Courses"
-      }
-    },
-    "navigation": {
-      "back": "Back",
-      "backToCart": "Back to Cart",
-      "continue": "Continue",
-      "continueToPayment": "Continue to Payment"
-    }
-  },
-  "errors": {
-    "payment": {
-      "declined": "Payment declined. Please check your card details or try a different payment method.",
-      "expired": "Your card has expired. Please use a different card.",
-      "insufficient": "Insufficient funds. Please try a different card.",
-      "timeout": "Payment timed out. Please try again. Your card was not charged."
-    },
-    "coupon": {
-      "invalid": "This coupon code is not valid. Please check the code and try again.",
-      "expired": "This coupon has expired.",
-      "minimum": "This coupon requires a minimum order of ${amount}.",
-      "alreadyUsed": "This coupon has already been used.",
-      "wrongStorefront": "This coupon is only valid for {storefront} courses."
+    "cart": {
+        "title": "Shopping Cart",
+        "empty": "Your cart is empty",
+        "emptySubtext": "Add courses to get started",
+        "browseCourses": "Browse Courses",
+        "bundleMessage": {
+            "title": "BONUS INCLUDED",
+            "text": "Your credit course purchase includes FREE access to the related Non-credit practice course. Start practicing right away!"
+        },
+        "upgradePrompt": {
+            "title": "UPGRADE AVAILABLE",
+            "text": "Want to earn Ontario credit for this course?",
+            "cta": "Learn About Upgrading",
+            "pricePrefix": "Upgrade for just"
+        },
+        "coupon": {
+            "placeholder": "Have a coupon code?",
+            "apply": "Apply",
+            "applied": "applied",
+            "remove": "Remove",
+            "invalid": "Invalid coupon code",
+            "expired": "Coupon has expired",
+            "minimum": "Minimum order of {amount} required"
+        },
+        "summary": {
+            "subtotal": "Subtotal",
+            "discount": "Discount",
+            "total": "Total",
+            "proceedToCheckout": "Proceed to Checkout"
+        },
+        "remove": "Remove",
+        "free": "FREE"
     },
     "checkout": {
-      "emptyCart": "Your cart is empty. Add courses before checking out.",
-      "sessionExpired": "Your session has expired. Please log in again.",
-      "stockError": "One or more courses in your cart are no longer available."
+        "title": "Checkout",
+        "steps": {
+            "cart": "Cart",
+            "details": "Details",
+            "payment": "Payment",
+            "confirmation": "Confirmation"
+        },
+        "parentDetails": {
+            "title": "Parent/Guardian Information",
+            "subtitle": "Account Holder",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phone": "Phone",
+            "country": "Country",
+            "province": "Province/State",
+            "createAccount": "Create an account to track enrollment and progress",
+            "password": "Password",
+            "confirmPassword": "Confirm Password"
+        },
+        "studentDetails": {
+            "title": "Student Information",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "dateOfBirth": "Date of Birth",
+            "currentGrade": "Current Grade",
+            "previousSchool": "Previous School (optional)"
+        },
+        "payment": {
+            "title": "Payment Method",
+            "cardOption": "Credit/Debit Card",
+            "flywireOption": "Flywire",
+            "flywireSubtext": "International payments - Bank transfer, Alipay",
+            "cardNumber": "Card Number",
+            "expiry": "Expiry",
+            "cvv": "CVV",
+            "nameOnCard": "Name on Card",
+            "saveCard": "Save card for future purchases",
+            "securePayment": "Secure payment. Your card details are encrypted.",
+            "termsAgree": "I agree to the Terms of Service and Privacy Policy",
+            "nonCreditAcknowledge": "I understand non-credit courses do not include assessments or OSSD credit",
+            "payButton": "Pay"
+        },
+        "flywire": {
+            "title": "Flywire International Payment",
+            "redirect": "You will be redirected to Flywire to complete your payment.",
+            "paymentAmount": "Payment Amount",
+            "payableTo": "Payable to: Toronto EMCS Inc.",
+            "reference": "Reference",
+            "methods": "Available payment methods on Flywire:",
+            "methodsList": [
+                "Bank Transfer",
+                "Alipay",
+                "WeChat Pay",
+                "Credit Card (international)"
+            ],
+            "continueButton": "Continue to Flywire",
+            "differentMethod": "Choose Different Method"
+        },
+        "confirmation": {
+            "title": "Payment Successful",
+            "thankYou": "Thank you!",
+            "orderNumber": "Order",
+            "emailSent": "A confirmation email has been sent to",
+            "whatsNext": "WHAT'S NEXT?",
+            "creditNextSteps": [
+                "Check your email for Zoom class schedule and link",
+                "Join orientation session within 48 hours",
+                "Meet your certified teacher",
+                "Access course materials in the student portal"
+            ],
+            "nonCreditNextSteps": [
+                "Log in to the student portal",
+                "Start learning immediately - courses are self-paced",
+                "Track progress in your dashboard"
+            ],
+            "receipt": {
+                "title": "ORDER RECEIPT",
+                "print": "Print",
+                "orderDate": "Order Date",
+                "orderNumber": "Order Number",
+                "paymentMethod": "Payment Method",
+                "items": "Items",
+                "subtotal": "Subtotal",
+                "discount": "Discount",
+                "totalPaid": "Total Paid"
+            },
+            "buttons": {
+                "dashboard": "Go to Student Dashboard",
+                "browse": "Browse More Courses"
+            }
+        },
+        "navigation": {
+            "back": "Back",
+            "backToCart": "Back to Cart",
+            "continue": "Continue",
+            "continueToPayment": "Continue to Payment"
+        }
     },
-    "form": {
-      "required": "This field is required.",
-      "invalidEmail": "Please enter a valid email address.",
-      "invalidPhone": "Please enter a valid phone number.",
-      "passwordMismatch": "Passwords do not match.",
-      "invalidCard": "Please enter a valid card number."
+    "errors": {
+        "payment": {
+            "declined": "Payment declined. Please check your card details or try a different payment method.",
+            "expired": "Your card has expired. Please use a different card.",
+            "insufficient": "Insufficient funds. Please try a different card.",
+            "timeout": "Payment timed out. Please try again. Your card was not charged."
+        },
+        "coupon": {
+            "invalid": "This coupon code is not valid. Please check the code and try again.",
+            "expired": "This coupon has expired.",
+            "minimum": "This coupon requires a minimum order of ${amount}.",
+            "alreadyUsed": "This coupon has already been used.",
+            "wrongStorefront": "This coupon is only valid for {storefront} courses."
+        },
+        "checkout": {
+            "emptyCart": "Your cart is empty. Add courses before checking out.",
+            "sessionExpired": "Your session has expired. Please log in again.",
+            "stockError": "One or more courses in your cart are no longer available."
+        },
+        "form": {
+            "required": "This field is required.",
+            "invalidEmail": "Please enter a valid email address.",
+            "invalidPhone": "Please enter a valid phone number.",
+            "passwordMismatch": "Passwords do not match.",
+            "invalidCard": "Please enter a valid card number."
+        }
+    },
+    "cta": {
+        "addToCart": "Add to Cart",
+        "buyNow": "Buy Now",
+        "viewDetails": "View Details",
+        "viewOutline": "View Outline",
+        "upgradeToCredit": "Upgrade to Credit",
+        "checkout": "Checkout",
+        "startLearning": "Start Learning",
+        "browseCourses": "Browse Courses",
+        "contactUs": "Contact Us",
+        "browseNonCredit": "Browse Non-credit",
+        "browseCredit": "Browse Credit Courses"
+    },
+    "labels": {
+        "price": "Price",
+        "listPrice": "Regular Price",
+        "salePrice": "Sale Price",
+        "savings": "You Save",
+        "subtotal": "Subtotal",
+        "discount": "Discount",
+        "total": "Total",
+        "free": "FREE",
+        "included": "Included",
+        "prerequisite": "Prerequisite",
+        "delivery": "Delivery",
+        "schedule": "Schedule",
+        "duration": "Duration",
+        "creditValue": "Credit Value",
+        "weeks": "weeks",
+        "hours": "hours",
+        "hoursPerWeek": "hrs/week"
+    },
+    "activities": {
+        "correct": {
+            "messages": [
+                "Great job!",
+                "Excellent!",
+                "You got it!",
+                "Perfect!",
+                "Awesome!",
+                "Well done!"
+            ]
+        },
+        "incorrect": {
+            "messages": [
+                "Try again!",
+                "Not quite.",
+                "Keep trying!",
+                "Almost there!",
+                "You can do it!"
+            ]
+        },
+        "hints": {
+            "showHint": "Show Hint",
+            "tryAgain": "Try Again",
+            "next": "Next Question"
+        }
+    },
+    "accessibility": {
+        "skipToContent": "Skip to main content",
+        "menuToggle": "Toggle menu",
+        "closeMenu": "Close menu",
+        "cart": "Shopping cart",
+        "cartItems": "items in cart",
+        "removeItem": "Remove item",
+        "selectGrade": "Select grade",
+        "selectSubject": "Select subject",
+        "loading": "Loading...",
+        "error": "Error occurred"
     }
-  },
-  "cta": {
-    "addToCart": "Add to Cart",
-    "buyNow": "Buy Now",
-    "viewDetails": "View Details",
-    "viewOutline": "View Outline",
-    "upgradeToCredit": "Upgrade to Credit",
-    "checkout": "Checkout",
-    "startLearning": "Start Learning",
-    "browseCourses": "Browse Courses",
-    "contactUs": "Contact Us",
-    "browseNonCredit": "Browse Non-credit",
-    "browseCredit": "Browse Credit Courses"
-  },
-  "labels": {
-    "price": "Price",
-    "listPrice": "Regular Price",
-    "salePrice": "Sale Price",
-    "savings": "You Save",
-    "subtotal": "Subtotal",
-    "discount": "Discount",
-    "total": "Total",
-    "free": "FREE",
-    "included": "Included",
-    "prerequisite": "Prerequisite",
-    "delivery": "Delivery",
-    "schedule": "Schedule",
-    "duration": "Duration",
-    "creditValue": "Credit Value",
-    "weeks": "weeks",
-    "hours": "hours",
-    "hoursPerWeek": "hrs/week"
-  },
-  "activities": {
-    "correct": {
-      "messages": [
-        "Great job!",
-        "Excellent!",
-        "You got it!",
-        "Perfect!",
-        "Awesome!",
-        "Well done!"
-      ]
-    },
-    "incorrect": {
-      "messages": [
-        "Try again!",
-        "Not quite.",
-        "Keep trying!",
-        "Almost there!",
-        "You can do it!"
-      ]
-    },
-    "hints": {
-      "showHint": "Show Hint",
-      "tryAgain": "Try Again",
-      "next": "Next Question"
-    }
-  },
-  "accessibility": {
-    "skipToContent": "Skip to main content",
-    "menuToggle": "Toggle menu",
-    "closeMenu": "Close menu",
-    "cart": "Shopping cart",
-    "cartItems": "items in cart",
-    "removeItem": "Remove item",
-    "selectGrade": "Select grade",
-    "selectSubject": "Select subject",
-    "loading": "Loading...",
-    "error": "Error occurred"
-  }
 }

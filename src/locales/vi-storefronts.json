@@ -1,0 +1,472 @@
+{
+    "storefronts": {
+        "nonCredit": {
+            "label": "Không tín chỉ",
+            "tagline": "Học Tự Định Tiến Độ",
+            "heroTitle": "Chương trình Học Không Tín chỉ",
+            "heroSubtitle": "Xây dựng kỹ năng theo tốc độ riêng với bài giảng video hấp dẫn và hoạt động thực hành.",
+            "description": "Khóa học video tự định tiến độ với bài tập thực hành",
+            "disclaimer": "Đây là khóa học không tín chỉ. Không kiểm tra, không đánh giá, không phiếu điểm, không tín chỉ OSSD.",
+            "shortDisclaimer": "Không kiểm tra, không tín chỉ OSSD",
+            "perfectFor": {
+                "title": "Phù hợp cho:",
+                "items": [
+                    "Luyện tập thêm bên cạnh trường chính quy",
+                    "Học hè để đi trước chương trình",
+                    "Hỗ trợ chương trình học tại nhà",
+                    "Học sinh quốc tế chuẩn bị cho việc học tại Canada"
+                ]
+            },
+            "whatsIncluded": {
+                "title": "Bao gồm:",
+                "items": [
+                    "Bài giảng video chất lượng cao",
+                    "Hoạt động thực hành tương tác",
+                    "Bài tập về nhà",
+                    "Học tự định tiến độ"
+                ]
+            },
+            "whatsNotIncluded": {
+                "title": "KHÔNG bao gồm:",
+                "items": [
+                    "Kiểm tra hoặc đánh giá",
+                    "Phiếu điểm hoặc bảng điểm",
+                    "Tín chỉ Ontario OSSD",
+                    "Giảng dạy trực tiếp với giáo viên"
+                ]
+            },
+            "crossSell": "Bạn đang tìm tín chỉ Ontario?",
+            "crossSellCta": "Xem Khóa học Tín chỉ",
+            "pricing": {
+                "startingAt": "Bắt đầu từ $100 CAD",
+                "limitedOffer": "Ưu đãi có thời hạn"
+            }
+        },
+        "credit": {
+            "label": "Tín chỉ",
+            "tagline": "Khóa học Tín chỉ Ontario",
+            "heroTitle": "Khóa học Tín chỉ Ontario",
+            "heroSubtitle": "Kiếm tín chỉ trung học Ontario chính thức thông qua lớp học trực tuyến trực tiếp với giáo viên Canada được chứng nhận.",
+            "description": "Lớp học trực tuyến trực tiếp với giáo viên Canada được chứng nhận",
+            "badge": "Ontario OSSD",
+            "badgeApproved": "Được Bộ Giáo dục Phê duyệt",
+            "features": {
+                "title": "Tại sao chọn Khóa học Tín chỉ EMCS?",
+                "items": [
+                    "Được Bộ Giáo dục phê duyệt (BSID: 665588)",
+                    "Giáo viên Được Chứng nhận Ontario (OCT)",
+                    "Lớp học trực tiếp qua Zoom (6 giờ/tuần)",
+                    "Bảng điểm và phiếu điểm chính thức",
+                    "Tín chỉ tính vào tốt nghiệp OSSD",
+                    "Được công nhận bởi các trường đại học trên toàn thế giới"
+                ]
+            },
+            "schedule": {
+                "title": "Lịch học",
+                "format": "3 ngày/tuần x 2 giờ/ngày",
+                "hoursPerWeek": "6 giờ/tuần",
+                "classSize": "Nhóm nhỏ để được quan tâm cá nhân"
+            },
+            "crossSell": "Cần luyện tập trước khi học tín chỉ?",
+            "crossSellCta": "Xem Không tín chỉ",
+            "pricing": {
+                "startingAt": "Bắt đầu từ $3,000 CAD",
+                "liveOnline": "Trực tuyến trực tiếp với giáo viên được chứng nhận"
+            }
+        },
+        "programFrame": {
+            "nonOntarioRecord": "Không có hồ sơ học sinh Ontario ⚠️ REVIEW",
+            "ontarioRecord": "Hồ sơ học sinh Ontario ⚠️ REVIEW",
+            "nonCreditLabel": "Không tín chỉ | Không có hồ sơ học sinh Ontario ⚠️ REVIEW",
+            "creditLabel": "Có tín chỉ | Hồ sơ học sinh Ontario ⚠️ REVIEW",
+            "upgradeCallout": "NÂNG CẤP lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario)"
+        },
+        "pricingV2": {
+            "promoBanner": "Đăng ký ngay và nhận giảm giá 50% — chỉ 325 đô cho chương trình 1 năm",
+            "perCourseRegular": "150 đô mỗi khóa",
+            "perCourseDiscounted": "75 đô mỗi khóa (giảm 50%)",
+            "fullYearPrep": "325 đô mỗi năm (tất cả 6 môn)",
+            "upgradePerCourse": "250 đô mỗi khóa (nâng cấp lên hồ sơ học sinh Ontario)",
+            "upgradeFullYear": "600 đô mỗi năm (nâng cấp lên hồ sơ học sinh Ontario, tất cả 6 môn)",
+            "legacyTeacherLed": "3.500 đô mỗi năm — Nền tảng Tiểu học cao cấp do Giáo viên hướng dẫn",
+            "highSchoolOfficial": "Từ 700 đô mỗi khóa · Chương trình cả năm từ 3.800 đô · Liên hệ bộ phận tuyển sinh để biết báo giá theo bậc"
+        },
+        "schedule": {
+            "standard": "Lịch trình: 5 tháng 9, 2026 đến 30 tháng 5, 2027 (39 tuần giảng dạy)",
+            "continuous": "Cũng có sẵn đăng ký liên tục — bắt đầu bất kỳ ngày nào trong năm."
+        },
+        "gradeGroup": {
+            "elementary": {
+                "title": "Tiểu học (Lớp 1 đến 5)",
+                "range": "Lớp 1 · Lớp 2 · Lớp 3 · Lớp 4 · Lớp 5"
+            },
+            "middle": {
+                "title": "Trung học Cơ sở (Lớp 6 đến 8)",
+                "range": "Lớp 6 · Lớp 7 · Lớp 8"
+            },
+            "high": {
+                "title": "Trung học Phổ thông (Lớp 9 đến 12)",
+                "range": "Lớp 9 · Lớp 10 · Lớp 11 · Lớp 12"
+            }
+        },
+        "frenchExemption": {
+            "grade9": "Học sinh đã hoàn thành Lớp 8 ở quốc gia của mình không bắt buộc phải học Tiếng Pháp là Ngôn ngữ Thứ hai. Một tín chỉ tương đương sẽ được cấp. ⚠️ REVIEW",
+            "grade10": "Học sinh đã hoàn thành Lớp 9 ở quốc gia của mình không bắt buộc phải học Tiếng Pháp là Ngôn ngữ Thứ hai (lộ trình không tín chỉ). Một tín chỉ tương đương sẽ được cấp. ⚠️ REVIEW",
+            "grade11": "Học sinh đã hoàn thành Lớp 10 ở quốc gia của mình không bắt buộc phải học Tiếng Pháp là Ngôn ngữ Thứ hai (lộ trình không tín chỉ). Một tín chỉ tương đương sẽ được cấp. ⚠️ REVIEW",
+            "grade12": "Học sinh đã hoàn thành Lớp 10 ở quốc gia của mình không bắt buộc phải học Tiếng Pháp là Ngôn ngữ Thứ hai (lộ trình không tín chỉ). Một tín chỉ tương đương sẽ được cấp. ⚠️ REVIEW"
+        },
+        "gradeTotals": {
+            "grade9": "Tổng Lớp 9 (chương trình một năm 8 tín chỉ)",
+            "grade10": "Tổng Lớp 10 (chương trình một năm 8 tín chỉ)",
+            "grade11": "Tổng Lớp 11 (chương trình một năm 7 tín chỉ)",
+            "grade12": "Tổng Lớp 12 (chương trình một năm 7 tín chỉ)"
+        },
+        "mcv4uSequence": "MCV4U sẽ được thực hiện sau khi MHF4U hoàn thành.",
+        "learnFirst": "Học trước.",
+        "decideLater": "Quyết định sau.",
+        "succeedSafely": "Thành công an toàn.",
+        "taglineStack": "Lộ trình Học tập Linh hoạt. Học trước. Quyết định sau. Thành công an toàn.",
+        "programHint": "Chuẩn bị hôm nay, công nhận ngày mai.",
+        "upgradeAffordance": {
+            "badge": "CÓ NÂNG CẤP",
+            "text": "Muốn kiếm tín chỉ Ontario cho khóa học này? Nâng cấp lên Chương trình Ontario Chính thức.",
+            "pricePrefix": "Nâng cấp chỉ với",
+            "cta": "Nâng cấp lên Tín chỉ",
+            "learnMore": "Tìm hiểu về Nâng cấp"
+        },
+        "grade8Transition": "Học sinh Lớp 8: chuẩn bị cho cầu nối học thuật Lớp 9. Hãy cân nhắc đăng ký trực tiếp vào Chương trình Ontario Chính thức cho Lớp 9 để bắt đầu kiếm tín chỉ OSSD ngay từ ngày đầu tiên, hoặc tiếp tục với Chương trình Chuẩn bị Học thuật để xác nhận sự sẵn sàng trước.",
+        "gradeGroupPanel": {
+            "leftHeading": "Chương trình Chuẩn bị Học thuật (không có hồ sơ học sinh Ontario) ⚠️ REVIEW",
+            "leftDescription": "Chương trình Chuẩn bị Học thuật xây dựng nền tảng vững chắc về tiếng Anh học thuật, toán học, khoa học, nghiên cứu xã hội và các kỹ năng học tập thiết yếu. Phù hợp với tiêu chuẩn Ontario, chương trình phát triển tư duy phân tích và thói quen học tập kỷ luật, chuẩn bị cho học sinh chuyển tiếp suôn sẻ sang các khóa học có tín chỉ OSSD hoặc Chương trình Bằng Tốt nghiệp Trung học Ontario (OSSD). ⚠️ REVIEW",
+            "leftWhatsIncludedTitle": "Bao gồm",
+            "leftWhatsIncluded": [
+                "Tất cả tài liệu học tập được cung cấp",
+                "Thông tin đăng nhập của học sinh và phụ huynh",
+                "Truy cập nội dung khóa học 24/7",
+                "Học theo nhịp độ riêng của bạn"
+            ],
+            "leftCta": "Đăng ký Chuẩn bị Học thuật",
+            "rightHeading": "NÂNG CẤP lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario) ⚠️ REVIEW",
+            "rightDescription": "Chương trình Ontario Chính thức là một lộ trình giáo dục trung học Canada được công nhận đầy đủ, được thiết kế cho học sinh theo đuổi sự xuất sắc trong học tập và cơ hội vào các trường đại học toàn cầu. Phù hợp với tiêu chuẩn chương trình giảng dạy Ontario, chương trình nhấn mạnh nền tảng học tập vững chắc, tư duy phản biện và học tập có kỷ luật. Với sự hướng dẫn học tập cá nhân hóa và môi trường học tập có cấu trúc, học sinh được chuẩn bị cho việc tuyển sinh đại học tại Canada và quốc tế. Sau khi hoàn thành thành công, học sinh sẽ nhận được Bằng Tốt nghiệp Trung học Ontario (OSSD). ⚠️ REVIEW",
+            "rightFeatures": [
+                "Hồ sơ học sinh Ontario",
+                "Lộ trình được công nhận",
+                "Phù hợp với đại học",
+                "Lộ trình OSSD"
+            ],
+            "upgradeNote": "Học sinh bắt đầu trong Chương trình Chuẩn bị Học thuật có thể nâng cấp bất cứ lúc nào trong năm học. Bài tập trước đó sẽ đóng góp vào hồ sơ học sinh Ontario khi nâng cấp. ⚠️ REVIEW",
+            "rightCta": "Nâng cấp lên Chương trình Ontario Chính thức",
+            "subjectHeader": "Môn học",
+            "languageHeader": "Ngôn ngữ",
+            "deliveryHeader": "Phương thức giảng dạy",
+            "selfLearning": "Tự học qua Nền tảng LMS",
+            "english": "Tiếng Anh"
+        }
+    },
+    "gradePage": {
+        "bundleCard": {
+            "titlePrefix": "Trọn gói Lớp",
+            "titleSuffix": "Chương trình",
+            "includes": "Bao gồm tất cả các khóa Toán, Khoa học và Tiếng Anh",
+            "savePrefix": "Tiết kiệm",
+            "saveSuffix": "với gói trọn"
+        },
+        "subjectTabs": {
+            "all": "Tất cả Môn học",
+            "math": "Toán",
+            "science": "Khoa học",
+            "english": "Tiếng Anh"
+        }
+    },
+    "courseCard": {
+        "credit": {
+            "badge": "Tín chỉ Ontario",
+            "liveOnline": "Trực tuyến trực tiếp",
+            "hoursPerWeek": "6 giờ/tuần",
+            "withTeacher": "Với giáo viên Ontario được chứng nhận"
+        },
+        "nonCredit": {
+            "badge": "Không tín chỉ",
+            "selfPaced": "Tự định tiến độ",
+            "videoAndPractice": "Video + Thực hành",
+            "noAssessments": "Không kiểm tra hoặc đánh giá"
+        },
+        "labels": {
+            "prerequisite": "Điều kiện tiên quyết",
+            "none": "Không",
+            "viewDetails": "Xem Chi tiết",
+            "addToCart": "Thêm vào Giỏ"
+        }
+    },
+    "coursePage": {
+        "creditAssurance": "Khóa học này cấp 1.0 tín chỉ trung học Ontario khi hoàn thành thành công. Bảng điểm và phiếu điểm được cung cấp. Được công nhận bởi OUAC/OCAS và các trường đại học.",
+        "sections": {
+            "overview": "Tổng quan",
+            "curriculum": "Chương trình học",
+            "schedule": "Lịch học",
+            "teacher": "Giáo viên của Bạn",
+            "faqs": "Câu hỏi Thường gặp",
+            "reviews": "Đánh giá"
+        },
+        "quickFacts": {
+            "prerequisite": "Điều kiện tiên quyết",
+            "creditValue": "Giá trị Tín chỉ",
+            "duration": "Thời lượng",
+            "schedule": "Lịch học",
+            "delivery": "Hình thức"
+        },
+        "deliveryMethods": {
+            "liveOnline": "Trực tuyến trực tiếp (Zoom)",
+            "selfPaced": "Tự định tiến độ"
+        },
+        "included": {
+            "title": "Bao gồm trong khóa học này",
+            "credit": [
+                "Buổi học trực tiếp qua Zoom",
+                "Video bài giảng ghi lại",
+                "Bộ bài tập thực hành",
+                "Kiểm tra và bài thi",
+                "Bài thi cuối kỳ",
+                "Bảng điểm chính thức",
+                "Phiếu điểm"
+            ],
+            "nonCredit": [
+                "Bài giảng video",
+                "Hoạt động thực hành",
+                "Bài tập về nhà"
+            ]
+        },
+        "bonusBadge": "TẶNG KÈM",
+        "bonusText": "MIỄN PHÍ: Khóa học Thực hành Đi kèm"
+    },
+    "cart": {
+        "title": "Giỏ Hàng",
+        "empty": "Giỏ hàng của bạn trống",
+        "emptySubtext": "Thêm khóa học để bắt đầu",
+        "browseCourses": "Duyệt Khóa học",
+        "bundleMessage": {
+            "title": "TẶNG KÈM",
+            "text": "Khi mua khóa học tín chỉ, bạn được MIỄN PHÍ quyền truy cập khóa học thực hành không tín chỉ liên quan. Bắt đầu luyện tập ngay!"
+        },
+        "upgradePrompt": {
+            "title": "CÓ THỂ NÂNG CẤP",
+            "text": "Muốn kiếm tín chỉ Ontario cho khóa học này?",
+            "cta": "Tìm hiểu về Nâng cấp",
+            "pricePrefix": "Nâng cấp chỉ với"
+        },
+        "coupon": {
+            "placeholder": "Bạn có mã giảm giá?",
+            "apply": "Áp dụng",
+            "applied": "đã áp dụng",
+            "remove": "Xóa",
+            "invalid": "Mã giảm giá không hợp lệ",
+            "expired": "Mã giảm giá đã hết hạn",
+            "minimum": "Đơn hàng tối thiểu {amount} được yêu cầu"
+        },
+        "summary": {
+            "subtotal": "Tạm tính",
+            "discount": "Giảm giá",
+            "total": "Tổng cộng",
+            "proceedToCheckout": "Tiến hành Thanh toán"
+        },
+        "remove": "Xóa",
+        "free": "MIỄN PHÍ"
+    },
+    "checkout": {
+        "title": "Thanh toán",
+        "steps": {
+            "cart": "Giỏ hàng",
+            "details": "Chi tiết",
+            "payment": "Thanh toán",
+            "confirmation": "Xác nhận"
+        },
+        "parentDetails": {
+            "title": "Thông tin Phụ huynh/Người giám hộ",
+            "subtitle": "Chủ Tài khoản",
+            "firstName": "Họ",
+            "lastName": "Tên",
+            "email": "Email",
+            "phone": "Điện thoại",
+            "country": "Quốc gia",
+            "province": "Tỉnh/Bang",
+            "createAccount": "Tạo tài khoản để theo dõi đăng ký và tiến độ",
+            "password": "Mật khẩu",
+            "confirmPassword": "Xác nhận Mật khẩu"
+        },
+        "studentDetails": {
+            "title": "Thông tin Học sinh",
+            "firstName": "Họ",
+            "lastName": "Tên",
+            "dateOfBirth": "Ngày sinh",
+            "currentGrade": "Lớp Hiện tại",
+            "previousSchool": "Trường trước (tùy chọn)"
+        },
+        "payment": {
+            "title": "Phương thức Thanh toán",
+            "cardOption": "Thẻ Tín dụng/Ghi nợ",
+            "flywireOption": "Flywire",
+            "flywireSubtext": "Thanh toán quốc tế - Chuyển khoản, Alipay",
+            "cardNumber": "Số Thẻ",
+            "expiry": "Hết hạn",
+            "cvv": "CVV",
+            "nameOnCard": "Tên trên Thẻ",
+            "saveCard": "Lưu thẻ cho lần mua sau",
+            "securePayment": "Thanh toán an toàn. Thông tin thẻ của bạn được mã hóa.",
+            "termsAgree": "Tôi đồng ý với Điều khoản Dịch vụ và Chính sách Bảo mật",
+            "nonCreditAcknowledge": "Tôi hiểu rằng khóa học không tín chỉ không bao gồm đánh giá hoặc tín chỉ OSSD",
+            "payButton": "Thanh toán"
+        },
+        "flywire": {
+            "title": "Thanh toán Quốc tế Flywire",
+            "redirect": "Bạn sẽ được chuyển hướng đến Flywire để hoàn tất thanh toán.",
+            "paymentAmount": "Số tiền Thanh toán",
+            "payableTo": "Thanh toán cho: Toronto EMCS Inc.",
+            "reference": "Mã tham chiếu",
+            "methods": "Phương thức thanh toán có sẵn trên Flywire:",
+            "methodsList": [
+                "Chuyển khoản Ngân hàng",
+                "Alipay",
+                "WeChat Pay",
+                "Thẻ Tín dụng (quốc tế)"
+            ],
+            "continueButton": "Tiếp tục đến Flywire",
+            "differentMethod": "Chọn Phương thức Khác"
+        },
+        "confirmation": {
+            "title": "Thanh toán Thành công",
+            "thankYou": "Cảm ơn bạn!",
+            "orderNumber": "Đơn hàng",
+            "emailSent": "Email xác nhận đã được gửi đến",
+            "whatsNext": "BƯỚC TIẾP THEO?",
+            "creditNextSteps": [
+                "Kiểm tra email để nhận lịch học Zoom và liên kết",
+                "Tham gia buổi định hướng trong vòng 48 giờ",
+                "Gặp giáo viên được chứng nhận của bạn",
+                "Truy cập tài liệu khóa học trong cổng học sinh"
+            ],
+            "nonCreditNextSteps": [
+                "Đăng nhập vào cổng học sinh",
+                "Bắt đầu học ngay - khóa học tự định tiến độ",
+                "Theo dõi tiến độ trong bảng điều khiển"
+            ],
+            "receipt": {
+                "title": "BIÊN LAI ĐƠN HÀNG",
+                "print": "In",
+                "orderDate": "Ngày Đặt hàng",
+                "orderNumber": "Mã Đơn hàng",
+                "paymentMethod": "Phương thức Thanh toán",
+                "items": "Mục",
+                "subtotal": "Tạm tính",
+                "discount": "Giảm giá",
+                "totalPaid": "Tổng Thanh toán"
+            },
+            "buttons": {
+                "dashboard": "Đến Bảng điều khiển Học sinh",
+                "browse": "Duyệt Thêm Khóa học"
+            }
+        },
+        "navigation": {
+            "back": "Quay lại",
+            "backToCart": "Quay lại Giỏ hàng",
+            "continue": "Tiếp tục",
+            "continueToPayment": "Tiếp tục Thanh toán"
+        }
+    },
+    "errors": {
+        "payment": {
+            "declined": "Thanh toán bị từ chối. Vui lòng kiểm tra thông tin thẻ hoặc thử phương thức thanh toán khác.",
+            "expired": "Thẻ của bạn đã hết hạn. Vui lòng sử dụng thẻ khác.",
+            "insufficient": "Không đủ số dư. Vui lòng thử thẻ khác.",
+            "timeout": "Thanh toán hết thời gian. Vui lòng thử lại. Thẻ của bạn chưa bị trừ tiền."
+        },
+        "coupon": {
+            "invalid": "Mã giảm giá không hợp lệ. Vui lòng kiểm tra mã và thử lại.",
+            "expired": "Mã giảm giá này đã hết hạn.",
+            "minimum": "Mã giảm giá này yêu cầu đơn hàng tối thiểu ${amount}.",
+            "alreadyUsed": "Mã giảm giá này đã được sử dụng.",
+            "wrongStorefront": "Mã giảm giá này chỉ áp dụng cho khóa học {storefront}."
+        },
+        "checkout": {
+            "emptyCart": "Giỏ hàng của bạn trống. Thêm khóa học trước khi thanh toán.",
+            "sessionExpired": "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại.",
+            "stockError": "Một hoặc nhiều khóa học trong giỏ hàng không còn khả dụng."
+        },
+        "form": {
+            "required": "Trường này là bắt buộc.",
+            "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ.",
+            "invalidPhone": "Vui lòng nhập số điện thoại hợp lệ.",
+            "passwordMismatch": "Mật khẩu không khớp.",
+            "invalidCard": "Vui lòng nhập số thẻ hợp lệ."
+        }
+    },
+    "cta": {
+        "addToCart": "Thêm vào Giỏ",
+        "buyNow": "Mua Ngay",
+        "viewDetails": "Xem Chi tiết",
+        "viewOutline": "Xem Đề cương",
+        "upgradeToCredit": "Nâng cấp lên Tín chỉ",
+        "checkout": "Thanh toán",
+        "startLearning": "Bắt đầu Học",
+        "browseCourses": "Duyệt Khóa học",
+        "contactUs": "Liên hệ",
+        "browseNonCredit": "Xem Không tín chỉ",
+        "browseCredit": "Xem Khóa học Tín chỉ"
+    },
+    "labels": {
+        "price": "Giá",
+        "listPrice": "Giá Niêm yết",
+        "salePrice": "Giá Khuyến mãi",
+        "savings": "Bạn Tiết kiệm",
+        "subtotal": "Tạm tính",
+        "discount": "Giảm giá",
+        "total": "Tổng cộng",
+        "free": "MIỄN PHÍ",
+        "included": "Bao gồm",
+        "prerequisite": "Điều kiện tiên quyết",
+        "delivery": "Hình thức",
+        "schedule": "Lịch học",
+        "duration": "Thời lượng",
+        "creditValue": "Giá trị Tín chỉ",
+        "weeks": "tuần",
+        "hours": "giờ",
+        "hoursPerWeek": "giờ/tuần"
+    },
+    "activities": {
+        "correct": {
+            "messages": [
+                "Giỏi lắm!",
+                "Xuất sắc!",
+                "Đúng rồi!",
+                "Hoàn hảo!",
+                "Tuyệt vời!",
+                "Làm tốt lắm!"
+            ]
+        },
+        "incorrect": {
+            "messages": [
+                "Thử lại!",
+                "Chưa đúng.",
+                "Cố gắng nào!",
+                "Gần đúng rồi!",
+                "Bạn làm được mà!"
+            ]
+        },
+        "hints": {
+            "showHint": "Xem Gợi ý",
+            "tryAgain": "Thử Lại",
+            "next": "Câu Tiếp theo"
+        }
+    },
+    "accessibility": {
+        "skipToContent": "Chuyển đến nội dung chính",
+        "menuToggle": "Bật/tắt menu",
+        "closeMenu": "Đóng menu",
+        "cart": "Giỏ hàng",
+        "cartItems": "mục trong giỏ hàng",
+        "removeItem": "Xóa mục",
+        "selectGrade": "Chọn lớp",
+        "selectSubject": "Chọn môn học",
+        "loading": "Đang tải...",
+        "error": "Đã xảy ra lỗi"
+    }
+}

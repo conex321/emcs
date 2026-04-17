@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Logo from './Logo'
 import './Footer.css'
 
 function Footer() {
@@ -9,22 +10,8 @@ function Footer() {
         <footer className="footer">
             <div className="footer-main container">
                 <div className="footer-brand">
-                    <Link to="/" className="footer-logo">
-                        <div className="footer-logo-icon">
-                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="40" height="40" rx="8" fill="url(#footerGrad)" />
-                                <path d="M20 8L10 14V26L20 32L30 26V14L20 8Z" fill="white" fillOpacity="0.9" />
-                                <path d="M20 8L20 32" stroke="#D4AF37" strokeWidth="2" />
-                                <path d="M10 14L30 26M30 14L10 26" stroke="#D4AF37" strokeWidth="1.5" strokeOpacity="0.6" />
-                                <defs>
-                                    <linearGradient id="footerGrad" x1="0" y1="0" x2="40" y2="40">
-                                        <stop stopColor="#1B4332" />
-                                        <stop offset="1" stopColor="#2D6A4F" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-                        <span>EMCS</span>
+                    <Link to="/" className="footer-logo" aria-label="EMCS home">
+                        <Logo variant="mark" className="footer-logo-mark" />
                     </Link>
                     <p className="footer-tagline">{t('footer.tagline')}</p>
                     <div className="footer-social">
@@ -59,15 +46,19 @@ function Footer() {
                             <li>
                                 <Link to="/academic-prep" className="footer-storefront-link elementary">
                                     <span className="storefront-indicator" style={{ background: '#2F80ED' }}></span>
-                                    Academic Preparation Program
+                                    {t('programs.academicPrep.name')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/official-ontario" className="footer-storefront-link credit">
                                     <span className="storefront-indicator" style={{ background: '#D4AF37' }}></span>
-                                    Official Ontario Program
+                                    {t('programs.officialOntario.name')}
                                 </Link>
                             </li>
+                            <li><Link to="/programs/elementary">{t('nav.primaryFoundation', 'Primary Foundation')}</Link></li>
+                            <li><Link to="/programs/middle-school">{t('nav.middleSchoolFoundation', 'Middle School Foundation')}</Link></li>
+                            <li><Link to="/programs/high-school">{t('nav.highSchoolPathways', 'High School Pathways')}</Link></li>
+                            <li><Link to="/tuition">{t('nav.tuitionPage', 'Tuition & Fees')}</Link></li>
                             <li><Link to="/ossd-requirements">{t('footer.ossd')}</Link></li>
                         </ul>
                     </div>
@@ -78,7 +69,10 @@ function Footer() {
                             <li><Link to="/about">{t('nav.about')}</Link></li>
                             <li><Link to="/admissions/international">{t('nav.international')}</Link></li>
                             <li><Link to="/student-support">{t('nav.support')}</Link></li>
+                            <li><Link to="/schedule">{t('nav.academicCalendar', 'Academic Calendar')}</Link></li>
+                            <li><Link to="/compare">{t('nav.compareProgramsLink', 'Compare Programs')}</Link></li>
                             <li><Link to="/faq">{t('footer.faq')}</Link></li>
+                            <li><Link to="/contact">{t('nav.contact')}</Link></li>
                         </ul>
                     </div>
 

@@ -6,6 +6,37 @@
     min-height: 80vh;
     padding: var(--space-12) 0;
     background: var(--bg-secondary);
+    overflow-x: hidden;
+}
+
+/* V2: Upgrade affordance on non-credit cart rows */
+.cart-upgrade-affordance {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #fbbf24;
+    border-left: 4px solid #d4af37;
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+    margin-top: 0.75rem;
+}
+
+.cart-upgrade-affordance__badge {
+    display: inline-block;
+    background: #d4af37;
+    color: #fff;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.cart-upgrade-affordance p {
+    margin: 0 0 0.625rem;
+    font-size: 0.875rem;
+    color: #78350f;
+    line-height: 1.5;
 }
 
 .cart-page h1 {
@@ -396,7 +427,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .cart-layout {
         grid-template-columns: 1fr;
     }

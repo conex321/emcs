@@ -22,107 +22,107 @@ function AgentPortal() {
             <div className="portal-content">
                 <div className="container">
                     <div className="portal-card">
-                        <div className="coming-soon-badge">Coming Soon</div>
+                        <div className="coming-soon-badge">{t('portals.comingSoon', 'Coming Soon')}</div>
 
-                        <h2>Partner Enrollment Portal</h2>
+                        <h2>{t('portals.agent.portalTitle', 'Partner Enrollment Portal')}</h2>
                         <p className="portal-description">
-                            Streamlined enrollment process for education agents and partner schools. Manage bulk enrollments, track commissions, and support your students' success.
+                            {t('portals.agent.portalDesc', "Streamlined enrollment process for education agents and partner schools. Manage bulk enrollments, track commissions, and support your students' success.")}
                         </p>
 
                         <div className="portal-features">
-                            <h3>Agent Dashboard Features:</h3>
+                            <h3>{t('portals.agent.featuresTitle', 'Agent Dashboard Features:')}</h3>
                             <ul className="feature-list">
                                 <li>
                                     <span className="feature-icon">📝</span>
                                     <div>
-                                        <strong>Bulk Enrollment Forms</strong>
-                                        <p>Enroll multiple students at once with streamlined forms and CSV upload</p>
+                                        <strong>{t('portals.agent.feature1Title', 'Bulk Enrollment Forms')}</strong>
+                                        <p>{t('portals.agent.feature1Desc', 'Enroll multiple students at once with streamlined forms and CSV upload')}</p>
                                     </div>
                                 </li>
                                 <li>
                                     <span className="feature-icon">💰</span>
                                     <div>
-                                        <strong>Commission Tracking</strong>
-                                        <p>Real-time visibility into earnings, payouts, and referral status</p>
+                                        <strong>{t('portals.agent.feature2Title', 'Commission Tracking')}</strong>
+                                        <p>{t('portals.agent.feature2Desc', 'Real-time visibility into earnings, payouts, and referral status')}</p>
                                     </div>
                                 </li>
                                 <li>
                                     <span className="feature-icon">👥</span>
                                     <div>
-                                        <strong>Student Management</strong>
-                                        <p>View all students you've enrolled, their progress, and enrollment status</p>
+                                        <strong>{t('portals.agent.feature3Title', 'Student Management')}</strong>
+                                        <p>{t('portals.agent.feature3Desc', "View all students you've enrolled, their progress, and enrollment status")}</p>
                                     </div>
                                 </li>
                                 <li>
                                     <span className="feature-icon">📊</span>
                                     <div>
-                                        <strong>Analytics Dashboard</strong>
-                                        <p>Track enrollment trends, popular programs, and student outcomes</p>
+                                        <strong>{t('portals.agent.feature4Title', 'Analytics Dashboard')}</strong>
+                                        <p>{t('portals.agent.feature4Desc', 'Track enrollment trends, popular programs, and student outcomes')}</p>
                                     </div>
                                 </li>
                                 <li>
                                     <span className="feature-icon">🎁</span>
                                     <div>
-                                        <strong>Promotional Materials</strong>
-                                        <p>Download brochures, flyers, and marketing assets for your region</p>
+                                        <strong>{t('portals.agent.feature5Title', 'Promotional Materials')}</strong>
+                                        <p>{t('portals.agent.feature5Desc', 'Download brochures, flyers, and marketing assets for your region')}</p>
                                     </div>
                                 </li>
                                 <li>
                                     <span className="feature-icon">📞</span>
                                     <div>
-                                        <strong>Dedicated Support</strong>
-                                        <p>Priority support from our partner relations team</p>
+                                        <strong>{t('portals.agent.feature6Title', 'Dedicated Support')}</strong>
+                                        <p>{t('portals.agent.feature6Desc', 'Priority support from our partner relations team')}</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
 
                         <div className="partnership-benefits">
-                            <h3>Why Partner With EMCS?</h3>
+                            <h3>{t('portals.agent.whyPartner', 'Why Partner With EMCS?')}</h3>
                             <div className="benefits-grid">
                                 <div className="benefit-card">
                                     <span className="benefit-icon">✅</span>
-                                    <h4>Ministry Inspected</h4>
-                                    <p>Official Ontario Ministry accreditation (BSID: 665588)</p>
+                                    <h4>{t('portals.agent.benefit1Title', 'Ministry Inspected')}</h4>
+                                    <p>{t('portals.agent.benefit1Desc', 'Official Ontario Ministry accreditation (BSID: 665588)')}</p>
                                 </div>
                                 <div className="benefit-card">
                                     <span className="benefit-icon">🌍</span>
-                                    <h4>Global Recognition</h4>
-                                    <p>OSSD credentials recognized by universities worldwide</p>
+                                    <h4>{t('portals.agent.benefit2Title', 'Global Recognition')}</h4>
+                                    <p>{t('portals.agent.benefit2Desc', 'OSSD credentials recognized by universities worldwide')}</p>
                                 </div>
                                 <div className="benefit-card">
                                     <span className="benefit-icon">💵</span>
-                                    <h4>Competitive Commissions</h4>
-                                    <p>Attractive commission structure for agent partners</p>
+                                    <h4>{t('portals.agent.benefit3Title', 'Competitive Commissions')}</h4>
+                                    <p>{t('portals.agent.benefit3Desc', 'Attractive commission structure for agent partners')}</p>
                                 </div>
                                 <div className="benefit-card">
                                     <span className="benefit-icon">📈</span>
-                                    <h4>Growing Programs</h4>
-                                    <p>Grades 1-12 with both Academic Prep and Official Ontario options</p>
+                                    <h4>{t('portals.agent.benefit4Title', 'Growing Programs')}</h4>
+                                    <p>{t('portals.agent.benefit4Desc', 'Grades 1-12 with both Academic Prep and Official Ontario options')}</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="portal-cta">
-                            <h3>Interested in Becoming a Partner?</h3>
+                            <h3>{t('portals.agent.partnerCtaTitle', 'Interested in Becoming a Partner?')}</h3>
                             <p className="cta-text">
-                                Join our network of education agents and partner schools. Help students worldwide access quality Canadian education.
+                                {t('portals.agent.partnerCtaDesc', 'Join our network of education agents and partner schools. Help students worldwide access quality Canadian education.')}
                             </p>
                             <div className="cta-buttons">
                                 <Link to="/contact" className="btn btn-primary">
-                                    Inquire About Partnership
+                                    {t('portals.agent.inquirePartnership', 'Inquire About Partnership')}
                                 </Link>
                                 <a href="mailto:partnerships@emcs.ca" className="btn btn-outline">
-                                    Email: partnerships@emcs.ca
+                                    {t('portals.agent.emailPartnership', 'Email: partnerships@emcs.ca')}
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <div className="portal-info-box">
-                        <h3>Existing Partner?</h3>
-                        <p>If you're already an approved partner and need login credentials:</p>
-                        <Link to="/contact" className="btn btn-outline">Contact Partner Support</Link>
+                        <h3>{t('portals.agent.existingPartner', 'Existing Partner?')}</h3>
+                        <p>{t('portals.agent.existingPartnerDesc', "If you're already an approved partner and need login credentials:")}</p>
+                        <Link to="/contact" className="btn btn-outline">{t('portals.agent.contactPartnerSupport', 'Contact Partner Support')}</Link>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import './PrimaryFoundation.css'
 
 function PrimaryFoundation() {
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
 
     const coreSubjects = [
         { name: t('primaryFoundation.selfLearning.subjects.math'), icon: '🔢' },
@@ -87,7 +87,7 @@ function PrimaryFoundation() {
             <section className="pf-pathways section bg-light">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>{i18n.language === 'vi' ? 'Hai Con Đường Học Tập' : 'Two Learning Pathways'}</h2>
+                        <h2>{t('primaryFoundation.twoPathways', 'Two Learning Pathways')}</h2>
                     </div>
 
                     <div className="pathways-container">
@@ -107,7 +107,7 @@ function PrimaryFoundation() {
                             </div>
 
                             <div className="pathway-important">
-                                <p><strong>{i18n.language === 'vi' ? 'Lưu ý:' : 'Important:'}</strong> {t('primaryFoundation.selfLearning.important')}</p>
+                                <p><strong>{t('primaryFoundation.important', 'Important:')}</strong> {t('primaryFoundation.selfLearning.important')}</p>
                                 <ul>
                                     <li>{t('primaryFoundation.selfLearning.idealFor.practice')}</li>
                                     <li>{t('primaryFoundation.selfLearning.idealFor.summer')}</li>
@@ -140,9 +140,44 @@ function PrimaryFoundation() {
                             </Link>
                         </div>
 
+                        {/* V2: Upgrade to Official Ontario Program (low-price tier) */}
+                        <div className="pathway-option card">
+                            <span className="pathway-badge" style={{ background: '#d4af37', color: '#fff' }}>NEW · v2</span>
+                            <h3>Upgrade to Official Ontario Program ($600/year)</h3>
+
+                            <div className="pathway-whats-included">
+                                <h4>What's Included:</h4>
+                                <ul>
+                                    <li><span className="check">✓</span> Ontario student record</li>
+                                    <li><span className="check">✓</span> All 6 subjects covered</li>
+                                    <li><span className="check">✓</span> Official Ontario Academic Report Card</li>
+                                    <li><span className="check">✓</span> Upgradeable from Academic Prep at any time</li>
+                                </ul>
+                            </div>
+
+                            <div className="pathway-pricing">
+                                <h4>Pricing:</h4>
+                                <div className="price-row highlight">
+                                    <span>Full Year (6 subjects)</span>
+                                    <span className="price">$600 CAD</span>
+                                </div>
+                                <div className="price-row">
+                                    <span>Per Course</span>
+                                    <span className="price">$250 CAD</span>
+                                </div>
+                                <p className="optional-record">
+                                    Entry-level Ontario student record pathway. NOT the premium Teacher-Led Primary Foundation ($3,500/yr) — this tier offers the student record at the new Version 2 low-price tier.
+                                </p>
+                            </div>
+
+                            <Link to="/academic-prep/group/elementary" className="btn btn-primary btn-lg btn-block">
+                                View Upgrade Pathway
+                            </Link>
+                        </div>
+
                         {/* Teacher-Led Option */}
                         <div className="pathway-option card featured">
-                            <span className="pathway-badge teacher-led">{t('primaryFoundation.teacherLed.badge')}</span>
+                            <span className="pathway-badge teacher-led">Premium Legacy · $3,500/yr</span>
                             <h3>{t('primaryFoundation.teacherLed.title')}</h3>
 
                             <div className="pathway-whats-included">
@@ -213,16 +248,16 @@ function PrimaryFoundation() {
             <section className="pf-grades section bg-light">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>{i18n.language === 'vi' ? 'Thông Tin Theo Lớp' : 'Grade-Specific Information'}</h2>
+                        <h2>{t('primaryFoundation.gradeSpecificInfo', 'Grade-Specific Information')}</h2>
                     </div>
                     <div className="grades-grid">
                         {grades.map((grade, index) => (
                             <div key={index} className="grade-card card animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                                <div className="grade-number">Grade {grade.grade}</div>
+                                <div className="grade-number">{t('primaryFoundation.gradePrefix', 'Grade')} {grade.grade}</div>
                                 <h3>{grade.title}</h3>
                                 <p>{grade.focus}</p>
                                 {grade.hasFrench && (
-                                    <span className="french-badge">+ French as a Second Language</span>
+                                    <span className="french-badge">{t('primaryFoundation.frenchBadge', '+ French as a Second Language')}</span>
                                 )}
                             </div>
                         ))}
@@ -275,7 +310,7 @@ function PrimaryFoundation() {
                             </ul>
                         </div>
                         <div className="disclaimer-card teacher-led">
-                            <h4>{i18n.language === 'vi' ? 'Chương Trình Có Giáo Viên:' : 'For Teacher-Led Program:'}</h4>
+                            <h4>{t('primaryFoundation.forTeacherLedProgram', 'For Teacher-Led Program:')}</h4>
                             <p>{t('primaryFoundation.disclaimers.teacherLed.content')}</p>
                         </div>
                     </div>

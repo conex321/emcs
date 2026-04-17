@@ -1,6 +1,6 @@
 /* ========================================
    EMCS Design System
-   Excellence Maple Canadian School
+   Toronto EMCS
    ======================================== */
 
 /* CSS Custom Properties (Design Tokens) */
@@ -216,6 +216,26 @@ h6 {
   font-weight: var(--font-bold);
   line-height: var(--leading-tight);
   color: var(--color-neutral-900);
+}
+
+/* Hero / dark sections — let headings inherit the parent (white) color
+   so page-level hero wrappers don't need to repeat `color: #fff` on every h1. */
+.hero h1, .hero h2, .hero h3,
+.calendar-hero h1, .calendar-hero h2,
+.tuition-hero h1, .tuition-hero h2,
+.compare-hero h1, .compare-hero h2,
+.msf-hero h1, .msf-hero h2,
+.msf-cta h2,
+.hsp-hero h1, .hsp-hero h2,
+.hsp-cta-closing h2,
+.grade-group-page__hero h1, .grade-group-page__hero h2,
+.grade-hero h1, .grade-hero h2,
+.program-hero h1, .program-hero h2,
+.courses-hero h1, .courses-hero h2,
+.pf-hero h1, .pf-hero h2,
+.tuition-cta-section h2,
+.cta-section h2 {
+  color: inherit;
 }
 
 h1 {

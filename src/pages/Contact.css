@@ -182,3 +182,51 @@
     background: var(--color-brand);
     color: white;
 }
+
+/* Form Validation */
+.form-error {
+    color: var(--color-error);
+    font-size: var(--text-sm);
+    margin-top: var(--space-1);
+}
+
+.form-group.error .input {
+    border-color: var(--color-error);
+}
+
+.form-group.error .input:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Form Success */
+.form-success {
+    text-align: center;
+    padding: var(--space-8) var(--space-4);
+}
+
+.form-success .success-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--color-primary-100);
+    color: var(--color-success);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: var(--space-4);
+}
+
+.form-success h3 {
+    color: var(--color-brand);
+    margin-bottom: var(--space-3);
+}
+
+.form-success p {
+    color: var(--color-neutral-600);
+    margin-bottom: var(--space-6);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}

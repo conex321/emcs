@@ -2,18 +2,23 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useCart } from '../context/CartContext'
+import { useAuth } from '../context/AuthContext'
 import { formatCurrency } from '../config/pricing'
+import supabase from '../services/supabaseClient'
 import './Checkout.css'
 
 function Checkout() {
     const { t } = useTranslation()
     const navigate = useNavigate()
     const { items, subtotal, discount, total, appliedCoupon, clearCart } = useCart()
+    const { user, signUp } = useAuth()
 
     const [currentStep, setCurrentStep] = useState(1)
     const [isProcessing, setIsProcessing] = useState(false)
     const [orderComplete, setOrderComplete] = useState(false)
     const [orderNumber, setOrderNumber] = useState('')
+    const [paymentError, setPaymentError] = useState('')
+    const [orderId, setOrderId] = useState(null)
 
     // Form state
     const [parentDetails, setParentDetails] = useState({
@@ -93,11 +98,11 @@ function Checkout() {
 
     const handleNext = () => {
         if (currentStep === 2 && !validateStep2()) {
-            alert('Please fill in all required fields')
+            alert(t('checkout.fillFieldsError', 'Please fill in all required fields'))
             return
         }
         if (currentStep === 3 && !validateStep3()) {
-            alert('Please complete payment details and accept terms')
+            alert(t('checkout.completePaymentError', 'Please complete payment details and accept terms'))
             return
         }
         setCurrentStep(prev => Math.min(prev + 1, 4))
@@ -109,24 +114,89 @@ function Checkout() {
 
     const handlePayment = async () => {
         setIsProcessing(true)
+        setPaymentError('')
 
-        // Simulate payment processing
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        try {
+            // Step 1: If user checked "create account", register them first
+            if (!user && parentDetails.createAccount && parentDetails.password) {
+                try {
+                    await signUp({
+                        email: parentDetails.email,
+                        password: parentDetails.password,
+                        fullName: `${parentDetails.firstName} ${parentDetails.lastName}`,
+                        phone: parentDetails.phone,
+                        country: parentDetails.country,
+                        province: parentDetails.province,
+                    })
+                } catch (signupErr) {
+                    console.warn('Account creation during checkout failed:', signupErr.message)
+                    // Continue with checkout even if signup fails
+                }
+            }
 
-        // Generate order number
-        const orderNum = `ORD-2025-${Math.random().toString(36).substring(2, 8).toUpperCase()}`
-        setOrderNumber(orderNum)
-        setOrderComplete(true)
-        setCurrentStep(4)
-        setIsProcessing(false)
+            // Step 2: Call process-payment Edge Function
+            const { data, error } = await supabase.functions.invoke('process-payment', {
+                body: {
+                    cart_items: items.map(item => ({
+                        code: item.code || item.courseCode,
+                        title: item.title,
+                        price: item.price,
+                        is_bundled: item.isBundled || false,
+                        bundle_reason: item.bundleReason || null,
+                        storefront: item.storefront,
+                    })),
+                    parent_details: parentDetails,
+                    student_details: studentDetails,
+                    coupon_code: appliedCoupon?.code || null,
+                    payment_method: paymentMethod,
+                },
+            })
 
-        // Clear cart after successful order
-        clearCart()
+            if (error) throw new Error(error.message)
+            if (!data?.success) throw new Error(data?.error || 'Payment processing failed')
+
+            setOrderId(data.order_id)
+            setOrderNumber(data.order_number)
+
+            // Step 3: Handle payment based on method
+            if (data.requires_payment && paymentMethod === 'card') {
+                // In production: use Stripe Elements with data.client_secret
+                // to confirm the PaymentIntent on the frontend.
+                // For now, we show success (webhook will handle the rest)
+                console.log('[checkout] Stripe client_secret received:', data.client_secret ? '✓' : '✗')
+                // TODO: Replace with stripe.confirmPayment({ clientSecret: data.client_secret })
+            }
+
+            // Step 4: If payment is not required (fully discounted), complete immediately
+            if (!data.requires_payment) {
+                // Trigger enrollment for free orders
+                await supabase.functions.invoke('enroll-student', {
+                    body: {
+                        order_id: data.order_id,
+                        students: studentDetails.map((s, i) => ({ ...s, index: i })),
+                        courses: items.map(item => ({
+                            course_code: item.code || item.courseCode,
+                            student_index: 0,
+                        })),
+                    },
+                })
+            }
+
+            setOrderComplete(true)
+            setCurrentStep(4)
+            clearCart()
+
+        } catch (err) {
+            console.error('Payment error:', err)
+            setPaymentError(err.message || 'Payment processing failed. Please try again.')
+        } finally {
+            setIsProcessing(false)
+        }
     }
 
     const handleFlywire = () => {
-        // In production, this would redirect to Flywire
-        alert('Redirecting to Flywire... (Demo)')
+        // In production, redirect to Flywire with order metadata
+        alert(t('checkout.redirectFlywire', 'Redirecting to Flywire for international payment...'))
         handlePayment()
     }
 
@@ -269,6 +339,12 @@ function Checkout() {
 
                     {/* Step 3: Payment */}
                     {currentStep === 3 && (
+                        <>
+                        {paymentError && (
+                            <div className="payment-error" style={{ background: '#fff5f5', color: '#c53030', padding: '0.75rem 1rem', borderRadius: '8px', marginBottom: '1rem', border: '1px solid #fed7d7' }}>
+                                ⚠️ {paymentError}
+                            </div>
+                        )}
                         <div className="checkout-step">
                             <h2>{t('storefront.checkout.paymentMethod')}</h2>
 
@@ -382,7 +458,8 @@ function Checkout() {
 
                             <p className="secure-note">🔒 {t('storefront.checkout.securePayment')}</p>
                         </div>
-                    )}
+                        </>)
+                    }
 
                     {/* Step 4: Confirmation */}
                     {currentStep === 4 && orderComplete && (
@@ -415,6 +492,18 @@ function Checkout() {
                                             <li>{t('storefront.checkout.nonCreditStep2')}</li>
                                             <li>{t('storefront.checkout.nonCreditStep3')}</li>
                                         </ul>
+                                    </div>
+                                )}
+
+                                {/* V2: Upgrade note when student enrolled in Academic Prep */}
+                                {items.some(i => i.storefront === 'non-credit' && !i.isBundled) && (
+                                    <div className="next-section next-section--upgrade">
+                                        <h4>💡 Flexible upgrade path</h4>
+                                        <p>
+                                            You can upgrade from the Academic Preparation Program to the Official Ontario Program
+                                            at any time during the academic year. Previous coursework contributes to the Ontario student record upon upgrade.
+                                            Contact admissions at <a href="mailto:contact@emcs.ca">contact@emcs.ca</a> when ready.
+                                        </p>
                                     </div>
                                 )}
                             </div>

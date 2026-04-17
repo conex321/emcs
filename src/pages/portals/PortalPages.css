@@ -5,6 +5,7 @@
 .portal-page {
     min-height: 100vh;
     background: var(--color-neutral-50, #f9fafb);
+    overflow-x: hidden;
 }
 
 /* Portal Hero */

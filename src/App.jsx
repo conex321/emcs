@@ -12,6 +12,14 @@ import Faq from './pages/Faq'
 import Contact from './pages/Contact'
 import PrimaryFoundation from './pages/PrimaryFoundation'
 
+// V2 new public pages
+import MiddleSchoolFoundation from './pages/MiddleSchoolFoundation'
+import HighSchoolPathways from './pages/HighSchoolPathways'
+import Tuition from './pages/Tuition'
+import AcademicCalendar from './pages/AcademicCalendar'
+import ProgramCompare from './pages/ProgramCompare'
+import GradeGroupPage from './pages/GradeGroupPage'
+
 // New storefront pages
 import AcademicPrepLanding from './pages/AcademicPrepLanding'
 import OfficialOntarioLanding from './pages/OfficialOntarioLanding'
@@ -25,13 +33,24 @@ import StudentPortal from './pages/portals/StudentPortal'
 import ParentPortal from './pages/portals/ParentPortal'
 import AgentPortal from './pages/portals/AgentPortal'
 
-// Storefront provider
+// Auth pages
+import AuthPage from './pages/auth/AuthPage'
+import AuthCallback from './pages/auth/AuthCallback'
+import Register from './pages/Register'
+
+// Auth & Storefront providers
+import { AuthProvider } from './context/AuthContext'
 import { StorefrontProvider } from './context/StorefrontContext'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
     return (
-        <>
+        <AuthProvider>
             <Routes>
+                {/* Auth routes */}
+                <Route path="/auth" element={<AuthPage />} />
+                <Route path="/auth/callback" element={<AuthCallback />} />
+
                 {/* Backward compatibility redirects - old routes to new routes */}
                 <Route path="/non-credit" element={<Navigate to="/academic-prep" replace />} />
                 <Route path="/credit" element={<Navigate to="/official-ontario" replace />} />
@@ -43,6 +62,7 @@ function App() {
                         <main>
                             <Routes>
                                 <Route path="/" element={<AcademicPrepLanding />} />
+                                <Route path="/group/:groupSlug" element={<GradeGroupPage storefront="academic-prep" />} />
                                 <Route path="/grade/:grade" element={<GradePage />} />
                                 <Route path="/grade/:grade/courses" element={<GradePage />} />
                                 <Route path="/course/:courseCode" element={<StorefrontCourseDetail />} />
@@ -59,6 +79,7 @@ function App() {
                         <main>
                             <Routes>
                                 <Route path="/" element={<OfficialOntarioLanding />} />
+                                <Route path="/group/:groupSlug" element={<GradeGroupPage storefront="official-ontario" />} />
                                 <Route path="/grade/:grade" element={<GradePage />} />
                                 <Route path="/grade/:grade/courses" element={<GradePage />} />
                                 <Route path="/course/:courseCode" element={<StorefrontCourseDetail />} />
@@ -133,22 +154,42 @@ function App() {
                                 <Route path="/student-support" element={<StudentSupport />} />
                                 <Route path="/faq" element={<Faq />} />
                                 <Route path="/contact" element={<Contact />} />
+                                <Route path="/register" element={<Register />} />
                                 <Route path="/programs/elementary" element={<PrimaryFoundation />} />
+
+                                {/* V2 new public pages */}
+                                <Route path="/programs/middle-school" element={<MiddleSchoolFoundation />} />
+                                <Route path="/programs/high-school" element={<HighSchoolPathways />} />
+                                <Route path="/tuition" element={<Tuition />} />
+                                <Route path="/schedule" element={<AcademicCalendar />} />
+                                <Route path="/compare" element={<ProgramCompare />} />
 
                                 {/* Program-agnostic grade pages (shows both programs side by side) */}
                                 <Route path="/grade/:grade" element={<GradePage />} />
 
-                                {/* Portal pages */}
-                                <Route path="/portal/student" element={<StudentPortal />} />
-                                <Route path="/portal/parent" element={<ParentPortal />} />
-                                <Route path="/portal/agent" element={<AgentPortal />} />
+                                {/* Portal pages — protected by auth */}
+                                <Route path="/portal/student" element={
+                                    <ProtectedRoute requiredRoles={['student', 'parent', 'admin']}>
+                                        <StudentPortal />
+                                    </ProtectedRoute>
+                                } />
+                                <Route path="/portal/parent" element={
+                                    <ProtectedRoute requiredRoles={['parent', 'admin']}>
+                                        <ParentPortal />
+                                    </ProtectedRoute>
+                                } />
+                                <Route path="/portal/agent" element={
+                                    <ProtectedRoute requiredRoles={['agent', 'admin']}>
+                                        <AgentPortal />
+                                    </ProtectedRoute>
+                                } />
                             </Routes>
                         </main>
                         <Footer />
                     </>
                 } />
             </Routes>
-        </>
+        </AuthProvider>
     )
 }
 

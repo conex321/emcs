@@ -93,18 +93,18 @@ function Home() {
                             <span className="badge-icon">✓</span>
                             {t('hero.badge')}
                         </span>
-                        <h1>ONTARIO CURRICULUM PROGRAMS (Grades 1–12)</h1>
-                        <h2 className="hero-subheading">Flexible Learning Pathways</h2>
-                        <p className="hero-tagline-text">Learn First. Decide Later. Succeed Safely.</p>
+                        <h1>{t('home.heroTitle', 'ONTARIO CURRICULUM PROGRAMS (Grades 1–12)')}</h1>
+                        <h2 className="hero-subheading">{t('home.heroSubtitle', 'Flexible Learning Pathways')}</h2>
+                        <p className="hero-tagline-text">{t('home.heroTagline', 'Learn First. Decide Later. Succeed Safely.')}</p>
                         <p className="hero-subtitle">
-                            We offer Ontario Curriculum-aligned learning for students in Grades 1–12 through two flexible pathways: the Academic Preparation Program (Non-Ontario student record) and the Official Ontario Program (Ontario student record). Students may start with preparation learning and upgrade to credit-bearing courses when academically ready.
+                            {t('home.heroDesc', 'We offer Ontario Curriculum-aligned learning for students in Grades 1–12 through two flexible pathways: the Academic Preparation Program (Non-Ontario student record) and the Official Ontario Program (Ontario student record). Students may start with preparation learning and upgrade to credit-bearing courses when academically ready.')}
                         </p>
                         <div className="hero-actions">
                             <Link to="/official-ontario" className="btn btn-accent btn-lg">
-                                Official Ontario Program
+                                {t('programs.officialOntario.name', 'Official Ontario Program')}
                             </Link>
                             <Link to="/academic-prep" className="btn btn-secondary btn-lg hero-btn-secondary">
-                                Academic Preparation Program
+                                {t('programs.academicPrep.name', 'Academic Preparation Program')}
                             </Link>
                         </div>
                     </div>
@@ -132,8 +132,8 @@ function Home() {
             <section className="two-programs-section section">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>Choose Your Learning Path</h2>
-                        <p className="section-subtitle">Two flexible pathways aligned with the Ontario Curriculum</p>
+                        <h2>{t('home.choosePathTitle', 'Choose Your Learning Path')}</h2>
+                        <p className="section-subtitle">{t('home.choosePathSubtitle', 'Two flexible pathways aligned with the Ontario Curriculum')}</p>
                     </div>
 
                     <div className="two-programs-grid">
@@ -141,81 +141,81 @@ function Home() {
                         <div className="program-column card academic-prep animate-fade-in-up">
                             <div className="program-badge">
                                 <span className="badge-dot" style={{ background: '#2F80ED' }}></span>
-                                Academic Preparation Program
+                                {t('programs.academicPrep.name', 'Academic Preparation Program')}
                             </div>
-                            <p className="program-subtitle-label">(Non-Ontario student record)</p>
+                            <p className="program-subtitle-label">{t('home.program1Subtitle', '(Non-Ontario student record)')}</p>
                             <p className="program-desc">
-                                The Academic Preparation Program builds strong foundations in Academic English, mathematics, science, social studies, and essential learning skills. Aligned with Ontario standards, it develops analytical thinking and disciplined study habits, preparing students for a smooth transition into OSSD credit courses or the Ontario Secondary School Diploma (OSSD) program.
+                                {t('home.program1Desc', 'The Academic Preparation Program builds strong foundations in Academic English, mathematics, science, social studies, and essential learning skills. Aligned with Ontario standards, it develops analytical thinking and disciplined study habits, preparing students for a smooth transition into OSSD credit courses or the Ontario Secondary School Diploma (OSSD) program.')}
                             </p>
                             <Link to="/academic-prep" className="btn btn-primary btn-lg btn-block">
-                                View More
+                                {t('home.viewMore', 'View More')}
                             </Link>
                         </div>
 
                         {/* Right Column: Official Ontario Program */}
                         <div className="program-column card official-ontario featured animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                            <span className="featured-ribbon">Most Popular</span>
+                            <span className="featured-ribbon">{t('home.mostPopular', 'Most Popular')}</span>
                             <div className="program-badge">
                                 <span className="badge-dot" style={{ background: '#D4AF37' }}></span>
-                                Official Ontario Program
+                                {t('programs.officialOntario.name', 'Official Ontario Program')}
                             </div>
-                            <p className="program-subtitle-label">(Ontario student record)</p>
+                            <p className="program-subtitle-label">{t('home.program2Subtitle', '(Ontario student record)')}</p>
                             <p className="program-desc">
-                                The Official Ontario Program is a fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Aligned with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. With personalized academic guidance and a structured learning environment, students are prepared for university admission in Canada and internationally. Upon successful completion, students earn the Ontario Secondary School Diploma (OSSD).
+                                {t('home.program2Desc', 'The Official Ontario Program is a fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Aligned with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. With personalized academic guidance and a structured learning environment, students are prepared for university admission in Canada and internationally. Upon successful completion, students earn the Ontario Secondary School Diploma (OSSD).')}
                             </p>
                             <Link to="/official-ontario" className="btn btn-accent btn-lg btn-block">
-                                View More
+                                {t('home.viewMore', 'View More')}
                             </Link>
                         </div>
                     </div>
 
                     {/* Program Comparison Table */}
                     <div className="program-comparison-table">
-                        <h3 className="comparison-title">Compare Programs</h3>
+                        <h3 className="comparison-title">{t('home.comparePrograms', 'Compare Programs')}</h3>
                         <div className="comparison-table-wrapper">
                             <table className="comparison-table">
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Academic Preparation Program<br /><span className="th-subtitle">(Non-Ontario student record)</span></th>
-                                        <th>Official Ontario Program<br /><span className="th-subtitle">(Ontario student record)</span></th>
+                                        <th>{t('programs.academicPrep.name', 'Academic Preparation Program')}<br /><span className="th-subtitle">{t('home.program1Subtitle', '(Non-Ontario student record)')}</span></th>
+                                        <th>{t('programs.officialOntario.name', 'Official Ontario Program')}<br /><span className="th-subtitle">{t('home.program2Subtitle', '(Ontario student record)')}</span></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><strong>Purpose</strong></td>
-                                        <td>Preparation for entry into the Official Ontario Program</td>
-                                        <td>Official Ontario high school program</td>
+                                        <td><strong>{t('home.compareRowPurpose', 'Purpose')}</strong></td>
+                                        <td>{t('home.compareAcadPurpose', 'Preparation for entry into the Official Ontario Program')}</td>
+                                        <td>{t('home.compareOntPurpose', 'Official Ontario high school program')}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Program Type</strong></td>
-                                        <td>Preparation for credit</td>
-                                        <td>Credit-based secondary program</td>
+                                        <td><strong>{t('home.compareRowType', 'Program Type')}</strong></td>
+                                        <td>{t('home.compareAcadType', 'Preparation for credit')}</td>
+                                        <td>{t('home.compareOntType', 'Credit-based secondary program')}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Curriculum</strong></td>
-                                        <td>Ontario-aligned</td>
-                                        <td>Official Ontario Curriculum</td>
+                                        <td><strong>{t('home.compareRowCurriculum', 'Curriculum')}</strong></td>
+                                        <td>{t('home.compareAcadCurriculum', 'Ontario-aligned')}</td>
+                                        <td>{t('home.compareOntCurriculum', 'Official Ontario Curriculum')}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Academic Focus</strong></td>
-                                        <td>Math, English, Science, and Social Studies</td>
-                                        <td>Math, English, Science, and Social Studies</td>
+                                        <td><strong>{t('home.compareRowFocus', 'Academic Focus')}</strong></td>
+                                        <td>{t('home.compareAcadFocus', 'Math, English, Science, and Social Studies')}</td>
+                                        <td>{t('home.compareOntFocus', 'Math, English, Science, and Social Studies')}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Assessment</strong></td>
-                                        <td>Skill-based feedback</td>
-                                        <td>Graded courses with records and credits</td>
+                                        <td><strong>{t('home.compareRowAssessment', 'Assessment')}</strong></td>
+                                        <td>{t('home.compareAcadAssessment', 'Skill-based feedback')}</td>
+                                        <td>{t('home.compareOntAssessment', 'Graded courses with records and credits')}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Progression</strong></td>
-                                        <td>Pathway to the Official Ontario Program</td>
-                                        <td>OSSD completion</td>
+                                        <td><strong>{t('home.compareRowProgression', 'Progression')}</strong></td>
+                                        <td>{t('home.compareAcadProgression', 'Pathway to the Official Ontario Program')}</td>
+                                        <td>{t('home.compareOntProgression', 'OSSD completion')}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Outcome</strong></td>
-                                        <td>Academic readiness</td>
-                                        <td>OSSD &amp; university preparation</td>
+                                        <td><strong>{t('home.compareRowOutcome', 'Outcome')}</strong></td>
+                                        <td>{t('home.compareAcadOutcome', 'Academic readiness')}</td>
+                                        <td>{t('home.compareOntOutcome', 'OSSD & university preparation')}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -290,22 +290,73 @@ function Home() {
                 </div>
             </section>
 
-            {/* Featured Program - Primary Foundation */}
+            {/* Featured Programs - 3 cards (v2) */}
             <section className="featured-program-section section bg-light">
                 <div className="container">
-                    <div className="featured-program-card card">
-                        <span className="new-badge">{t('home.featuredPrograms.primaryFoundation.badge')}</span>
-                        <div className="featured-program-content">
-                            <h2>{t('home.featuredPrograms.primaryFoundation.title')}</h2>
-                            <p>{t('home.featuredPrograms.primaryFoundation.desc')}</p>
+                    <div className="section-header text-center">
+                        <h2>{t('home.featuredProgramsTitle', 'Featured Programs')}</h2>
+                        <p className="section-subtitle">{t('home.taglineLearn', 'Learn First. Decide Later. Succeed Safely.')}</p>
+                    </div>
+                    <div className="featured-programs-grid">
+                        {/* Primary Foundation (Grades 1-5) */}
+                        <div className="featured-program-card card">
+                            <span className="new-badge">{t('home.featuredPrograms.primaryFoundation.badge', 'NEW')}</span>
+                            <h3>{t('home.featuredPrograms.primaryFoundation.title', 'Ontario Primary Foundation Program')}</h3>
+                            <p>{t('home.featuredPrograms.primaryFoundation.desc', 'Grades 1 to 5 aligned with Ontario Curriculum. Two pathways available:')}</p>
                             <ul className="featured-program-options">
-                                <li>{t('home.featuredPrograms.primaryFoundation.selfLearning')}</li>
-                                <li>{t('home.featuredPrograms.primaryFoundation.teacherLed')}</li>
+                                <li>{t('home.featuredPrograms.primaryFoundation.bullet1')}</li>
+                                <li>{t('home.featuredPrograms.primaryFoundation.bullet2')}</li>
+                                <li>{t('home.featuredPrograms.primaryFoundation.bullet3')}</li>
                             </ul>
-                            <Link to="/academic-prep" className="btn btn-primary btn-lg">
-                                {t('home.featuredPrograms.primaryFoundation.cta')}
+                            <Link to="/programs/elementary" className="btn btn-primary btn-lg btn-block">
+                                {t('home.featuredPrograms.primaryFoundation.cta', 'Learn More About Elementary Programs')}
                             </Link>
                         </div>
+
+                        {/* Middle School Foundation (Grades 6-8) — NEW in v2 */}
+                        <div className="featured-program-card card">
+                            <span className="new-badge">{t('home.featuredPrograms.middleSchool.badge', 'NEW')}</span>
+                            <h3>{t('home.featuredPrograms.middleSchool.title', 'Middle School Foundation (Grades 6 to 8)')}</h3>
+                            <p>{t('home.featuredPrograms.middleSchool.desc')}</p>
+                            <ul className="featured-program-options">
+                                <li>{t('home.featuredPrograms.middleSchool.bullet1')}</li>
+                                <li>{t('home.featuredPrograms.middleSchool.bullet2')}</li>
+                                <li>{t('home.featuredPrograms.middleSchool.bullet3')}</li>
+                            </ul>
+                            <Link to="/programs/middle-school" className="btn btn-primary btn-lg btn-block">
+                                {t('home.featuredPrograms.middleSchool.cta', 'Explore Middle School Foundation')}
+                            </Link>
+                        </div>
+
+                        {/* High School Pathways (Grades 9-12) — NEW in v2 */}
+                        <div className="featured-program-card card featured-program-card--gold">
+                            <span className="new-badge new-badge--gold">{t('home.featuredPrograms.highSchool.badge', 'FLEXIBLE PATHWAYS')}</span>
+                            <h3>{t('home.featuredPrograms.highSchool.title', 'Ontario High School Pathways (Grades 9 to 12)')}</h3>
+                            <p className="home-card-tagline">{t('home.featuredPrograms.highSchool.tagline')}</p>
+                            <p>{t('home.featuredPrograms.highSchool.desc')}</p>
+                            <ul className="featured-program-options">
+                                <li>{t('home.featuredPrograms.highSchool.bullet1')}</li>
+                                <li>{t('home.featuredPrograms.highSchool.bullet2')}</li>
+                                <li>{t('home.featuredPrograms.highSchool.bullet3')}</li>
+                                <li>{t('home.featuredPrograms.highSchool.bullet4')}</li>
+                            </ul>
+                            <Link to="/programs/high-school" className="btn btn-accent btn-lg btn-block">
+                                {t('home.featuredPrograms.highSchool.cta', 'View High School Pathways')}
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* V2: Compare + Calendar quick links */}
+                    <div className="home-v2-quicklinks">
+                        <Link to="/compare" className="home-quicklink">
+                            🔍 {t('nav.programDropdown.compareLink', 'Compare Both Programs →')}
+                        </Link>
+                        <Link to="/schedule" className="home-quicklink">
+                            📅 {t('nav.programDropdown.scheduleLink', 'View Academic Calendar →')}
+                        </Link>
+                        <Link to="/tuition" className="home-quicklink">
+                            💰 {t('nav.tuitionPage', 'Tuition & Fees')}
+                        </Link>
                     </div>
                 </div>
             </section>

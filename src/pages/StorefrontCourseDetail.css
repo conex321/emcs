@@ -5,6 +5,7 @@
 .course-detail-page {
     min-height: 100vh;
     background: var(--bg-secondary);
+    overflow-x: hidden;
 }
 
 .course-not-found {
@@ -509,7 +510,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .course-hero .hero-content {
         grid-template-columns: 1fr;
     }

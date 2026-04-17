@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useCart } from '../context/CartContext'
 import './SubjectCardGrid.css'
 
@@ -8,52 +9,59 @@ import './SubjectCardGrid.css'
  * Used in single-course pricing view on grade pages
  */
 
-const SUBJECT_CONFIG = [
-    {
-        name: 'Mathematics',
-        icon: '🔢',
-        color: '#6366F1',
-        description: 'Number sense, operations, algebra, and problem-solving'
-    },
-    {
-        name: 'Language',
-        icon: '📖',
-        color: '#F59E0B',
-        description: 'Reading, writing, speaking, and listening skills'
-    },
-    {
-        name: 'Science & Technology',
-        icon: '🔬',
-        color: '#10B981',
-        description: 'Life systems, matter and energy, structures and mechanisms'
-    },
-    {
-        name: 'Social Studies',
-        icon: '🌍',
-        color: '#8B5CF6',
-        description: 'Heritage, communities, and citizenship'
-    },
-    {
-        name: 'The Arts',
-        icon: '🎨',
-        color: '#EC4899',
-        description: 'Visual arts, music, drama, and dance'
-    },
-    {
-        name: 'Health & Physical Education',
-        icon: '💪',
-        color: '#EF4444',
-        description: 'Active living, movement skills, and healthy choices'
-    }
-]
-
 function SubjectCardGrid({ grade, courses, program = 'academic-prep' }) {
+    const { t } = useTranslation()
     const { addItem } = useCart()
+
+    const SUBJECT_CONFIG = [
+        {
+            key: 'Mathematics',
+            name: t('subjects.math.name', 'Mathematics'),
+            icon: '🔢',
+            color: '#6366F1',
+            description: t('subjects.math.desc', 'Number sense, operations, algebra, and problem-solving')
+        },
+        {
+            key: 'Language',
+            name: t('subjects.language.name', 'Language'),
+            icon: '📖',
+            color: '#F59E0B',
+            description: t('subjects.language.desc', 'Reading, writing, speaking, and listening skills')
+        },
+        {
+            key: 'Science & Technology',
+            name: t('subjects.science.name', 'Science & Technology'),
+            icon: '🔬',
+            color: '#10B981',
+            description: t('subjects.science.desc', 'Life systems, matter and energy, structures and mechanisms')
+        },
+        {
+            key: 'Social Studies',
+            name: t('subjects.social.name', 'Social Studies'),
+            icon: '🌍',
+            color: '#8B5CF6',
+            description: t('subjects.social.desc', 'Heritage, communities, and citizenship')
+        },
+        {
+            key: 'The Arts',
+            name: t('subjects.arts.name', 'The Arts'),
+            icon: '🎨',
+            color: '#EC4899',
+            description: t('subjects.arts.desc', 'Visual arts, music, drama, and dance')
+        },
+        {
+            key: 'Health & Physical Education',
+            name: t('subjects.health.name', 'Health & Physical Education'),
+            icon: '💪',
+            color: '#EF4444',
+            description: t('subjects.health.desc', 'Active living, movement skills, and healthy choices')
+        }
+    ]
 
     // Group courses by subject
     const coursesBySubject = SUBJECT_CONFIG.map(subject => {
         const course = courses.find(c =>
-            c.subject === subject.name &&
+            c.subject === subject.key &&
             c.grade === String(grade) &&
             c.program === program
         )
@@ -80,9 +88,9 @@ function SubjectCardGrid({ grade, courses, program = 'academic-prep' }) {
 
     return (
         <div className="subject-card-grid">
-            {coursesBySubject.map(({ name, icon, color, description, course }) => (
+            {coursesBySubject.map(({ key, name, icon, color, description, course }) => (
                 <div
-                    key={name}
+                    key={key}
                     className="subject-card"
                     style={{ '--subject-color': color }}
                 >
@@ -115,7 +123,7 @@ function SubjectCardGrid({ grade, courses, program = 'academic-prep' }) {
                                                     ${course.product?.pricing?.salePrice || course.product?.pricing?.basePrice}
                                                 </span>
                                                 {course.product?.pricing?.listPrice > course.product?.pricing?.salePrice && (
-                                                    <span className="discount-badge">50% OFF</span>
+                                                    <span className="discount-badge">{t('subjects.discountBadge', '50% OFF')}</span>
                                                 )}
                                             </>
                                         ) : (
@@ -127,7 +135,9 @@ function SubjectCardGrid({ grade, courses, program = 'academic-prep' }) {
 
                                     {/* Delivery Method */}
                                     <p className="delivery-method">
-                                        {program === 'academic-prep' ? '📹 Self-paced video' : '🎥 Live classes'}
+                                        {program === 'academic-prep'
+                                            ? `📹 ${t('subjects.selfPacedVideo', 'Self-paced video')}`
+                                            : `🎥 ${t('subjects.liveClasses', 'Live classes')}`}
                                     </p>
                                 </div>
 
@@ -137,19 +147,19 @@ function SubjectCardGrid({ grade, courses, program = 'academic-prep' }) {
                                         className={`btn btn-sm ${program === 'academic-prep' ? 'btn-primary' : 'btn-accent'}`}
                                         onClick={() => handleAddToCart(course)}
                                     >
-                                        Enroll
+                                        {t('subjects.enroll', 'Enroll')}
                                     </button>
                                     <Link
                                         to={`/${program}/course/${course.code}`}
                                         className="btn btn-sm btn-outline"
                                     >
-                                        Details
+                                        {t('subjects.details', 'Details')}
                                     </Link>
                                 </div>
                             </>
                         ) : (
                             <div className="no-course">
-                                <p>Course coming soon</p>
+                                <p>{t('subjects.comingSoon', 'Course coming soon')}</p>
                             </div>
                         )}
                     </div>

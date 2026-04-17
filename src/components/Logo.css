@@ -1,0 +1,14 @@
+.logo-svg {
+    display: block;
+    height: auto;
+}
+
+.logo-svg-full {
+    height: 36px;
+    width: auto;
+}
+
+.logo-svg-mark {
+    height: 40px;
+    width: 40px;
+}

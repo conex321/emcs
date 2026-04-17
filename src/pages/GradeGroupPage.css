@@ -1,0 +1,37 @@
+.grade-group-page__hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: #fff;
+    padding: 2.5rem 0 2rem;
+}
+
+.grade-group-page__breadcrumbs {
+    font-size: 0.8125rem;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+}
+
+.grade-group-page__breadcrumbs a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.grade-group-page__hero h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.grade-group-page__hero-subtitle {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 48rem;
+}
+
+.grade-group-page__body {
+    padding: 2rem 0 3rem;
+}
+
+.grade-group-page--error {
+    padding: 4rem 0;
+    text-align: center;
+}

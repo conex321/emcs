@@ -10,19 +10,19 @@ function LoginPortalDropdown({ isOpen, onClose }) {
     const portals = [
         {
             label: t('nav.studentPortal', 'Student Portal'),
-            desc: 'Access your LMS and courses',
+            desc: t('portals.student.shortDesc', 'Access your LMS and courses'),
             href: '/portal/student',
             icon: '🎓'
         },
         {
             label: t('nav.parentPortal', 'Parent Portal'),
-            desc: 'Enrollment and student progress',
+            desc: t('portals.parent.shortDesc', 'Enrollment and student progress'),
             href: '/portal/parent',
             icon: '👨‍👩‍👧'
         },
         {
             label: t('nav.agentPortal', 'Agent / School Portal'),
-            desc: 'Partner enrollment forms',
+            desc: t('portals.agent.shortDesc', 'Partner enrollment forms'),
             href: '/portal/agent',
             icon: '🏢'
         }

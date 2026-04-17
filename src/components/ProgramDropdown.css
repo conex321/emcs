@@ -4,6 +4,7 @@
 
 .program-dropdown-two-panel {
     display: flex;
+    flex-wrap: wrap;
     position: fixed;
     top: 80px;
     left: 50%;
@@ -11,10 +12,126 @@
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    width: min(800px, 90vw);
+    width: min(960px, 95vw);
     z-index: 1000;
     animation: programDropdownFadeIn 0.15s ease;
     overflow: visible;
+}
+
+.program-dropdown-v2 .panel {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 320px;
+}
+
+.panel-sublabel {
+    margin: 0 0 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0369a1;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.panel-tagline {
+    margin: 0 0 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text, #1a202c);
+    font-style: italic;
+}
+
+.panel-description {
+    margin: 0 0 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--color-text-muted, #64748b);
+    max-height: 5.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.grade-group-label--link {
+    color: var(--color-text, #1a202c);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.grade-group-label--link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.panel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.panel-pricing-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.panel-pricing-link:hover {
+    text-decoration: underline;
+}
+
+.program-dropdown-shared-footer {
+    flex-basis: 100%;
+    padding: 0.75rem 1.25rem;
+    background: linear-gradient(90deg, #f0f9ff 0%, #fef3c7 100%);
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+}
+
+.shared-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-bottom: 0.375rem;
+}
+
+.shared-link {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1e40af;
+    text-decoration: none;
+}
+
+.shared-link:hover {
+    color: #1e3a8a;
+    text-decoration: underline;
+}
+
+.shared-footer-tagline {
+    margin: 0;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #78350f;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 720px) {
+    .program-dropdown-v2 .panel {
+        flex-basis: 100%;
+    }
+
+    .program-dropdown-v2 .panel-left {
+        border-right: none;
+        border-bottom: 1px solid var(--color-neutral-200, #e5e7eb);
+    }
 }
 
 @keyframes programDropdownFadeIn {

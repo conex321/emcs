@@ -6,6 +6,7 @@ import LanguageToggle from './LanguageToggle'
 import ProgramDropdown from './ProgramDropdown'
 import CoursesDropdown from './CoursesDropdown'
 import LoginPortalDropdown from './LoginPortalDropdown'
+import Logo from './Logo'
 import './Header.css'
 
 function Header() {
@@ -19,7 +20,7 @@ function Header() {
     const location = useLocation()
 
     // Calculate cart item count
-    const cartItemCount = items.reduce((sum, item) => sum + item.quantity, 0)
+    const cartItemCount = items.filter(item => !item.isBundled).length
 
     // Close dropdown when clicking outside any dropdown
     useEffect(() => {
@@ -63,9 +64,8 @@ function Header() {
     return (
         <header className="header">
             <div className="header-container container">
-                <Link to="/" className="logo">
-                    <img src="/images/logo-shield.png" alt="EMCS Logo" className="logo-img" />
-                    <span className="logo-text">EMCS</span>
+                <Link to="/" className="logo" aria-label="EMCS home">
+                    <Logo variant="full" />
                 </Link>
 
                 <nav className={`nav-main ${mobileMenuOpen ? 'active' : ''}`}>
@@ -170,7 +170,7 @@ function Header() {
                             <span className="storefront-icon">📚</span>
                             <div>
                                 <span className="storefront-name">{t('programs.academicPrep.shortName', 'Academic Prep')}</span>
-                                <span className="storefront-tagline">Grades 1-12</span>
+                                <span className="storefront-tagline">{t('nav.gradesRange', 'Grades 1-12')}</span>
                             </div>
                         </Link>
                         <Link
@@ -182,14 +182,14 @@ function Header() {
                             <span className="storefront-icon">🎓</span>
                             <div>
                                 <span className="storefront-name">{t('programs.officialOntario.shortName', 'Official Ontario')}</span>
-                                <span className="storefront-tagline">Grades 1-12</span>
+                                <span className="storefront-tagline">{t('nav.gradesRange', 'Grades 1-12')}</span>
                             </div>
                         </Link>
                     </div>
 
                     {/* Browse by Grade */}
                     <div className="mobile-grades-section">
-                        <span className="mobile-section-label">Browse by Grade</span>
+                        <span className="mobile-section-label">{t('nav.browseByGrade', 'Browse by Grade')}</span>
                         <div className="mobile-grade-pills">
                             {['1','2','3','4','5','6','7','8','9','10','11','12'].map(g => (
                                 <Link
@@ -198,10 +198,33 @@ function Header() {
                                     className="mobile-grade-pill"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    Gr {g}
+                                    {t('nav.gradeAbbrev', 'Gr')} {g}
                                 </Link>
                             ))}
                         </div>
+                    </div>
+
+                    {/* V2 program pages */}
+                    <div className="mobile-v2-programs">
+                        <span className="mobile-section-label">{t('nav.program', 'Program')}</span>
+                        <Link to="/programs/elementary" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                            {t('nav.primaryFoundation', 'Primary Foundation (Grades 1–5)')}
+                        </Link>
+                        <Link to="/programs/middle-school" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                            {t('nav.middleSchoolFoundation', 'Middle School Foundation')}
+                        </Link>
+                        <Link to="/programs/high-school" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                            {t('nav.highSchoolPathways', 'High School Pathways')}
+                        </Link>
+                        <Link to="/tuition" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                            {t('nav.tuitionPage', 'Tuition & Fees')}
+                        </Link>
+                        <Link to="/schedule" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                            {t('nav.academicCalendar', 'Academic Calendar')}
+                        </Link>
+                        <Link to="/compare" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                            {t('nav.compareProgramsLink', 'Compare Programs')}
+                        </Link>
                     </div>
 
                     <nav className="mobile-nav">
@@ -219,7 +242,7 @@ function Header() {
 
                     {/* Portal Links */}
                     <div className="mobile-portals">
-                        <span className="mobile-section-label">Login Portals</span>
+                        <span className="mobile-section-label">{t('nav.loginPortals', 'Login Portals')}</span>
                         <Link to="/portal/student" className="mobile-portal-link" onClick={() => setMobileMenuOpen(false)}>
                             🎓 {t('nav.studentPortal', 'Student Portal')}
                         </Link>

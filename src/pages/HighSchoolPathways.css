@@ -1,0 +1,261 @@
+.hs-pathways-page section {
+    padding: 2rem 0;
+}
+
+.hsp-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #7c3aed 100%);
+    color: #fff;
+    padding: 3.5rem 0 3rem !important;
+    text-align: center;
+}
+
+.hsp-hero h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    letter-spacing: 0.02em;
+}
+
+.hsp-hero__subtitle {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.hsp-hero__tagline {
+    margin: 0 0 1.25rem;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #fcd34d;
+}
+
+.hsp-hero__lede {
+    max-width: 48rem;
+    margin: 0 auto 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hsp-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.hsp-pathways {
+    background: #f8fafc;
+}
+
+.hsp-pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: 1.5rem;
+}
+
+.hsp-pathway-card {
+    background: #fff;
+    padding: 1.75rem;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.08));
+    position: relative;
+}
+
+.hsp-pathway-card--academic {
+    border-top: 4px solid #2563eb;
+}
+
+.hsp-pathway-card--official {
+    border-top: 4px solid #d4af37;
+    background: linear-gradient(180deg, #fffbeb 0%, #fff 40%);
+}
+
+.hsp-pathway-card h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    color: var(--color-text, #1a202c);
+}
+
+.hsp-pathway-card p {
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-text-muted, #475569);
+}
+
+.hsp-pathway-card h4 {
+    margin: 1rem 0 0.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted, #64748b);
+}
+
+.hsp-pathway-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--color-text, #1a202c);
+    line-height: 1.6;
+}
+
+.hsp-pathway-card ul li {
+    margin-bottom: 0.25rem;
+    font-size: 0.9375rem;
+}
+
+.hsp-badge {
+    position: absolute;
+    top: -12px;
+    right: 1rem;
+    background: #d4af37;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.375rem 0.75rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hsp-official-heading {
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding: 2.5rem 0 1rem !important;
+}
+
+.hsp-official-heading h2 {
+    margin: 0 0 0.25rem;
+    color: var(--color-text, #1a202c);
+}
+
+.hsp-official-sub {
+    margin: 0 0 0.5rem;
+    color: var(--color-text-muted, #64748b);
+    font-weight: 600;
+}
+
+.hsp-official-tagline {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted, #64748b);
+}
+
+.hsp-tabs-section {
+    background: #fff;
+}
+
+.hsp-grade-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.hsp-grade-tab {
+    padding: 0.625rem 1.125rem;
+    background: #f1f5f9;
+    border: 2px solid #e2e8f0;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    color: var(--color-text-muted, #475569);
+    transition: all 0.15s ease;
+}
+
+.hsp-grade-tab:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.hsp-grade-tab.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+}
+
+.hsp-note-card {
+    background: #fef3c7;
+    border: 1px solid #fbbf24;
+    border-left: 4px solid #d97706;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #78350f;
+}
+
+.hsp-fees {
+    background: #f8fafc;
+}
+
+.hsp-fees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 1rem;
+}
+
+.hsp-fee-card {
+    background: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border-left: 4px solid #2563eb;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-text, #1a202c);
+}
+
+.hsp-dual-pathway {
+    background: #fff;
+}
+
+.hsp-dual-pathway h2 {
+    text-align: center;
+    margin: 0 0 1.5rem;
+    color: var(--color-text, #1a202c);
+}
+
+.hsp-dual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: 1rem;
+}
+
+.hsp-dual-card {
+    background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid #c7d2fe;
+}
+
+.hsp-dual-card h3 {
+    margin: 0 0 0.5rem;
+    color: #1e3a8a;
+    font-size: 1.125rem;
+}
+
+.hsp-dual-card p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted, #475569);
+}
+
+.hsp-cta-closing {
+    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.hsp-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}

@@ -6,67 +6,67 @@ function OssdRequirements() {
     const { t } = useTranslation()
 
     const compulsoryCredits = [
-        { subject: 'English', credits: 4, note: '1 credit per grade (9, 10, 11, 12)' },
-        { subject: 'Mathematics', credits: 3, note: 'At least 1 in Grade 11 or 12' },
-        { subject: 'Science', credits: 2, note: '' },
-        { subject: 'Canadian History', credits: 1, note: 'Grade 10' },
-        { subject: 'Canadian Geography', credits: 1, note: 'Grade 9' },
-        { subject: 'Arts', credits: 1, note: 'Music, Art, Drama, or Dance' },
-        { subject: 'Health & Physical Education', credits: 1, note: '' },
-        { subject: 'French as a Second Language', credits: 1, note: '' },
-        { subject: 'Career Studies', credits: 0.5, note: '' },
-        { subject: 'Civics', credits: 0.5, note: '' },
-        { subject: 'Group 1, 2, or 3', credits: 3, note: 'Additional from specified groups' }
+        { subject: t('ossd.english', 'English'), credits: 4, note: t('ossd.englishNote', '1 credit per grade (9, 10, 11, 12)') },
+        { subject: t('ossd.mathematics', 'Mathematics'), credits: 3, note: t('ossd.mathematicsNote', 'At least 1 in Grade 11 or 12') },
+        { subject: t('ossd.science', 'Science'), credits: 2, note: '' },
+        { subject: t('ossd.canadianHistory', 'Canadian History'), credits: 1, note: t('ossd.canadianHistoryNote', 'Grade 10') },
+        { subject: t('ossd.canadianGeography', 'Canadian Geography'), credits: 1, note: t('ossd.canadianGeographyNote', 'Grade 9') },
+        { subject: t('ossd.arts', 'Arts'), credits: 1, note: t('ossd.artsNote', 'Music, Art, Drama, or Dance') },
+        { subject: t('ossd.healthPhysEd', 'Health & Physical Education'), credits: 1, note: '' },
+        { subject: t('ossd.frenchSecondLang', 'French as a Second Language'), credits: 1, note: '' },
+        { subject: t('ossd.careerStudies', 'Career Studies'), credits: 0.5, note: '' },
+        { subject: t('ossd.civics', 'Civics'), credits: 0.5, note: '' },
+        { subject: t('ossd.group123', 'Group 1, 2, or 3'), credits: 3, note: t('ossd.group123Note', 'Additional from specified groups') }
     ]
 
     const electiveOptions = [
-        'Accounting',
-        'Business Studies',
-        'Economics',
-        'Law',
-        'Marketing',
-        'Music',
-        'Visual Arts',
-        'Computer Science',
-        'Technological Education',
-        'Additional Sciences',
-        'Additional Mathematics',
-        'World Languages'
+        t('ossd.elective.accounting', 'Accounting'),
+        t('ossd.elective.businessStudies', 'Business Studies'),
+        t('ossd.elective.economics', 'Economics'),
+        t('ossd.elective.law', 'Law'),
+        t('ossd.elective.marketing', 'Marketing'),
+        t('ossd.elective.music', 'Music'),
+        t('ossd.elective.visualArts', 'Visual Arts'),
+        t('ossd.elective.computerScience', 'Computer Science'),
+        t('ossd.elective.techEd', 'Technological Education'),
+        t('ossd.elective.additionalSciences', 'Additional Sciences'),
+        t('ossd.elective.additionalMath', 'Additional Mathematics'),
+        t('ossd.elective.worldLanguages', 'World Languages')
     ]
 
     const additionalReqs = [
         {
             icon: '📝',
-            title: 'Ontario Secondary School Literacy Test (OSSLT)',
-            desc: 'The OSSLT evaluates English reading and writing skills and is administered in Grade 10. Students may retake the test until Grade 12, or complete an additional English credit (OSSLC) if unsuccessful.'
+            title: t('ossd.additionalReq.ossltTitle', 'Ontario Secondary School Literacy Test (OSSLT)'),
+            desc: t('ossd.additionalReq.ossltDesc', 'The OSSLT evaluates English reading and writing skills and is administered in Grade 10. Students may retake the test until Grade 12, or complete an additional English credit (OSSLC) if unsuccessful.')
         },
         {
             icon: '🤝',
-            title: '40 Hours Community Involvement',
-            desc: 'Complete 40 hours of community volunteer service before graduation. This helps develop civic responsibility and gives back to the community.'
+            title: t('ossd.additionalReq.communityTitle', '40 Hours Community Involvement'),
+            desc: t('ossd.additionalReq.communityDesc', 'Complete 40 hours of community volunteer service before graduation. This helps develop civic responsibility and gives back to the community.')
         },
         {
             icon: '💻',
-            title: 'Online Learning Requirement',
-            desc: 'Minimum of 2 online learning credits required for graduation. This requirement is automatically fulfilled through EMCS courses.'
+            title: t('ossd.additionalReq.onlineTitle', 'Online Learning Requirement'),
+            desc: t('ossd.additionalReq.onlineDesc', 'Minimum of 2 online learning credits required for graduation. This requirement is automatically fulfilled through EMCS courses.')
         }
     ]
 
     const internationalBenefits = [
         {
             icon: '🌍',
-            title: 'Transfer Credit Recognition',
-            desc: 'High school courses from your home country receive recognition, considered equivalent to a maximum of 23 credits. Only 7 credits must be completed in Canada.'
+            title: t('ossd.intl.transferTitle', 'Transfer Credit Recognition'),
+            desc: t('ossd.intl.transferDesc', 'High school courses from your home country receive recognition, considered equivalent to a maximum of 23 credits. Only 7 credits must be completed in Canada.')
         },
         {
             icon: '🎯',
-            title: 'Personalized Study Plans',
-            desc: 'We provide mathematics diagnostic testing and personalized study plans for non-native speakers to enhance comprehension of mathematical terminology in English.'
+            title: t('ossd.intl.studyPlansTitle', 'Personalized Study Plans'),
+            desc: t('ossd.intl.studyPlansDesc', 'We provide mathematics diagnostic testing and personalized study plans for non-native speakers to enhance comprehension of mathematical terminology in English.')
         },
         {
             icon: '📚',
-            title: 'Language Support',
-            desc: 'Non-native English speakers receive support to demonstrate proficiency through IELTS or TOEFL, with comprehensive preparation resources available.'
+            title: t('ossd.intl.langSupportTitle', 'Language Support'),
+            desc: t('ossd.intl.langSupportDesc', 'Non-native English speakers receive support to demonstrate proficiency through IELTS or TOEFL, with comprehensive preparation resources available.')
         }
     ]
 
@@ -78,7 +78,7 @@ function OssdRequirements() {
                     <h1>{t('ossd.title')}</h1>
                     <p className="hero-subtitle">{t('ossd.subtitle')}</p>
                     <div className="hero-highlight">
-                        <p>A vital qualification for students aspiring to pursue post-secondary education or enter the workforce</p>
+                        <p>{t('ossd.heroDesc', 'A vital qualification for students aspiring to pursue post-secondary education or enter the workforce')}</p>
                     </div>
                 </div>
             </section>
@@ -88,29 +88,29 @@ function OssdRequirements() {
                 <div className="container">
                     <div className="intro-content">
                         <div className="intro-text">
-                            <h2>What is the Ontario Secondary School Diploma?</h2>
-                            <p>The Ontario Secondary School Diploma (OSSD) represents a qualification from Ontario, Canada for students completing secondary education requirements. It is recognized worldwide and opens doors to top universities and careers globally.</p>
-                            <p>Excellence Maple Canadian School (EMCS) provides a full range of high school courses approved by the Ontario Ministry of Education for students in grades 9 to 12. BSID: 665588.</p>
+                            <h2>{t('ossd.whatIsOssdTitle', 'What is the Ontario Secondary School Diploma?')}</h2>
+                            <p>{t('ossd.whatIsOssdDesc1', 'The Ontario Secondary School Diploma (OSSD) represents a qualification from Ontario, Canada for students completing secondary education requirements. It is recognized worldwide and opens doors to top universities and careers globally.')}</p>
+                            <p>{t('ossd.whatIsOssdDesc2', 'EMCS provides a full range of high school courses approved by the Ontario Ministry of Education for students in grades 9 to 12. BSID: 665588.')}</p>
                             <div className="intro-stats">
                                 <div className="intro-stat">
                                     <span className="stat-value">98%</span>
-                                    <span className="stat-label">University Acceptance</span>
+                                    <span className="stat-label">{t('ossd.statUniversityAcceptance', 'University Acceptance')}</span>
                                 </div>
                                 <div className="intro-stat">
                                     <span className="stat-value">170+</span>
-                                    <span className="stat-label">Course Options</span>
+                                    <span className="stat-label">{t('ossd.statCourseOptions', 'Course Options')}</span>
                                 </div>
                                 <div className="intro-stat">
                                     <span className="stat-value">100%</span>
-                                    <span className="stat-label">Ministry Approved</span>
+                                    <span className="stat-label">{t('ossd.statMinistryApproved', 'Ministry Approved')}</span>
                                 </div>
                             </div>
                         </div>
                         <div className="intro-image">
                             <div className="image-placeholder">
                                 <div className="diploma-icon">🎓</div>
-                                <h3>OSSD</h3>
-                                <p>Recognized Worldwide</p>
+                                <h3>{t('ossd.diplomaLabel', 'OSSD')}</h3>
+                                <p>{t('ossd.recognizedWorldwide', 'Recognized Worldwide')}</p>
                             </div>
                         </div>
                     </div>
@@ -121,29 +121,29 @@ function OssdRequirements() {
             <section className="ossd-overview section bg-light">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>Graduation Requirements Overview</h2>
-                        <p className="section-subtitle">To earn your OSSD, you must complete:</p>
+                        <h2>{t('ossd.gradReqOverview', 'Graduation Requirements Overview')}</h2>
+                        <p className="section-subtitle">{t('ossd.gradReqSubtitle', 'To earn your OSSD, you must complete:')}</p>
                     </div>
                     <div className="overview-cards">
                         <div className="overview-card card animate-fade-in-up">
                             <div className="overview-number">30</div>
                             <div className="overview-label">{t('ossd.total')}</div>
-                            <div className="overview-detail">18 Compulsory + 12 Elective</div>
+                            <div className="overview-detail">{t('ossd.overviewCreditsDetail', '18 Compulsory + 12 Elective')}</div>
                         </div>
                         <div className="overview-card card animate-fade-in-up stagger-1">
                             <div className="overview-number">1</div>
                             <div className="overview-label">{t('ossd.literacy')}</div>
-                            <div className="overview-detail">OSSLT or OSSLC</div>
+                            <div className="overview-detail">{t('ossd.overviewLiteracyDetail', 'OSSLT or OSSLC')}</div>
                         </div>
                         <div className="overview-card card animate-fade-in-up stagger-2">
                             <div className="overview-number">40</div>
-                            <div className="overview-label">{t('ossd.community')} Hours</div>
-                            <div className="overview-detail">Community Service</div>
+                            <div className="overview-label">{t('ossd.community')} {t('ossd.hours', 'Hours')}</div>
+                            <div className="overview-detail">{t('ossd.overviewCommunityDetail', 'Community Service')}</div>
                         </div>
                         <div className="overview-card card animate-fade-in-up stagger-3">
                             <div className="overview-number">2</div>
-                            <div className="overview-label">Online Credits</div>
-                            <div className="overview-detail">Fulfilled at EMCS</div>
+                            <div className="overview-label">{t('ossd.onlineCredits', 'Online Credits')}</div>
+                            <div className="overview-detail">{t('ossd.overviewOnlineDetail', 'Fulfilled at EMCS')}</div>
                         </div>
                     </div>
                 </div>
@@ -168,9 +168,9 @@ function OssdRequirements() {
                             <tbody>
                                 {compulsoryCredits.map((item, index) => (
                                     <tr key={index}>
-                                        <td><strong>{t(`ossd.subjects.${item.subject.toLowerCase().replace(/ & /g, '').replace(/ /g, '')}`) || item.subject}</strong></td>
+                                        <td><strong>{item.subject}</strong></td>
                                         <td><span className="credit-badge">{item.credits}</span></td>
-                                        <td className="note">{t(`ossd.notes.${item.subject.toLowerCase().replace(/ & /g, '').replace(/ /g, '')}`) || item.note}</td>
+                                        <td className="note">{item.note}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -190,8 +190,8 @@ function OssdRequirements() {
             <section className="elective-section section bg-light">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>12 Elective Credits</h2>
-                        <p className="section-subtitle">Choose from a wide range of subjects based on your interests and career goals</p>
+                        <h2>{t('ossd.electiveCreditsTitle', '12 Elective Credits')}</h2>
+                        <p className="section-subtitle">{t('ossd.electiveCreditsSubtitle', 'Choose from a wide range of subjects based on your interests and career goals')}</p>
                     </div>
                     <div className="elective-grid">
                         {electiveOptions.map((elective, index) => (
@@ -202,7 +202,7 @@ function OssdRequirements() {
                         ))}
                     </div>
                     <div className="text-center mt-4">
-                        <p className="elective-note">And many more options available! Students earn one credit per completed subject.</p>
+                        <p className="elective-note">{t('ossd.electiveNote', 'And many more options available! Students earn one credit per completed subject.')}</p>
                     </div>
                 </div>
             </section>
@@ -230,8 +230,8 @@ function OssdRequirements() {
             <section className="international-section section bg-light">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>International Student Provisions</h2>
-                        <p className="section-subtitle">Special considerations for students transferring from international schools</p>
+                        <h2>{t('ossd.intlProvisionsTitle', 'International Student Provisions')}</h2>
+                        <p className="section-subtitle">{t('ossd.intlProvisionsSubtitle', 'Special considerations for students transferring from international schools')}</p>
                     </div>
                     <div className="international-grid">
                         {internationalBenefits.map((benefit, index) => (
@@ -243,27 +243,27 @@ function OssdRequirements() {
                         ))}
                     </div>
                     <div className="international-highlight card">
-                        <h3>Credit Transfer Process</h3>
+                        <h3>{t('ossd.transferProcessTitle', 'Credit Transfer Process')}</h3>
                         <div className="transfer-steps">
                             <div className="transfer-step">
                                 <span className="step-number">1</span>
                                 <div className="step-content">
-                                    <h4>Submit Transcripts</h4>
-                                    <p>Provide official transcripts from your previous schools</p>
+                                    <h4>{t('ossd.transferStep1Title', 'Submit Transcripts')}</h4>
+                                    <p>{t('ossd.transferStep1Desc', 'Provide official transcripts from your previous schools')}</p>
                                 </div>
                             </div>
                             <div className="transfer-step">
                                 <span className="step-number">2</span>
                                 <div className="step-content">
-                                    <h4>Credit Evaluation</h4>
-                                    <p>We assess your courses (up to 23 credits recognized)</p>
+                                    <h4>{t('ossd.transferStep2Title', 'Credit Evaluation')}</h4>
+                                    <p>{t('ossd.transferStep2Desc', 'We assess your courses (up to 23 credits recognized)')}</p>
                                 </div>
                             </div>
                             <div className="transfer-step">
                                 <span className="step-number">3</span>
                                 <div className="step-content">
-                                    <h4>Complete Remaining</h4>
-                                    <p>Finish the remaining 7 credits to earn your OSSD</p>
+                                    <h4>{t('ossd.transferStep3Title', 'Complete Remaining')}</h4>
+                                    <p>{t('ossd.transferStep3Desc', 'Finish the remaining 7 credits to earn your OSSD')}</p>
                                 </div>
                             </div>
                         </div>
@@ -275,38 +275,38 @@ function OssdRequirements() {
             <section className="why-emcs section">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>Why Choose EMCS for Your OSSD?</h2>
+                        <h2>{t('ossd.whyEmcsTitle', 'Why Choose EMCS for Your OSSD?')}</h2>
                     </div>
                     <div className="benefits-grid">
                         <div className="benefit-card card">
                             <div className="benefit-icon">✓</div>
-                            <h3>Ministry Approved</h3>
-                            <p>All courses approved by the Ontario Ministry of Education</p>
+                            <h3>{t('ossd.benefit.ministryTitle', 'Ministry Approved')}</h3>
+                            <p>{t('ossd.benefit.ministryDesc', 'All courses approved by the Ontario Ministry of Education')}</p>
                         </div>
                         <div className="benefit-card card">
                             <div className="benefit-icon">✓</div>
-                            <h3>Flexible Learning</h3>
-                            <p>Study online at your own pace, from anywhere in the world</p>
+                            <h3>{t('ossd.benefit.flexibleTitle', 'Flexible Learning')}</h3>
+                            <p>{t('ossd.benefit.flexibleDesc', 'Study online at your own pace, from anywhere in the world')}</p>
                         </div>
                         <div className="benefit-card card">
                             <div className="benefit-icon">✓</div>
-                            <h3>Expert Teachers</h3>
-                            <p>Ontario Certified Teachers (OCT) with real teaching experience</p>
+                            <h3>{t('ossd.benefit.teachersTitle', 'Expert Teachers')}</h3>
+                            <p>{t('ossd.benefit.teachersDesc', 'Ontario Certified Teachers (OCT) with real teaching experience')}</p>
                         </div>
                         <div className="benefit-card card">
                             <div className="benefit-icon">✓</div>
-                            <h3>University Ready</h3>
-                            <p>OSSD recognized by top universities worldwide</p>
+                            <h3>{t('ossd.benefit.universityTitle', 'University Ready')}</h3>
+                            <p>{t('ossd.benefit.universityDesc', 'OSSD recognized by top universities worldwide')}</p>
                         </div>
                         <div className="benefit-card card">
                             <div className="benefit-icon">✓</div>
-                            <h3>Personalized Support</h3>
-                            <p>Diagnostic testing and customized study plans</p>
+                            <h3>{t('ossd.benefit.supportTitle', 'Personalized Support')}</h3>
+                            <p>{t('ossd.benefit.supportDesc', 'Diagnostic testing and customized study plans')}</p>
                         </div>
                         <div className="benefit-card card">
                             <div className="benefit-icon">✓</div>
-                            <h3>Fast Track Options</h3>
-                            <p>Complete courses in as little as 4 weeks</p>
+                            <h3>{t('ossd.benefit.fastTrackTitle', 'Fast Track Options')}</h3>
+                            <p>{t('ossd.benefit.fastTrackDesc', 'Complete courses in as little as 4 weeks')}</p>
                         </div>
                     </div>
                 </div>
@@ -319,7 +319,7 @@ function OssdRequirements() {
                     <p>{t('ossd.cta.subtitle')}</p>
                     <div className="cta-buttons">
                         <Link to="/contact" className="btn btn-accent btn-lg">{t('ossd.cta.button')}</Link>
-                        <Link to="/official-ontario" className="btn btn-secondary btn-lg">Browse Courses</Link>
+                        <Link to="/official-ontario" className="btn btn-secondary btn-lg">{t('ossd.browseCourses', 'Browse Courses')}</Link>
                     </div>
                 </div>
             </section>

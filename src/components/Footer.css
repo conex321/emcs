@@ -35,9 +35,9 @@
     font-weight: var(--font-bold);
 }
 
-.footer-logo-icon svg {
-    width: 48px;
+.footer-logo-mark {
     height: 48px;
+    width: 48px;
 }
 
 .footer-tagline {

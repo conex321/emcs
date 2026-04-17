@@ -6,6 +6,7 @@
     min-height: 100vh;
     padding: var(--space-8) 0 var(--space-16);
     background: var(--bg-secondary);
+    overflow-x: hidden;
 }
 
 /* Progress Steps */
@@ -410,7 +411,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .checkout-content {
         grid-template-columns: 1fr;
     }
