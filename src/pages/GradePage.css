@@ -301,13 +301,17 @@
 
 /* Link to Single Course */
 .link-single-course {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     margin-top: 1rem;
     color: var(--color-brand, #1B4332);
     font-weight: 600;
     text-decoration: none;
     font-size: 0.95rem;
+    min-height: 44px;
+    padding: 10px;
 }
 
 .link-single-course:hover {

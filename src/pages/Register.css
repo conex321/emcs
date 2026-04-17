@@ -160,6 +160,7 @@
 .register-form .field input,
 .register-form .field select {
     padding: 0.65rem 0.85rem;
+    min-height: 44px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     font-size: 1rem;

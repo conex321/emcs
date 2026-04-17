@@ -13,3 +13,8 @@ dist
 audit-*.png
 fix-*.png
 verify-*.png
+
+# UI audit output
+tests/ui-audit/results/
+playwright-report/
+test-results/

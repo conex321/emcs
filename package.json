@@ -6,7 +6,9 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "audit:ui": "playwright test",
+        "audit:ui:report": "node tests/ui-audit/report.js"
     },
     "dependencies": {
         "@react-three/drei": "^9.122.0",
@@ -20,6 +22,7 @@
         "three": "^0.160.1"
     },
     "devDependencies": {
+        "@playwright/test": "^1.59.1",
         "@types/react": "^18.3.12",
         "@types/react-dom": "^18.3.1",
         "@vitejs/plugin-react": "^4.3.3",

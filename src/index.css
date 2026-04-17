@@ -859,6 +859,7 @@ ol {
 
 .input {
   width: 100%;
+  min-height: 44px;
   padding: var(--space-3) var(--space-4);
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -867,6 +868,13 @@ ol {
   border: 2px solid var(--color-neutral-200);
   border-radius: var(--radius-lg);
   transition: all var(--transition-fast);
+}
+
+/* WebKit ignores min-height on <select>; force it cross-browser. */
+select.input,
+.form-group select,
+.register-form .field select {
+  height: 44px;
 }
 
 .input:focus {
