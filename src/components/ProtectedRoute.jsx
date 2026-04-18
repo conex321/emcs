@@ -9,6 +9,7 @@ import { useAuth } from '../context/AuthContext'
 export default function ProtectedRoute({ children, requiredRole, requiredRoles }) {
   const { user, profile, loading } = useAuth()
   const location = useLocation()
+  const activeRole = profile?.role || user?.user_metadata?.role
 
   // Show nothing while checking auth status
   if (loading) {
@@ -33,8 +34,8 @@ export default function ProtectedRoute({ children, requiredRole, requiredRoles }
 
   // Check role if required
   const allowedRoles = requiredRoles || (requiredRole ? [requiredRole] : null)
-  if (allowedRoles && profile) {
-    if (!allowedRoles.includes(profile.role)) {
+  if (allowedRoles && activeRole) {
+    if (!allowedRoles.includes(activeRole)) {
       // Authenticated but wrong role → redirect to their portal
       const roleRoutes = {
         admin: '/admin/dashboard',
@@ -43,7 +44,7 @@ export default function ProtectedRoute({ children, requiredRole, requiredRoles }
         student: '/portal/student',
         agent: '/portal/agent',
       }
-      const redirect = roleRoutes[profile.role] || '/'
+      const redirect = roleRoutes[activeRole] || '/'
       return <Navigate to={redirect} replace />
     }
   }

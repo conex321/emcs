@@ -3,7 +3,6 @@
 // Manages user session, role-based routing, profile data
 // ============================================================
 import { createContext, useContext, useState, useEffect, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
 import supabase from '../services/supabaseClient'
 
 const AuthContext = createContext(null)
@@ -18,6 +17,8 @@ const ROLE_ROUTES = {
   school_admin: '/admin/dashboard',
 }
 
+const getRouteForRole = (role) => ROLE_ROUTES[role] || ROLE_ROUTES.parent
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [profile, setProfile] = useState(null)
@@ -31,7 +32,7 @@ export function AuthProvider({ children }) {
         .from('profiles')
         .select('*')
         .eq('id', userId)
-        .single()
+        .maybeSingle()
 
       if (error) {
         console.error('Profile fetch error:', error)
@@ -46,38 +47,44 @@ export function AuthProvider({ children }) {
 
   // Initialize auth state
   useEffect(() => {
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session: currentSession } }) => {
-      setSession(currentSession)
-      setUser(currentSession?.user ?? null)
+    let isMounted = true
 
-      if (currentSession?.user) {
-        fetchProfile(currentSession.user.id).then(setProfile)
+    const syncAuthState = async (nextSession) => {
+      if (!isMounted) return
+
+      setLoading(true)
+      setSession(nextSession)
+      setUser(nextSession?.user ?? null)
+
+      if (!nextSession?.user) {
+        setProfile(null)
+        setLoading(false)
+        return
       }
 
+      const profileData = await fetchProfile(nextSession.user.id)
+      if (!isMounted) return
+
+      setProfile(profileData)
       setLoading(false)
+    }
+
+    // Get initial session
+    supabase.auth.getSession().then(({ data: { session: currentSession } }) => {
+      void syncAuthState(currentSession)
     })
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, newSession) => {
-        setSession(newSession)
-        setUser(newSession?.user ?? null)
-
-        if (newSession?.user) {
-          const profileData = await fetchProfile(newSession.user.id)
-          setProfile(profileData)
-        } else {
-          setProfile(null)
-        }
-
-        if (event === 'SIGNED_OUT') {
-          setProfile(null)
-        }
+      async (_event, newSession) => {
+        await syncAuthState(newSession)
       }
     )
 
-    return () => subscription.unsubscribe()
+    return () => {
+      isMounted = false
+      subscription.unsubscribe()
+    }
   }, [fetchProfile])
 
   // ─── AUTH METHODS ──────────────────────────────────────
@@ -124,7 +131,17 @@ export function AuthProvider({ children }) {
       password,
     })
     if (error) throw error
-    return data
+
+    const profileData = data?.user ? await fetchProfile(data.user.id) : null
+    if (profileData) {
+      setProfile(profileData)
+    }
+
+    return {
+      ...data,
+      profile: profileData,
+      redirect: getRouteForRole(profileData?.role || data?.user?.user_metadata?.role || 'parent'),
+    }
   }
 
   const signOut = async () => {
@@ -145,7 +162,22 @@ export function AuthProvider({ children }) {
   // Get the appropriate redirect path for the user's role
   const getRoleRedirect = () => {
     const role = profile?.role || user?.user_metadata?.role || 'parent'
-    return ROLE_ROUTES[role] || ROLE_ROUTES.parent
+    return getRouteForRole(role)
+  }
+
+  const resolveRoleRedirect = async (authUser = user) => {
+    if (!authUser) {
+      return ROLE_ROUTES.parent
+    }
+
+    const profileData = await fetchProfile(authUser.id)
+    const resolvedRole = profileData?.role || authUser?.user_metadata?.role || 'parent'
+
+    if (profileData) {
+      setProfile(profileData)
+    }
+
+    return getRouteForRole(resolvedRole)
   }
 
   // Check if user has a specific role
@@ -166,6 +198,7 @@ export function AuthProvider({ children }) {
     signOut,
     resetPassword,
     getRoleRedirect,
+    resolveRoleRedirect,
     hasRole,
     isAdmin,
     fetchProfile,

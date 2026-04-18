@@ -9,31 +9,43 @@ import { useAuth } from '../../context/AuthContext'
 export default function AuthCallback() {
   const [error, setError] = useState('')
   const navigate = useNavigate()
-  const { getRoleRedirect } = useAuth()
+  const { resolveRoleRedirect } = useAuth()
 
   useEffect(() => {
     const handleCallback = async () => {
       try {
-        const { data, error: exchangeError } = await supabase.auth.exchangeCodeForSession(
-          window.location.search
-        )
+        const params = new URLSearchParams(window.location.search)
+        const code = params.get('code')
+        let authUser = null
 
-        if (exchangeError) {
-          setError(exchangeError.message)
+        if (code) {
+          const { data, error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
+
+          if (exchangeError) {
+            setError(exchangeError.message)
+            return
+          }
+
+          authUser = data?.user ?? null
+        } else {
+          const { data: { session } } = await supabase.auth.getSession()
+          authUser = session?.user ?? null
+        }
+
+        if (!authUser) {
+          setError('Authentication session could not be established.')
           return
         }
 
-        // Redirect based on role after a brief delay for profile fetch
-        setTimeout(() => {
-          navigate(getRoleRedirect(), { replace: true })
-        }, 500)
+        const redirect = await resolveRoleRedirect(authUser)
+        navigate(redirect, { replace: true })
       } catch (err) {
         setError(err.message || 'Authentication callback failed')
       }
     }
 
     handleCallback()
-  }, [navigate, getRoleRedirect])
+  }, [navigate, resolveRoleRedirect])
 
   if (error) {
     return (

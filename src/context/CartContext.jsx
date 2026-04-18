@@ -1,5 +1,5 @@
-import { createContext, useContext, useReducer, useEffect } from 'react'
-import { PRICING_CONFIG, applyCoupon as applyCouponLogic, calculateAgentCommission } from '../config/pricing'
+import { createContext, useContext, useReducer, useState, useEffect } from 'react'
+import supabase from '../services/supabaseClient'
 
 // Initial state
 const initialState = {
@@ -41,11 +41,16 @@ function calculateTotals(items, appliedCoupon) {
 
     let discount = 0
     if (appliedCoupon) {
-        if (appliedCoupon.type === 'PERCENT') {
-            const effectivePercent = Math.min(appliedCoupon.value, 60)
+        const couponType = String(appliedCoupon.type || '').toLowerCase()
+
+        if (couponType === 'percent' || couponType === 'percentage' || couponType === 'percent_off' || appliedCoupon.type === 'PERCENT') {
+            const effectivePercent = Math.min(
+                Number(appliedCoupon.value) || 0,
+                Number(appliedCoupon.max_discount) || 60
+            )
             discount = subtotal * (effectivePercent / 100)
-        } else if (appliedCoupon.type === 'FIXED') {
-            discount = Math.min(appliedCoupon.value, subtotal * 0.6)
+        } else if (couponType === 'fixed' || appliedCoupon.type === 'FIXED') {
+            discount = Math.min(Number(appliedCoupon.value) || 0, subtotal * 0.6)
         }
     }
 
@@ -153,6 +158,7 @@ const CartContext = createContext(null)
 // Provider component
 export function CartProvider({ children }) {
     const [state, dispatch] = useReducer(cartReducer, initialState)
+    const [isLoaded, setIsLoaded] = useState(false)
 
     // Load cart from localStorage on mount
     useEffect(() => {
@@ -165,12 +171,14 @@ export function CartProvider({ children }) {
                 console.error('Failed to load cart:', e)
             }
         }
+        setIsLoaded(true)
     }, [])
 
-    // Save cart to localStorage on changes
+    // Save cart to localStorage on changes — only after initial load
     useEffect(() => {
+        if (!isLoaded) return
         localStorage.setItem('emcs-cart', JSON.stringify(state))
-    }, [state])
+    }, [state, isLoaded])
 
     // Actions
     const addItem = (item, allCourses = []) => {
@@ -181,23 +189,77 @@ export function CartProvider({ children }) {
         dispatch({ type: ACTIONS.REMOVE_ITEM, payload: { itemId } })
     }
 
-    const applyCoupon = (couponCode) => {
-        // Mock coupon validation - in production this would call an API
-        const mockCoupons = {
-            'PROMO-SAVE50': { code: 'PROMO-SAVE50', type: 'PERCENT', value: 50, description: '50% off' },
-            'PROMO-SAVE40': { code: 'PROMO-SAVE40', type: 'PERCENT', value: 40, description: '40% off' },
-            'AGENT-SMITH50': { code: 'AGENT-SMITH50', type: 'PERCENT', value: 50, description: 'Agent discount 50%' },
-            'AGENT-DEMO60': { code: 'AGENT-DEMO60', type: 'PERCENT', value: 60, description: 'Agent discount 60%' },
-            'WELCOME100': { code: 'WELCOME100', type: 'FIXED', value: 100, description: '$100 off' },
-        }
+    const applyCoupon = async (couponCode) => {
+        const normalizedCode = couponCode.trim().toUpperCase()
 
-        const coupon = mockCoupons[couponCode.toUpperCase()]
-        if (!coupon) {
+        if (!normalizedCode) {
             return { success: false, error: 'Invalid coupon code' }
         }
 
-        dispatch({ type: ACTIONS.APPLY_COUPON, payload: { coupon } })
-        return { success: true, coupon }
+        try {
+            const { data: coupon, error } = await supabase
+                .from('coupons')
+                .select(`
+                    code,
+                    type,
+                    value,
+                    description,
+                    max_discount,
+                    max_uses,
+                    use_count,
+                    expires_at,
+                    starts_at,
+                    is_active,
+                    agent_id
+                `)
+                .eq('code', normalizedCode)
+                .eq('is_active', true)
+                .maybeSingle()
+
+            if (error) {
+                throw error
+            }
+
+            if (!coupon) {
+                return { success: false, error: 'Invalid coupon code' }
+            }
+
+            if (coupon.starts_at && new Date(coupon.starts_at) > new Date()) {
+                return { success: false, error: 'Coupon is not active yet' }
+            }
+
+            if (coupon.expires_at && new Date(coupon.expires_at) < new Date()) {
+                return { success: false, error: 'Coupon has expired' }
+            }
+
+            if (coupon.max_uses && coupon.use_count >= coupon.max_uses) {
+                return { success: false, error: 'Coupon usage limit reached' }
+            }
+
+            dispatch({
+                type: ACTIONS.APPLY_COUPON,
+                payload: {
+                    coupon: {
+                        ...coupon,
+                        description: coupon.description || 'Discount applied',
+                    },
+                },
+            })
+
+            return {
+                success: true,
+                coupon: {
+                    ...coupon,
+                    description: coupon.description || 'Discount applied',
+                },
+            }
+        } catch (error) {
+            console.error('Coupon lookup failed:', error)
+            return {
+                success: false,
+                error: 'Coupon verification is unavailable right now. Please try again later.',
+            }
+        }
     }
 
     const removeCoupon = () => {

@@ -67,6 +67,7 @@ serve(async (req) => {
             parent_id: user.id,
             first_name: studentData.first_name || studentData.firstName,
             last_name: studentData.last_name || studentData.lastName,
+            email: studentData.email || null,
             date_of_birth: studentData.date_of_birth || studentData.dateOfBirth,
             current_grade: studentData.current_grade || studentData.currentGrade,
             previous_school: studentData.previous_school || studentData.previousSchool,
@@ -80,27 +81,51 @@ serve(async (req) => {
 
       // Create enrollments for each course assigned to this student
       const studentCourses = (courses || []).filter(
-        (c: any) => c.student_index === studentData.index || !c.student_index
+        (c: any) =>
+          c.student_index === studentData.index ||
+          c.student_index === undefined ||
+          c.student_index === null
       )
 
       for (const courseData of studentCourses) {
+        const courseCode = courseData.course_code || courseData.code
+
         // Look up course by code
         const { data: course } = await supabaseAdmin
           .from('courses')
           .select('id')
-          .eq('code', courseData.course_code || courseData.code)
+          .eq('code', courseCode)
           .single()
 
         if (!course) continue
 
         // Find the order item
-        const { data: orderItem } = await supabaseAdmin
+        const { data: unassignedOrderItem } = await supabaseAdmin
           .from('order_items')
           .select('id')
           .eq('order_id', order_id)
-          .eq('course_code', courseData.course_code || courseData.code)
-          .eq('student_id', studentId)
-          .single()
+          .eq('course_code', courseCode)
+          .is('student_id', null)
+          .maybeSingle()
+
+        let orderItemId = unassignedOrderItem?.id || null
+
+        if (unassignedOrderItem?.id) {
+          await supabaseAdmin
+            .from('order_items')
+            .update({ student_id: studentId })
+            .eq('id', unassignedOrderItem.id)
+        } else {
+          const { data: existingOrderItem } = await supabaseAdmin
+            .from('order_items')
+            .select('id')
+            .eq('order_id', order_id)
+            .eq('course_code', courseCode)
+            .eq('student_id', studentId)
+            .maybeSingle()
+
+          orderItemId = existingOrderItem?.id || null
+        }
 
         // Create enrollment (upsert to handle idempotency)
         const { data: enrollment, error: enrollError } = await supabaseAdmin
@@ -108,7 +133,7 @@ serve(async (req) => {
           .upsert({
             student_id: studentId,
             course_id: course.id,
-            order_item_id: orderItem?.id,
+            order_item_id: orderItemId,
             status: 'active',
             enrolled_at: new Date().toISOString(),
           }, { onConflict: 'student_id,course_id' })

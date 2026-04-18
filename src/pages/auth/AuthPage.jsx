@@ -39,9 +39,9 @@ export default function AuthPage() {
     setLoading(true)
 
     try {
-      await signIn({ email: loginForm.email, password: loginForm.password })
+      const signInResult = await signIn({ email: loginForm.email, password: loginForm.password })
       const from = location.state?.from?.pathname
-      navigate(from || getRoleRedirect(), { replace: true })
+      navigate(from || signInResult?.redirect || getRoleRedirect(), { replace: true })
     } catch (err) {
       setError(err.message || 'Login failed. Please check your credentials.')
     } finally {

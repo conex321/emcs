@@ -25,7 +25,7 @@ function Cart() {
     const [couponError, setCouponError] = useState('')
     const [couponSuccess, setCouponSuccess] = useState('')
 
-    const handleApplyCoupon = () => {
+    const handleApplyCoupon = async () => {
         setCouponError('')
         setCouponSuccess('')
 
@@ -34,7 +34,7 @@ function Cart() {
             return
         }
 
-        const result = applyCoupon(couponCode.trim())
+        const result = await applyCoupon(couponCode.trim())
         if (result.success) {
             setCouponSuccess(t('cart.couponApplied', 'Coupon applied: {{description}}', { description: result.coupon.description }))
             setCouponCode('')
@@ -211,11 +211,16 @@ function Cart() {
                                         placeholder={t('storefront.cart.enterCoupon')}
                                         value={couponCode}
                                         onChange={(e) => setCouponCode(e.target.value)}
-                                        onKeyPress={(e) => e.key === 'Enter' && handleApplyCoupon()}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') {
+                                                e.preventDefault()
+                                                void handleApplyCoupon()
+                                            }
+                                        }}
                                     />
                                     <button
                                         className="btn btn-secondary btn-sm"
-                                        onClick={handleApplyCoupon}
+                                        onClick={() => void handleApplyCoupon()}
                                     >
                                         {t('storefront.cart.apply')}
                                     </button>
