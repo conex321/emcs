@@ -188,7 +188,6 @@ function Checkout() {
 
         try {
             const checkoutParentDetails = {
-                ...resolvedParentDetails,
                 firstName: resolvedParentDetails.firstName.trim(),
                 lastName: resolvedParentDetails.lastName.trim(),
                 email: resolvedParentDetails.email.trim(),
