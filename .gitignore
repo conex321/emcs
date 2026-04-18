@@ -18,3 +18,4 @@ verify-*.png
 tests/ui-audit/results/
 playwright-report/
 test-results/
+.vercel

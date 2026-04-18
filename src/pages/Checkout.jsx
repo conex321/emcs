@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useCart } from '../context/CartContext'
@@ -6,6 +6,15 @@ import { useAuth } from '../context/AuthContext'
 import { formatCurrency } from '../config/pricing'
 import supabase from '../services/supabaseClient'
 import './Checkout.css'
+
+function splitFullName(fullName = '') {
+    const parts = fullName.trim().split(/\s+/).filter(Boolean)
+
+    return {
+        firstName: parts[0] || '',
+        lastName: parts.slice(1).join(' '),
+    }
+}
 
 function Checkout() {
     const { t } = useTranslation()
@@ -19,12 +28,16 @@ function Checkout() {
     const [orderNumber, setOrderNumber] = useState('')
     const [paymentError, setPaymentError] = useState('')
     const [orderId, setOrderId] = useState(null)
+    const [hasPortalAccess, setHasPortalAccess] = useState(Boolean(user))
+
+    const profileName = profile?.full_name || user?.user_metadata?.full_name || ''
+    const derivedName = splitFullName(profileName)
 
     // Form state
     const [parentDetails, setParentDetails] = useState({
-        firstName: user?.user_metadata?.full_name?.split(' ')[0] || '',
-        lastName: user?.user_metadata?.full_name?.split(' ').slice(1).join(' ') || '',
-        email: user?.email || '',
+        firstName: derivedName.firstName,
+        lastName: derivedName.lastName,
+        email: profile?.email || user?.email || '',
         phone: profile?.phone || '',
         country: profile?.country || 'Canada',
         province: profile?.province || 'Ontario',
@@ -67,6 +80,51 @@ function Checkout() {
         (item.storefront === 'non-credit' || item.storefront === 'academic-prep') && !item.isBundled
     )
 
+    const resolvedParentDetails = {
+        ...parentDetails,
+        firstName: parentDetails.firstName || derivedName.firstName,
+        lastName: parentDetails.lastName || derivedName.lastName,
+        email: parentDetails.email || profile?.email || user?.email || '',
+        phone: parentDetails.phone || profile?.phone || '',
+        country: parentDetails.country || profile?.country || 'Canada',
+        province: parentDetails.province || profile?.province || 'Ontario',
+    }
+
+    useEffect(() => {
+        setHasPortalAccess(Boolean(user))
+    }, [user])
+
+    useEffect(() => {
+        if (!user && !profile) {
+            return
+        }
+
+        setParentDetails(prev => ({
+            ...prev,
+            firstName: prev.firstName || derivedName.firstName,
+            lastName: prev.lastName || derivedName.lastName,
+            email: prev.email || profile?.email || user?.email || '',
+            phone: prev.phone || profile?.phone || '',
+            country: prev.country || profile?.country || 'Canada',
+            province: prev.province || profile?.province || 'Ontario',
+        }))
+    }, [
+        derivedName.firstName,
+        derivedName.lastName,
+        profile?.country,
+        profile?.email,
+        profile?.phone,
+        profile?.province,
+        user,
+        user?.email,
+    ])
+
+    useEffect(() => {
+        if (items.length === 0 && !orderComplete) {
+            navigate('/cart', { replace: true })
+        }
+    }, [items.length, navigate, orderComplete])
+
     const handleParentChange = (field, value) => {
         setParentDetails(prev => ({ ...prev, [field]: value }))
     }
@@ -84,10 +142,13 @@ function Checkout() {
     }
 
     const validateStep2 = () => {
-        const { firstName, lastName, email, phone } = parentDetails
+        const { firstName, lastName, email, phone, createAccount, password } = resolvedParentDetails
         const student = studentDetails[0]
-        return firstName && lastName && email && phone &&
-               student.firstName && student.lastName
+        const hasRequiredParentFields = firstName.trim() && lastName.trim() && email.trim() && phone.trim()
+        const hasRequiredStudentFields = student.firstName.trim() && student.lastName.trim()
+        const hasValidAccountPassword = !createAccount || password.trim().length >= 8
+
+        return hasRequiredParentFields && hasRequiredStudentFields && hasValidAccountPassword
     }
 
     const validateStep3 = () => {
@@ -123,22 +184,62 @@ function Checkout() {
         setIsProcessing(true)
         setPaymentError('')
 
+        let createdOrderNumber = ''
+
         try {
+            const checkoutParentDetails = {
+                ...resolvedParentDetails,
+                firstName: resolvedParentDetails.firstName.trim(),
+                lastName: resolvedParentDetails.lastName.trim(),
+                email: resolvedParentDetails.email.trim(),
+                phone: resolvedParentDetails.phone.trim(),
+                country: resolvedParentDetails.country,
+                province: resolvedParentDetails.province,
+                createAccount: resolvedParentDetails.createAccount,
+            }
+
+            const studentPayload = studentDetails.map((student, index) => ({
+                ...student,
+                firstName: student.firstName.trim(),
+                lastName: student.lastName.trim(),
+                email: student.email.trim(),
+                previousSchool: student.previousSchool.trim(),
+                index,
+            }))
+
             // Step 1: If user checked "create account", register them first
-            if (!user && parentDetails.createAccount && parentDetails.password) {
+            if (!user && resolvedParentDetails.createAccount) {
+                if (!resolvedParentDetails.password || resolvedParentDetails.password.trim().length < 8) {
+                    throw new Error('Please choose a password with at least 8 characters to create your account.')
+                }
+
                 try {
                     await signUp({
-                        email: parentDetails.email,
-                        password: parentDetails.password,
-                        fullName: `${parentDetails.firstName} ${parentDetails.lastName}`,
-                        phone: parentDetails.phone,
-                        country: parentDetails.country,
-                        province: parentDetails.province,
+                        email: checkoutParentDetails.email,
+                        password: resolvedParentDetails.password,
+                        fullName: `${checkoutParentDetails.firstName} ${checkoutParentDetails.lastName}`.trim(),
+                        phone: checkoutParentDetails.phone,
+                        country: checkoutParentDetails.country,
+                        province: checkoutParentDetails.province,
                     })
                 } catch (signupErr) {
                     console.warn('Account creation during checkout failed:', signupErr.message)
-                    // Continue with checkout even if signup fails
                 }
+
+                const { data: sessionData } = await supabase.auth.getSession()
+
+                if (!sessionData?.session) {
+                    const { error: signInError } = await supabase.auth.signInWithPassword({
+                        email: checkoutParentDetails.email,
+                        password: resolvedParentDetails.password,
+                    })
+
+                    if (signInError) {
+                        throw new Error(`Your order could not be linked to the new account. ${signInError.message}`)
+                    }
+                }
+
+                setHasPortalAccess(true)
             }
 
             // Step 2: Call process-payment Edge Function
@@ -152,8 +253,8 @@ function Checkout() {
                         bundle_reason: item.bundleReason || null,
                         storefront: item.storefront,
                     })),
-                    parent_details: parentDetails,
-                    student_details: studentDetails,
+                    parent_details: checkoutParentDetails,
+                    student_details: studentPayload.map(({ index, ...student }) => student),
                     coupon_code: appliedCoupon?.code || null,
                     payment_method: total === 0 ? 'free' : paymentMethod,
                 },
@@ -164,6 +265,7 @@ function Checkout() {
 
             setOrderId(data.order_id)
             setOrderNumber(data.order_number)
+            createdOrderNumber = data.order_number
 
             // Step 3: Handle payment based on method
             if (data.requires_payment && paymentMethod === 'card') {
@@ -185,16 +287,28 @@ function Checkout() {
             // Step 4: If payment is not required (fully discounted), complete immediately
             if (!data.requires_payment) {
                 // Trigger enrollment for free orders
-                await supabase.functions.invoke('enroll-student', {
+                const { data: enrollmentData, error: enrollmentError } = await supabase.functions.invoke('enroll-student', {
                     body: {
                         order_id: data.order_id,
-                        students: studentDetails.map((s, i) => ({ ...s, index: i })),
+                        students: studentPayload,
                         courses: items.map(item => ({
                             course_code: item.code || item.courseCode,
                             student_index: 0,
                         })),
                     },
                 })
+
+                if (enrollmentError) {
+                    throw new Error(
+                        `Order ${data.order_number} was created, but enrollment could not be completed automatically. ${enrollmentError.message}`
+                    )
+                }
+
+                if (!enrollmentData?.success || (items.length > 0 && Number(enrollmentData?.count || 0) === 0)) {
+                    throw new Error(
+                        `Order ${data.order_number} was created, but no enrollments were saved. Please contact support before the student begins coursework.`
+                    )
+                }
             }
 
             setOrderComplete(true)
@@ -203,7 +317,10 @@ function Checkout() {
 
         } catch (err) {
             console.error('Payment error:', err)
-            setPaymentError(err.message || 'Payment processing failed. Please try again.')
+            const fallbackMessage = createdOrderNumber
+                ? `Order ${createdOrderNumber} was saved, but checkout could not finish automatically. Please contact support with your order number.`
+                : 'Payment processing failed. Please try again.'
+            setPaymentError(err.message || fallbackMessage)
         } finally {
             setIsProcessing(false)
         }
@@ -215,9 +332,7 @@ function Checkout() {
         handlePayment()
     }
 
-    // Redirect to cart if empty and not on confirmation
     if (items.length === 0 && !orderComplete) {
-        navigate('/cart')
         return null
     }
 
@@ -333,7 +448,7 @@ function Checkout() {
                                     <label>{t('storefront.checkout.firstName', 'First Name')} *</label>
                                     <input
                                         type="text"
-                                        value={parentDetails.firstName}
+                                        value={resolvedParentDetails.firstName}
                                         onChange={(e) => handleParentChange('firstName', e.target.value)}
                                         required
                                     />
@@ -342,7 +457,7 @@ function Checkout() {
                                     <label>{t('storefront.checkout.lastName', 'Last Name')} *</label>
                                     <input
                                         type="text"
-                                        value={parentDetails.lastName}
+                                        value={resolvedParentDetails.lastName}
                                         onChange={(e) => handleParentChange('lastName', e.target.value)}
                                         required
                                     />
@@ -351,7 +466,7 @@ function Checkout() {
                                     <label>{t('storefront.checkout.email', 'Email')} *</label>
                                     <input
                                         type="email"
-                                        value={parentDetails.email}
+                                        value={resolvedParentDetails.email}
                                         onChange={(e) => handleParentChange('email', e.target.value)}
                                         required
                                         disabled={!!user}
@@ -361,7 +476,7 @@ function Checkout() {
                                     <label>{t('storefront.checkout.phone', 'Phone')} *</label>
                                     <input
                                         type="tel"
-                                        value={parentDetails.phone}
+                                        value={resolvedParentDetails.phone}
                                         onChange={(e) => handleParentChange('phone', e.target.value)}
                                         required
                                     />
@@ -369,7 +484,7 @@ function Checkout() {
                                 <div className="form-group">
                                     <label>{t('storefront.checkout.country', 'Country')}</label>
                                     <select
-                                        value={parentDetails.country}
+                                        value={resolvedParentDetails.country}
                                         onChange={(e) => handleParentChange('country', e.target.value)}
                                     >
                                         <option value="Canada">Canada</option>
@@ -384,7 +499,7 @@ function Checkout() {
                                 <div className="form-group">
                                     <label>{t('storefront.checkout.province', 'Province / State')}</label>
                                     <select
-                                        value={parentDetails.province}
+                                        value={resolvedParentDetails.province}
                                         onChange={(e) => handleParentChange('province', e.target.value)}
                                     >
                                         <option value="Ontario">Ontario</option>
@@ -402,17 +517,17 @@ function Checkout() {
                                     <label className="checkbox-label">
                                         <input
                                             type="checkbox"
-                                            checked={parentDetails.createAccount}
-                                            onChange={(e) => handleParentChange('createAccount', e.target.checked)}
-                                        />
-                                        {t('storefront.checkout.createAccount', 'Create an account to track your orders and enrollments')}
-                                    </label>
-                                    {parentDetails.createAccount && (
+                                        checked={resolvedParentDetails.createAccount}
+                                        onChange={(e) => handleParentChange('createAccount', e.target.checked)}
+                                    />
+                                    {t('storefront.checkout.createAccount', 'Create an account to track your orders and enrollments')}
+                                </label>
+                                    {resolvedParentDetails.createAccount && (
                                         <div className="form-group" style={{ marginTop: '1rem' }}>
                                             <label>{t('storefront.checkout.password', 'Password')} *</label>
                                             <input
                                                 type="password"
-                                                value={parentDetails.password}
+                                                value={resolvedParentDetails.password}
                                                 onChange={(e) => handleParentChange('password', e.target.value)}
                                                 placeholder={t('storefront.checkout.passwordPlaceholder', 'Min 8 characters')}
                                                 minLength={8}
@@ -639,7 +754,7 @@ function Checkout() {
                             <h2>{t('storefront.checkout.paymentSuccess', 'Enrollment Complete!')}</h2>
                             <p className="order-number">{t('storefront.checkout.orderNumber', 'Order')} #{orderNumber}</p>
                             <p className="confirmation-email">
-                                {t('storefront.checkout.confirmationEmail', 'A confirmation email has been sent to')} {parentDetails.email}
+                                {t('storefront.checkout.confirmationEmail', 'A confirmation email has been sent to')} {resolvedParentDetails.email}
                             </p>
 
                             <div className="next-steps card">
@@ -682,7 +797,7 @@ function Checkout() {
                             </div>
 
                             <div className="confirmation-actions">
-                                {user ? (
+                                {user || hasPortalAccess ? (
                                     <Link to={portalRedirect} className="btn btn-accent btn-lg">
                                         {t('storefront.checkout.goToPortal', 'Go to Your Portal')} →
                                     </Link>

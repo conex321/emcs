@@ -53,7 +53,29 @@ serve(async (req) => {
       )
     }
 
+    const normalizedOrderEmail = String(order.parent_details?.email || '').trim().toLowerCase()
+    const normalizedUserEmail = String(user.email || '').trim().toLowerCase()
+    const orderBelongsToUser = order.parent_id
+      ? order.parent_id === user.id
+      : Boolean(normalizedOrderEmail && normalizedOrderEmail === normalizedUserEmail)
+
+    if (!orderBelongsToUser) {
+      return new Response(
+        JSON.stringify({ error: 'You do not have access to enroll students for this order' }),
+        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
+    if (!order.parent_id) {
+      await supabaseAdmin
+        .from('orders')
+        .update({ parent_id: user.id, updated_at: new Date().toISOString() })
+        .eq('id', order_id)
+    }
+
     const createdEnrollments = []
+    const touchedStudentIds = new Set<string>()
+    const skippedCourses: string[] = []
 
     // Process each student
     for (const studentData of (students || [])) {
@@ -79,6 +101,8 @@ serve(async (req) => {
         studentId = newStudent.id
       }
 
+      touchedStudentIds.add(studentId)
+
       // Create enrollments for each course assigned to this student
       const studentCourses = (courses || []).filter(
         (c: any) =>
@@ -97,7 +121,10 @@ serve(async (req) => {
           .eq('code', courseCode)
           .single()
 
-        if (!course) continue
+        if (!course) {
+          skippedCourses.push(courseCode)
+          continue
+        }
 
         // Find the order item
         const { data: unassignedOrderItem } = await supabaseAdmin
@@ -149,17 +176,74 @@ serve(async (req) => {
       }
     }
 
+    if ((courses || []).length > 0 && createdEnrollments.length === 0) {
+      return new Response(
+        JSON.stringify({
+          error: 'No enrollments were created for this order',
+          skipped_courses: skippedCourses,
+        }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
     // Update order status to processing
     await supabaseAdmin
       .from('orders')
       .update({ status: 'processing', updated_at: new Date().toISOString() })
       .eq('id', order_id)
 
+    // Trigger follow-up emails for free or fully-discounted orders.
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')
+    const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
+    const emailJobs = {
+      purchase_receipt_sent: false,
+      registration_emails_sent_for: [] as string[],
+    }
+
+    if (supabaseUrl && serviceKey && createdEnrollments.length > 0) {
+      try {
+        const receiptResponse = await fetch(`${supabaseUrl}/functions/v1/send-purchase-receipt`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${serviceKey}`,
+          },
+          body: JSON.stringify({ order_id }),
+        })
+
+        emailJobs.purchase_receipt_sent = receiptResponse.ok
+      } catch (emailError) {
+        console.error('[enroll-student] Failed to send purchase receipt:', emailError)
+      }
+
+      for (const studentId of touchedStudentIds) {
+        try {
+          const registrationResponse = await fetch(`${supabaseUrl}/functions/v1/send-registration-email`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${serviceKey}`,
+            },
+            body: JSON.stringify({ order_id, student_id: studentId }),
+          })
+
+          if (registrationResponse.ok) {
+            emailJobs.registration_emails_sent_for.push(studentId)
+          }
+        } catch (emailError) {
+          console.error(`[enroll-student] Failed to send registration email for ${studentId}:`, emailError)
+        }
+      }
+    }
+
     return new Response(
       JSON.stringify({
         success: true,
         enrollments: createdEnrollments,
         count: createdEnrollments.length,
+        students: Array.from(touchedStudentIds).map((studentId) => ({ id: studentId })),
+        skipped_courses: skippedCourses,
+        email_jobs: emailJobs,
       }),
       { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )

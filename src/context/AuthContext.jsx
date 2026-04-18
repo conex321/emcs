@@ -69,15 +69,31 @@ export function AuthProvider({ children }) {
       setLoading(false)
     }
 
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session: currentSession } }) => {
-      void syncAuthState(currentSession)
-    })
+    const bootstrapAuth = async () => {
+      try {
+        const { data: { session: currentSession } } = await supabase.auth.getSession()
+        await syncAuthState(currentSession)
+      } catch (err) {
+        console.error('Auth bootstrap failed:', err)
+
+        if (!isMounted) return
+
+        setSession(null)
+        setUser(null)
+        setProfile(null)
+        setLoading(false)
+      }
+    }
+
+    void bootstrapAuth()
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, newSession) => {
-        await syncAuthState(newSession)
+      (_event, newSession) => {
+        // Avoid awaiting Supabase calls directly inside the auth callback.
+        window.setTimeout(() => {
+          void syncAuthState(newSession)
+        }, 0)
       }
     )
 
