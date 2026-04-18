@@ -32,6 +32,7 @@ import Checkout from './pages/Checkout'
 import StudentPortal from './pages/portals/StudentPortal'
 import ParentPortal from './pages/portals/ParentPortal'
 import AgentPortal from './pages/portals/AgentPortal'
+import AdminDashboard from './pages/admin/AdminDashboard'
 
 // Auth pages
 import AuthPage from './pages/auth/AuthPage'
@@ -181,6 +182,11 @@ function App() {
                                 <Route path="/portal/agent" element={
                                     <ProtectedRoute requiredRoles={['agent', 'admin']}>
                                         <AgentPortal />
+                                    </ProtectedRoute>
+                                } />
+                                <Route path="/admin/dashboard" element={
+                                    <ProtectedRoute requiredRoles={['admin', 'school_admin']}>
+                                        <AdminDashboard />
                                     </ProtectedRoute>
                                 } />
                             </Routes>

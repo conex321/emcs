@@ -202,7 +202,7 @@ export function AuthProvider({ children }) {
   }
 
   // Check if user is admin
-  const isAdmin = () => hasRole('admin')
+  const isAdmin = () => hasRole('admin') || hasRole('school_admin')
 
   const value = {
     user,

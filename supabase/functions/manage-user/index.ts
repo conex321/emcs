@@ -6,6 +6,10 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { corsHeaders, handleCors } from '../_shared/cors.ts'
 import { createServiceClient, createUserClient } from '../_shared/supabase-client.ts'
 
+function hasAdminAccess(role?: string | null) {
+  return role === 'admin' || role === 'school_admin'
+}
+
 serve(async (req) => {
   const corsResponse = handleCors(req)
   if (corsResponse) return corsResponse
@@ -29,7 +33,7 @@ serve(async (req) => {
       .eq('id', user.id)
       .single()
 
-    if (profile?.role !== 'admin') {
+    if (!hasAdminAccess(profile?.role)) {
       return new Response(
         JSON.stringify({ error: 'Admin access required' }),
         { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -149,6 +153,144 @@ serve(async (req) => {
 
         return new Response(
           JSON.stringify({ success: true, user: newUser?.user }),
+          { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        )
+      }
+
+      // ── APPROVE STUDENT ──
+      case 'approve_student': {
+        const { student_id } = payload
+        if (!student_id) throw new Error('student_id required')
+
+        const { data: student, error: studentErr } = await supabaseAdmin
+          .from('students')
+          .select('id, is_active')
+          .eq('id', student_id)
+          .single()
+
+        if (studentErr || !student) throw studentErr || new Error('Student not found')
+
+        const { error: studentUpdateErr } = await supabaseAdmin
+          .from('students')
+          .update({
+            is_active: true,
+            updated_at: new Date().toISOString(),
+          })
+          .eq('id', student_id)
+
+        if (studentUpdateErr) throw studentUpdateErr
+
+        const { data: pendingEnrollments, error: pendingErr } = await supabaseAdmin
+          .from('enrollments')
+          .select('id')
+          .eq('student_id', student_id)
+          .eq('status', 'pending')
+
+        if (pendingErr) throw pendingErr
+
+        let activatedEnrollmentCount = 0
+
+        if ((pendingEnrollments || []).length > 0) {
+          activatedEnrollmentCount = pendingEnrollments.length
+
+          const { error: enrollUpdateErr } = await supabaseAdmin
+            .from('enrollments')
+            .update({
+              status: 'active',
+              started_at: new Date().toISOString(),
+              updated_at: new Date().toISOString(),
+            })
+            .eq('student_id', student_id)
+            .eq('status', 'pending')
+
+          if (enrollUpdateErr) throw enrollUpdateErr
+        }
+
+        await supabaseAdmin.from('audit_log').insert({
+          actor_id: user.id,
+          action: 'student.approve',
+          target_type: 'student',
+          target_id: student_id,
+          old_values: {
+            is_active: student.is_active,
+            pending_enrollments: pendingEnrollments?.length || 0,
+          },
+          new_values: {
+            is_active: true,
+            activated_enrollments: activatedEnrollmentCount,
+          },
+        })
+
+        return new Response(
+          JSON.stringify({
+            success: true,
+            activated_enrollments: activatedEnrollmentCount,
+          }),
+          { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        )
+      }
+
+      // ── SEND REGISTRATION EMAIL ──
+      case 'send_registration_email': {
+        const { student_id, order_id } = payload
+        if (!student_id) throw new Error('student_id required')
+
+        let resolvedOrderId = order_id
+
+        if (!resolvedOrderId) {
+          const { data: latestItem, error: itemErr } = await supabaseAdmin
+            .from('order_items')
+            .select('order_id')
+            .eq('student_id', student_id)
+            .order('created_at', { ascending: false })
+            .limit(1)
+            .maybeSingle()
+
+          if (itemErr) throw itemErr
+          resolvedOrderId = latestItem?.order_id || null
+        }
+
+        const supabaseUrl = Deno.env.get('SUPABASE_URL')
+        const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
+
+        if (!supabaseUrl || !serviceRoleKey) {
+          throw new Error('Supabase environment is not configured for email dispatch')
+        }
+
+        const emailResponse = await fetch(`${supabaseUrl}/functions/v1/send-registration-email`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${serviceRoleKey}`,
+          },
+          body: JSON.stringify({
+            student_id,
+            order_id: resolvedOrderId,
+          }),
+        })
+
+        const emailResult = await emailResponse.json().catch(() => ({}))
+
+        if (!emailResponse.ok) {
+          throw new Error(emailResult?.error || 'Failed to send registration email')
+        }
+
+        await supabaseAdmin.from('audit_log').insert({
+          actor_id: user.id,
+          action: 'student.registration_email.send',
+          target_type: 'student',
+          target_id: student_id,
+          new_values: {
+            order_id: resolvedOrderId,
+            recipient: emailResult?.registration?.recipient || null,
+          },
+        })
+
+        return new Response(
+          JSON.stringify({
+            success: true,
+            email: emailResult,
+          }),
           { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         )
       }

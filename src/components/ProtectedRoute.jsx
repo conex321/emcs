@@ -39,6 +39,7 @@ export default function ProtectedRoute({ children, requiredRole, requiredRoles }
       // Authenticated but wrong role → redirect to their portal
       const roleRoutes = {
         admin: '/admin/dashboard',
+        school_admin: '/admin/dashboard',
         teacher: '/teacher/dashboard',
         parent: '/portal/parent',
         student: '/portal/student',
