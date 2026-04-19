@@ -150,6 +150,61 @@
     box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.1);
 }
 
+.document-upload-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-4);
+}
+
+.document-upload-card {
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    background: var(--color-neutral-50);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.document-upload-copy h4 {
+    margin: 0 0 var(--space-1);
+    padding: 0;
+    border: none;
+    font-size: var(--text-base);
+}
+
+.document-upload-copy p {
+    margin: 0;
+    color: var(--color-neutral-600);
+    font-size: var(--text-sm);
+}
+
+.document-upload-input {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    border-radius: var(--radius-md);
+    background: white;
+    border: 1px dashed var(--color-brand);
+    color: var(--color-brand);
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+}
+
+.document-upload-input input {
+    display: none;
+}
+
+.document-upload-status {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--color-neutral-600);
+    font-size: var(--text-xs);
+}
+
 /* Payment Methods */
 .payment-methods {
     display: flex;

@@ -4,6 +4,7 @@ import './Contact.css'
 
 function Contact() {
     const { t } = useTranslation()
+    const socialComingSoon = t('contact.socialComingSoon', 'Social channels are being updated. Please use email or phone for now.')
 
     const [formData, setFormData] = useState({
         name: '',
@@ -166,11 +167,12 @@ function Contact() {
                             <div className="social-section">
                                 <h3>{t('contact.follow')}</h3>
                                 <div className="social-links">
-                                    <a href="#" className="social-link">{t('contact.social.facebook', 'Facebook')}</a>
-                                    <a href="#" className="social-link">{t('contact.social.instagram', 'Instagram')}</a>
-                                    <a href="#" className="social-link">{t('contact.social.linkedin', 'LinkedIn')}</a>
-                                    <a href="#" className="social-link">{t('contact.social.youtube', 'YouTube')}</a>
+                                    <span className="social-link social-link--disabled" title={socialComingSoon}>{t('contact.social.facebook', 'Facebook')}</span>
+                                    <span className="social-link social-link--disabled" title={socialComingSoon}>{t('contact.social.instagram', 'Instagram')}</span>
+                                    <span className="social-link social-link--disabled" title={socialComingSoon}>{t('contact.social.linkedin', 'LinkedIn')}</span>
+                                    <span className="social-link social-link--disabled" title={socialComingSoon}>{t('contact.social.youtube', 'YouTube')}</span>
                                 </div>
+                                <p className="social-help-text">{socialComingSoon}</p>
                             </div>
                         </div>
                     </div>

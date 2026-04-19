@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useAuth } from '../../context/AuthContext'
 import {
     formatPortalDate,
+    getDocumentTypeLabel,
     getProgressValue,
     isCreditStorefront,
     normalizeEnrollment,
@@ -17,6 +18,7 @@ function StudentPortal() {
     const viewerRole = profile?.role || user?.user_metadata?.role
 
     const [enrollments, setEnrollments] = useState([])
+    const [uploadedDocuments, setUploadedDocuments] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
@@ -44,6 +46,15 @@ function StudentPortal() {
                         .maybeSingle()
 
                     if (studentRecord) {
+                        const { data: documentsData, error: documentsError } = await supabase
+                            .from('student_documents')
+                            .select('id, document_type, file_name, status, created_at, student_id')
+                            .eq('student_id', studentRecord.id)
+                            .order('created_at', { ascending: false })
+
+                        if (documentsError) throw documentsError
+                        setUploadedDocuments(documentsData || [])
+
                         query = supabase
                             .from('enrollments')
                             .select(`
@@ -64,6 +75,7 @@ function StudentPortal() {
                             .order('enrolled_at', { ascending: false })
                     } else {
                         setEnrollments([])
+                        setUploadedDocuments([])
                     }
                 } else {
                     // Parent — get all children's enrollments
@@ -74,6 +86,26 @@ function StudentPortal() {
 
                     if (children && children.length > 0) {
                         const childIds = children.map(c => c.id)
+                        const { data: documentsData, error: documentsError } = await supabase
+                            .from('student_documents')
+                            .select(`
+                                id,
+                                document_type,
+                                file_name,
+                                status,
+                                created_at,
+                                student_id,
+                                students (
+                                    first_name,
+                                    last_name
+                                )
+                            `)
+                            .in('student_id', childIds)
+                            .order('created_at', { ascending: false })
+
+                        if (documentsError) throw documentsError
+                        setUploadedDocuments(documentsData || [])
+
                         query = supabase
                             .from('enrollments')
                             .select(`
@@ -94,6 +126,7 @@ function StudentPortal() {
                             .order('enrolled_at', { ascending: false })
                     } else {
                         setEnrollments([])
+                        setUploadedDocuments([])
                     }
                 }
 
@@ -271,6 +304,33 @@ function StudentPortal() {
                         )}
 
                         {/* Quick Actions */}
+                        {uploadedDocuments.length > 0 && (
+                            <section className="portal-section">
+                                <h2 className="portal-section-title">
+                                    📄 Uploaded Documents
+                                </h2>
+                                <div className="admin-doc-grid">
+                                    {uploadedDocuments.map((document) => (
+                                        <article key={document.id} className="admin-doc-card">
+                                            <div className="admin-doc-header">
+                                                <h3>{document.file_name}</h3>
+                                                <span className={`status-badge ${document.status === 'linked' ? 'active' : 'pending'}`}>
+                                                    {document.status}
+                                                </span>
+                                            </div>
+                                            {document.students && (
+                                                <p>{document.students.first_name} {document.students.last_name}</p>
+                                            )}
+                                            <div className="admin-doc-meta">
+                                                <span>{getDocumentTypeLabel(document.document_type)}</span>
+                                                <span>{formatPortalDate(document.created_at)}</span>
+                                            </div>
+                                        </article>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
+
                         <section className="portal-section">
                             <h2 className="portal-section-title">
                                 ⚡ {t('portal.student.quickActions', 'Quick Actions')}

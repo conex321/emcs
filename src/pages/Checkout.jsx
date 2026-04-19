@@ -7,6 +7,35 @@ import { formatCurrency } from '../config/pricing'
 import supabase from '../services/supabaseClient'
 import './Checkout.css'
 
+const DOCUMENT_FIELDS = [
+    {
+        key: 'transcript',
+        type: 'transcript',
+        title: 'Transcript / Report Card',
+        description: 'Upload recent report cards or official transcripts.',
+    },
+    {
+        key: 'idDocument',
+        type: 'id_document',
+        title: 'ID Document / Passport',
+        description: 'Upload a passport, birth certificate, or other student ID.',
+    },
+    {
+        key: 'supportingDocument',
+        type: 'supporting_document',
+        title: 'Supporting Document',
+        description: 'Optional: English assessment, residency proof, or extra supporting file.',
+    },
+]
+
+function createEmptyStudentDocuments() {
+    return {
+        transcript: null,
+        idDocument: null,
+        supportingDocument: null,
+    }
+}
+
 function splitFullName(fullName = '') {
     const parts = fullName.trim().split(/\s+/).filter(Boolean)
 
@@ -53,6 +82,7 @@ function Checkout() {
         currentGrade: '',
         previousSchool: '',
     }])
+    const [studentDocuments, setStudentDocuments] = useState([createEmptyStudentDocuments()])
 
     const [paymentMethod, setPaymentMethod] = useState('card')
     const [cardDetails, setCardDetails] = useState({
@@ -139,6 +169,87 @@ function Checkout() {
 
     const handleCardChange = (field, value) => {
         setCardDetails(prev => ({ ...prev, [field]: value }))
+    }
+
+    const handleStudentDocumentChange = (index, field, file) => {
+        if (file && file.size > 10 * 1024 * 1024) {
+            setPaymentError('Each supporting document must be 10MB or smaller.')
+            return
+        }
+
+        setPaymentError('')
+        setStudentDocuments(prev => {
+            const updated = [...prev]
+            updated[index] = {
+                ...(updated[index] || createEmptyStudentDocuments()),
+                [field]: file || null,
+            }
+            return updated
+        })
+    }
+
+    const uploadStudentDocuments = async ({ orderId, studentsPayload, parentEmail }) => {
+        const selectedDocuments = studentsPayload.flatMap((student, index) =>
+            DOCUMENT_FIELDS.map((documentField) => {
+                const file = studentDocuments[index]?.[documentField.key]
+                if (!file) {
+                    return null
+                }
+
+                return {
+                    file,
+                    documentType: documentField.type,
+                    studentIndex: index,
+                    student,
+                }
+            }).filter(Boolean)
+        )
+
+        if (selectedDocuments.length === 0) {
+            return []
+        }
+
+        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+        if (!supabaseUrl) {
+            throw new Error('Supabase upload endpoint is not configured.')
+        }
+
+        const { data: sessionData } = await supabase.auth.getSession()
+        const headers = {}
+
+        if (sessionData?.session?.access_token) {
+            headers.Authorization = `Bearer ${sessionData.session.access_token}`
+        }
+
+        const uploadedDocuments = []
+
+        for (const document of selectedDocuments) {
+            const formData = new FormData()
+            formData.append('order_id', orderId)
+            formData.append('document_type', document.documentType)
+            formData.append('student_index', String(document.studentIndex))
+            formData.append('student_email', document.student.email || '')
+            formData.append('student_first_name', document.student.firstName || '')
+            formData.append('student_last_name', document.student.lastName || '')
+            formData.append('parent_email', parentEmail || '')
+            formData.append('file', document.file)
+
+            const response = await fetch(`${supabaseUrl}/functions/v1/upload-student-document`, {
+                method: 'POST',
+                headers,
+                body: formData,
+            })
+
+            const payload = await response.json().catch(() => ({}))
+
+            if (!response.ok) {
+                throw new Error(payload?.error || `Could not upload ${document.file.name}`)
+            }
+
+            uploadedDocuments.push(payload.document)
+        }
+
+        return uploadedDocuments
     }
 
     const validateStep2 = () => {
@@ -266,6 +377,12 @@ function Checkout() {
             setOrderNumber(data.order_number)
             createdOrderNumber = data.order_number
 
+            await uploadStudentDocuments({
+                orderId: data.order_id,
+                studentsPayload: studentPayload,
+                parentEmail: checkoutParentDetails.email,
+            })
+
             // Step 3: Handle payment based on method
             if (data.requires_payment && paymentMethod === 'card') {
                 // Stripe is not yet configured — show a clear message
@@ -313,6 +430,7 @@ function Checkout() {
             setOrderComplete(true)
             setCurrentStep(4)
             clearCart()
+            setStudentDocuments([createEmptyStudentDocuments()])
 
         } catch (err) {
             console.error('Payment error:', err)
@@ -594,6 +712,43 @@ function Checkout() {
                                         placeholder={t('storefront.checkout.previousSchoolPlaceholder', 'Name of current or previous school')}
                                     />
                                 </div>
+                            </div>
+
+                            <h3 className="section-title">Supporting Documents</h3>
+                            <p className="step-subtitle">
+                                Upload proof documents now so the school team can review them from the admin dashboard. Accepted formats: PDF, DOC, DOCX, JPG, and PNG up to 10MB each.
+                            </p>
+                            <div className="document-upload-grid">
+                                {DOCUMENT_FIELDS.map((documentField) => {
+                                    const selectedFile = studentDocuments[0]?.[documentField.key]
+
+                                    return (
+                                        <div key={documentField.key} className="document-upload-card">
+                                            <div className="document-upload-copy">
+                                                <h4>{documentField.title}</h4>
+                                                <p>{documentField.description}</p>
+                                            </div>
+                                            <label className="document-upload-input">
+                                                <span>{selectedFile ? 'Replace file' : 'Choose file'}</span>
+                                                <input
+                                                    type="file"
+                                                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                                                    onChange={(e) => handleStudentDocumentChange(0, documentField.key, e.target.files?.[0] || null)}
+                                                />
+                                            </label>
+                                            <div className="document-upload-status">
+                                                {selectedFile ? (
+                                                    <>
+                                                        <strong>{selectedFile.name}</strong>
+                                                        <span>{Math.max(1, Math.round(selectedFile.size / 1024))} KB</span>
+                                                    </>
+                                                ) : (
+                                                    <span>No file selected yet.</span>
+                                                )}
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     )}

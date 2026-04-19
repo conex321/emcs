@@ -6,6 +6,18 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { corsHeaders, handleCors } from '../_shared/cors.ts'
 import { createServiceClient, createUserClient } from '../_shared/supabase-client.ts'
 
+function nullIfBlank(value: unknown) {
+  if (value === undefined || value === null) {
+    return null
+  }
+
+  if (typeof value === 'string' && value.trim() === '') {
+    return null
+  }
+
+  return value
+}
+
 serve(async (req) => {
   const corsResponse = handleCors(req)
   if (corsResponse) return corsResponse
@@ -87,12 +99,12 @@ serve(async (req) => {
           .from('students')
           .insert({
             parent_id: user.id,
-            first_name: studentData.first_name || studentData.firstName,
-            last_name: studentData.last_name || studentData.lastName,
-            email: studentData.email || null,
-            date_of_birth: studentData.date_of_birth || studentData.dateOfBirth,
-            current_grade: studentData.current_grade || studentData.currentGrade,
-            previous_school: studentData.previous_school || studentData.previousSchool,
+            first_name: nullIfBlank(studentData.first_name || studentData.firstName),
+            last_name: nullIfBlank(studentData.last_name || studentData.lastName),
+            email: nullIfBlank(studentData.email),
+            date_of_birth: nullIfBlank(studentData.date_of_birth || studentData.dateOfBirth),
+            current_grade: nullIfBlank(studentData.current_grade || studentData.currentGrade),
+            previous_school: nullIfBlank(studentData.previous_school || studentData.previousSchool),
           })
           .select()
           .single()
@@ -102,6 +114,16 @@ serve(async (req) => {
       }
 
       touchedStudentIds.add(studentId)
+
+      await supabaseAdmin
+        .from('student_documents')
+        .update({
+          student_id: studentId,
+          status: 'linked',
+          updated_at: new Date().toISOString(),
+        })
+        .eq('order_id', order_id)
+        .eq('student_index', studentData.index ?? 0)
 
       // Create enrollments for each course assigned to this student
       const studentCourses = (courses || []).filter(

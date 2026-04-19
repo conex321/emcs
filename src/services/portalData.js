@@ -65,3 +65,18 @@ export function normalizeOrder(order) {
     order_items: orderItems,
   }
 }
+
+export function getDocumentTypeLabel(documentType) {
+  switch (documentType) {
+    case 'transcript':
+      return 'Transcript / Report Card'
+    case 'id_document':
+      return 'ID Document'
+    case 'supporting_document':
+      return 'Supporting Document'
+    case 'report_card':
+      return 'Report Card'
+    default:
+      return 'Document'
+  }
+}

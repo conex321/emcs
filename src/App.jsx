@@ -10,6 +10,7 @@ import OssdRequirements from './pages/OssdRequirements'
 import StudentSupport from './pages/StudentSupport'
 import Faq from './pages/Faq'
 import Contact from './pages/Contact'
+import LegalPage from './pages/LegalPage'
 import PrimaryFoundation from './pages/PrimaryFoundation'
 
 // V2 new public pages
@@ -155,6 +156,8 @@ function App() {
                                 <Route path="/student-support" element={<StudentSupport />} />
                                 <Route path="/faq" element={<Faq />} />
                                 <Route path="/contact" element={<Contact />} />
+                                <Route path="/privacy-policy" element={<LegalPage />} />
+                                <Route path="/terms-of-service" element={<LegalPage />} />
                                 <Route path="/register" element={<Register />} />
                                 <Route path="/programs/elementary" element={<PrimaryFoundation />} />
 
@@ -182,6 +185,11 @@ function App() {
                                 <Route path="/portal/agent" element={
                                     <ProtectedRoute requiredRoles={['agent', 'admin']}>
                                         <AgentPortal />
+                                    </ProtectedRoute>
+                                } />
+                                <Route path="/admin" element={
+                                    <ProtectedRoute requiredRoles={['admin', 'school_admin']}>
+                                        <Navigate to="/admin/dashboard" replace />
                                     </ProtectedRoute>
                                 } />
                                 <Route path="/admin/dashboard" element={

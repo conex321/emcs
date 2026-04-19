@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { formatCurrency } from '../../config/pricing'
-import { formatPortalDate, normalizeEnrollment, normalizeOrder } from '../../services/portalData'
+import { formatPortalDate, getDocumentTypeLabel, normalizeEnrollment, normalizeOrder } from '../../services/portalData'
 import supabase from '../../services/supabaseClient'
 import '../portals/PortalPages.css'
 
@@ -53,6 +53,7 @@ function AdminDashboard() {
     const [orders, setOrders] = useState([])
     const [profiles, setProfiles] = useState([])
     const [reportCards, setReportCards] = useState([])
+    const [studentDocuments, setStudentDocuments] = useState([])
     const [emailLog, setEmailLog] = useState([])
     const [auditLog, setAuditLog] = useState([])
     const [refreshKey, setRefreshKey] = useState(0)
@@ -100,6 +101,7 @@ function AdminDashboard() {
                     ordersResult,
                     profilesResult,
                     reportCardsResult,
+                    studentDocumentsResult,
                     emailLogResult,
                     auditLogResult,
                 ] = await Promise.all([
@@ -199,6 +201,25 @@ function AdminDashboard() {
                         .order('uploaded_at', { ascending: false })
                         .limit(50),
                     supabase
+                        .from('student_documents')
+                        .select(`
+                            id,
+                            student_id,
+                            document_type,
+                            file_name,
+                            file_path,
+                            status,
+                            created_at,
+                            student_first_name,
+                            student_last_name,
+                            students (
+                                first_name,
+                                last_name
+                            )
+                        `)
+                        .order('created_at', { ascending: false })
+                        .limit(100),
+                    supabase
                         .from('email_log')
                         .select('id, recipient, template, subject, status, error_message, metadata, sent_at')
                         .order('sent_at', { ascending: false })
@@ -236,6 +257,10 @@ function AdminDashboard() {
                     nextWarnings.push(`Report cards could not be loaded: ${reportCardsResult.error.message}`)
                 }
 
+                if (studentDocumentsResult.error) {
+                    nextWarnings.push(`Student documents could not be loaded: ${studentDocumentsResult.error.message}`)
+                }
+
                 if (emailLogResult.error) {
                     nextWarnings.push(`Email activity could not be loaded: ${emailLogResult.error.message}`)
                 }
@@ -253,6 +278,7 @@ function AdminDashboard() {
                 setOrders((ordersResult.data || []).map(normalizeOrder))
                 setProfiles(profilesResult.data || [])
                 setReportCards(reportCardsResult.data || [])
+                setStudentDocuments(studentDocumentsResult.data || [])
                 setEmailLog(emailLogResult.data || [])
                 setAuditLog(auditLogResult.data || [])
                 setWarnings(nextWarnings)
@@ -307,12 +333,14 @@ function AdminDashboard() {
         const needsApproval = !student.is_active
             || studentEnrollments.some((enrollment) => enrollment.status === 'pending')
             || !student.registration_email_sent
+        const uploadedDocumentCount = studentDocuments.filter((document) => document.student_id === student.id).length
 
         return {
             ...student,
             latestOrder,
             studentEnrollments,
             portalAccount,
+            uploadedDocumentCount,
             needsApproval,
         }
     })
@@ -321,7 +349,7 @@ function AdminDashboard() {
     const activeEnrollments = enrollments.filter((item) => item.status === 'active')
     const pendingReviews = registrationRows.filter((item) => item.needsApproval)
     const failedEmails = emailLog.filter((entry) => entry.status === 'failed' || entry.status === 'bounced')
-    const docsAvailable = reportCards.length
+    const docsAvailable = reportCards.length + studentDocuments.length
 
     const setBusy = (key, value) => {
         setBusyActions((prev) => ({ ...prev, [key]: value }))
@@ -659,7 +687,7 @@ function AdminDashboard() {
                                         <div className="admin-stat-card">
                                             <span className="admin-stat-label">Documents</span>
                                             <strong className="admin-stat-value">{docsAvailable}</strong>
-                                            <span className="admin-stat-meta">Report card metadata on file</span>
+                                            <span className="admin-stat-meta">Registration proofs + report cards</span>
                                         </div>
                                         <div className="admin-stat-card">
                                             <span className="admin-stat-label">Failed Emails</span>
@@ -805,6 +833,10 @@ function AdminDashboard() {
                                                             <strong>Registered</strong>
                                                             <span>{formatPortalDate(student.created_at)}</span>
                                                         </div>
+                                                        <div>
+                                                            <strong>Documents</strong>
+                                                            <span>{student.uploadedDocumentCount} uploaded</span>
+                                                        </div>
                                                     </div>
 
                                                     <div className="admin-registration-flags">
@@ -885,39 +917,71 @@ function AdminDashboard() {
                         {activeTab === 'documents' && (
                             <section className="portal-section">
                                 <h2 className="portal-section-title">Documents</h2>
-                                <div className="admin-notice admin-notice--warning">
-                                    Supabase currently stores report card metadata only. Registration uploads are not modeled in the backend yet, so this view will stay empty until files are added there.
-                                </div>
-                                {reportCards.length === 0 ? (
+                                {studentDocuments.length === 0 && reportCards.length === 0 ? (
                                     <div className="portal-empty">
                                         <div className="portal-empty-icon">📄</div>
                                         <h2>No documents stored yet</h2>
-                                        <p>Once report cards are uploaded, their metadata and publishing status will appear here.</p>
+                                        <p>Uploaded registration proofs and report card metadata will appear here once files are saved.</p>
                                     </div>
                                 ) : (
-                                    <div className="admin-doc-grid">
-                                        {reportCards.map((doc) => (
-                                            <article key={doc.id} className="admin-doc-card">
-                                                <div className="admin-doc-header">
-                                                    <h3>{doc.file_name}</h3>
-                                                    <span className={`status-badge ${doc.is_published ? 'completed' : 'pending'}`}>
-                                                        {doc.is_published ? 'Published' : 'Draft'}
-                                                    </span>
+                                    <>
+                                        {studentDocuments.length > 0 && (
+                                            <section className="portal-section">
+                                                <h3 className="portal-section-title">Registration Proof Documents</h3>
+                                                <div className="admin-doc-grid">
+                                                    {studentDocuments.map((doc) => (
+                                                        <article key={doc.id} className="admin-doc-card">
+                                                            <div className="admin-doc-header">
+                                                                <h3>{doc.file_name}</h3>
+                                                                <span className={`status-badge ${getStatusClass(doc.status)}`}>
+                                                                    {doc.status}
+                                                                </span>
+                                                            </div>
+                                                            <p>
+                                                                {(doc.students?.first_name || doc.students?.last_name)
+                                                                    ? `${doc.students?.first_name || ''} ${doc.students?.last_name || ''}`.trim()
+                                                                    : `${doc.student_first_name || ''} ${doc.student_last_name || ''}`.trim() || 'Student record'}
+                                                            </p>
+                                                            <div className="admin-doc-meta">
+                                                                <span>{getDocumentTypeLabel(doc.document_type)}</span>
+                                                                <span>{formatPortalDate(doc.created_at)}</span>
+                                                            </div>
+                                                            <code className="admin-doc-path">{doc.file_path}</code>
+                                                        </article>
+                                                    ))}
                                                 </div>
-                                                <p>
-                                                    {(doc.students?.first_name || doc.students?.last_name)
-                                                        ? `${doc.students?.first_name || ''} ${doc.students?.last_name || ''}`.trim()
-                                                        : 'Student record'}
-                                                </p>
-                                                <div className="admin-doc-meta">
-                                                    <span>{doc.term}{doc.academic_year ? ` • ${doc.academic_year}` : ''}</span>
-                                                    <span>{String(doc.file_type || 'file').toUpperCase()}</span>
-                                                    <span>{formatPortalDate(doc.uploaded_at)}</span>
+                                            </section>
+                                        )}
+
+                                        {reportCards.length > 0 && (
+                                            <section className="portal-section">
+                                                <h3 className="portal-section-title">Report Cards</h3>
+                                                <div className="admin-doc-grid">
+                                                    {reportCards.map((doc) => (
+                                                        <article key={doc.id} className="admin-doc-card">
+                                                            <div className="admin-doc-header">
+                                                                <h3>{doc.file_name}</h3>
+                                                                <span className={`status-badge ${doc.is_published ? 'completed' : 'pending'}`}>
+                                                                    {doc.is_published ? 'Published' : 'Draft'}
+                                                                </span>
+                                                            </div>
+                                                            <p>
+                                                                {(doc.students?.first_name || doc.students?.last_name)
+                                                                    ? `${doc.students?.first_name || ''} ${doc.students?.last_name || ''}`.trim()
+                                                                    : 'Student record'}
+                                                            </p>
+                                                            <div className="admin-doc-meta">
+                                                                <span>{doc.term}{doc.academic_year ? ` • ${doc.academic_year}` : ''}</span>
+                                                                <span>{String(doc.file_type || 'file').toUpperCase()}</span>
+                                                                <span>{formatPortalDate(doc.uploaded_at)}</span>
+                                                            </div>
+                                                            <code className="admin-doc-path">{doc.file_path}</code>
+                                                        </article>
+                                                    ))}
                                                 </div>
-                                                <code className="admin-doc-path">{doc.file_path}</code>
-                                            </article>
-                                        ))}
-                                    </div>
+                                            </section>
+                                        )}
+                                    </>
                                 )}
                             </section>
                         )}

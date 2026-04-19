@@ -183,6 +183,22 @@
     color: white;
 }
 
+.social-link--disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+.social-link--disabled:hover {
+    background: var(--color-neutral-100);
+    color: var(--color-neutral-600);
+}
+
+.social-help-text {
+    margin-top: var(--space-3);
+    color: var(--color-neutral-500);
+    font-size: var(--text-sm);
+}
+
 /* Form Validation */
 .form-error {
     color: var(--color-error);

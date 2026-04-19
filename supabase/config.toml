@@ -15,3 +15,6 @@ verify_jwt = false
 
 [functions.sync-school]
 verify_jwt = false
+
+[functions.upload-student-document]
+verify_jwt = false

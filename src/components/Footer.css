@@ -71,6 +71,17 @@
     transform: translateY(-2px);
 }
 
+.social-link--disabled {
+    cursor: default;
+    opacity: 0.72;
+}
+
+.social-link--disabled:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-neutral-400);
+    transform: none;
+}
+
 /* Footer Links */
 .footer-links {
     display: grid;
