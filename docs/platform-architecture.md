@@ -2656,7 +2656,7 @@ Perfect for:
 **Earn official Ontario high school credits through live online classes with certified Canadian teachers.**
 
 **Why EMCS Credit Courses?**
-★ Ministry of Education approved (BSID: 665588)
+★ Ministry of Education approved (BSID: 886229)
 ★ Ontario Certified Teachers (OCT)
 ★ Live classes via Zoom (6 hrs/week)
 ★ Official transcripts and report cards

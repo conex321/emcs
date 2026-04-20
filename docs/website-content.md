@@ -625,7 +625,7 @@ Practice and reinforce Ontario curriculum concepts
 ---
 
 ### Why EMCS Credit Courses?
-- Ministry of Education approved (BSID: 665588)
+- Ministry of Education approved (BSID: 886229)
 - Ontario Certified Teachers (OCT)
 - Live classes via Zoom (6 hrs/week)
 - Official transcripts and report cards
@@ -637,7 +637,7 @@ Practice and reinforce Ontario curriculum concepts
 ### Features
 
 #### Ministry Approved
-Authorized by Ontario Ministry of Education (BSID: 665588)
+Authorized by Ontario Ministry of Education (BSID: 886229)
 
 #### Certified Teachers
 All courses taught by Ontario Certified Teachers (OCT)

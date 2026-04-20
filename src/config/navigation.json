@@ -4,7 +4,7 @@
       "name": "EMCS",
       "fullName": "Toronto EMCS",
       "logo": null,
-      "tagline": "Ontario Ministry Inspected School • BSID: 665588",
+      "tagline": "Ontario Ministry Inspected School • BSID: 886229",
       "href": "/"
     },
     "programs": {
@@ -125,11 +125,11 @@
           "text": "#1B4332"
         },
         "description": "The Official Ontario Program is a fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Aligned with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. With personalized academic guidance and a structured learning environment, students are prepared for university admission in Canada and internationally. Upon successful completion, students earn the Ontario Secondary School Diploma (OSSD).",
-        "badge": "Ministry Inspected • BSID: 665588",
+        "badge": "Ministry Inspected • BSID: 886229",
         "grades": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
         "subjects": ["Mathematics", "Language", "The Arts", "Science & Technology", "Health & Physical Education", "Social Studies", "French"],
         "features": [
-          "Ministry of Education inspected (BSID: 665588)",
+          "Ministry of Education inspected (BSID: 886229)",
           "Ontario Certified Teachers (OCT)",
           "Live classes via Zoom",
           "Official transcripts and report cards",
@@ -230,11 +230,11 @@
           "text": "#1B4332"
         },
         "description": "Earn official OSSD credits recognized by universities worldwide. Live classes with Ontario Certified Teachers.",
-        "badge": "Ministry Inspected • BSID: 665588",
+        "badge": "Ministry Inspected • BSID: 886229",
         "grades": ["9", "10", "11", "12"],
         "subjects": ["Math", "Science", "English", "Business", "Social Sciences", "Arts", "French"],
         "features": [
-          "Ministry of Education inspected (BSID: 665588)",
+          "Ministry of Education inspected (BSID: 886229)",
           "Ontario Certified Teachers (OCT)",
           "Live classes via Zoom",
           "Official transcripts and report cards",
@@ -550,7 +550,7 @@
   "trustIndicators": [
     {
       "label": "Ministry Inspected",
-      "value": "BSID: 665588",
+      "value": "BSID: 886229",
       "icon": "verified"
     },
     {
@@ -581,7 +581,7 @@
   ],
   "accreditation": {
     "title": "Ministry Inspected Private School",
-    "bsid": "665588",
+    "bsid": "886229",
     "statement": "EMCS is inspected by the Ontario Ministry of Education and authorized to grant credits toward the Ontario Secondary School Diploma (OSSD).",
     "details": "Our credits hold the same value as those earned in traditional Ontario day schools and are recognized by all Canadian colleges and universities. Transcripts are sent directly to OUAC, OCAS, and educational institutions worldwide."
   },

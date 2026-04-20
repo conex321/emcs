@@ -82,7 +82,7 @@ function OfficialOntarioLanding() {
                         <span className="badge-icon">✓</span>
                         <div className="badge-content">
                             <h3>{t('officialOntario.ministryTitle', 'Ontario Ministry Inspected School')}</h3>
-                            <p><strong>{t('officialOntario.ministryBsid', 'BSID: 665588')}</strong></p>
+                            <p><strong>{t('officialOntario.ministryBsid', 'BSID: 886229')}</strong></p>
                             <p>{t('officialOntario.ministryDesc', 'Authorized to grant credits toward the Ontario Secondary School Diploma (OSSD)')}</p>
                         </div>
                     </div>

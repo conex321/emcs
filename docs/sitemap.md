@@ -145,7 +145,7 @@ Three portal cards:
 **Bottom bar**
 - "© 2026 EMCS. All rights reserved."
 - "Privacy Policy" · "Terms of Service" · "Refund Policy"
-- Accreditation badge: "Ontario Ministry Inspected School | BSID: 665588"
+- Accreditation badge: "Ontario Ministry Inspected School | BSID: 886229"
 
 ---
 
@@ -239,7 +239,7 @@ Three portal cards:
 9. Final CTA
 
 **Copy — Hero (`hero`)**
-- Badge: "Ontario Ministry Inspected School • BSID: 665588"
+- Badge: "Ontario Ministry Inspected School • BSID: 886229"
 - Title: "Your Path to a"
 - Title highlight: "Canadian Education"
 - Subtitle: "Build academic foundations from Grade 1 or earn your Ontario Secondary School Diploma (OSSD) 100% online from anywhere in the world. Study at your own pace with Ontario Certified Teachers."
@@ -247,7 +247,7 @@ Three portal cards:
 - CTA 2: "Explore Programs"
 
 **Copy — Trust indicators (`trustIndicators`)**
-- "Ministry Inspected" — "BSID: 665588"
+- "Ministry Inspected" — "BSID: 886229"
 - "Years of Experience" — "Since 2010"
 - "Students Worldwide" — "130+ Countries"
 - "Course Completion" — "4 weeks to 12 months"
@@ -314,7 +314,7 @@ Three portal cards:
 **Copy — Accreditation strip (`accreditation`)**
 - Title: "Ministry Inspected Private School"
 - Statement: "EMCS is inspected by the Ontario Ministry of Education and authorized to grant credits toward the Ontario Secondary School Diploma (OSSD)."
-- BSID: "BSID: 665588"
+- BSID: "BSID: 886229"
 - Details: "Our credits hold the same value as those earned in traditional Ontario day schools and are recognized by all Canadian colleges and universities. Transcripts are sent directly to OUAC, OCAS, and educational institutions worldwide."
 
 ---
@@ -342,7 +342,7 @@ Three portal cards:
 **Copy — Who We Are (`about.whoWeAre`)**
 - Title: "Who We Are"
 - Body: "Excellence Maple Canadian School (EMCS), operating as Toronto Academy of English, Mathematics and Coding (EMC), is a Ministry-inspected private school authorized by the Ontario Ministry of Education to grant OSSD credits. We provide high-quality education for students from Grades 1-12 based on the official Ontario Curriculum. As an IB World School for the Diploma Programme, we maintain the highest standards in curriculum delivery and student support."
-- BSID line: "BSID: 665588 | Inspected by the Ontario Ministry of Education"
+- BSID line: "BSID: 886229 | Inspected by the Ontario Ministry of Education"
 
 **Copy — Our Story (`about.story` / `about.storyText`)**
 - Title: "Our Story"
@@ -367,7 +367,7 @@ Three portal cards:
 **Copy — Accreditation grid (`about.accreditation` + `accreditationDetails`)**
 - Section title: "Accreditation & Recognition"
 - Lead: "We are a Ministry-inspected private school authorized by the Ontario Ministry of Education to grant Ontario Secondary School Diploma (OSSD) credits."
-- "Ontario Ministry Inspection" — "BSID: 665588"
+- "Ontario Ministry Inspection" — "BSID: 886229"
 - "IB World School" — "Diploma Programme"
 - "Credit Recognition" — "Same as traditional Ontario day schools"
 - "Transcript Delivery" — "Direct to OUAC, OCAS, universities"
@@ -483,7 +483,7 @@ Three portal cards:
 
 **Copy — Why Choose EMCS Credit Courses? (`creditCourses.why`)**
 - Title: "Why Choose EMCS Credit Courses?"
-- "Ministry Inspected: Authorized by the Ontario Ministry of Education (BSID: 665588)"
+- "Ministry Inspected: Authorized by the Ontario Ministry of Education (BSID: 886229)"
 - "Ontario Certified Teachers: All courses taught by teachers in good standing with the Ontario College of Teachers (OCT)"
 - "Same Credits as Day Schools: Our credits hold the same value as those earned in traditional Ontario schools"
 - "Direct Transcript Delivery: Marks sent directly to OUAC, OCAS, and your day school"
@@ -810,7 +810,7 @@ Three portal cards:
 **Copy — Q&A (verbatim)**
 
 > **Q1. Is EMCS accredited?**
-> A1. Yes, EMCS is a Ministry-inspected private school authorized by the Ontario Ministry of Education to grant OSSD credits. Our BSID is 665588. Our credits hold the same value as those earned in traditional Ontario day schools.
+> A1. Yes, EMCS is a Ministry-inspected private school authorized by the Ontario Ministry of Education to grant OSSD credits. Our BSID is 886229. Our credits hold the same value as those earned in traditional Ontario day schools.
 
 > **Q2. When can I start?**
 > A2. We have continuous enrollment year-round. You can register at any time and typically start your course within 24-48 hours.
@@ -1255,7 +1255,7 @@ The "Add to Cart" button on each course card uses `storefronts.cta.addToCart` �
 
 **Copy — Ministry section (`officialOntario.ministry*`)**
 - Title: "Ontario Ministry Inspected School"
-- BSID: "BSID: 665588"
+- BSID: "BSID: 886229"
 - Authorization: "Authorized to grant credits toward the Ontario Secondary School Diploma (OSSD)"
 
 **Copy — What's Included (`officialOntario.included*`)**
@@ -1562,7 +1562,7 @@ Renders [StorefrontCourseDetail.jsx](../src/pages/StorefrontCourseDetail.jsx) in
 
 **Why Partner With EMCS? (`portals.agent.benefit*`)**
 - Section title: "Why Partner With EMCS?"
-- "Ministry Inspected" — "Official Ontario Ministry accreditation (BSID: 665588)"
+- "Ministry Inspected" — "Official Ontario Ministry accreditation (BSID: 886229)"
 - "Global Recognition" — "OSSD credentials recognized by universities worldwide"
 - "Competitive Commissions" — "Attractive commission structure for agent partners"
 - "Growing Programs" — "Grades 1-12 with both Academic Prep and Official Ontario options"

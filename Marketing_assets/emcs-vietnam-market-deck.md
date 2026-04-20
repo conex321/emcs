@@ -4,7 +4,7 @@
 
 ---
 
-**Ontario Ministry of Education Inspected School • BSID: 665588 • Established Since 2010**
+**Ontario Ministry of Education Inspected School • BSID: 886229 • Established Since 2010**
 
 The Ontario Secondary School Diploma (OSSD) is Canada's most globally recognized high school credential. Now Vietnamese students can earn it 100% online, from Hanoi, Ho Chi Minh City, Da Nang, or anywhere — in as little as 8–12 months.
 
@@ -27,7 +27,7 @@ The Ontario Secondary School Diploma (OSSD) is Canada's most globally recognized
 
 The Ontario Secondary School Diploma (OSSD) is Canada's most globally recognized high school credential. Now Vietnamese students can earn it 100% online, from Hanoi, Ho Chi Minh City, Da Nang, or anywhere — in as little as 8–12 months.
 
-**Ontario Ministry of Education Inspected School • BSID: 665588**
+**Ontario Ministry of Education Inspected School • BSID: 886229**
 
 ---
 
@@ -65,7 +65,7 @@ The OSSD is the official high school diploma issued by the Ontario Ministry of E
 | 📚 | **Based on 70% coursework / 30% final evaluation** | No single high-stakes national exam — continuous assessment throughout the course |
 | 🕐 | **Self-paced — study on your own schedule** | Complete courses in as little as 4 weeks or take up to 12 months |
 | 💻 | **100% online — no visa, no relocation** | Study from Hanoi, HCMC, Da Nang, or anywhere with internet access |
-| 🏛️ | **Government-certified** | EMCS BSID: 665588 — regularly inspected and authorized to grant OSSD credits |
+| 🏛️ | **Government-certified** | EMCS BSID: 886229 — regularly inspected and authorized to grant OSSD credits |
 | 🎓 | **Identical to diplomas earned in Toronto** | University admissions officers cannot distinguish between online and in-person OSSD |
 
 ---
@@ -116,7 +116,7 @@ The OSSD is the official high school diploma issued by the Ontario Ministry of E
 
 | Feature | Details |
 |---------|---------|
-| **Ministry-Inspected** *(Bộ Giáo Dục Ontario Kiểm Định)* | BSID: 665588. Regularly inspected and authorized by the Ontario Ministry of Education to grant OSSD credits and diplomas. |
+| **Ministry-Inspected** *(Bộ Giáo Dục Ontario Kiểm Định)* | BSID: 886229. Regularly inspected and authorized by the Ontario Ministry of Education to grant OSSD credits and diplomas. |
 | **Ontario Certified Teachers** *(Giáo Viên Chứng Nhận Ontario)* | Every credit course taught by teachers registered with the Ontario College of Teachers (OCT), with real classroom experience. |
 | **Two Flexible Pathways** *(Hai Lộ Trình Linh Hoạt)* | Start with the Academic Preparation Program to build foundations, then upgrade to the Official Ontario Program for credits. *"Learn First. Decide Later. Succeed Safely."* |
 | **188 Courses Available** *(188 Khóa Học)* | Complete course catalog from Grades 1–12, covering English, Math, Science, Business, Arts, Technology, French, and Social Studies. |
@@ -483,7 +483,7 @@ OSSD is also recognized by international universities operating in Vietnam (RMIT
 2. When you re-apply in 6–12 months, show immigration officers:
    - ✅ Active transcripts proving you are a serious, committed student
    - ✅ Course progress and grades from a Ministry-inspected Ontario school
-   - ✅ A genuine, government-certified academic program (BSID: 665588)
+   - ✅ A genuine, government-certified academic program (BSID: 886229)
    - ✅ A clear, documented pathway from OSSD → Canadian university
 
 **Benefits:**
@@ -543,7 +543,7 @@ OSSD is also recognized by international universities operating in Vietnam (RMIT
 - Vietnamese-speaking support available through local education agents
 
 ### ✅ Tính Hợp Pháp & Công Nhận *(Legitimacy & Recognition)*
-- EMCS is inspected by the Ontario Ministry of Education (BSID: 665588)
+- EMCS is inspected by the Ontario Ministry of Education (BSID: 886229)
 - OSSD is the exact same diploma earned by students in Toronto and across Ontario
 - Credits are recorded in Ontario's provincial system
 - Transcripts are official and sent directly to universities via OUAC and OCAS
@@ -560,7 +560,7 @@ OSSD is also recognized by international universities operating in Vietnam (RMIT
 A: Yes — accepted by all major universities in Canada, US, UK, Australia, and internationally. The OSSD is Canada's official high school diploma.
 
 **Q: EMCS có được chính phủ Canada công nhận không?** *(Is EMCS officially recognized?)*
-A: Yes — EMCS (BSID: 665588) is inspected and authorized by the Ontario Ministry of Education with full authority to grant OSSD credits and diplomas.
+A: Yes — EMCS (BSID: 886229) is inspected and authorized by the Ontario Ministry of Education with full authority to grant OSSD credits and diplomas.
 
 **Q: Con tôi có cần visa du học không?** *(Does my child need a student visa?)*
 A: No — EMCS is 100% online (asynchronous). No study permit or visa is required.
@@ -665,7 +665,7 @@ Vietnam's thriving tech and startup ecosystem (FPT, VNG, VinTech) increasingly v
 - Training and onboarding support
 
 ### Why Partner with EMCS?
-- ✅ Ministry-inspected school (BSID: 665588) — your clients' trust is protected
+- ✅ Ministry-inspected school (BSID: 886229) — your clients' trust is protected
 - ✅ 188 courses across Grades 1–12 — serve families at every level
 - ✅ Competitive pricing for the Vietnamese market — high conversion potential
 - ✅ Two pathways (Academic Prep + Official Ontario) — flexibility for every family
@@ -683,7 +683,7 @@ Vietnam's thriving tech and startup ecosystem (FPT, VNG, VinTech) increasingly v
 | 📚 Course Catalog | **188 courses** |
 | 🏫 Grade Levels | **Grades 1–12 (Lớp 1–12)** |
 | ✅ Accreditation | **Ontario Ministry of Education Inspected** |
-| 🏛️ BSID | **665588** |
+| 🏛️ BSID | **886229** |
 | 👨‍🏫 Teacher Certification | **Ontario College of Teachers (OCT)** |
 | ⏱️ Course Completion Window | **4 weeks to 12 months** |
 | 💬 Teacher Response Time | **Within 48 hours** |

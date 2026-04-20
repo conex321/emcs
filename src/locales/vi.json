@@ -1,6 +1,6 @@
 {
     "hero": {
-        "badge": "Trường được Bộ Giáo dục Ontario kiểm định • BSID: 665588",
+        "badge": "Trường được Bộ Giáo dục Ontario kiểm định • BSID: 886229",
         "title": "Con đường đến với",
         "titleHighlight": "Nền Giáo dục Canada",
         "subtitle": "Xây dựng nền tảng học tập từ Lớp 1 hoặc lấy Bằng Tốt nghiệp Trung học Ontario (OSSD) 100% trực tuyến từ bất cứ đâu trên thế giới. Học theo tốc độ của riêng bạn với Giáo viên Ontario Được Chứng nhận.",
@@ -9,7 +9,7 @@
     },
     "stats": {
         "ministryInspected": "Được Bộ kiểm định",
-        "bsid": "BSID: 665588",
+        "bsid": "BSID: 886229",
         "yearsExperience": "Từ năm 2010",
         "studentsWorldwide": "130+ Quốc gia",
         "courseCompletion": "4 tuần đến 12 tháng",
@@ -25,7 +25,7 @@
     },
     "trustIndicators": {
         "ministryInspected": "Được Bộ kiểm định",
-        "bsid": "BSID: 665588",
+        "bsid": "BSID: 886229",
         "yearsExperience": "Năm kinh nghiệm",
         "since": "Từ năm 2010",
         "studentsWorldwide": "Học sinh Toàn cầu",
@@ -214,7 +214,7 @@
     "accreditation": {
         "title": "Trường Tư thục Được Bộ Kiểm định",
         "statement": "EMCS được kiểm định bởi Bộ Giáo dục Ontario và được phép cấp tín chỉ hướng tới Bằng Tốt nghiệp Trung học Ontario (OSSD).",
-        "bsid": "BSID: 665588",
+        "bsid": "BSID: 886229",
         "details": "Tín chỉ của chúng tôi có giá trị như những tín chỉ kiếm được tại các trường Ontario truyền thống và được công nhận bởi tất cả các trường cao đẳng và đại học Canada. Bảng điểm được gửi trực tiếp đến OUAC, OCAS và các cơ sở giáo dục trên toàn thế giới."
     },
     "nav": {
@@ -288,7 +288,7 @@
         "faq": "FAQ",
         "blog": "Blog",
         "studentSupport": "Hỗ trợ Học sinh",
-        "accreditationBadge": "Trường được Bộ Giáo dục Ontario kiểm định | BSID: 665588"
+        "accreditationBadge": "Trường được Bộ Giáo dục Ontario kiểm định | BSID: 886229"
     },
     "about": {
         "title": "Về EMCS",
@@ -296,7 +296,7 @@
         "whoWeAre": {
             "title": "Chúng tôi là ai",
             "content": "EMCS là một trường tư thục tại Toronto được Bộ Giáo dục Ontario kiểm định và được phép cấp tín chỉ OSSD. Chúng tôi cung cấp giáo dục chất lượng cao cho học sinh từ Lớp 1-12 dựa trên Chương trình Ontario chính thức, với trọng tâm là giảng dạy trực tuyến linh hoạt và hỗ trợ học sinh cá nhân hóa.",
-            "bsid": "BSID: 665588 | Được kiểm định bởi Bộ Giáo dục Ontario"
+            "bsid": "BSID: 886229 | Được kiểm định bởi Bộ Giáo dục Ontario"
         },
         "story": "Câu chuyện của chúng tôi",
         "storyText": "EMCS được thành lập với sứ mệnh mang nền giáo dục Canada đẳng cấp thế giới đến với học sinh trên toàn cầu. Chúng tôi nhận ra rằng địa lý không bao giờ nên là rào cản cho giáo dục chất lượng. Kể từ khi thành lập, chúng tôi đã giúp hàng nghìn học sinh kiếm tín chỉ trung học Ontario, hoàn thành OSSD và được nhận vào các trường đại học hàng đầu trên toàn thế giới.",
@@ -310,7 +310,7 @@
         "accreditationText": "Chúng tôi là trường tư thục được Bộ kiểm định, được phép bởi Bộ Giáo dục Ontario cấp tín chỉ Bằng Tốt nghiệp Trung học Ontario (OSSD).",
         "accreditationDetails": {
             "ministryInspection": "Kiểm định Bộ Ontario",
-            "bsid": "BSID: 665588",
+            "bsid": "BSID: 886229",
             "creditRecognition": "Công nhận Tín chỉ",
             "creditDetails": "Như các trường Ontario truyền thống",
             "transcriptDelivery": "Gửi Bảng điểm",
@@ -618,10 +618,10 @@
     "creditCourses": {
         "title": "Khóa học Tín chỉ Trung học Ontario",
         "subtitle": "Kiếm tín chỉ OSSD chính thức được các trường đại học trên toàn thế giới công nhận",
-        "badge": "Được Bộ Giáo dục Phê duyệt | BSID: 665588",
+        "badge": "Được Bộ Giáo dục Phê duyệt | BSID: 886229",
         "why": {
             "title": "Tại sao Chọn Khóa học Tín chỉ EMCS?",
-            "ministryInspected": "Được Bộ Kiểm định: Được phép bởi Bộ Giáo dục Ontario (BSID: 665588)",
+            "ministryInspected": "Được Bộ Kiểm định: Được phép bởi Bộ Giáo dục Ontario (BSID: 886229)",
             "certifiedTeachers": "Giáo viên Ontario Được Chứng nhận: Tất cả khóa học được giảng dạy bởi giáo viên có tư cách tốt với Hội đồng Giáo viên Ontario (OCT)",
             "sameCredits": "Tín chỉ Như Trường Truyền thống: Tín chỉ của chúng tôi có giá trị như những tín chỉ kiếm được tại các trường Ontario truyền thống",
             "directTranscript": "Gửi Bảng điểm Trực tiếp: Điểm được gửi trực tiếp đến OUAC, OCAS và trường của bạn",
@@ -1122,7 +1122,7 @@
             "technical": "Yêu cầu Kỹ thuật"
         },
         "q1": "EMCS có được kiểm định không?",
-        "a1": "Có, EMCS là trường tư thục được Bộ kiểm định, được phép bởi Bộ Giáo dục Ontario cấp tín chỉ OSSD. BSID của chúng tôi là 665588. Tín chỉ của chúng tôi có giá trị như những tín chỉ kiếm được tại các trường Ontario truyền thống.",
+        "a1": "Có, EMCS là trường tư thục được Bộ kiểm định, được phép bởi Bộ Giáo dục Ontario cấp tín chỉ OSSD. BSID của chúng tôi là 886229. Tín chỉ của chúng tôi có giá trị như những tín chỉ kiếm được tại các trường Ontario truyền thống.",
         "q2": "Khi nào tôi có thể bắt đầu?",
         "a2": "Chúng tôi mở đăng ký liên tục quanh năm. Bạn có thể đăng ký bất cứ lúc nào và thường bắt đầu khóa học trong vòng 24-48 giờ.",
         "q3": "Tôi có bao lâu để hoàn thành một khóa học?",
@@ -1495,7 +1495,7 @@
             "feature6Desc": "Hỗ trợ ưu tiên từ đội ngũ quan hệ đối tác",
             "whyPartner": "Tại sao Hợp tác với EMCS?",
             "benefit1Title": "Được Bộ Kiểm định",
-            "benefit1Desc": "Kiểm định chính thức của Bộ Giáo dục Ontario (BSID: 665588)",
+            "benefit1Desc": "Kiểm định chính thức của Bộ Giáo dục Ontario (BSID: 886229)",
             "benefit2Title": "Công nhận Toàn cầu",
             "benefit2Desc": "Bằng OSSD được các trường đại học trên toàn thế giới công nhận",
             "benefit3Title": "Hoa hồng Cạnh tranh",
@@ -1594,7 +1594,7 @@
             "speakCounselor": "Nói chuyện với Cố vấn",
             "features": {
                 "ministryApproved": "Được Bộ Kiểm định",
-                "ministryApprovedDesc": "Được phép bởi Bộ Giáo dục Ontario (BSID: 665588)",
+                "ministryApprovedDesc": "Được phép bởi Bộ Giáo dục Ontario (BSID: 886229)",
                 "certifiedTeachers": "Giáo viên Được Chứng nhận",
                 "certifiedTeachersDesc": "Tất cả khóa học được giảng dạy bởi Giáo viên Ontario Được Chứng nhận (OCT)",
                 "liveClasses": "Lớp học Trực tiếp",
@@ -1906,7 +1906,7 @@
         "featureOfficialCredits": "Tín chỉ Chính thức",
         "featureOssdDiploma": "Bằng OSSD",
         "ministryTitle": "Trường được Bộ Giáo dục Ontario Kiểm định",
-        "ministryBsid": "BSID: 665588",
+        "ministryBsid": "BSID: 886229",
         "ministryAuth": "Được ủy quyền cấp tín chỉ cho Bằng Tốt nghiệp Trung học Ontario (OSSD)",
         "whatsIncluded": "Bao gồm",
         "included1Title": "Lớp Trực tuyến Trực tiếp",

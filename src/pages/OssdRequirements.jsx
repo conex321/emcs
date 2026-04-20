@@ -90,7 +90,7 @@ function OssdRequirements() {
                         <div className="intro-text">
                             <h2>{t('ossd.whatIsOssdTitle', 'What is the Ontario Secondary School Diploma?')}</h2>
                             <p>{t('ossd.whatIsOssdDesc1', 'The Ontario Secondary School Diploma (OSSD) represents a qualification from Ontario, Canada for students completing secondary education requirements. It is recognized worldwide and opens doors to top universities and careers globally.')}</p>
-                            <p>{t('ossd.whatIsOssdDesc2', 'EMCS provides a full range of high school courses approved by the Ontario Ministry of Education for students in grades 9 to 12. BSID: 665588.')}</p>
+                            <p>{t('ossd.whatIsOssdDesc2', 'EMCS provides a full range of high school courses approved by the Ontario Ministry of Education for students in grades 9 to 12. BSID: 886229.')}</p>
                             <div className="intro-stats">
                                 <div className="intro-stat">
                                     <span className="stat-value">98%</span>

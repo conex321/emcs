@@ -24,7 +24,7 @@ function InternationalStudents() {
         {
             icon: '✓',
             title: t('international.whyChoose.inspected.title', 'Ontario Ministry Inspected'),
-            desc: t('international.whyChoose.inspected.desc', 'BSID: 665588 - Official transcripts recognized by universities worldwide')
+            desc: t('international.whyChoose.inspected.desc', 'BSID: 886229 - Official transcripts recognized by universities worldwide')
         },
         {
             icon: '💻',

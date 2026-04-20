@@ -1,6 +1,6 @@
 {
     "hero": {
-        "badge": "Ontario Ministry Inspected School • BSID: 665588",
+        "badge": "Ontario Ministry Inspected School • BSID: 886229",
         "title": "Your Path to a",
         "titleHighlight": "Canadian Education",
         "subtitle": "Build academic foundations from Grade 1 or earn your Ontario Secondary School Diploma (OSSD) 100% online from anywhere in the world. Study at your own pace with Ontario Certified Teachers.",
@@ -9,7 +9,7 @@
     },
     "stats": {
         "ministryInspected": "Ministry Inspected",
-        "bsid": "BSID: 665588",
+        "bsid": "BSID: 886229",
         "yearsExperience": "Since 2010",
         "studentsWorldwide": "130+ Countries",
         "courseCompletion": "4 weeks to 12 months",
@@ -25,7 +25,7 @@
     },
     "trustIndicators": {
         "ministryInspected": "Ministry Inspected",
-        "bsid": "BSID: 665588",
+        "bsid": "BSID: 886229",
         "yearsExperience": "Years of Experience",
         "since": "Since 2010",
         "studentsWorldwide": "Students Worldwide",
@@ -214,7 +214,7 @@
     "accreditation": {
         "title": "Ministry Inspected Private School",
         "statement": "EMCS is inspected by the Ontario Ministry of Education and authorized to grant credits toward the Ontario Secondary School Diploma (OSSD).",
-        "bsid": "BSID: 665588",
+        "bsid": "BSID: 886229",
         "details": "Our credits hold the same value as those earned in traditional Ontario day schools and are recognized by all Canadian colleges and universities. Transcripts are sent directly to OUAC, OCAS, and educational institutions worldwide."
     },
     "nav": {
@@ -288,7 +288,7 @@
         "faq": "FAQ",
         "blog": "Blog",
         "studentSupport": "Student Support",
-        "accreditationBadge": "Ontario Ministry Inspected School | BSID: 665588"
+        "accreditationBadge": "Ontario Ministry Inspected School | BSID: 886229"
     },
     "about": {
         "title": "About EMCS",
@@ -296,7 +296,7 @@
         "whoWeAre": {
             "title": "Who We Are",
             "content": "EMCS is a Ministry-inspected private school in Toronto, authorized by the Ontario Ministry of Education to grant OSSD credits. We provide high-quality education for students from Grades 1-12 based on the official Ontario Curriculum, with a focus on flexible, online delivery and personalized student support.",
-            "bsid": "BSID: 665588 | Inspected by the Ontario Ministry of Education"
+            "bsid": "BSID: 886229 | Inspected by the Ontario Ministry of Education"
         },
         "story": "Our Story",
         "storyText": "EMCS was founded with a mission to bring world-class Canadian education to students around the globe. We recognized that geography should never be a barrier to quality education. Since our founding, we have helped thousands of students earn Ontario high school credits, complete their OSSD, and gain admission to top universities worldwide.",
@@ -310,7 +310,7 @@
         "accreditationText": "We are a Ministry-inspected private school authorized by the Ontario Ministry of Education to grant Ontario Secondary School Diploma (OSSD) credits.",
         "accreditationDetails": {
             "ministryInspection": "Ontario Ministry Inspection",
-            "bsid": "BSID: 665588",
+            "bsid": "BSID: 886229",
             "creditRecognition": "Credit Recognition",
             "creditDetails": "Same as traditional Ontario day schools",
             "transcriptDelivery": "Transcript Delivery",
@@ -618,10 +618,10 @@
     "creditCourses": {
         "title": "Ontario High School Credit Courses",
         "subtitle": "Earn official OSSD credits recognized by universities worldwide",
-        "badge": "Ministry of Education Approved | BSID: 665588",
+        "badge": "Ministry of Education Approved | BSID: 886229",
         "why": {
             "title": "Why Choose EMCS Credit Courses?",
-            "ministryInspected": "Ministry Inspected: Authorized by the Ontario Ministry of Education (BSID: 665588)",
+            "ministryInspected": "Ministry Inspected: Authorized by the Ontario Ministry of Education (BSID: 886229)",
             "certifiedTeachers": "Ontario Certified Teachers: All courses taught by teachers in good standing with the Ontario College of Teachers (OCT)",
             "sameCredits": "Same Credits as Day Schools: Our credits hold the same value as those earned in traditional Ontario schools",
             "directTranscript": "Direct Transcript Delivery: Marks sent directly to OUAC, OCAS, and your day school",
@@ -1122,7 +1122,7 @@
             "technical": "Technical Requirements"
         },
         "q1": "Is EMCS accredited?",
-        "a1": "Yes, EMCS is a Ministry-inspected private school authorized by the Ontario Ministry of Education to grant OSSD credits. Our BSID is 665588. Our credits hold the same value as those earned in traditional Ontario day schools.",
+        "a1": "Yes, EMCS is a Ministry-inspected private school authorized by the Ontario Ministry of Education to grant OSSD credits. Our BSID is 886229. Our credits hold the same value as those earned in traditional Ontario day schools.",
         "q2": "When can I start?",
         "a2": "We have continuous enrollment year-round. You can register at any time and typically start your course within 24-48 hours.",
         "q3": "How long do I have to complete a course?",
@@ -1495,7 +1495,7 @@
             "feature6Desc": "Priority support from our partner relations team",
             "whyPartner": "Why Partner With EMCS?",
             "benefit1Title": "Ministry Inspected",
-            "benefit1Desc": "Official Ontario Ministry accreditation (BSID: 665588)",
+            "benefit1Desc": "Official Ontario Ministry accreditation (BSID: 886229)",
             "benefit2Title": "Global Recognition",
             "benefit2Desc": "OSSD credentials recognized by universities worldwide",
             "benefit3Title": "Competitive Commissions",
@@ -1594,7 +1594,7 @@
             "speakCounselor": "Speak with a Counselor",
             "features": {
                 "ministryApproved": "Ministry Inspected",
-                "ministryApprovedDesc": "Authorized by Ontario Ministry of Education (BSID: 665588)",
+                "ministryApprovedDesc": "Authorized by Ontario Ministry of Education (BSID: 886229)",
                 "certifiedTeachers": "Certified Teachers",
                 "certifiedTeachersDesc": "All courses taught by Ontario Certified Teachers (OCT)",
                 "liveClasses": "Live Classes",
@@ -1906,7 +1906,7 @@
         "featureOfficialCredits": "Official Credits",
         "featureOssdDiploma": "OSSD Diploma",
         "ministryTitle": "Ontario Ministry Inspected School",
-        "ministryBsid": "BSID: 665588",
+        "ministryBsid": "BSID: 886229",
         "ministryAuth": "Authorized to grant credits toward the Ontario Secondary School Diploma (OSSD)",
         "whatsIncluded": "What's Included",
         "included1Title": "Live Online Classes",
