@@ -1,0 +1,555 @@
+{
+  "_meta": {
+    "generatedAt": "2026-04-18T20:14:00Z",
+    "source": "EMCS Platform — Marketing & Brand Identity Export",
+    "description": "Comprehensive brand identity, design system, messaging framework, and marketing assets extracted from canadaemcs.com and the EMCS codebase. Use this file for brand consistency across all marketing channels, partnerships, and media kits.",
+    "extractedFrom": {
+      "liveSite": "https://www.canadaemcs.com",
+      "method": "Firecrawl branding extraction + codebase CSS design tokens + i18n content",
+      "confidence": 0.95
+    }
+  },
+
+  "brand": {
+    "identity": {
+      "name": "EMCS",
+      "legalName": "Toronto EMCS Inc.",
+      "dba": "Toronto EMCS",
+      "tagline": "Ontario-accredited online education for students worldwide",
+      "motto": "Learn First. Decide Later. Succeed Safely.",
+      "established": 2010,
+      "bsid": "665588",
+      "accreditation": "Ontario Ministry of Education Inspected Private School",
+      "website": "https://www.canadaemcs.com",
+      "industry": "Online Education / EdTech / K-12",
+      "marketPosition": "Premier Ontario-accredited online school serving international students in 130+ countries"
+    },
+
+    "mission": "To make high-quality Canadian education accessible, flexible, and supported—wherever students are in the world.",
+    "vision": "Empowering students globally to achieve academic excellence through Ontario's world-class curriculum, delivered with innovation and personal support.",
+
+    "values": {
+      "excellence": {
+        "title": "Excellence",
+        "description": "We maintain the highest standards in curriculum delivery, assessment, and student support."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "Quality education should be available to all students, regardless of location or circumstances."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We leverage technology to create engaging and effective learning experiences that prepare students for the future."
+      },
+      "support": {
+        "title": "Support",
+        "description": "Every student receives personalized guidance throughout their educational journey."
+      }
+    },
+
+    "personality": {
+      "tone": "professional",
+      "energy": "medium",
+      "voice": "authoritative yet approachable",
+      "targetAudience": "International students (Grades 1–12) and their parents seeking accredited Canadian education online",
+      "keywords": [
+        "accredited",
+        "Ontario curriculum",
+        "globally recognized",
+        "flexible",
+        "online",
+        "OSSD",
+        "certified teachers",
+        "anywhere in the world"
+      ]
+    }
+  },
+
+  "designSystem": {
+    "colorPalette": {
+      "brand": {
+        "primary": "#1B4332",
+        "primaryLight": "#2D6A4F",
+        "primaryDark": "#0F2921",
+        "description": "Deep forest green — conveys trust, prestige, Canadian identity"
+      },
+      "accent": {
+        "gold": "#D4AF37",
+        "goldLight": "#E8C967",
+        "goldDark": "#B8860B",
+        "description": "Regal gold — signals premium quality and achievement"
+      },
+      "secondary": {
+        "blue": "#2563EB",
+        "description": "Used for links and interactive elements"
+      },
+      "canadian": {
+        "red": "#C8102E",
+        "redLight": "#E31E3A",
+        "redDark": "#9A0C24",
+        "description": "Canadian red — used for national identity branding"
+      },
+      "storefronts": {
+        "nonCredit": {
+          "primary": "#2F80ED",
+          "secondary": "#1A5DC9",
+          "light": "#E3F2FD",
+          "text": "#FFFFFF",
+          "label": "Academic Preparation Program"
+        },
+        "credit": {
+          "primary": "#F2C94C",
+          "secondary": "#D4AF37",
+          "light": "#FFF8E1",
+          "text": "#1B4332",
+          "label": "Official Ontario Program"
+        }
+      },
+      "semantic": {
+        "success": "#22c55e",
+        "warning": "#f59e0b",
+        "error": "#ef4444",
+        "info": "#3b82f6"
+      },
+      "neutrals": {
+        "50": "#fafafa",
+        "100": "#f5f5f5",
+        "200": "#e5e5e5",
+        "300": "#d4d4d4",
+        "400": "#a3a3a3",
+        "500": "#737373",
+        "600": "#525252",
+        "700": "#404040",
+        "800": "#262626",
+        "900": "#171717",
+        "950": "#0a0a0a"
+      },
+      "greens": {
+        "50": "#f0fdf4",
+        "100": "#dcfce7",
+        "200": "#bbf7d0",
+        "300": "#86efac",
+        "400": "#4ade80",
+        "500": "#22c55e",
+        "600": "#16a34a",
+        "700": "#15803d",
+        "800": "#166534",
+        "900": "#14532d",
+        "950": "#052e16"
+      },
+      "backgrounds": {
+        "primary": "#ffffff",
+        "secondary": "#f8fafc",
+        "tertiary": "#f1f5f9",
+        "dark": "#0f172a"
+      },
+      "gradients": {
+        "hero": "linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #1B4332 100%)",
+        "gold": "linear-gradient(135deg, #D4AF37 0%, #E8C967 100%)"
+      }
+    },
+
+    "typography": {
+      "fontFamilies": {
+        "display": "'Outfit', system-ui, sans-serif",
+        "body": "'Inter', system-ui, sans-serif"
+      },
+      "fontStacks": {
+        "heading": ["Outfit", "system-ui", "sans-serif"],
+        "body": ["Inter", "system-ui", "sans-serif"]
+      },
+      "fontSizes": {
+        "xs": "clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)",
+        "sm": "clamp(0.875rem, 0.8rem + 0.35vw, 1rem)",
+        "base": "clamp(1rem, 0.9rem + 0.45vw, 1.125rem)",
+        "lg": "clamp(1.125rem, 1rem + 0.55vw, 1.25rem)",
+        "xl": "clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem)",
+        "2xl": "clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem)",
+        "3xl": "clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem)",
+        "4xl": "clamp(2.25rem, 1.8rem + 2vw, 3rem)",
+        "5xl": "clamp(3rem, 2.2rem + 3.5vw, 4.5rem)",
+        "6xl": "clamp(3.75rem, 2.5rem + 5vw, 6rem)"
+      },
+      "fontWeights": {
+        "light": 300,
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "extrabold": 800
+      },
+      "lineHeights": {
+        "none": 1,
+        "tight": 1.25,
+        "snug": 1.375,
+        "normal": 1.5,
+        "relaxed": 1.625,
+        "loose": 2
+      },
+      "letterSpacing": {
+        "tighter": "-0.05em",
+        "tight": "-0.025em",
+        "normal": "0em",
+        "wide": "0.025em",
+        "wider": "0.05em"
+      },
+      "liveExtracted": {
+        "h1": "56px",
+        "h2": "28px",
+        "body": "20px"
+      }
+    },
+
+    "spacing": {
+      "baseUnit": 4,
+      "scale": {
+        "0": "0",
+        "1": "0.25rem",
+        "2": "0.5rem",
+        "3": "0.75rem",
+        "4": "1rem",
+        "5": "1.25rem",
+        "6": "1.5rem",
+        "8": "2rem",
+        "10": "2.5rem",
+        "12": "3rem",
+        "14": "3.5rem",
+        "16": "4rem",
+        "20": "5rem",
+        "24": "6rem",
+        "32": "8rem",
+        "40": "10rem",
+        "48": "12rem"
+      }
+    },
+
+    "borderRadius": {
+      "none": "0",
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "2xl": "1.5rem",
+      "3xl": "2rem",
+      "full": "9999px"
+    },
+
+    "shadows": {
+      "xs": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+      "sm": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+      "md": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+      "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+      "xl": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+      "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+      "inner": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+      "glow": "0 0 40px rgba(212, 175, 55, 0.3)",
+      "glowBrand": "0 0 40px rgba(27, 67, 50, 0.3)"
+    },
+
+    "transitions": {
+      "fast": "150ms ease",
+      "base": "250ms ease",
+      "slow": "350ms ease",
+      "slower": "500ms ease",
+      "spring": "500ms cubic-bezier(0.34, 1.56, 0.64, 1)"
+    },
+
+    "zIndex": {
+      "dropdown": 100,
+      "sticky": 200,
+      "fixed": 300,
+      "modalBackdrop": 400,
+      "modal": 500,
+      "popover": 600,
+      "tooltip": 700
+    },
+
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px"
+    },
+
+    "components": {
+      "buttonPrimary": {
+        "background": "#0F2921",
+        "textColor": "#FFFFFF",
+        "borderColor": "#BDEECF",
+        "borderRadius": "12px",
+        "shadow": "rgba(0, 0, 0, 0.2) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -1px"
+      },
+      "buttonSecondary": {
+        "background": "#FFFFFF",
+        "textColor": "#000000",
+        "borderColor": "#FFFFFF",
+        "borderRadius": "12px",
+        "shadow": "rgba(234, 179, 8, 0.3) 0px 4px 15px 0px"
+      },
+      "header": {
+        "height": "72px"
+      }
+    },
+
+    "colorScheme": "light"
+  },
+
+  "logo": {
+    "svg": "data:image/svg+xml;utf8,%3Csvg%20class%3D%22logo-svg%20logo-svg-full%20%22%20viewBox%3D%220%200%20140%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20role%3D%22img%22%20aria-label%3D%22EMCS%22%3E%3Ctext%20x%3D%220%22%20y%3D%2228%22%20font-family%3D%22'Outfit'%2C%20-apple-system%2C%20BlinkMacSystemFont%2C%20'Segoe%20UI'%2C%20Helvetica%2C%20Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20letter-spacing%3D%222.5%22%20fill%3D%22%231B4332%22%3EEMCS%3C%2Ftext%3E%3Cline%20x1%3D%221%22%20y1%3D%2237%22%20x2%3D%2234%22%20y2%3D%2237%22%20stroke%3D%22%23D4AF37%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+    "description": "EMCS wordmark in Outfit Bold (forest green #1B4332) with a gold accent underline (#D4AF37) under the 'E'",
+    "altText": "EMCS",
+    "favicon": "https://www.canadaemcs.com/favicon.svg",
+    "logoFont": "Outfit",
+    "logoFontWeight": 700,
+    "logoFontSize": "28px",
+    "logoLetterSpacing": "2.5px",
+    "logoColor": "#1B4332",
+    "accentLineColor": "#D4AF37",
+    "linkTarget": "/"
+  },
+
+  "seo": {
+    "title": "EMCS | Toronto EMCS | Online OSSD",
+    "metaDescription": "EMCS - Toronto EMCS. Earn your Ontario Secondary School Diploma (OSSD) online from anywhere in the world.",
+    "language": "en",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "ogImage": null,
+    "favicon": "https://www.canadaemcs.com/favicon.svg"
+  },
+
+  "messaging": {
+    "hero": {
+      "badge": "Ontario Ministry Inspected School • BSID: 665588",
+      "headline": "Your Path to a Canadian Education",
+      "subheadline": "Build academic foundations from Grade 1 or earn your Ontario Secondary School Diploma (OSSD) 100% online from anywhere in the world. Study at your own pace with Ontario Certified Teachers.",
+      "ctaPrimary": "Get Started Now",
+      "ctaSecondary": "Explore Programs"
+    },
+
+    "valuePropositions": [
+      {
+        "icon": "🌍",
+        "title": "Study From Anywhere",
+        "description": "Learn from Vietnam, Canada, or anywhere globally. All you need is an internet connection. No study permit required for online courses."
+      },
+      {
+        "icon": "⏰",
+        "title": "Your Schedule, Your Pace",
+        "description": "Start anytime—we offer continuous enrollment year-round. Complete courses in as little as 4 weeks or take up to 12 months."
+      },
+      {
+        "icon": "👨‍🏫",
+        "title": "Ontario Certified Teachers",
+        "description": "All credit courses are delivered by teachers in good standing with the Ontario College of Teachers (OCT), with real classroom experience."
+      },
+      {
+        "icon": "🎓",
+        "title": "Globally Recognized Credentials",
+        "description": "Our OSSD credits are the same as those earned in traditional Ontario schools—recognized by universities in Canada, the US, UK, Australia, and worldwide."
+      }
+    ],
+
+    "howItWorks": [
+      {
+        "step": 1,
+        "icon": "📝",
+        "title": "Register Anytime",
+        "description": "Sign up 365 days a year. No deadlines, no waitlists. Continuous enrollment means you start when you're ready."
+      },
+      {
+        "step": 2,
+        "icon": "💻",
+        "title": "Learn at Your Pace",
+        "description": "Access course materials 24/7. Our asynchronous platform fits your schedule—study when it works for you."
+      },
+      {
+        "step": 3,
+        "icon": "👨‍🏫",
+        "title": "Get Teacher Support",
+        "description": "Ontario Certified Teachers respond to questions within 48 hours. Office hours available for real-time help."
+      },
+      {
+        "step": 4,
+        "icon": "🎓",
+        "title": "Earn Your Credential",
+        "description": "Credits appear on official Ontario transcripts. Marks sent directly to OUAC, OCAS, and your day school."
+      }
+    ],
+
+    "accreditation": {
+      "title": "Ministry Inspected Private School",
+      "statement": "EMCS is inspected by the Ontario Ministry of Education and authorized to grant credits toward the Ontario Secondary School Diploma (OSSD).",
+      "bsid": "BSID: 665588",
+      "details": "Our credits hold the same value as those earned in traditional Ontario day schools and are recognized by all Canadian colleges and universities. Transcripts are sent directly to OUAC, OCAS, and educational institutions worldwide."
+    },
+
+    "callToAction": {
+      "headline": "Ready to Start Your Canadian Education Journey?",
+      "subheadline": "Join students from over 130 countries learning with EMCS. Register today and access your course within 24-48 hours.",
+      "buttonText": "Get Started Now"
+    },
+
+    "trustIndicators": {
+      "ministryInspected": "Ministry Inspected",
+      "bsid": "BSID: 665588",
+      "yearsExperience": "Since 2010",
+      "studentsWorldwide": "130+ Countries",
+      "courseCompletion": "4 weeks to 12 months",
+      "teacherSupport": "Within 48 hours",
+      "transcriptDelivery": "Direct to OUAC/OCAS"
+    },
+
+    "socialProof": {
+      "universityPartners": [
+        "University of Toronto",
+        "McGill University",
+        "University of Waterloo",
+        "Western University",
+        "University of British Columbia",
+        "McMaster University",
+        "Queen's University",
+        "York University"
+      ],
+      "headline": "Our Graduates Attend Top Institutions Worldwide",
+      "subheadline": "OSSD credentials are recognized globally. Our students have been accepted to universities across Canada, the United States, United Kingdom, Australia, and beyond."
+    },
+
+    "footer": {
+      "tagline": "Ontario-accredited online education for students worldwide",
+      "copyright": "© 2026 EMCS. All rights reserved.",
+      "accreditationBadge": "Ontario Ministry Inspected School | BSID: 665588"
+    }
+  },
+
+  "programs": {
+    "overview": {
+      "headline": "ONTARIO CURRICULUM PROGRAMS (Grades 1–12)",
+      "subheadline": "Flexible Learning Pathways",
+      "motto": "Learn First. Decide Later. Succeed Safely.",
+      "description": "We offer Ontario Curriculum-aligned learning for students in Grades 1–12 through two flexible pathways: the Academic Preparation Program (Non-Ontario student record) and the Official Ontario Program (Ontario student record). Students may start with preparation learning and upgrade to credit-bearing courses when academically ready."
+    },
+
+    "academicPreparation": {
+      "name": "Academic Preparation Program",
+      "subtitle": "(Non-Ontario student record)",
+      "description": "The Academic Preparation Program builds strong foundations in Academic English, mathematics, science, social studies, and essential learning skills. Aligned with Ontario standards, it develops analytical thinking and disciplined study habits, preparing students for a smooth transition into OSSD credit courses or the Ontario Secondary School Diploma (OSSD) program.",
+      "type": "Preparation for credit",
+      "curriculum": "Ontario-aligned",
+      "assessment": "Skill-based feedback",
+      "outcome": "Academic readiness"
+    },
+
+    "officialOntario": {
+      "name": "Official Ontario Program",
+      "subtitle": "(Ontario student record)",
+      "badge": "Most Popular",
+      "description": "The Official Ontario Program is a fully accredited Canadian secondary education pathway designed for students pursuing academic excellence and global university opportunities. Aligned with Ontario curriculum standards, the program emphasizes strong academic foundations, critical thinking, and disciplined learning. With personalized academic guidance and a structured learning environment, students are prepared for university admission in Canada and internationally. Upon successful completion, students earn the Ontario Secondary School Diploma (OSSD).",
+      "type": "Credit-based secondary program",
+      "curriculum": "Official Ontario Curriculum",
+      "assessment": "Graded courses with records and credits",
+      "outcome": "OSSD & university preparation"
+    },
+
+    "comparisonMatrix": {
+      "purpose": {
+        "academicPrep": "Preparation for entry into the Official Ontario Program",
+        "officialOntario": "Official Ontario high school program"
+      },
+      "programType": {
+        "academicPrep": "Preparation for credit",
+        "officialOntario": "Credit-based secondary program"
+      },
+      "curriculum": {
+        "academicPrep": "Ontario-aligned",
+        "officialOntario": "Official Ontario Curriculum"
+      },
+      "academicFocus": {
+        "academicPrep": "Math, English, Science, and Social Studies",
+        "officialOntario": "Math, English, Science, and Social Studies"
+      },
+      "assessment": {
+        "academicPrep": "Skill-based feedback",
+        "officialOntario": "Graded courses with records and credits"
+      },
+      "progression": {
+        "academicPrep": "Pathway to the Official Ontario Program",
+        "officialOntario": "OSSD completion"
+      },
+      "outcome": {
+        "academicPrep": "Academic readiness",
+        "officialOntario": "OSSD & university preparation"
+      }
+    },
+
+    "featuredPrograms": [
+      {
+        "badge": "NEW",
+        "title": "Ontario Primary Foundation Program",
+        "grades": "1 to 5",
+        "highlights": [
+          "Academic Preparation (Self-Learning, Non-Ontario student record): From $50 CAD per course or $300 CAD for the full-year 6-subject bundle.",
+          "Upgrade to Ontario Official Program (Ontario student record): $400 CAD per course, or $1,800 CAD per year for the full 6-subject bundle.",
+          "Live Teacher-Led Primary Foundation (with Ontario report card): $4,500 CAD per year (premium teacher-led pathway)."
+        ],
+        "cta": "Learn More About Elementary Programs",
+        "url": "https://www.canadaemcs.com/programs/elementary"
+      },
+      {
+        "badge": "NEW",
+        "title": "Middle School Foundation (Grades 6 to 8)",
+        "grades": "6 to 8",
+        "highlights": [
+          "Academic Preparation (Non-Credit): $50 per course, $300 CAD for the full-year 6-subject bundle.",
+          "Upgrade to Ontario Official Program (Ontario student record): $400 per course, $1,800 CAD per year.",
+          "Entrance Test Fee: $50 CAD (non-refundable). Registration Fee: $50 CAD."
+        ],
+        "cta": "Explore Middle School Foundation",
+        "url": "https://www.canadaemcs.com/programs/middle-school"
+      },
+      {
+        "badge": "FLEXIBLE PATHWAYS",
+        "title": "Ontario High School Pathways (Grades 9 to 12)",
+        "grades": "9 to 12",
+        "highlights": [
+          "Academic Preparation Program (Non-Credit): Skills-focused preparation with no Ontario student record.",
+          "Official Ontario Program: Credit-bearing, Ontario student record, leading to the Ontario Secondary School Diploma.",
+          "Registration Fee: $100 CAD. Entrance Test Fee: $50 CAD.",
+          "Grade 9 and Grade 10 = 8-credit one-year programs. Grade 11 and Grade 12 = 7-credit one-year programs."
+        ],
+        "cta": "View High School Pathways",
+        "url": "https://www.canadaemcs.com/programs/high-school"
+      }
+    ]
+  },
+
+  "siteMap": {
+    "primaryNavigation": [
+      { "label": "Official Ontario Program", "url": "/official-ontario" },
+      { "label": "Academic Preparation Program", "url": "/academic-prep" },
+      { "label": "Programs — Elementary", "url": "/programs/elementary" },
+      { "label": "Programs — Middle School", "url": "/programs/middle-school" },
+      { "label": "Programs — High School", "url": "/programs/high-school" },
+      { "label": "Compare Programs", "url": "/compare" },
+      { "label": "Academic Calendar", "url": "/schedule" },
+      { "label": "Tuition & Fees", "url": "/tuition" }
+    ],
+    "footerLinks": {
+      "programs": ["Official Ontario Program", "Academic Preparation Program"],
+      "resources": ["OSSD Requirements", "FAQ", "Blog", "Student Support"],
+      "about": ["About", "Contact"],
+      "legal": ["Privacy Policy", "Terms of Service", "Refund Policy"]
+    },
+    "discoveredUrls": [
+      "https://www.canadaemcs.com",
+      "https://www.canadaemcs.com/official-ontario",
+      "https://www.canadaemcs.com/academic-prep",
+      "https://www.canadaemcs.com/programs/elementary",
+      "https://www.canadaemcs.com/programs/middle-school",
+      "https://www.canadaemcs.com/programs/high-school",
+      "https://www.canadaemcs.com/compare",
+      "https://www.canadaemcs.com/schedule",
+      "https://www.canadaemcs.com/tuition"
+    ]
+  }
+}

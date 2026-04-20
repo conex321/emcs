@@ -68,7 +68,7 @@ function AcademicPrepLanding() {
                         </div>
                         <div className="feature-item">
                             <span className="feature-icon">💰</span>
-                            <span>{t('academicPrep.featureStartingPrice', 'Starting at $75')}</span>
+                            <span>{t('academicPrep.featureStartingPrice', 'Starting at $50')}</span>
                         </div>
                     </div>
                 </div>
@@ -161,12 +161,12 @@ function AcademicPrepLanding() {
             <section className="pricing-callout-section">
                 <div className="container">
                     <div className="pricing-v2-banner">
-                        {t('storefronts.pricingV2.promoBanner', 'Enroll now and receive a 50% discount — only $325 for a 1-year program')}
+                        {t('storefronts.pricingV2.promoBanner', 'Start from just $50 per course — $300 for a full 6-course year.')}
                     </div>
                     <div className="pricing-v2-upgrade">
-                        <strong>{t('storefronts.programFrame.upgradeCallout', 'UPGRADE to Official Ontario Program (Ontario student record)')}:</strong>{' '}
-                        {t('storefronts.pricingV2.upgradePerCourse', '$250 per course')}{' · '}
-                        {t('storefronts.pricingV2.upgradeFullYear', '$600 per year (all 6 subjects)')}
+                        <strong>{t('storefronts.programFrame.upgradeCallout', 'UPGRADE to Ontario Record (credit-bearing)')}:</strong>{' '}
+                        {t('storefronts.pricingV2.upgradePerCourse', '+$350 per course (total $400)')}{' · '}
+                        {t('storefronts.pricingV2.upgradeFullYear', '$1,800 per year (6 courses)')}
                     </div>
                     <ScheduleStrip />
                 </div>

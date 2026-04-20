@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useCart } from '../context/CartContext'
 import { useStorefront } from '../context/StorefrontContext'
 import { courses as coursesEn } from '../data/courses'
-import { formatCurrency } from '../config/pricing'
+import { formatCurrency, getPricingForGrade } from '../config/pricing'
 import './StorefrontCourseDetail.css'
 
 function StorefrontCourseDetail() {
@@ -21,13 +21,16 @@ function StorefrontCourseDetail() {
     const course = useMemo(() => {
         // For credit courses, use existing data
         if (isCredit && coursesEn[courseCode]) {
+            const existing = coursesEn[courseCode]
+            const bandPricing = getPricingForGrade(existing.grade)
+            const perCourse = bandPricing?.academicOntarioRecord?.selfPaced?.perCourse ?? 400
             return {
-                ...coursesEn[courseCode],
+                ...existing,
                 storefront: 'credit',
                 product: {
                     pricing: {
-                        listPrice: 3000,
-                        basePrice: 3000,
+                        listPrice: perCourse,
+                        basePrice: perCourse,
                         currency: 'CAD',
                     }
                 },
@@ -77,8 +80,8 @@ function StorefrontCourseDetail() {
                 ],
                 product: {
                     pricing: {
-                        listPrice: 250,
-                        basePrice: 100,
+                        listPrice: getPricingForGrade(grade)?.nonAcademicOntarioRecord?.perCourse ?? 50,
+                        basePrice: getPricingForGrade(grade)?.nonAcademicOntarioRecord?.perCourse ?? 50,
                         currency: 'CAD',
                     }
                 },

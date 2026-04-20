@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { GRADE_LEVEL_PRICING, PRIMARY_FOUNDATION_LEGACY } from '../config/pricing'
+import { GRADE_LEVEL_PRICING, formatCurrency } from '../config/pricing'
 import ScheduleStrip from '../components/storefront/ScheduleStrip'
 import './Tuition.css'
 
@@ -23,8 +23,49 @@ function Tuition() {
 
     const elem = GRADE_LEVEL_PRICING['1-5']
     const mid = GRADE_LEVEL_PRICING['6-8']
-    const hs9 = GRADE_LEVEL_PRICING['9']
-    const hs11 = GRADE_LEVEL_PRICING['11']
+    const hs = GRADE_LEVEL_PRICING['9-12']
+
+    const renderBand = (band, { bandLabel, subtitle, includeSingleCredit = false }) => (
+        <div className="pricing-grid">
+            <div className="pricing-card pricing-card--academic">
+                <h3>Non-Academic Ontario Record</h3>
+                <p>Self-paced LMS pathway — no Ontario student record. Ideal for students building foundations.</p>
+                <ul className="pricing-breakdown">
+                    <li><span>Per course</span> <strong>{formatCurrency(band.nonAcademicOntarioRecord.perCourse)}</strong></li>
+                    <li><span>Full year (6 courses)</span> <strong>{formatCurrency(band.nonAcademicOntarioRecord.bundle6)}</strong></li>
+                    <li><span>Registration Fee</span> <strong>{formatCurrency(band.registration)}</strong></li>
+                    <li><span>Entrance Test Fee</span> <strong>{band.entranceTest === 0 ? 'Waived' : formatCurrency(band.entranceTest)}</strong></li>
+                </ul>
+            </div>
+
+            <div className="pricing-card pricing-card--official" id={bandLabel === 'elementary' ? 'official-ontario' : undefined}>
+                <h3>Upgrade to Ontario Record</h3>
+                <p>Convert an existing Non-Academic course into the credit-bearing Ontario Record at any time.</p>
+                <ul className="pricing-breakdown">
+                    <li><span>Upgrade delta (per course)</span> <strong>+{formatCurrency(band.upgradeToOntarioRecord.addOnPerCourse)}</strong></li>
+                    <li><span>Total per course after upgrade</span> <strong>{formatCurrency(band.upgradeToOntarioRecord.totalPerCourse)}</strong></li>
+                    <li><span>Full year upgrade (6 courses)</span> <strong>{formatCurrency(band.upgradeToOntarioRecord.bundle6)}</strong></li>
+                    <li><span>Registration Fee</span> <strong>{formatCurrency(band.registration)}</strong></li>
+                    <li><span>Entrance Test Fee</span> <strong>{band.entranceTest === 0 ? 'Waived' : formatCurrency(band.entranceTest)}</strong></li>
+                </ul>
+            </div>
+
+            <div className="pricing-card pricing-card--academic-ontario">
+                <h3>Academic Ontario Record</h3>
+                <p>Credit-bearing direct-purchase pathway (Ontario student record). Two delivery modes.</p>
+                <ul className="pricing-breakdown">
+                    <li><span>Self-paced — per course</span> <strong>{formatCurrency(band.academicOntarioRecord.selfPaced.perCourse)}</strong></li>
+                    <li><span>Self-paced — full year (6 courses)</span> <strong>{formatCurrency(band.academicOntarioRecord.selfPaced.bundle6)}</strong></li>
+                    {includeSingleCredit && band.academicOntarioRecord.selfPaced.singleCreditStandalone && (
+                        <li><span>Single credit (standalone)</span> <strong>{formatCurrency(band.academicOntarioRecord.selfPaced.singleCreditStandalone)}</strong></li>
+                    )}
+                    <li><span>Live Teacher — per year (6 courses)</span> <strong>{formatCurrency(band.academicOntarioRecord.liveTeacher.annual)}</strong></li>
+                    <li><span>Registration Fee</span> <strong>{formatCurrency(band.registration)}</strong></li>
+                    <li><span>Entrance Test Fee</span> <strong>{band.entranceTest === 0 ? 'Waived' : formatCurrency(band.entranceTest)}</strong></li>
+                </ul>
+            </div>
+        </div>
+    )
 
     return (
         <div className="tuition-page">
@@ -55,42 +96,7 @@ function Tuition() {
                         <div className="tuition-band">
                             <h2 id="academic-prep">{t('tuitionPage.bands.elementary.heading', 'Elementary Pricing (Grades 1 to 5)')}</h2>
                             <p className="band-subtitle">{t('tuitionPage.bands.elementary.subtitle')}</p>
-
-                            <div className="pricing-grid">
-                                <div className="pricing-card pricing-card--academic">
-                                    <h3>Academic Preparation Program (Non-Credit)</h3>
-                                    <p>{t('tuitionPage.bands.elementary.academicPrep')}</p>
-                                    <ul className="pricing-breakdown">
-                                        <li><span>Per course</span> <strong>${elem.academicPrep.salePrice} <s>${elem.academicPrep.listPrice}</s></strong></li>
-                                        <li><span>Full year (6 subjects)</span> <strong>${elem.academicPrep.fullYear}</strong></li>
-                                        <li><span>Registration Fee</span> <strong>${elem.registration}</strong></li>
-                                        <li><span>Entrance Test Fee</span> <strong>Waived</strong></li>
-                                    </ul>
-                                </div>
-
-                                <div className="pricing-card pricing-card--official" id="official-ontario">
-                                    <h3>Upgrade to Ontario Official Program</h3>
-                                    <p>{t('tuitionPage.bands.elementary.upgrade')}</p>
-                                    <ul className="pricing-breakdown">
-                                        <li><span>Per course</span> <strong>${elem.officialOntario.perCourse}</strong></li>
-                                        <li><span>Full year (6 subjects)</span> <strong>${elem.officialOntario.fullYear}</strong></li>
-                                        <li><span>Registration Fee</span> <strong>${elem.registration}</strong></li>
-                                        <li><span>Entrance Test Fee</span> <strong>Waived</strong></li>
-                                    </ul>
-                                </div>
-
-                                <div className="pricing-card pricing-card--legacy">
-                                    <span className="pricing-card__badge">Premium Legacy</span>
-                                    <h3>Primary Foundation Teacher-Led</h3>
-                                    <p>{t('tuitionPage.bands.elementary.legacy')}</p>
-                                    <ul className="pricing-breakdown">
-                                        <li><span>Core Subjects (6, full year)</span> <strong>${PRIMARY_FOUNDATION_LEGACY.corePrice}</strong></li>
-                                        <li><span>French as a Second Language (add-on)</span> <strong>${PRIMARY_FOUNDATION_LEGACY.frenchAddOn}</strong></li>
-                                        <li><span>Registration Fee</span> <strong>${PRIMARY_FOUNDATION_LEGACY.registration}</strong></li>
-                                        <li><span>Entrance Test Fee</span> <strong>${PRIMARY_FOUNDATION_LEGACY.entranceTest}</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            {renderBand(elem, { bandLabel: 'elementary' })}
                             <ScheduleStrip />
                         </div>
                     )}
@@ -99,30 +105,7 @@ function Tuition() {
                         <div className="tuition-band">
                             <h2>{t('tuitionPage.bands.middle.heading', 'Middle School Pricing (Grades 6 to 8)')}</h2>
                             <p className="band-subtitle">{t('tuitionPage.bands.middle.subtitle')}</p>
-
-                            <div className="pricing-grid">
-                                <div className="pricing-card pricing-card--academic">
-                                    <h3>Academic Preparation Program (Non-Credit)</h3>
-                                    <p>{t('tuitionPage.bands.middle.academicPrep')}</p>
-                                    <ul className="pricing-breakdown">
-                                        <li><span>Per course</span> <strong>${mid.academicPrep.salePrice} <s>${mid.academicPrep.listPrice}</s></strong></li>
-                                        <li><span>Full year (6 subjects)</span> <strong>${mid.academicPrep.fullYear}</strong></li>
-                                        <li><span>Registration Fee</span> <strong>${mid.registration}</strong></li>
-                                        <li><span>Entrance Test Fee</span> <strong>${mid.entranceTest}</strong></li>
-                                    </ul>
-                                </div>
-
-                                <div className="pricing-card pricing-card--official">
-                                    <h3>Upgrade to Ontario Official Program</h3>
-                                    <p>{t('tuitionPage.bands.middle.upgrade')}</p>
-                                    <ul className="pricing-breakdown">
-                                        <li><span>Per course</span> <strong>${mid.officialOntario.perCourse}</strong></li>
-                                        <li><span>Full year (6 subjects)</span> <strong>${mid.officialOntario.fullYear}</strong></li>
-                                        <li><span>Registration Fee</span> <strong>${mid.registration}</strong></li>
-                                        <li><span>Entrance Test Fee</span> <strong>${mid.entranceTest}</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            {renderBand(mid, { bandLabel: 'middle' })}
                             <ScheduleStrip />
                         </div>
                     )}
@@ -131,32 +114,9 @@ function Tuition() {
                         <div className="tuition-band">
                             <h2>{t('tuitionPage.bands.high.heading', 'High School Pricing (Grades 9 to 12)')}</h2>
                             <p className="band-subtitle">{t('tuitionPage.bands.high.subtitle')}</p>
-
-                            <div className="pricing-grid">
-                                <div className="pricing-card pricing-card--academic">
-                                    <h3>Academic Preparation Program (Non-Credit)</h3>
-                                    <p>{t('tuitionPage.bands.high.academicPrep')}</p>
-                                    <ul className="pricing-breakdown">
-                                        <li><span>Per course</span> <strong>${hs9.academicPrep.salePrice} <s>${hs9.academicPrep.listPrice}</s></strong></li>
-                                        <li><span>Grade 9–10 Full Year Bundle</span> <strong>Contact for tiered quotes</strong></li>
-                                        <li><span>Registration Fee</span> <strong>${hs9.registration}</strong></li>
-                                        <li><span>Entrance Test Fee</span> <strong>${hs9.entranceTest}</strong></li>
-                                    </ul>
-                                </div>
-
-                                <div className="pricing-card pricing-card--official">
-                                    <h3>Official Ontario Program</h3>
-                                    <p>{t('tuitionPage.bands.high.official')}</p>
-                                    <ul className="pricing-breakdown">
-                                        <li><span>Per course</span> <strong>From ${hs9.officialOntario.perCourse}</strong></li>
-                                        <li><span>Grade 9 & 10 (8-credit)</span> <strong>From ${hs9.officialOntario.fullYear}</strong></li>
-                                        <li><span>Grade 11 & 12 (7-credit)</span> <strong>From ${hs11.officialOntario.fullYear}</strong></li>
-                                        <li><span>Registration Fee</span> <strong>${hs9.registration}</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            {renderBand(hs, { bandLabel: 'high', includeSingleCredit: true })}
                             <p className="tuition-footnote">
-                                Contact admissions for domestic, visa, and international tier quotes.
+                                Single-credit standalone pricing ({formatCurrency(hs.academicOntarioRecord.selfPaced.singleCreditStandalone)}) applies to one-off credit purchases outside the full-year plan.
                                 MCV4U must be taken after MHF4U (Grade 12 sequencing requirement).
                             </p>
                             <ScheduleStrip />
@@ -175,65 +135,115 @@ function Tuition() {
                                             <th>Registration</th>
                                             <th>Entrance Test</th>
                                             <th>Per Course</th>
-                                            <th>Full Year Bundle</th>
+                                            <th>Full Year Bundle (6 courses)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>Grades 1–5</td>
-                                            <td>Academic Preparation</td>
-                                            <td>$50</td>
+                                            <td>Non-Academic Ontario Record</td>
+                                            <td>{formatCurrency(elem.registration)}</td>
                                             <td>Waived</td>
-                                            <td>$75 <s>$150</s></td>
-                                            <td>$325 (6 subjects)</td>
+                                            <td>{formatCurrency(elem.nonAcademicOntarioRecord.perCourse)}</td>
+                                            <td>{formatCurrency(elem.nonAcademicOntarioRecord.bundle6)}</td>
                                         </tr>
                                         <tr>
                                             <td>Grades 1–5</td>
-                                            <td>Upgrade to Ontario Official</td>
-                                            <td>$50</td>
+                                            <td>Upgrade to Ontario Record</td>
+                                            <td>{formatCurrency(elem.registration)}</td>
                                             <td>Waived</td>
-                                            <td>$250</td>
-                                            <td>$600 (6 subjects)</td>
+                                            <td>{formatCurrency(elem.upgradeToOntarioRecord.totalPerCourse)} <small>(+{formatCurrency(elem.upgradeToOntarioRecord.addOnPerCourse)} delta)</small></td>
+                                            <td>{formatCurrency(elem.upgradeToOntarioRecord.bundle6)}</td>
                                         </tr>
                                         <tr>
                                             <td>Grades 1–5</td>
-                                            <td>Primary Foundation Teacher-Led (Legacy)</td>
-                                            <td>$100</td>
-                                            <td>$50</td>
+                                            <td>Academic Ontario Record — Self-paced</td>
+                                            <td>{formatCurrency(elem.registration)}</td>
+                                            <td>Waived</td>
+                                            <td>{formatCurrency(elem.academicOntarioRecord.selfPaced.perCourse)}</td>
+                                            <td>{formatCurrency(elem.academicOntarioRecord.selfPaced.bundle6)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Grades 1–5</td>
+                                            <td>Academic Ontario Record — Live Teacher</td>
+                                            <td>{formatCurrency(elem.registration)}</td>
+                                            <td>Waived</td>
                                             <td>Included</td>
-                                            <td>$3,500</td>
+                                            <td>{formatCurrency(elem.academicOntarioRecord.liveTeacher.annual)} / year</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Grades 6–8</td>
+                                            <td>Non-Academic Ontario Record</td>
+                                            <td>{formatCurrency(mid.registration)}</td>
+                                            <td>{formatCurrency(mid.entranceTest)}</td>
+                                            <td>{formatCurrency(mid.nonAcademicOntarioRecord.perCourse)}</td>
+                                            <td>{formatCurrency(mid.nonAcademicOntarioRecord.bundle6)}</td>
                                         </tr>
                                         <tr>
                                             <td>Grades 6–8</td>
-                                            <td>Academic Preparation</td>
-                                            <td>$50</td>
-                                            <td>$50</td>
-                                            <td>$75 <s>$150</s></td>
-                                            <td>$325 (6 subjects)</td>
+                                            <td>Upgrade to Ontario Record</td>
+                                            <td>{formatCurrency(mid.registration)}</td>
+                                            <td>{formatCurrency(mid.entranceTest)}</td>
+                                            <td>{formatCurrency(mid.upgradeToOntarioRecord.totalPerCourse)} <small>(+{formatCurrency(mid.upgradeToOntarioRecord.addOnPerCourse)} delta)</small></td>
+                                            <td>{formatCurrency(mid.upgradeToOntarioRecord.bundle6)}</td>
                                         </tr>
                                         <tr>
                                             <td>Grades 6–8</td>
-                                            <td>Upgrade to Ontario Official</td>
-                                            <td>$50</td>
-                                            <td>$50</td>
-                                            <td>$250</td>
-                                            <td>$600 (6 subjects)</td>
+                                            <td>Academic Ontario Record — Self-paced</td>
+                                            <td>{formatCurrency(mid.registration)}</td>
+                                            <td>{formatCurrency(mid.entranceTest)}</td>
+                                            <td>{formatCurrency(mid.academicOntarioRecord.selfPaced.perCourse)}</td>
+                                            <td>{formatCurrency(mid.academicOntarioRecord.selfPaced.bundle6)}</td>
                                         </tr>
                                         <tr>
-                                            <td>Grades 9–10</td>
-                                            <td>Official Ontario (8-credit)</td>
-                                            <td>$100</td>
-                                            <td>$50</td>
-                                            <td>From $700</td>
-                                            <td>From $3,800</td>
+                                            <td>Grades 6–8</td>
+                                            <td>Academic Ontario Record — Live Teacher</td>
+                                            <td>{formatCurrency(mid.registration)}</td>
+                                            <td>{formatCurrency(mid.entranceTest)}</td>
+                                            <td>Included</td>
+                                            <td>{formatCurrency(mid.academicOntarioRecord.liveTeacher.annual)} / year</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Grades 9–12</td>
+                                            <td>Non-Academic Ontario Record</td>
+                                            <td>{formatCurrency(hs.registration)}</td>
+                                            <td>{formatCurrency(hs.entranceTest)}</td>
+                                            <td>{formatCurrency(hs.nonAcademicOntarioRecord.perCourse)}</td>
+                                            <td>{formatCurrency(hs.nonAcademicOntarioRecord.bundle6)}</td>
                                         </tr>
                                         <tr>
-                                            <td>Grades 11–12</td>
-                                            <td>Official Ontario (7-credit)</td>
-                                            <td>$100</td>
-                                            <td>$50</td>
-                                            <td>From $700</td>
-                                            <td>From $3,800</td>
+                                            <td>Grades 9–12</td>
+                                            <td>Upgrade to Ontario Record</td>
+                                            <td>{formatCurrency(hs.registration)}</td>
+                                            <td>{formatCurrency(hs.entranceTest)}</td>
+                                            <td>{formatCurrency(hs.upgradeToOntarioRecord.totalPerCourse)} <small>(+{formatCurrency(hs.upgradeToOntarioRecord.addOnPerCourse)} delta)</small></td>
+                                            <td>{formatCurrency(hs.upgradeToOntarioRecord.bundle6)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Grades 9–12</td>
+                                            <td>Academic Ontario Record — Self-paced</td>
+                                            <td>{formatCurrency(hs.registration)}</td>
+                                            <td>{formatCurrency(hs.entranceTest)}</td>
+                                            <td>{formatCurrency(hs.academicOntarioRecord.selfPaced.perCourse)}</td>
+                                            <td>{formatCurrency(hs.academicOntarioRecord.selfPaced.bundle6)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Grades 9–12</td>
+                                            <td>Academic Ontario Record — Single Credit (standalone)</td>
+                                            <td>{formatCurrency(hs.registration)}</td>
+                                            <td>{formatCurrency(hs.entranceTest)}</td>
+                                            <td>{formatCurrency(hs.academicOntarioRecord.selfPaced.singleCreditStandalone)}</td>
+                                            <td>—</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Grades 9–12</td>
+                                            <td>Academic Ontario Record — Live Teacher</td>
+                                            <td>{formatCurrency(hs.registration)}</td>
+                                            <td>{formatCurrency(hs.entranceTest)}</td>
+                                            <td>Included</td>
+                                            <td>{formatCurrency(hs.academicOntarioRecord.liveTeacher.annual)} / year</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -264,10 +274,10 @@ function Tuition() {
                     <p>{t('tuitionPage.ctaSubtitle', 'Start your Canadian education journey today.')}</p>
                     <div className="tuition-cta-buttons">
                         <Link to="/academic-prep" className="btn btn-primary btn-lg">
-                            {t('tuitionPage.ctaAcademicPrep', 'Browse Academic Prep')}
+                            {t('tuitionPage.ctaAcademicPrep', 'Browse Non-Academic Program')}
                         </Link>
                         <Link to="/official-ontario" className="btn btn-accent btn-lg">
-                            {t('tuitionPage.ctaOfficialOntario', 'Browse Official Ontario')}
+                            {t('tuitionPage.ctaOfficialOntario', 'Browse Academic Ontario Record')}
                         </Link>
                         <Link to="/contact" className="btn btn-outline btn-lg">
                             {t('tuitionPage.ctaContact', 'Contact Us')}

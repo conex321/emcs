@@ -1,8 +1,8 @@
 # Project Notes — EMCS
 
-**Last updated:** 2026-04-19T00:33:32Z
-**Last agent:** Codex
-**Session summary:** Generic student-document upload remains live on the backend and passed another full local browser proof against the real Supabase project. Codex re-verified the full parent checkout -> document upload -> admin approval/account creation -> student login workflow, confirmed build health and public-route dead-link health, and cleaned all disposable test data back out.
+**Last updated:** 2026-04-19
+**Last agent:** Claude
+**Session summary:** Executed the April 2026 pricing revamp end-to-end and removed phone/address from the live site. Collapsed the former tiered pricing (Academic Prep $75/$325, Official Ontario $250/$600, HS $700/$3,800, Primary Foundation Legacy $3,500+$2,000) into a uniform three-tier model: Non-Academic Ontario Record ($50/course, $300/6), Upgrade to Ontario Record (+$350 delta = $400/course, $1,800/6), and Academic Ontario Record (self-paced $350 G1-8 / $400 G9-12, bundle $1,800, Live Teacher $4,500/yr, G9-12 single-credit $450). Retired `PRIMARY_FOUNDATION_LEGACY`. Added a cart/edge-function rule enforcing the $450 single-credit standalone surcharge and $1,800 bundle cap for G9-12 Academic Ontario self-paced. Swept all config, locales, components, pages, DB migration (014_pricing_revamp_april_2026.sql), seed, marketing decks, Vietnam deck, and docs/website-content. Removed EMCS phone (+1 (416) 882-6571) and address (10 Gurney Crescent, North York, ON M6B 1S8) from Footer, Contact page, LegalPage, and AuthPage phone placeholder.
 
 ## Current State
 - Production frontend is deployed on Vercel project `emcs` and serving `https://www.canadaemcs.com` and `https://www.canadaemcs.com/admin/dashboard`.
@@ -10,15 +10,16 @@
 - Frontend auth, checkout, and portal data all depend on `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Production Vercel env vars were configured in the dashboard; local `.env` contains those variable names.
 - Supabase project ref is `gbclamtkotqcdcgveget`. Migrations through `013` are applied in the live Supabase project.
 - Free and 100%-discounted checkout is working in production. Verified flow: account creation or sign-in, cart/checkout, `process-payment`, `enroll-student`, confirmation page, parent portal, student portal, receipt email, registration email, and admin notification.
-- Repo-side checkout now supports supporting-document upload for student registration. The backend pieces are live in Supabase (`public.student_documents`, private Storage bucket `student-documents`, and `upload-student-document`), and a full local browser proof against the live backend passed: parent checkout upload -> `student_documents` rows -> storage objects -> linked `student_id` -> admin document visibility -> student portal visibility.
+- Checkout now supports supporting-document upload for student registration in both repo and production. The backend pieces are live in Supabase (`public.student_documents`, private Storage bucket `student-documents`, and `upload-student-document`), and both local and production browser proofs passed: parent checkout upload -> `student_documents` rows -> storage objects -> linked `student_id` -> admin document visibility -> student portal visibility.
 - A second local verification pass on 2026-04-19 also passed end-to-end against the live Supabase backend using `/Users/matthews/EMCS/scripts/document-workflow-check.mjs`: disposable coupon + parent checkout, two uploaded proof files, parent portal, school-admin document review, student approval, student portal account creation, registration email trigger, student login, and cleanup.
+- A production verification pass on 2026-04-19 also passed end-to-end against `https://www.canadaemcs.com` using the same proof script and live Supabase project: disposable coupon + parent checkout, two uploaded proof files, parent portal, school-admin document review, student approval, student portal account creation, registration email trigger, student login, and cleanup.
 - Local public-route smoke verification also passed on 2026-04-19 for `/`, `/courses`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, and `/official-ontario/course/ENG1D`; each route loaded without browser errors and without placeholder `a[href="#"]` links.
-- The new document-upload UI, legal pages, and footer/contact dead-link cleanup are currently in the local worktree only. They are not yet deployed to Vercel production until the next frontend push.
+- Production public-route smoke verification also passed on 2026-04-19 for `/`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, and `/admin`; each route loaded without browser errors and without placeholder `a[href="#"]` links, and `/admin` now correctly resolves to the auth flow for unauthenticated users instead of falling through to the public homepage.
 - Paid card checkout is still intentionally blocked because Stripe is not configured end-to-end. The frontend shows the pending Stripe state instead of performing a real charge.
 - Moodle is still not configured end-to-end. Registration emails generate and store Moodle-style credentials in `students.moodle_username` and `students.moodle_password`, but no real Moodle account is created and `students.moodle_user_id` remains `null` until Moodle integration is finished.
 - Student portal, parent portal, and agent portal are live dashboards backed by Supabase tables. They are no longer placeholder pages.
 - Admin dashboard is live at `/admin/dashboard` and was production-tested with a disposable `school_admin` login. Verified actions: view registration, view report-card metadata, approve student, create student portal account, send registration email, and confirm student login.
-- `/admin` itself is not yet deployed as a redirect. Local worktree has an unreleased patch in `/Users/matthews/EMCS/src/App.jsx` that redirects `/admin` to `/admin/dashboard`. Current production behavior for `/admin` still falls through to the public site.
+- `/admin` is now deployed correctly. For unauthenticated users it resolves to the auth flow (`/auth`); for authenticated admins it continues to route to `/admin/dashboard`.
 - `createProfile` still returns `UNAUTHORIZED_UNSUPPORTED_TOKEN_ALGORITHM` in browser-triggered signup calls even after redeploy. This is non-blocking because the `on_auth_user_created` DB trigger continues to create the `profiles` row correctly.
 - `school_admin` currently has platform-wide access because the schema has no school-scoping relationship on `profiles`, `students`, `orders`, or `report_cards`. Migration `012` enables the role, but it does not limit records by school.
 - Current local worktree status after this session includes unreleased frontend changes in `/Users/matthews/EMCS/src/App.jsx`, `/Users/matthews/EMCS/src/pages/Checkout.jsx`, `/Users/matthews/EMCS/src/components/Footer.jsx`, `/Users/matthews/EMCS/src/pages/Contact.jsx`, `/Users/matthews/EMCS/src/pages/admin/AdminDashboard.jsx`, `/Users/matthews/EMCS/src/pages/portals/StudentPortal.jsx`, plus new files for legal pages, document upload backend, migration `013`, and `/Users/matthews/EMCS/scripts/document-workflow-check.mjs`. Unrelated untracked files still exist at `/Users/matthews/EMCS/emcs-brand-marketing.json`, `/Users/matthews/EMCS/emcs-complete-site-data.json`, and `/Users/matthews/EMCS/extract-site-data.mjs`.
@@ -154,6 +155,12 @@
 - Confirmed the disposable rerun created order `EMCS-20260419-0001` and then deleted the related `auth.users`, `profiles`, `students`, `student_documents`, `orders`, `order_items`, `enrollments`, `email_log`, `audit_log`, and coupon rows during script cleanup.
 - Ran a small Playwright-based public route sweep against `http://127.0.0.1:4173` for `/`, `/courses`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, and `/official-ontario/course/ENG1D`; no console/page errors or placeholder `#` links were observed on those pages.
 
+### Session on 2026-04-19 — Production frontend deployment verification
+- Verified the newly released frontend pieces on `https://www.canadaemcs.com` in a real browser: `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, and `/admin` all loaded without placeholder `#` links or browser errors; `/admin` now routes unauthenticated users to `/auth`.
+- Re-ran `/Users/matthews/EMCS/scripts/document-workflow-check.mjs` against production (`TEST_BASE_URL=https://www.canadaemcs.com`) using the live Supabase project service-role key from `npx supabase projects api-keys --project-ref gbclamtkotqcdcgveget -o json`.
+- Confirmed the production browser flow passed with order `EMCS-20260419-0001`, two uploaded proof files, student creation, enrollment creation, parent portal visibility, admin review/approval, student portal account creation, registration email trigger, and student login.
+- Verified cleanup after the production run: the disposable parent/admin/student `profiles`, `students`, `orders`, and coupon row returned to zero, confirming the production proof left no retained test data.
+
 ## Failures & Resolutions
 
 ### Protected routes hung on full reload
@@ -237,15 +244,6 @@
 
 **Guardrail:** When using Edge Functions from the browser, always parse structured error bodies before deciding whether a fallback is safe.
 
-### `/admin` does not yet redirect to the dashboard in production
-**Issue:** `https://www.canadaemcs.com/admin` still lands on the public site while `https://www.canadaemcs.com/admin/dashboard` works.
-
-**Root cause:** The route table only defined `/admin/dashboard`.
-
-**Fix:** Local patch in `/Users/matthews/EMCS/src/App.jsx` adds `/admin` -> `/admin/dashboard` behind `ProtectedRoute`.
-
-**Guardrail:** Test both the canonical protected route and the shorthand route a stakeholder is likely to type.
-
 ### Migration 012 is not idempotent
 **Issue:** `/Users/matthews/EMCS/supabase/migrations/012_school_admin_dashboard_access.sql` applies bare `CREATE POLICY` statements without guards, unlike 010 and 011 which wrap every policy in `DO $$ BEGIN IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE ...) THEN CREATE POLICY ...; END IF; END $$;`.
 
@@ -301,11 +299,9 @@
 **Guardrail:** Do not start Docker on the user's behalf to silence the warning. Deploys are considered successful when the `Deployed Functions on project <ref>: <name>` line appears.
 
 ## Open Questions / Next Steps
-- Deploy the local `/admin` redirect patch in `/Users/matthews/EMCS/src/App.jsx` so `https://www.canadaemcs.com/admin` behaves the same as `/admin/dashboard`.
 - Decide whether student portal accounts should continue to be created manually by admins or be auto-provisioned during checkout/enrollment.
 - Add real school scoping for `school_admin`. Current role access is platform-wide because the schema lacks a clean `school_id` linkage for operational tables.
-- Deploy the local frontend upload/dead-link/legal-page changes to Vercel so the live site exposes the new document-upload workflow, not just the local browser proof.
-- After the next frontend deploy, rerun the document workflow proof against `https://www.canadaemcs.com` rather than `http://127.0.0.1:4173` so the uploaded-document UI is proven in production as well as locally.
+- Keep `/Users/matthews/EMCS/scripts/document-workflow-check.mjs` as the regression proof for future production releases that touch checkout, admin approvals, student documents, or portals.
 - Decide whether admin and student portals should expose signed download links for uploaded documents. The current implementation surfaces metadata and file paths only.
 - Finish Stripe integration: set `STRIPE_SECRET_KEY`, wire the frontend confirmation flow, and test `webhook-stripe`.
 - Finish Moodle integration: connect `sync-school`, create Moodle users for registrations, and replace placeholder LMS account generation with real provisioning.

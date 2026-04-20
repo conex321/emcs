@@ -114,7 +114,7 @@ function SubjectCardGrid({ grade, courses, program = 'academic-prep' }) {
                                     <div className="course-pricing">
                                         {program === 'academic-prep' ? (
                                             <>
-                                                {course.product?.pricing?.listPrice && (
+                                                {course.product?.pricing?.listPrice > (course.product?.pricing?.salePrice || course.product?.pricing?.basePrice) && (
                                                     <span className="list-price">
                                                         ${course.product.pricing.listPrice}
                                                     </span>
@@ -123,7 +123,7 @@ function SubjectCardGrid({ grade, courses, program = 'academic-prep' }) {
                                                     ${course.product?.pricing?.salePrice || course.product?.pricing?.basePrice}
                                                 </span>
                                                 {course.product?.pricing?.listPrice > course.product?.pricing?.salePrice && (
-                                                    <span className="discount-badge">{t('subjects.discountBadge', '50% OFF')}</span>
+                                                    <span className="discount-badge">{t('subjects.discountBadge', 'Sale')}</span>
                                                 )}
                                             </>
                                         ) : (

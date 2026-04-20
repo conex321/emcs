@@ -88,28 +88,28 @@
           "12-month access"
         ],
         "pricing": {
-          "startingAt": 75,
+          "startingAt": 50,
           "currency": "CAD",
-          "displayText": "Starting at $75 CAD"
+          "displayText": "Starting at $50 CAD"
         },
         "gradeGroups": {
           "elementary": {
             "label": "Elementary (Grades 1-5)",
             "grades": ["1", "2", "3", "4", "5"],
             "icon": "school",
-            "price": "$75 CAD per subject (50% off)"
+            "price": "$50 CAD per course"
           },
           "middle": {
             "label": "Middle School (Grades 6-8)",
             "grades": ["6", "7", "8"],
             "icon": "menu_book",
-            "price": "$75 CAD per subject (50% off)"
+            "price": "$50 CAD per course"
           },
           "secondary": {
             "label": "High School (Grades 9-12)",
             "grades": ["9", "10", "11", "12"],
             "icon": "graduation_cap",
-            "price": "$75-150 CAD per course"
+            "price": "$50 CAD per course"
           }
         }
       },
@@ -143,9 +143,9 @@
           "displayText": "Live classes: 6 hrs/week"
         },
         "pricing": {
-          "startingAt": 250,
+          "startingAt": 350,
           "currency": "CAD",
-          "displayText": "From $250 CAD per subject"
+          "displayText": "From $350 CAD per course"
         },
         "evaluation": {
           "termWork": 70,
@@ -156,19 +156,19 @@
             "label": "Elementary (Grades 1-5)",
             "grades": ["1", "2", "3", "4", "5"],
             "icon": "school",
-            "price": "$250 CAD per subject"
+            "price": "$350 CAD per course · $1,800 for 6 · Live Teacher $4,500/yr"
           },
           "middle": {
             "label": "Middle School (Grades 6-8)",
             "grades": ["6", "7", "8"],
             "icon": "menu_book",
-            "price": "$250 CAD per subject"
+            "price": "$350 CAD per course · $1,800 for 6 · Live Teacher $4,500/yr"
           },
           "secondary": {
             "label": "High School (Grades 9-12)",
             "grades": ["9", "10", "11", "12"],
             "icon": "graduation_cap",
-            "price": "From $3,500 CAD per year"
+            "price": "$400 CAD per course · $1,800 for 6 · Live Teacher $4,500/yr"
           }
         }
       },
@@ -194,28 +194,28 @@
           "12-month access"
         ],
         "pricing": {
-          "startingAt": 75,
+          "startingAt": 50,
           "currency": "CAD",
-          "displayText": "Starting at $75 CAD"
+          "displayText": "Starting at $50 CAD"
         },
         "gradeGroups": {
           "elementary": {
             "label": "Elementary (Grades 1-5)",
             "grades": ["1", "2", "3", "4", "5"],
             "icon": "school",
-            "price": "$75 CAD per subject"
+            "price": "$50 CAD per course"
           },
           "middle": {
             "label": "Middle School (Grades 6-8)",
             "grades": ["6", "7", "8"],
             "icon": "menu_book",
-            "price": "$75-150 CAD per subject"
+            "price": "$50 CAD per course"
           },
           "secondary": {
             "label": "High School (Grades 9-12)",
             "grades": ["9", "10", "11", "12"],
             "icon": "graduation_cap",
-            "price": "$75-150 CAD per course"
+            "price": "$50 CAD per course"
           }
         }
       },
@@ -248,9 +248,9 @@
           "displayText": "Live classes: 6 hrs/week"
         },
         "pricing": {
-          "startingAt": 3500,
+          "startingAt": 1800,
           "currency": "CAD",
-          "displayText": "From $3,500 CAD per year"
+          "displayText": "From $1,800 CAD per 6-course year · Live Teacher $4,500/yr"
         },
         "evaluation": {
           "termWork": 70,

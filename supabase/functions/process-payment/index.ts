@@ -32,7 +32,7 @@ serve(async (req) => {
     const courseCodes = cart_items.map((item: any) => item.code || item.course_code)
     const { data: courses, error: coursesError } = await supabaseAdmin
       .from('courses')
-      .select('id, code, title, list_price, base_price, sale_price, per_course_price, storefront')
+      .select('id, code, title, list_price, base_price, sale_price, per_course_price, storefront, grade_level')
       .in('code', courseCodes)
 
     if (coursesError) throw coursesError
@@ -49,11 +49,36 @@ serve(async (req) => {
         course_code: item.code || item.course_code,
         course_title: course?.title || item.title,
         course_id: course?.id,
+        storefront: course?.storefront || item.storefront,
+        grade_level: course?.grade_level ?? null,
+        pathway: item.pathway || 'self-paced',
         price,
         is_bundled: item.is_bundled || false,
         bundle_reason: item.bundle_reason || null,
       }
     })
+
+    // ── Step 2b: Apply G9-12 Academic Ontario Record self-paced cart rule ──
+    //   1 credit:  +$50 surcharge (=$450 standalone)
+    //   2-5:       $400 each (no adjustment)
+    //   6+:        cap at $1,800 bundle total
+    const hsSelfPacedLines = lineItems.filter((li: any) =>
+      !li.is_bundled &&
+      (li.storefront === 'credit' || li.storefront === 'official-ontario') &&
+      Number(li.grade_level) >= 9 && Number(li.grade_level) <= 12 &&
+      String(li.pathway).toLowerCase() !== 'live-teacher'
+    )
+    let hsAdjustment = 0
+    let hsRule = 'none'
+    if (hsSelfPacedLines.length === 1) {
+      hsAdjustment = 50
+      hsRule = 'single-credit-standalone'
+    } else if (hsSelfPacedLines.length >= 6) {
+      const currentSum = hsSelfPacedLines.reduce((s: number, li: any) => s + Number(li.price || 0), 0)
+      hsAdjustment = 1800 - currentSum
+      hsRule = 'bundle-6-cap'
+    }
+    subtotal += hsAdjustment
 
     // ── Step 3: Validate coupon ──
     let discount = 0
@@ -214,6 +239,8 @@ serve(async (req) => {
         payment_method,
         client_secret: clientSecret,
         requires_payment: total > 0,
+        hs_self_paced_rule: hsRule,
+        hs_self_paced_adjustment: hsAdjustment,
       }),
       { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )

@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { GRADE_LEVEL_PRICING, formatCurrency } from '../config/pricing'
 import './PrimaryFoundation.css'
 
 function PrimaryFoundation() {
     const { t } = useTranslation()
+    const band = GRADE_LEVEL_PRICING['1-5']
 
     const coreSubjects = [
         { name: t('primaryFoundation.selfLearning.subjects.math'), icon: '🔢' },
@@ -140,10 +142,10 @@ function PrimaryFoundation() {
                             </Link>
                         </div>
 
-                        {/* V2: Upgrade to Official Ontario Program (low-price tier) */}
+                        {/* Upgrade to Ontario Record */}
                         <div className="pathway-option card">
-                            <span className="pathway-badge" style={{ background: '#d4af37', color: '#fff' }}>NEW · v2</span>
-                            <h3>Upgrade to Official Ontario Program ($600/year)</h3>
+                            <span className="pathway-badge" style={{ background: '#d4af37', color: '#fff' }}>Credit-Bearing</span>
+                            <h3>Upgrade to Ontario Record ({formatCurrency(band.upgradeToOntarioRecord.bundle6)}/year)</h3>
 
                             <div className="pathway-whats-included">
                                 <h4>What's Included:</h4>
@@ -151,22 +153,26 @@ function PrimaryFoundation() {
                                     <li><span className="check">✓</span> Ontario student record</li>
                                     <li><span className="check">✓</span> All 6 subjects covered</li>
                                     <li><span className="check">✓</span> Official Ontario Academic Report Card</li>
-                                    <li><span className="check">✓</span> Upgradeable from Academic Prep at any time</li>
+                                    <li><span className="check">✓</span> Upgradeable from Non-Academic at any time</li>
                                 </ul>
                             </div>
 
                             <div className="pathway-pricing">
                                 <h4>Pricing:</h4>
                                 <div className="price-row highlight">
-                                    <span>Full Year (6 subjects)</span>
-                                    <span className="price">$600 CAD</span>
+                                    <span>Full Year (6 subjects, upgrade bundle)</span>
+                                    <span className="price">{formatCurrency(band.upgradeToOntarioRecord.bundle6)} CAD</span>
                                 </div>
                                 <div className="price-row">
-                                    <span>Per Course</span>
-                                    <span className="price">$250 CAD</span>
+                                    <span>Upgrade delta per course</span>
+                                    <span className="price">+{formatCurrency(band.upgradeToOntarioRecord.addOnPerCourse)} CAD</span>
+                                </div>
+                                <div className="price-row">
+                                    <span>Total per course after upgrade</span>
+                                    <span className="price">{formatCurrency(band.upgradeToOntarioRecord.totalPerCourse)} CAD</span>
                                 </div>
                                 <p className="optional-record">
-                                    Entry-level Ontario student record pathway. NOT the premium Teacher-Led Primary Foundation ($3,500/yr) — this tier offers the student record at the new Version 2 low-price tier.
+                                    Upgrade converts a Non-Academic course (${formatCurrency(band.nonAcademicOntarioRecord.perCourse)}) into a credit-bearing Ontario Record course at any time.
                                 </p>
                             </div>
 
@@ -175,48 +181,44 @@ function PrimaryFoundation() {
                             </Link>
                         </div>
 
-                        {/* Teacher-Led Option */}
+                        {/* Live Teacher — Academic Ontario Record */}
                         <div className="pathway-option card featured">
-                            <span className="pathway-badge teacher-led">Premium Legacy · $3,500/yr</span>
-                            <h3>{t('primaryFoundation.teacherLed.title')}</h3>
+                            <span className="pathway-badge teacher-led">Live Teacher · {formatCurrency(band.academicOntarioRecord.liveTeacher.annual)}/yr</span>
+                            <h3>{t('primaryFoundation.teacherLed.title', 'Live Teacher — Academic Ontario Record')}</h3>
 
                             <div className="pathway-whats-included">
-                                <h4>{t('primaryFoundation.teacherLed.whatsIncluded.title')}</h4>
+                                <h4>{t('primaryFoundation.teacherLed.whatsIncluded.title', "What's Included")}</h4>
                                 <ul>
-                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.materials')}</li>
-                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.credentials')}</li>
-                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.live')}</li>
-                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.assessments')}</li>
-                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.reportCard')}</li>
+                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.materials', 'All learning materials provided')}</li>
+                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.credentials', 'Student and parent login credentials')}</li>
+                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.live', 'Live online classes with Ontario Certified Teachers')}</li>
+                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.assessments', 'Required assessments and evaluations')}</li>
+                                    <li><span className="check">✓</span> {t('primaryFoundation.teacherLed.whatsIncluded.reportCard', 'Official Ontario academic report card')}</li>
                                 </ul>
                             </div>
 
                             <div className="pathway-schedule">
-                                <h4>{t('primaryFoundation.teacherLed.schedule.title')}</h4>
-                                <p>{t('primaryFoundation.teacherLed.schedule.option1')}</p>
-                                <p>{t('primaryFoundation.teacherLed.schedule.option2')}</p>
-                                <p className="duration">{t('primaryFoundation.teacherLed.duration')}</p>
+                                <h4>{t('primaryFoundation.teacherLed.schedule.title', 'Schedule')}</h4>
+                                <p>{t('primaryFoundation.teacherLed.schedule.option1', 'September 5, 2026 — May 30, 2027')}</p>
+                                <p>{t('primaryFoundation.teacherLed.schedule.option2', '39 instructional weeks')}</p>
+                                <p className="duration">{t('primaryFoundation.teacherLed.duration', '6 hours / week')}</p>
                             </div>
 
                             <div className="pathway-pricing">
-                                <h4>{t('primaryFoundation.teacherLed.pricing.title')}</h4>
+                                <h4>Pricing</h4>
                                 <div className="price-row highlight">
-                                    <span>{t('primaryFoundation.teacherLed.pricing.core')}</span>
-                                    <span className="price">{t('primaryFoundation.teacherLed.pricing.corePrice')}</span>
-                                </div>
-                                <div className="price-row">
-                                    <span>{t('primaryFoundation.teacherLed.pricing.french')}</span>
-                                    <span className="price">{t('primaryFoundation.teacherLed.pricing.frenchPrice')}</span>
+                                    <span>All 6 core subjects, full year</span>
+                                    <span className="price">{formatCurrency(band.academicOntarioRecord.liveTeacher.annual)} CAD</span>
                                 </div>
                             </div>
 
                             <div className="pathway-fees">
-                                <p>{t('primaryFoundation.teacherLed.pricing.entrance')}: {t('primaryFoundation.teacherLed.pricing.entrancePrice')}</p>
-                                <p>{t('primaryFoundation.teacherLed.pricing.registration')}: {t('primaryFoundation.teacherLed.pricing.registrationPrice')}</p>
+                                <p>Entrance Test Fee: {band.entranceTest === 0 ? 'Waived' : formatCurrency(band.entranceTest)}</p>
+                                <p>Registration Fee: {formatCurrency(band.registration)}</p>
                             </div>
 
                             <Link to="/contact" className="btn btn-accent btn-lg btn-block">
-                                {t('primaryFoundation.teacherLed.cta')}
+                                {t('primaryFoundation.teacherLed.cta', 'Contact Admissions')}
                             </Link>
                         </div>
                     </div>

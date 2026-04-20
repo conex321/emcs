@@ -52,7 +52,6 @@ function HighSchoolTimetable({ grade, pricing, showIntro = false, showLinks = tr
                                         <th>{t('gradePage.thType', 'Type')}</th>
                                         <th>{t('gradePage.thCredit', 'Credit')}</th>
                                         <th>{t('gradePage.thPriceCad', 'Price (CAD)')}</th>
-                                        <th>{t('gradePage.thDiscountCad', '50% Discount (CAD)')}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -62,8 +61,7 @@ function HighSchoolTimetable({ grade, pricing, showIntro = false, showLinks = tr
                                             <td>{course.name}</td>
                                             <td>{course.type}</td>
                                             <td className="text-center">{course.credit}</td>
-                                            <td className="list-price">{course.listPrice}</td>
-                                            <td className="sale-price">{course.salePrice}</td>
+                                            <td>${course.listPrice}</td>
                                         </tr>
                                     ))}
                                     <tr className="total-row">
@@ -71,8 +69,11 @@ function HighSchoolTimetable({ grade, pricing, showIntro = false, showLinks = tr
                                         <td></td>
                                         <td></td>
                                         <td className="text-center"><strong>{academicPrep.totalCredits}</strong></td>
-                                        <td className="list-price"><strong>{academicPrep.totalListPrice}</strong></td>
-                                        <td className="sale-price"><strong>{academicPrep.totalSalePrice}</strong></td>
+                                        <td><strong>${academicPrep.totalListPrice}</strong></td>
+                                    </tr>
+                                    <tr className="total-row total-row--bundle">
+                                        <td colSpan="4"><strong>{t('gradePage.bundle6Label', '6-Course Bundle (Non-Academic)')}</strong></td>
+                                        <td><strong>${academicPrep.bundle6Price ?? 300}</strong></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -159,11 +160,24 @@ function HighSchoolTimetable({ grade, pricing, showIntro = false, showLinks = tr
 
                         <div className="discount-tuition-box">
                             <p className="discount-tuition-label">
-                                {t('gradePage.discountedTuition', 'Discounted Tuition ({{credits}} credits):', { credits: officialOntario.totalCredits })}
+                                {t('gradePage.bundleTuition', '6-Course Bundle Tuition:')}
                             </p>
                             <p className="discount-tuition-price">${officialOntario.discountTuition.toLocaleString()} / {t('gradePage.year', 'year')}</p>
                             <p className="discount-tuition-schedule">{officialOntario.schedule}</p>
                         </div>
+
+                        <div className="discount-tuition-box discount-tuition-box--live">
+                            <p className="discount-tuition-label">
+                                {t('gradePage.liveTeacherAnnual', 'Live Teacher — per year (6 courses)')}
+                            </p>
+                            <p className="discount-tuition-price">${(officialOntario.liveTeacherAnnual ?? 4500).toLocaleString()} / {t('gradePage.year', 'year')}</p>
+                        </div>
+
+                        {officialOntario.singleCreditStandalone && (
+                            <p className="discount-note">
+                                <strong>{t('gradePage.singleCreditStandalone', 'Single credit (standalone, self-paced)')}:</strong> ${officialOntario.singleCreditStandalone}
+                            </p>
+                        )}
 
                         {officialOntario.discountNote && (
                             <p className="discount-note">{officialOntario.discountNote}</p>

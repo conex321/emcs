@@ -250,7 +250,7 @@ export default function AuthPage() {
                 <input
                   id="reg-phone"
                   type="tel"
-                  placeholder="+1 (416) 555-0123"
+                  placeholder="+1 555 123 4567"
                   value={registerForm.phone}
                   onChange={(e) => setRegisterForm({ ...registerForm, phone: e.target.value })}
                 />

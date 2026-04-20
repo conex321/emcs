@@ -43,7 +43,7 @@
         "elementary": {
             "title": "Nền tảng Tiểu học (Lớp 1-5)",
             "desc": "Xây dựng kỹ năng học thuật thiết yếu theo Chương trình Ontario. Hoàn hảo cho học sinh quốc tế chuẩn bị học tập tại Canada hoặc gia đình cần hỗ trợ học tập theo chương trình chuẩn.",
-            "price": "Bắt đầu: $75 CAD mỗi môn",
+            "price": "Bắt đầu: $50 CAD mỗi khóa",
             "cta": "Khám phá Chương trình Tiểu học"
         },
         "middle": {
@@ -54,13 +54,13 @@
         "highSchool": {
             "title": "Trung học Phổ thông Tín chỉ (Lớp 9-12)",
             "desc": "Kiếm tín chỉ OSSD chính thức được các trường đại học trên toàn thế giới công nhận. Lớp học trực tiếp với Giáo viên Ontario Được Chứng nhận.",
-            "price": "Từ $3,500 CAD mỗi năm",
+            "price": "Từ $4,500 CAD mỗi năm",
             "cta": "Khám phá Khóa học Tín chỉ"
         },
         "practice": {
             "title": "Khóa học Thực hành (Tất cả các Lớp)",
             "desc": "Bài giảng video tự định tiến độ và các hoạt động để luyện tập thêm. Không đánh giá, không tín chỉ—chỉ học tập.",
-            "price": "Bắt đầu từ $75 CAD",
+            "price": "Bắt đầu từ $50 CAD",
             "cta": "Khám phá Khóa học Thực hành"
         },
         "highSchoolAcademicPrep": {
@@ -178,19 +178,19 @@
                 "badge": "MỚI",
                 "title": "Chương trình Nền tảng Tiểu học Ontario ⚠️ REVIEW",
                 "desc": "Lớp 1 đến 5 phù hợp với Chương trình giảng dạy Ontario. Hai lộ trình có sẵn:",
-                "selfLearning": "Tự Học: Từ $75 CAD mỗi môn",
-                "teacherLed": "Có Giáo viên Hướng dẫn: $3,500 CAD mỗi năm",
+                "selfLearning": "Tự Học: Từ $50 CAD mỗi khóa",
+                "teacherLed": "Có Giáo viên Hướng dẫn: $4,500 CAD mỗi năm",
                 "cta": "Tìm hiểu thêm về các chương trình Tiểu học",
-                "bullet1": "Chuẩn bị Học thuật (Tự học, không có hồ sơ học sinh Ontario): Từ 75 CAD mỗi môn với chiết khấu khuyến mãi 50%, hoặc 325 CAD cho gói 6 môn cả năm.",
-                "bullet2": "Nâng cấp lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario): 250 CAD mỗi khóa, hoặc 600 CAD mỗi năm cho gói đầy đủ 6 môn.",
-                "bullet3": "Nền tảng Tiểu học do Giáo viên hướng dẫn trực tiếp (có thẻ báo cáo Ontario): 3.500 CAD mỗi năm (lộ trình giáo viên hướng dẫn cao cấp)."
+                "bullet1": "Chuẩn bị Học thuật (Tự học, không có hồ sơ học sinh Ontario): Từ 75 CAD mỗi môn với chiết khấu khuyến mãi 50%, hoặc 300 CAD cho gói 6 môn cả năm.",
+                "bullet2": "Nâng cấp lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario): 250 CAD mỗi khóa, hoặc 1,800 CAD mỗi năm cho gói đầy đủ 6 môn.",
+                "bullet3": "Nền tảng Tiểu học do Giáo viên hướng dẫn trực tiếp (có thẻ báo cáo Ontario): 4.500 CAD mỗi năm (lộ trình giáo viên hướng dẫn cao cấp)."
             },
             "middleSchool": {
                 "badge": "MỚI",
                 "title": "Nền tảng Trung học Cơ sở (Lớp 6 đến 8)",
                 "desc": "Chuẩn bị Lớp 6 đến 8 phù hợp với Chương trình giảng dạy Ontario với tùy chọn nâng cấp lên hồ sơ học sinh Ontario.",
-                "bullet1": "Chuẩn bị Học thuật (Không tín chỉ): 75 đô mỗi khóa (giảm 50%), 325 CAD cho gói 6 môn cả năm.",
-                "bullet2": "Nâng cấp lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario): 250 đô mỗi khóa, 600 CAD mỗi năm.",
+                "bullet1": "Chuẩn bị Học thuật (Không tín chỉ): 50 đô mỗi khóa, 300 CAD cho gói 6 môn cả năm.",
+                "bullet2": "Nâng cấp lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario): 400 đô mỗi khóa, 1,800 CAD mỗi năm.",
                 "bullet3": "Phí Kiểm tra Đầu vào: 50 CAD (không hoàn lại). Phí đăng ký: 50 CAD.",
                 "cta": "Khám phá Nền tảng Trung học Cơ sở"
             },
@@ -382,35 +382,35 @@
             "grades": "1-5",
             "format": "100% Tự Định Tiến Độ",
             "credential": "Chứng nhận Hoàn thành",
-            "price": "$75-150 CAD/môn"
+            "price": "$50 CAD/khóa"
         },
         "primaryTeacherLed": {
             "name": "Nền tảng Tiểu học (Có Giáo viên)",
             "grades": "1-5",
             "format": "Lớp Trực tuyến Trực tiếp",
             "credential": "Phiếu điểm Ontario",
-            "price": "$3,500 CAD/năm"
+            "price": "$4,500 CAD/năm"
         },
         "middleSchool": {
             "name": "Thực hành Trung học Cơ sở",
             "grades": "6-8",
             "format": "Tự Định Tiến Độ",
             "credential": "Không có bằng cấp chính thức",
-            "price": "$75-150 CAD/môn"
+            "price": "$50 CAD/khóa"
         },
         "highSchoolCredit": {
             "name": "Trung học Tín chỉ",
             "grades": "9-12",
             "format": "Trực tiếp + Tự Định Tiến Độ",
             "credential": "Tín chỉ OSSD",
-            "price": "$3,500+ CAD/năm"
+            "price": "Từ $1,800 CAD/năm"
         },
         "highSchoolPractice": {
             "name": "Thực hành Trung học",
             "grades": "9-12",
             "format": "100% Tự Định Tiến Độ",
             "credential": "Không có tín chỉ OSSD",
-            "price": "$75-150 CAD/khóa"
+            "price": "$50 CAD/khóa"
         },
         "whichProgram": {
             "title": "Chương trình nào Phù hợp với Bạn?",
@@ -470,9 +470,9 @@
                 "grade4to5": "Lớp 4-5: 6 môn + Tiếng Pháp",
                 "regular": "Giá Thường",
                 "discounted": "Giá Khuyến mãi",
-                "perSubject": "$75 CAD mỗi môn",
+                "perSubject": "$50 CAD mỗi khóa",
                 "french": "Tiếng Pháp như Ngôn ngữ thứ hai",
-                "frenchPrice": "$150 CAD"
+                "frenchPrice": "$50 CAD"
             },
             "subjects": {
                 "title": "Các Môn học Có sẵn:",
@@ -487,9 +487,9 @@
             "fees": {
                 "title": "Phí Bổ sung:",
                 "entrance": "Phí Thi Đầu vào: $50 CAD (không hoàn lại)",
-                "registration": "Phí Đăng ký: $35 CAD (không hoàn lại)"
+                "registration": "Phí Đăng ký: $50 CAD (không hoàn lại)"
             },
-            "optionalRecord": "Nếu cần hồ sơ học tập Ontario chính thức, phí bổ sung $250 CAD áp dụng cho mỗi khóa học ngoài giá khuyến mãi.",
+            "optionalRecord": "Nếu cần hồ sơ học tập Ontario chính thức, phí bổ sung $400 CAD áp dụng cho mỗi khóa học ngoài giá khuyến mãi.",
             "cta": "Đăng ký Chương trình Tự Học"
         },
         "teacherLed": {
@@ -517,9 +517,9 @@
             "pricing": {
                 "title": "Mức giá:",
                 "core": "Các Môn Chính (6 môn)",
-                "corePrice": "$3,500 mỗi năm",
+                "corePrice": "$4,500 mỗi năm",
                 "french": "Tiếng Pháp như Ngôn ngữ thứ hai (1 giờ/tuần)",
-                "frenchPrice": "$2,000 mỗi năm (bổ sung)",
+                "frenchPrice": "Đã bao gồm",
                 "entrance": "Phí Thi Đầu vào",
                 "entrancePrice": "$50 (không hoàn lại)",
                 "registration": "Phí Đăng ký",
@@ -567,12 +567,12 @@
             "bestFor": "Phù hợp Nhất Cho",
             "practiceHomeschool": "Luyện tập, hỗ trợ học tại nhà",
             "officialCredential": "Bằng cấp chính thức",
-            "recordNote": "*Hồ sơ học tập Ontario có sẵn với phí bổ sung $250/khóa"
+            "recordNote": "*Hồ sơ học tập Ontario có sẵn với phí bổ sung $400/khóa"
         },
         "disclaimers": {
             "selfLearning": {
                 "title": "Xin Lưu ý:",
-                "content": "Hoàn thành các khóa Tự Học sẽ KHÔNG kiếm được hồ sơ học tập Ontario trừ khi phí bổ sung $250 mỗi khóa được thanh toán. Chương trình này được thiết kế cho luyện tập và tiếp xúc chương trình, không phải cấp bằng chính thức.",
+                "content": "Hoàn thành các khóa Tự Học sẽ KHÔNG kiếm được hồ sơ học tập Ontario trừ khi phí bổ sung $400 mỗi khóa được thanh toán. Chương trình này được thiết kế cho luyện tập và tiếp xúc chương trình, không phải cấp bằng chính thức.",
                 "idealFor": "Khóa học Tự Học lý tưởng cho:",
                 "items": [
                     "Học tập bổ sung song song với trường học thông thường",
@@ -750,9 +750,9 @@
         },
         "pricing": {
             "title": "Mức giá",
-            "elementary": "Tiểu học (Lớp 1-5): $75 CAD mỗi môn",
-            "middle": "Trung học Cơ sở (Lớp 6-8): $75-150 CAD mỗi môn",
-            "highSchool": "Trung học Phổ thông (Lớp 9-12): $75-150 CAD mỗi khóa"
+            "elementary": "Tiểu học (Lớp 1-5): $50 CAD mỗi khóa",
+            "middle": "Trung học Cơ sở (Lớp 6-8): $50 CAD mỗi khóa",
+            "highSchool": "Trung học Phổ thông (Lớp 9-12): $50 CAD mỗi khóa"
         },
         "gradeGroups": {
             "elementary": {
@@ -883,13 +883,13 @@
                 "selfLearning": {
                     "title": "Lựa chọn Tự Học:",
                     "desc": "Hoàn hảo để tiếp xúc chương trình và luyện tập",
-                    "price": "Từ $75 CAD mỗi môn",
+                    "price": "Từ $50 CAD mỗi khóa",
                     "note": "Không yêu cầu đánh giá"
                 },
                 "teacherLed": {
                     "title": "Lựa chọn Có Giáo viên:",
                     "desc": "Hồ sơ học tập Ontario chính thức",
-                    "price": "$3,500 CAD mỗi năm + phí",
+                    "price": "$4,500 CAD mỗi năm + phí",
                     "note": "Lớp trực tiếp với giáo viên Canada"
                 }
             },
@@ -1138,7 +1138,7 @@
         "q8": "Sự khác biệt giữa Tự Học và Có Giáo viên là gì?",
         "a8": "Tự Học cung cấp quyền truy cập tài liệu theo chương trình chuẩn để luyện tập—không đánh giá, không phiếu điểm, không tương tác giáo viên. Có Giáo viên bao gồm lớp trực tuyến trực tiếp với giáo viên Canada, đánh giá yêu cầu, và phiếu điểm học tập Ontario chính thức.",
         "q9": "Chương trình Tự Học có cung cấp tín chỉ không?",
-        "a9": "Không. Chương trình Nền tảng Tiểu học Tự Học không cung cấp tín chỉ OSSD (chỉ áp dụng cho Lớp 9-12) hoặc hồ sơ học tập Ontario. Để có hồ sơ chính thức, hãy chọn tùy chọn Có Giáo viên hoặc thêm tiện ích bổ sung Hồ sơ Học tập Ontario ($250 mỗi khóa) vào đăng ký Tự Học.",
+        "a9": "Không. Chương trình Nền tảng Tiểu học Tự Học không cung cấp tín chỉ OSSD (chỉ áp dụng cho Lớp 9-12) hoặc hồ sơ học tập Ontario. Để có hồ sơ chính thức, hãy chọn tùy chọn Có Giáo viên hoặc thêm tiện ích bổ sung Hồ sơ Học tập Ontario ($400 mỗi khóa) vào đăng ký Tự Học.",
         "q10": "Chương trình Nền tảng Tiểu học có được kiểm định không?",
         "a10": "EMCS là trường tư thục được Bộ Giáo dục Ontario kiểm định. Chương trình Nền tảng Tiểu học Có Giáo viên bao gồm phiếu điểm học tập Ontario chính thức. Chương trình Tự Học cung cấp tài liệu thực hành theo chương trình chuẩn mà không có bằng cấp chính thức.",
         "q11": "Khóa học thực hành có cho tín chỉ không?",
@@ -1169,22 +1169,22 @@
                 "french": "Lớp 4-5: Tiếng Pháp như Ngôn ngữ thứ hai",
                 "regular": "Giá Thường",
                 "discounted": "Giá Khuyến mãi",
-                "regularPrice": "$150 CAD",
-                "discountedPrice": "$75 CAD",
+                "regularPrice": "$50 CAD",
+                "discountedPrice": "$50 CAD",
                 "frenchRegular": "$300 CAD",
-                "frenchDiscounted": "$150 CAD",
+                "frenchDiscounted": "$50 CAD",
                 "fees": {
                     "entrance": "Thi Đầu vào: $50 CAD (không hoàn lại)",
-                    "registration": "Đăng ký: $35 CAD (không hoàn lại)"
+                    "registration": "Đăng ký: $50 CAD (không hoàn lại)"
                 },
-                "optionalAddon": "Tiện ích Bổ sung Tùy chọn: Hồ sơ Học tập Ontario: +$250 CAD mỗi khóa"
+                "optionalAddon": "Tiện ích Bổ sung Tùy chọn: Hồ sơ Học tập Ontario: +$400 CAD mỗi khóa"
             },
             "teacherLed": {
                 "title": "Chương trình Có Giáo viên",
                 "core": "Các Môn Chính (6 môn, cả năm)",
-                "corePrice": "$3,500",
+                "corePrice": "$4,500",
                 "french": "Tiếng Pháp như Ngôn ngữ thứ hai (bổ sung)",
-                "frenchPrice": "$2,000",
+                "frenchPrice": "Đã bao gồm",
                 "entranceFee": "Phí Thi Đầu vào",
                 "entrancePrice": "$50 (không hoàn lại)",
                 "registrationFee": "Phí Đăng ký",
@@ -1193,7 +1193,7 @@
         },
         "middle": {
             "title": "Trung học Cơ sở (Lớp 6-8)",
-            "practice": "Khóa học Thực hành: $75-150 CAD mỗi môn"
+            "practice": "Khóa học Thực hành: $50 CAD mỗi khóa"
         },
         "highSchool": {
             "title": "Trung học Phổ thông (Lớp 9-12)",
@@ -1221,7 +1221,7 @@
             },
             "practice": {
                 "title": "Khóa học Thực hành (Không Tín chỉ)",
-                "price": "$75-150 CAD"
+                "price": "$50 CAD"
             }
         },
         "whatsIncluded": {
@@ -1341,7 +1341,7 @@
         "selfLearningLms": "Tự học qua Nền tảng LMS",
         "whatsIncludedLabel": "Bao gồm:",
         "whatsIncludedNote": "Tất cả tài liệu học tập được cung cấp · Tài khoản đăng nhập cho học sinh và phụ huynh · Truy cập nội dung 24/7 · Học theo tiến độ riêng",
-        "promoBanner": "Đăng ký ngay và nhận giảm giá 50% — chỉ ${{price}} cho chương trình 1 năm",
+        "promoBanner": "Đăng ký ngay và nhận chỉ ${{price}} cho chương trình 1 năm",
         "registrationFee": "Phí Đăng ký",
         "entranceTestFee": "Phí Kiểm tra Đầu vào",
         "pricePerCourse": "Giá mỗi Khóa",
@@ -1399,7 +1399,7 @@
         "compareOutcomeOfficial": "OSSD & chuẩn bị đại học",
         "chooseSpecificSubjects": "Chọn các môn học cụ thể phù hợp với nhu cầu của bạn",
         "academicPrepSelfPaced": "Chương trình Chuẩn bị Học thuật – Tự học",
-        "academicPrepSingleDesc": "Video bài giảng và hoạt động tương tác · ${{price}} mỗi môn (giảm 50%)",
+        "academicPrepSingleDesc": "Video bài giảng và hoạt động tương tác · ${{price}} mỗi môn ()",
         "officialOntarioLive": "Chương trình Ontario Chính thức – Lớp Trực tiếp",
         "officialOntarioSingleDesc": "Giảng dạy trực tiếp với Giáo viên Ontario Được Chứng nhận · ${{price}} mỗi môn"
     },
@@ -1568,7 +1568,7 @@
             "subtitle": "Kiếm tín chỉ OSSD chính thức được các trường đại học trên toàn thế giới công nhận. Lớp trực tiếp với Giáo viên Ontario Được Chứng nhận.",
             "hrsPerWeek": "giờ/tuần",
             "ossdCredit": "Tín chỉ OSSD",
-            "fromPrice": "Từ $3,500 CAD",
+            "fromPrice": "Từ $4,500 CAD",
             "browseCta": "Duyệt theo Lớp",
             "nonCreditLink": "Chỉ cần Thực hành? Xem Không tín chỉ",
             "whyEmcs": "Tại sao chọn Khóa học Tín chỉ EMCS?",
@@ -1871,8 +1871,8 @@
         "included6Desc": "Giám sát hành trình học tập và thành tích",
         "browseByGrade": "Duyệt theo Lớp",
         "browseByGradeSubtitle": "Chọn nhóm lớp để khám phá các khóa học có sẵn",
-        "pricingElem": "💰 <strong>$75 mỗi môn</strong> hoặc <strong>$450 trọn năm</strong> (tất cả 6 môn)",
-        "pricingHs": "💰 <strong>$75 mỗi khóa</strong> hoặc <strong>$450 trọn năm</strong>",
+        "pricingElem": "💰 <strong>$50 mỗi khóa</strong> hoặc <strong>$300 trọn năm</strong> (tất cả 6 môn)",
+        "pricingHs": "💰 <strong>$50 mỗi khóa</strong> hoặc <strong>$300 trọn năm</strong>",
         "whyTitle": "Tại sao chọn Chuẩn bị Học thuật?",
         "keyFeature1Title": "Chương trình Ontario",
         "keyFeature1Desc": "Tất cả nội dung phù hợp với tiêu chuẩn chương trình Ontario chính thức",
@@ -1889,12 +1889,12 @@
         "ctaContact": "Liên hệ",
         "ctaContactUs": "Liên hệ",
         "featurePracticeActivities": "Hoạt động Thực hành",
-        "featureStartingPrice": "Từ $75/môn",
+        "featureStartingPrice": "Từ $50/khóa",
         "pricingHsFullYear": "Trọn năm từ",
-        "pricingHsDiscount": "$450",
+        "pricingHsDiscount": "$300",
         "pricingElemOr": "hoặc",
-        "pricingElemFullYear": "$450 trọn năm",
-        "pricingElemDiscount": "$75",
+        "pricingElemFullYear": "$300 trọn năm",
+        "pricingElemDiscount": "$50",
         "pricingElemAll": "(tất cả 6 môn)"
     },
     "officialOntario": {
@@ -1929,8 +1929,8 @@
         "gradeGroupMiddleDesc": "Xây dựng nền tảng trung học cơ sở vững chắc",
         "gradeGroupHs": "Trung học Phổ thông (Lớp 9-12)",
         "gradeGroupHsDesc": "Kiếm tín chỉ OSSD chính thức",
-        "pricingHs": "💰 <strong>$700 mỗi khóa</strong> · Trọn năm từ <strong>$3,800</strong>",
-        "pricingElem": "💰 <strong>$250 mỗi môn</strong> hoặc <strong>$600 trọn năm</strong> (tất cả 6 môn)",
+        "pricingHs": "💰 <strong>$400 mỗi khóa</strong> · Trọn năm từ <strong>$1,800</strong>",
+        "pricingElem": "💰 <strong>$400 mỗi khóa</strong> hoặc <strong>$1,800 trọn năm</strong> (tất cả 6 môn)",
         "whyTitle": "Tại sao chọn Chương trình Ontario Chính thức?",
         "keyFeature1Title": "Kiếm Tín chỉ Thật",
         "keyFeature1Desc": "Tín chỉ OSSD chính thức được các trường đại học Canada và quốc tế công nhận",
@@ -1948,7 +1948,7 @@
         "ministryDesc": "Được ủy quyền cấp tín chỉ cho Bằng Tốt nghiệp Trung học Ontario (OSSD)",
         "pricingHsFullYear": "Trọn năm từ",
         "pricingElemOr": "hoặc",
-        "pricingElemFullYear": "$600 trọn năm",
+        "pricingElemFullYear": "$1,800 trọn năm",
         "pricingElemAll": "(tất cả 6 môn)"
     },
     "middleSchool": {
@@ -1981,7 +1981,7 @@
         },
         "upgrade": {
             "title": "Lộ trình Nâng cấp",
-            "body": "Học sinh có thể bắt đầu năm học trong Chương trình Chuẩn bị Học thuật và nâng cấp lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario) bất cứ lúc nào. Phí nâng cấp 250 đô mỗi khóa chỉ áp dụng cho các môn được nâng cấp; giá nâng cấp cả năm là 600 đô cho toàn bộ 6 môn. ⚠️ REVIEW"
+            "body": "Học sinh có thể bắt đầu năm học với Hồ sơ Phi Học thuật Ontario và nâng cấp lên Hồ sơ Học thuật Ontario (có tín chỉ) bất cứ lúc nào. Phí nâng cấp cộng thêm 350 đô mỗi khóa (tổng 400 đô/khóa sau nâng cấp), hoặc 1.800 đô cho trọn năm 6 khóa."
         },
         "cta": {
             "title": "Sẵn sàng xây dựng Nền tảng Trung học Cơ sở của bạn?",
@@ -2078,23 +2078,23 @@
             "elementary": {
                 "heading": "Giá Tiểu học (Lớp 1 đến 5)",
                 "subtitle": "Hai lộ trình: Chuẩn bị Học thuật (tự học) và tùy chọn Nâng cấp lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario). ⚠️ REVIEW",
-                "academicPrep": "Chương trình Chuẩn bị Học thuật (Không tín chỉ) — 75 đô mỗi khóa (giảm 50% từ 150 đô), 325 CAD cho gói 6 môn cả năm.",
-                "upgrade": "Nâng cấp lên Chương trình Ontario Chính thức — 250 đô mỗi khóa, 600 CAD mỗi năm (tất cả 6 môn).",
-                "legacy": "Nền tảng Tiểu học do Giáo viên hướng dẫn trực tiếp — 3.500 CAD mỗi năm (lộ trình cao cấp với thẻ báo cáo Ontario). ⚠️ REVIEW",
+                "academicPrep": "Chương trình Chuẩn bị Học thuật (Không tín chỉ) — 50 đô mỗi khóa ( từ 50 đô), 300 CAD cho gói 6 môn cả năm.",
+                "upgrade": "Nâng cấp lên Chương trình Ontario Chính thức — 400 đô mỗi khóa, 1,800 CAD mỗi năm (tất cả 6 môn).",
+                "legacy": "Nền tảng Tiểu học do Giáo viên hướng dẫn trực tiếp — 4.500 CAD mỗi năm (lộ trình cao cấp với thẻ báo cáo Ontario). ⚠️ REVIEW",
                 "fees": "Phí đăng ký: 50 CAD. Phí Kiểm tra Đầu vào: miễn cho Lớp 1 đến 5."
             },
             "middle": {
                 "heading": "Giá Trung học Cơ sở (Lớp 6 đến 8)",
                 "subtitle": "Cấu trúc giống như Tiểu học, với phí kiểm tra đầu vào 50 CAD.",
-                "academicPrep": "Chương trình Chuẩn bị Học thuật (Không tín chỉ) — 75 đô mỗi khóa (giảm 50% từ 150 đô), 325 CAD cho gói 6 môn cả năm.",
-                "upgrade": "Nâng cấp lên Chương trình Ontario Chính thức — 250 đô mỗi khóa, 600 CAD mỗi năm (tất cả 6 môn).",
+                "academicPrep": "Chương trình Chuẩn bị Học thuật (Không tín chỉ) — 50 đô mỗi khóa ( từ 50 đô), 300 CAD cho gói 6 môn cả năm.",
+                "upgrade": "Nâng cấp lên Chương trình Ontario Chính thức — 400 đô mỗi khóa, 1,800 CAD mỗi năm (tất cả 6 môn).",
                 "fees": "Phí đăng ký: 50 CAD. Phí Kiểm tra Đầu vào: 50 CAD (không hoàn lại)."
             },
             "high": {
                 "heading": "Giá Trung học Phổ thông (Lớp 9 đến 12)",
                 "subtitle": "Giá theo từng khóa và giá chương trình cả năm cho chương trình một năm 8 tín chỉ (Lớp 9 và 10) và 7 tín chỉ (Lớp 11 và 12).",
-                "academicPrep": "Chuẩn bị Học thuật (Không tín chỉ) — Từ 75 đô mỗi khóa (giảm 50% từ 150 đô).",
-                "official": "Chương trình Ontario Chính thức — Theo khóa từ 700 CAD. Chương trình 8 tín chỉ cả năm từ 3.800 CAD (Lớp 9 và 10). Chương trình 7 tín chỉ cả năm từ 3.800 CAD (Lớp 11 và 12). Liên hệ bộ phận tuyển sinh để biết báo giá bậc trong nước, visa và quốc tế. ⚠️ REVIEW",
+                "academicPrep": "Chuẩn bị Học thuật (Không tín chỉ) — Từ 50 đô mỗi khóa ( từ 50 đô).",
+                "official": "Chương trình Ontario Chính thức — Theo khóa từ 400 CAD. Chương trình 8 tín chỉ cả năm từ 1.800 CAD (Lớp 9 và 10). Chương trình 7 tín chỉ cả năm từ 1.800 CAD (Lớp 11 và 12). Liên hệ bộ phận tuyển sinh để biết báo giá bậc trong nước, visa và quốc tế. ⚠️ REVIEW",
                 "fees": "Phí đăng ký: 100 CAD. Phí Kiểm tra Đầu vào: 50 CAD (không hoàn lại)."
             }
         },
@@ -2198,18 +2198,18 @@
             },
             "fullYearPriceLow": {
                 "label": "Giá cả năm (Lớp 1 đến 8)",
-                "academic": "325 CAD",
+                "academic": "300 CAD",
                 "official": "600 CAD"
             },
             "perCoursePriceLow": {
                 "label": "Giá mỗi khóa (Lớp 1 đến 8)",
-                "academic": "75 CAD (giảm 50% từ 150 đô)",
+                "academic": "75 CAD ( từ 50 đô)",
                 "official": "250 CAD"
             },
             "perCoursePriceHigh": {
                 "label": "Giá mỗi khóa (Lớp 9 đến 12)",
                 "academic": "75 đến 150 CAD",
-                "official": "Từ 700 CAD (liên hệ bộ phận tuyển sinh để biết tỷ lệ theo bậc)"
+                "official": "Từ 400 CAD (liên hệ bộ phận tuyển sinh để biết tỷ lệ theo bậc)"
             },
             "registrationFee": {
                 "label": "Phí đăng ký",

@@ -32,12 +32,45 @@ function findRelatedNonCredit(creditCourse, allCourses) {
     )
 }
 
+// G9-12 Academic Ontario Record self-paced cart rule:
+//   1 credit:  $450 (single standalone surcharge)
+//   2-5:       $400 each (standard per-course rate)
+//   6+:        $1,800 bundle cap (= $300 avg per credit)
+function isHsSelfPacedCredit(item) {
+    if (!item) return false
+    const grade = parseInt(String(item.grade || ''), 10)
+    if (!(grade >= 9 && grade <= 12)) return false
+    const sf = String(item.storefront || '')
+    if (sf !== 'credit' && sf !== 'official-ontario') return false
+    const pathway = String(item.pathway || '').toLowerCase()
+    // Default to self-paced for HS credit unless explicitly 'live-teacher'
+    return pathway !== 'live-teacher'
+}
+
+function applyHsSelfPacedRule(items) {
+    const hsItems = items.filter(i => !i.isBundled && isHsSelfPacedCredit(i))
+    const count = hsItems.length
+    if (count === 0) return { items, adjustment: 0, rule: 'none' }
+
+    if (count === 1) {
+        return { items, adjustment: 50, rule: 'single-credit-standalone' } // +$50 surcharge on the one $400 credit → $450
+    }
+    if (count >= 6) {
+        const currentSum = hsItems.reduce((s, i) => s + (i.price || 0), 0)
+        return { items, adjustment: 1800 - currentSum, rule: 'bundle-6-cap' } // pin HS total to $1,800
+    }
+    return { items, adjustment: 0, rule: 'standard' } // 2-5 credits: $400 each, no adjustment
+}
+
 // Calculate totals
 function calculateTotals(items, appliedCoupon) {
-    const subtotal = items.reduce((sum, item) => {
+    const baseSubtotal = items.reduce((sum, item) => {
         if (item.isBundled) return sum // Don't count bundled items
         return sum + (item.price || 0)
     }, 0)
+
+    const { adjustment: hsAdjustment, rule: hsRule } = applyHsSelfPacedRule(items)
+    const subtotal = baseSubtotal + hsAdjustment
 
     let discount = 0
     if (appliedCoupon) {
@@ -58,6 +91,8 @@ function calculateTotals(items, appliedCoupon) {
         subtotal,
         discount,
         total: subtotal - discount,
+        hsSelfPacedRule: hsRule,
+        hsSelfPacedAdjustment: hsAdjustment,
     }
 }
 

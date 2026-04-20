@@ -181,7 +181,7 @@ function TwoColumnComparison({ grade, pricing, t, navigate }) {
 
                         {/* Promo Banner */}
                         <div className="promo-banner">
-                            {t('gradePage.promoBanner', 'Enroll now and receive a 50% discount — only ${{price}} for a 1-year program', { price: pricing.academicPrep.fullYear })}
+                            {t('gradePage.promoBanner', 'Start from just ${{price}} per course — ${{bundle}} for a full 6-course year.', { price: pricing.academicPrep.salePrice, bundle: pricing.academicPrep.fullYear })}
                         </div>
 
                         <div className="pricing-card">
@@ -199,17 +199,13 @@ function TwoColumnComparison({ grade, pricing, t, navigate }) {
                                     <tr>
                                         <td><strong>{t('gradePage.pricePerCourse', 'Price per Course')}</strong></td>
                                         <td>
-                                            <span className="list-price">${pricing.academicPrep.listPrice}</span>{' '}
-                                            <strong className="sale-price">${pricing.academicPrep.salePrice}</strong>{' '}
-                                            <span className="discount-badge">{t('gradePage.fiftyOff', '50% OFF')}</span>
+                                            <strong className="sale-price">${pricing.academicPrep.salePrice}</strong>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td><strong>{t('gradePage.fullYear6Subjects', 'Full Year (6 subjects)')}</strong></td>
                                         <td>
-                                            <span className="list-price">${pricing.academicPrep.listPrice * 6 + pricing.registration}</span>{' '}
-                                            <strong className="sale-price">${pricing.academicPrep.fullYear}</strong>{' '}
-                                            <span className="discount-badge">{t('gradePage.fiftyOff', '50% OFF')}</span>
+                                            <strong className="sale-price">${pricing.academicPrep.fullYear}</strong>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -364,7 +360,7 @@ function SingleCourseListing({ grade, pricing, t }) {
                 <div className="program-courses-section">
                     <h3>{t('gradePage.academicPrepSelfPaced', 'Academic Preparation Program – Self-Paced Learning')}</h3>
                     <p className="program-description">
-                        {t('gradePage.academicPrepSingleDesc', 'Video lessons and interactive activities · ${{price}} per subject (50% off regular price)', { price: pricing.academicPrep.salePrice })}
+                        {t('gradePage.academicPrepSingleDesc', 'Video lessons and interactive activities · ${{price}} per subject', { price: pricing.academicPrep.salePrice })}
                     </p>
                     <SubjectCardGrid
                         grade={grade}

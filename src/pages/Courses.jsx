@@ -71,76 +71,76 @@ function Courses() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Academic Preparation Program (Elementary)</strong></td>
+                                    <td><strong>Non-Academic Ontario Record (Elementary)</strong></td>
                                     <td>1 to 5</td>
                                     <td>100% Self-Paced via LMS</td>
                                     <td>Non-Ontario student record</td>
                                     <td>Certificate of Completion</td>
-                                    <td>$325 CAD (50% off $650)</td>
-                                    <td>$75 CAD (50% off $150)</td>
+                                    <td>$300 CAD (6 courses)</td>
+                                    <td>$50 CAD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Upgrade to Ontario Official (Elementary)</strong></td>
+                                    <td><strong>Upgrade to Ontario Record (Elementary)</strong></td>
                                     <td>1 to 5</td>
                                     <td>Guided with Ontario student record</td>
                                     <td>Ontario student record</td>
                                     <td>Ontario Academic Report Card</td>
-                                    <td>$600 CAD</td>
-                                    <td>$250 CAD</td>
+                                    <td>$1,800 CAD (6 courses)</td>
+                                    <td>$400 CAD (includes +$350 upgrade delta)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Primary Foundation (Live Teacher-Led, Legacy)</strong></td>
+                                    <td><strong>Academic Ontario Record — Live Teacher (Elementary)</strong></td>
                                     <td>1 to 5</td>
                                     <td>Live Online, 6 hrs/week</td>
                                     <td>Ontario student record</td>
                                     <td>Ontario Report Card</td>
-                                    <td>$3,500 CAD/year</td>
+                                    <td>$4,500 CAD/year (6 courses)</td>
                                     <td>Included in bundle</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Academic Preparation Program (Middle School)</strong></td>
+                                    <td><strong>Non-Academic Ontario Record (Middle School)</strong></td>
                                     <td>6 to 8</td>
                                     <td>100% Self-Paced via LMS</td>
                                     <td>Non-Ontario student record</td>
                                     <td>Certificate of Completion</td>
-                                    <td>$325 CAD</td>
-                                    <td>$75 CAD (50% off $150)</td>
+                                    <td>$300 CAD (6 courses)</td>
+                                    <td>$50 CAD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Upgrade to Ontario Official (Middle School)</strong></td>
+                                    <td><strong>Upgrade to Ontario Record (Middle School)</strong></td>
                                     <td>6 to 8</td>
                                     <td>Guided with Ontario student record</td>
                                     <td>Ontario student record</td>
                                     <td>Ontario Academic Report Card</td>
-                                    <td>$600 CAD</td>
-                                    <td>$250 CAD</td>
+                                    <td>$1,800 CAD (6 courses)</td>
+                                    <td>$400 CAD (includes +$350 upgrade delta)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Academic Preparation Program (High School)</strong></td>
+                                    <td><strong>Non-Academic Ontario Record (High School)</strong></td>
                                     <td>9 to 12</td>
                                     <td>100% Self-Paced</td>
                                     <td>Non-Ontario student record</td>
                                     <td>No OSSD credit</td>
-                                    <td>Contact admissions</td>
-                                    <td>$75 to $150 CAD</td>
+                                    <td>$300 CAD (6 courses)</td>
+                                    <td>$50 CAD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Official Ontario Program (High School)</strong></td>
-                                    <td>9 to 10</td>
-                                    <td>Live + Self-Paced (8-credit)</td>
+                                    <td><strong>Academic Ontario Record — Self-paced (High School)</strong></td>
+                                    <td>9 to 12</td>
+                                    <td>Self-Paced, credit-bearing</td>
                                     <td>Ontario student record</td>
                                     <td>OSSD Credits</td>
-                                    <td>From $3,800</td>
-                                    <td>From $700</td>
+                                    <td>$1,800 CAD (6 courses)</td>
+                                    <td>$400 CAD · $450 single standalone</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Official Ontario Program (High School)</strong></td>
-                                    <td>11 to 12</td>
-                                    <td>Live + Self-Paced (7-credit)</td>
+                                    <td><strong>Academic Ontario Record — Live Teacher (High School)</strong></td>
+                                    <td>9 to 12</td>
+                                    <td>Live Online, 6 hrs/week</td>
                                     <td>Ontario student record</td>
                                     <td>OSSD Credits → Diploma</td>
-                                    <td>From $3,800</td>
-                                    <td>From $700</td>
+                                    <td>$4,500 CAD/year (6 courses)</td>
+                                    <td>Included in bundle</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -160,8 +160,8 @@ function Courses() {
                                 <h4>For Elementary Students (Grades 1 to 5)</h4>
                                 <ul>
                                     <li>Want curriculum-aligned learning without assessments? → <strong>Academic Preparation Program (Non-Ontario student record)</strong></li>
-                                    <li>Want an Ontario student record without the premium price tag? → <strong>Upgrade to Official Ontario Program ($600/year)</strong></li>
-                                    <li>Want the premium live teacher-led experience with full Ontario report card? → <strong>Primary Foundation Teacher-Led ($3,500/year)</strong></li>
+                                    <li>Want an Ontario student record at the upgrade tier? → <strong>Upgrade to Ontario Record ($1,800/year for 6 courses)</strong></li>
+                                    <li>Want the premium live teacher-led experience with full Ontario report card? → <strong>Academic Ontario Record — Live Teacher ($4,500/year)</strong></li>
                                 </ul>
                             </div>
                             <div className="decision-group">

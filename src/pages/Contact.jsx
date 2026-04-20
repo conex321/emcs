@@ -4,7 +4,7 @@ import './Contact.css'
 
 function Contact() {
     const { t } = useTranslation()
-    const socialComingSoon = t('contact.socialComingSoon', 'Social channels are being updated. Please use email or phone for now.')
+    const socialComingSoon = t('contact.socialComingSoon', 'Social channels are being updated. Please use email for now.')
 
     const [formData, setFormData] = useState({
         name: '',
@@ -16,8 +16,6 @@ function Contact() {
     const [submitted, setSubmitted] = useState(false)
 
     const contactInfo = [
-        { icon: '📍', label: t('contact.address'), value: '10 Gurney Crescent, North York, ON M6B 1S8' },
-        { icon: '📞', label: t('contact.phone'), value: '+1 (416) 882-6571' },
         { icon: '✉️', label: t('contact.email'), value: 'contact@emcs.ca' },
         { icon: '🕐', label: t('contact.hours'), value: t('contact.businessHours', 'Mon-Fri: 9:00AM – 5:00PM') }
     ]

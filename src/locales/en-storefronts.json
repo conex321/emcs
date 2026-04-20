@@ -38,7 +38,7 @@
             "crossSell": "Looking for Ontario credit?",
             "crossSellCta": "Browse Credit Courses",
             "pricing": {
-                "startingAt": "Starting at $100 CAD",
+                "startingAt": "Starting at $50 CAD",
                 "limitedOffer": "Limited time offer"
             }
         },
@@ -70,7 +70,7 @@
             "crossSell": "Need practice before credit courses?",
             "crossSellCta": "Browse Non-credit",
             "pricing": {
-                "startingAt": "Starting at $3,000 CAD",
+                "startingAt": "From $1,800 CAD/yr · Live Teacher $4,500/yr",
                 "liveOnline": "Live online with certified teacher"
             }
         },
@@ -82,14 +82,14 @@
             "upgradeCallout": "UPGRADE to Official Ontario Program (Ontario student record)"
         },
         "pricingV2": {
-            "promoBanner": "Enroll now and receive a 50% discount — only $325 for a 1-year program",
-            "perCourseRegular": "$150 per course",
-            "perCourseDiscounted": "$75 per course (50% off)",
-            "fullYearPrep": "$325 per year (all 6 subjects)",
-            "upgradePerCourse": "$250 per course (upgrade to Ontario student record)",
-            "upgradeFullYear": "$600 per year (upgrade to Ontario student record, all 6 subjects)",
-            "legacyTeacherLed": "$3,500 per year — premium Teacher-Led Primary Foundation",
-            "highSchoolOfficial": "From $700 per course · Full-year program from $3,800 · Contact admissions for tiered quotes"
+            "promoBanner": "Enroll now and receive a $300 for a 1-year program",
+            "perCourseRegular": "$50 per course",
+            "perCourseDiscounted": "$50 per course",
+            "fullYearPrep": "$300 per year (all 6 subjects)",
+            "upgradePerCourse": "$400 per course (upgrade to Ontario student record)",
+            "upgradeFullYear": "$1,800 per year (upgrade to Ontario student record, all 6 subjects)",
+            "legacyTeacherLed": "$4,500 per year — premium Teacher-Led Primary Foundation",
+            "highSchoolOfficial": "From $400 per course · Full-year program from $1,800 · Contact admissions for tiered quotes"
         },
         "schedule": {
             "standard": "Schedule: September 5, 2026 to May 30, 2027 (39 instructional weeks)",

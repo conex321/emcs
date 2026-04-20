@@ -83,10 +83,6 @@ function Footer() {
                             <li>
                                 <a href="mailto:contact@emcs.ca">contact@emcs.ca</a>
                             </li>
-                            <li>
-                                <a href="tel:+1-416-882-6571">+1 (416) 882-6571</a>
-                            </li>
-                            <li>10 Gurney Crescent, North York, ON M6B 1S8</li>
                         </ul>
                     </div>
                 </div>

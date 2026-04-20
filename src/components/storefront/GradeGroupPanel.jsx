@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { getPricingForGrade } from '../../config/pricing'
+import { getPricingForGrade, formatCurrency } from '../../config/pricing'
 import ScheduleStrip from './ScheduleStrip'
 import './GradeGroupPanel.css'
 
@@ -17,20 +17,11 @@ const GROUP_LABELS = {
 }
 
 /**
- * GradeGroupPanel — v2 shared two-column layout.
+ * GradeGroupPanel — two-column pathway chooser.
  *
- * Renders the "Academic Preparation Program (Non-Ontario student record)"
- * alongside "UPGRADE to Official Ontario Program (Ontario student record)"
- * with subject table, pricing, fees, and primary CTAs.
- *
- * Used by:
- * - /academic-prep/group/:groupSlug and /official-ontario/group/:groupSlug
- * - Embedded in /programs/middle-school and /programs/high-school
- * - Embedded in /academic-prep and /official-ontario landing pages
- *
- * Props:
- * - groupSlug: 'elementary' | 'middle' | 'high'
- * - context: 'academic-prep' | 'official-ontario' | 'both' (default: 'both')
+ * Left:  Non-Academic Ontario Record (Academic Preparation, non-credit)
+ * Right: Upgrade to Ontario Record (adds $350 delta; $400/course total) + direct
+ *        Academic Ontario Record self-paced + Live Teacher callouts.
  */
 function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
     const { t } = useTranslation()
@@ -45,20 +36,24 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
 
     const groupLabel = t(GROUP_LABELS[groupSlug].key, GROUP_LABELS[groupSlug].fallback)
 
-    // K–8 subject list (unused for HS where we switch to a course-count narrative)
     const subjects = representativePricing.subjects || [
         'Mathematics', 'Language', 'The Arts',
         'Science & Technology', 'Health & Physical Education', 'Social Studies'
     ]
 
-    const perCourseList = representativePricing.academicPrep?.listPrice || 150
-    const perCourseSale = representativePricing.academicPrep?.salePrice || 75
-    const fullYear = representativePricing.academicPrep?.fullYear || 325
-    const upgradePerCourse = representativePricing.officialOntario?.perCourse || 250
-    const upgradeFullYear = representativePricing.officialOntario?.fullYear || 600
-    // HS-specific values
-    const hsCreditCount = representativePricing.timetable?.officialOntario?.totalCredits
-    const hsDiscountTuition = representativePricing.timetable?.officialOntario?.discountTuition
+    // New pricing model
+    const nonAcademic = representativePricing.nonAcademicOntarioRecord
+    const upgrade = representativePricing.upgradeToOntarioRecord
+    const selfPacedOntario = representativePricing.academicOntarioRecord?.selfPaced
+    const liveTeacher = representativePricing.academicOntarioRecord?.liveTeacher
+
+    const nonAcademicPerCourse = nonAcademic?.perCourse ?? 50
+    const nonAcademicBundle = nonAcademic?.bundle6 ?? 300
+    const upgradeTotalPerCourse = upgrade?.totalPerCourse ?? 400
+    const upgradeBundle = upgrade?.bundle6 ?? 1800
+    const upgradeAddOn = upgrade?.addOnPerCourse ?? 350
+    const singleCreditStandalone = selfPacedOntario?.singleCreditStandalone
+    const liveTeacherAnnual = liveTeacher?.annual ?? 4500
 
     return (
         <div className="grade-group-panel">
@@ -72,11 +67,11 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
             </div>
 
             <div className="grade-group-panel__columns">
-                {/* LEFT: Academic Preparation Program */}
+                {/* LEFT: Non-Academic Ontario Record */}
                 <div className="grade-group-panel__col grade-group-panel__col--left">
                     <div className="grade-group-panel__col-header">
                         <span className="grade-group-panel__dot" style={{ background: '#2F80ED' }}></span>
-                        <h3>{t('storefronts.gradeGroupPanel.leftHeading', 'Academic Preparation Program (Non-Ontario student record)')}</h3>
+                        <h3>{t('storefronts.gradeGroupPanel.leftHeading', 'Non-Academic Ontario Record (Academic Preparation)')}</h3>
                     </div>
 
                     <p className="grade-group-panel__description">
@@ -86,12 +81,11 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
                     {isHighSchool ? (
                         <div className="grade-group-panel__hs-summary">
                             <p>
-                                Grades 9–10 deliver the <strong>8-credit one-year program</strong>;
-                                Grades 11–12 deliver the <strong>7-credit one-year program</strong>.
-                                Each course is self-paced via the LMS Platform with no Ontario student record.
+                                Grades 9–12 deliver self-paced courses via the LMS Platform with no Ontario student record.
+                                Each course carries the same flat per-course rate.
                             </p>
                             <p>
-                                View the full per-grade course codes (ENG1D, MTH1W, SNC1W, …) and 50% sale pricing on any
+                                View the full per-grade course codes (ENG1D, MTH1W, SNC1W, …) on any
                                 Grade 9–12 detail page below.
                             </p>
                         </div>
@@ -127,37 +121,29 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
                     </div>
 
                     <div className="grade-group-panel__promo">
-                        {t('storefronts.pricingV2.promoBanner', 'Enroll now and receive a 50% discount — only $325 for a 1-year program')}
+                        {t('storefronts.pricingV2.promoBanner', {
+                            defaultValue: 'Start from just {{price}} per course — or {{bundle}} for a full 6-course year.',
+                            price: formatCurrency(nonAcademicPerCourse),
+                            bundle: formatCurrency(nonAcademicBundle),
+                        })}
                     </div>
 
                     <div className="grade-group-panel__price-card">
                         <div className="price-row">
                             <span>{t('gradePage.pricePerCourse', 'Price per Course')}</span>
-                            <span>
-                                <span className="list-price">${perCourseList}</span>{' '}
-                                <strong className="sale-price">${perCourseSale}</strong>{' '}
-                                <span className="discount-badge">{t('gradePage.fiftyOff', '50% OFF')}</span>
-                            </span>
+                            <strong>{formatCurrency(nonAcademicPerCourse)}</strong>
                         </div>
-                        {!isHighSchool && (
-                            <div className="price-row">
-                                <span>{t('gradePage.fullYear6Subjects', 'Full Year (6 subjects)')}</span>
-                                <strong>${fullYear}</strong>
-                            </div>
-                        )}
-                        {isHighSchool && (
-                            <div className="price-row">
-                                <span>Full Program Bundle</span>
-                                <strong>Contact admissions</strong>
-                            </div>
-                        )}
+                        <div className="price-row">
+                            <span>{t('gradePage.fullYear6Subjects', 'Full Year (6 subjects)')}</span>
+                            <strong>{formatCurrency(nonAcademicBundle)}</strong>
+                        </div>
                         <div className="price-row price-row--muted">
                             <span>{t('gradePage.registrationFeeLabel', 'Registration Fee:')}</span>
-                            <span>${representativePricing.registration}</span>
+                            <span>{formatCurrency(representativePricing.registration)}</span>
                         </div>
                         <div className="price-row price-row--muted">
                             <span>{t('gradePage.entranceTestFeeLabel', 'Entrance Test Fee:')}</span>
-                            <span>{representativePricing.entranceTest === 0 ? 'Waived' : `$${representativePricing.entranceTest}`}</span>
+                            <span>{representativePricing.entranceTest === 0 ? 'Waived' : formatCurrency(representativePricing.entranceTest)}</span>
                         </div>
                     </div>
 
@@ -165,16 +151,16 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
                         className="btn btn-primary btn-lg btn-block"
                         onClick={() => navigate(`/academic-prep/grade/${firstGrade}`)}
                     >
-                        {t('storefronts.gradeGroupPanel.leftCta', 'Enroll in Academic Preparation')}
+                        {t('storefronts.gradeGroupPanel.leftCta', 'Enroll in Non-Academic Program')}
                     </button>
                 </div>
 
-                {/* RIGHT: Upgrade to Official Ontario */}
+                {/* RIGHT: Upgrade / Direct Academic Ontario Record */}
                 <div className="grade-group-panel__col grade-group-panel__col--right">
                     <span className="grade-group-panel__badge">{t('nav.programDropdown.rightBadge', 'Most Popular')}</span>
                     <div className="grade-group-panel__col-header">
                         <span className="grade-group-panel__dot" style={{ background: '#D4AF37' }}></span>
-                        <h3>{t('storefronts.gradeGroupPanel.rightHeading', 'UPGRADE to Official Ontario Program (Ontario student record)')}</h3>
+                        <h3>{t('storefronts.gradeGroupPanel.rightHeading', 'Academic Ontario Record (credit-bearing)')}</h3>
                     </div>
 
                     <p className="grade-group-panel__description">
@@ -190,27 +176,23 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
 
                     <div className="grade-group-panel__price-card grade-group-panel__price-card--featured">
                         <div className="price-row">
-                            <span>{t('gradePage.pricePerCourse', 'Price per Course')}</span>
-                            <strong>${upgradePerCourse}</strong>
+                            <span>{t('gradePage.upgradePerCourse', 'Upgrade — per course (adds {{addOn}})', { addOn: formatCurrency(upgradeAddOn) })}</span>
+                            <strong>{formatCurrency(upgradeTotalPerCourse)}</strong>
                         </div>
-                        {!isHighSchool && (
-                            <div className="price-row">
-                                <span>{t('gradePage.fullYear6Subjects', 'Full Year (6 subjects)')}</span>
-                                <strong>${upgradeFullYear}</strong>
+                        <div className="price-row">
+                            <span>{t('gradePage.upgradeFullYear', 'Upgrade — full year (6 courses)')}</span>
+                            <strong>{formatCurrency(upgradeBundle)}</strong>
+                        </div>
+                        {isHighSchool && singleCreditStandalone && (
+                            <div className="price-row price-row--muted">
+                                <span>{t('gradePage.singleCreditStandalone', 'Single credit (standalone, self-paced)')}</span>
+                                <span>{formatCurrency(singleCreditStandalone)}</span>
                             </div>
                         )}
-                        {isHighSchool && (
-                            <>
-                                <div className="price-row">
-                                    <span>Full Year ({hsCreditCount || '8'}-credit program)</span>
-                                    <strong>From ${(hsDiscountTuition || 3800).toLocaleString()}</strong>
-                                </div>
-                                <div className="price-row price-row--muted">
-                                    <span>Grade 11 &amp; 12 (7-credit)</span>
-                                    <span>From $3,800</span>
-                                </div>
-                            </>
-                        )}
+                        <div className="price-row price-row--highlight">
+                            <span>{t('gradePage.liveTeacherAnnual', 'Live Teacher — per year (6 courses)')}</span>
+                            <strong>{formatCurrency(liveTeacherAnnual)}</strong>
+                        </div>
                     </div>
 
                     <p className="grade-group-panel__upgrade-note">
@@ -221,7 +203,7 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
                         className="btn btn-accent btn-lg btn-block"
                         onClick={() => navigate(`/official-ontario/grade/${firstGrade}`)}
                     >
-                        {t('storefronts.gradeGroupPanel.rightCta', 'Upgrade to Official Ontario Program')}
+                        {t('storefronts.gradeGroupPanel.rightCta', 'Upgrade to Ontario Record')}
                     </button>
                 </div>
             </div>

@@ -141,7 +141,7 @@ function InternationalStudents() {
                         <div className="pricing-card card">
                             <div className="pricing-header">
                                 <h3>{t('international.tuition.perCourse.title')}</h3>
-                                <div className="price">$3,500 <span>CAD</span></div>
+                                <div className="price">$1,800 <span>CAD</span></div>
                             </div>
                             <ul className="pricing-features">
                                 {t('international.tuition.perCourse.features', { returnObjects: true }).map((feature, i) => (

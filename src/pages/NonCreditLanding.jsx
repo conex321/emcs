@@ -84,7 +84,7 @@ function NonCreditLanding() {
                         </div>
 
                         <div className="hero-price">
-                            {t('storefront.nonCredit.startingAt')} <strong>$75 CAD</strong>
+                            {t('storefront.nonCredit.startingAt')} <strong>$50 CAD</strong>
                         </div>
 
                         <div className="hero-cta">

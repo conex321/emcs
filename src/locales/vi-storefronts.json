@@ -38,7 +38,7 @@
             "crossSell": "Bạn đang tìm tín chỉ Ontario?",
             "crossSellCta": "Xem Khóa học Tín chỉ",
             "pricing": {
-                "startingAt": "Bắt đầu từ $100 CAD",
+                "startingAt": "Bắt đầu từ $50 CAD",
                 "limitedOffer": "Ưu đãi có thời hạn"
             }
         },
@@ -70,7 +70,7 @@
             "crossSell": "Cần luyện tập trước khi học tín chỉ?",
             "crossSellCta": "Xem Không tín chỉ",
             "pricing": {
-                "startingAt": "Bắt đầu từ $3,000 CAD",
+                "startingAt": "Từ $1,800 CAD/năm · Giáo viên trực tiếp $4,500/năm",
                 "liveOnline": "Trực tuyến trực tiếp với giáo viên được chứng nhận"
             }
         },
@@ -82,14 +82,14 @@
             "upgradeCallout": "NÂNG CẤP lên Chương trình Ontario Chính thức (hồ sơ học sinh Ontario)"
         },
         "pricingV2": {
-            "promoBanner": "Đăng ký ngay và nhận giảm giá 50% — chỉ 325 đô cho chương trình 1 năm",
-            "perCourseRegular": "150 đô mỗi khóa",
-            "perCourseDiscounted": "75 đô mỗi khóa (giảm 50%)",
-            "fullYearPrep": "325 đô mỗi năm (tất cả 6 môn)",
-            "upgradePerCourse": "250 đô mỗi khóa (nâng cấp lên hồ sơ học sinh Ontario)",
-            "upgradeFullYear": "600 đô mỗi năm (nâng cấp lên hồ sơ học sinh Ontario, tất cả 6 môn)",
-            "legacyTeacherLed": "3.500 đô mỗi năm — Nền tảng Tiểu học cao cấp do Giáo viên hướng dẫn",
-            "highSchoolOfficial": "Từ 700 đô mỗi khóa · Chương trình cả năm từ 3.800 đô · Liên hệ bộ phận tuyển sinh để biết báo giá theo bậc"
+            "promoBanner": "Đăng ký ngay và nhận chỉ 300 đô cho chương trình 1 năm",
+            "perCourseRegular": "50 đô mỗi khóa",
+            "perCourseDiscounted": "50 đô mỗi khóa",
+            "fullYearPrep": "300 đô mỗi năm (tất cả 6 môn)",
+            "upgradePerCourse": "400 đô mỗi khóa (nâng cấp lên hồ sơ học sinh Ontario)",
+            "upgradeFullYear": "1,800 đô mỗi năm (nâng cấp lên hồ sơ học sinh Ontario, tất cả 6 môn)",
+            "legacyTeacherLed": "4.500 đô mỗi năm — Nền tảng Tiểu học cao cấp do Giáo viên hướng dẫn",
+            "highSchoolOfficial": "Từ 400 đô mỗi khóa · Chương trình cả năm từ 1.800 đô · Liên hệ bộ phận tuyển sinh để biết báo giá theo bậc"
         },
         "schedule": {
             "standard": "Lịch trình: 5 tháng 9, 2026 đến 30 tháng 5, 2027 (39 tuần giảng dạy)",

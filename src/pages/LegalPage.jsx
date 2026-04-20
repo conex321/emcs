@@ -31,7 +31,7 @@ const LEGAL_CONTENT = {
             {
                 heading: 'Questions or Requests',
                 paragraphs: [
-                    'If you need help updating your information or have privacy questions, contact EMCS at contact@emcs.ca or +1 (416) 882-6571.',
+                    'If you need help updating your information or have privacy questions, contact EMCS at contact@emcs.ca.',
                 ],
             },
         ],
