@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { GRADE_LEVEL_PRICING, formatCurrency } from '../config/pricing'
 import './Home.css'
 
 function Home() {
     const { t } = useTranslation()
+    const elem = GRADE_LEVEL_PRICING['1-5']
+    const mid = GRADE_LEVEL_PRICING['6-8']
+    const hs = GRADE_LEVEL_PRICING['9-12']
+    const feeRow = (band) => ({
+        registration: formatCurrency(band.registration),
+        entranceTest: band.entranceTest === 0 ? 'Waived' : formatCurrency(band.entranceTest),
+    })
 
     const trustIndicators = [
         { label: t('trustIndicators.ministryInspected'), value: t('trustIndicators.bsid'), icon: '✓' },
@@ -302,54 +310,120 @@ function Home() {
                         <h2>{t('home.featuredProgramsTitle', 'Featured Programs')}</h2>
                         <p className="section-subtitle">{t('home.taglineLearn', 'Learn First. Decide Later. Succeed Safely.')}</p>
                     </div>
-                    <div className="featured-programs-grid">
-                        {/* Primary Foundation (Grades 1-5) */}
-                        <div className="featured-program-card card">
-                            <span className="new-badge">{t('home.featuredPrograms.primaryFoundation.badge', 'NEW')}</span>
-                            <h3>{t('home.featuredPrograms.primaryFoundation.title', 'Ontario Primary Foundation Program')}</h3>
-                            <p>{t('home.featuredPrograms.primaryFoundation.desc', 'Grades 1 to 5 aligned with Ontario Curriculum. Two pathways available:')}</p>
-                            <ul className="featured-program-options">
-                                <li>{t('home.featuredPrograms.primaryFoundation.bullet1')}</li>
-                                <li>{t('home.featuredPrograms.primaryFoundation.bullet2')}</li>
-                                <li>{t('home.featuredPrograms.primaryFoundation.bullet3')}</li>
-                            </ul>
-                            <Link to="/programs/elementary" className="btn btn-primary btn-lg btn-block">
-                                {t('home.featuredPrograms.primaryFoundation.cta', 'Learn More About Elementary Programs')}
-                            </Link>
-                        </div>
-
-                        {/* Middle School Foundation (Grades 6-8) — NEW in v2 */}
-                        <div className="featured-program-card card">
-                            <span className="new-badge">{t('home.featuredPrograms.middleSchool.badge', 'NEW')}</span>
-                            <h3>{t('home.featuredPrograms.middleSchool.title', 'Middle School Foundation (Grades 6 to 8)')}</h3>
-                            <p>{t('home.featuredPrograms.middleSchool.desc')}</p>
-                            <ul className="featured-program-options">
-                                <li>{t('home.featuredPrograms.middleSchool.bullet1')}</li>
-                                <li>{t('home.featuredPrograms.middleSchool.bullet2')}</li>
-                                <li>{t('home.featuredPrograms.middleSchool.bullet3')}</li>
-                            </ul>
-                            <Link to="/programs/middle-school" className="btn btn-primary btn-lg btn-block">
-                                {t('home.featuredPrograms.middleSchool.cta', 'Explore Middle School Foundation')}
-                            </Link>
-                        </div>
-
-                        {/* High School Pathways (Grades 9-12) — NEW in v2 */}
-                        <div className="featured-program-card card featured-program-card--gold">
-                            <span className="new-badge new-badge--gold">{t('home.featuredPrograms.highSchool.badge', 'FLEXIBLE PATHWAYS')}</span>
-                            <h3>{t('home.featuredPrograms.highSchool.title', 'Ontario High School Pathways (Grades 9 to 12)')}</h3>
-                            <p className="home-card-tagline">{t('home.featuredPrograms.highSchool.tagline')}</p>
-                            <p>{t('home.featuredPrograms.highSchool.desc')}</p>
-                            <ul className="featured-program-options">
-                                <li>{t('home.featuredPrograms.highSchool.bullet1')}</li>
-                                <li>{t('home.featuredPrograms.highSchool.bullet2')}</li>
-                                <li>{t('home.featuredPrograms.highSchool.bullet3')}</li>
-                                <li>{t('home.featuredPrograms.highSchool.bullet4')}</li>
-                            </ul>
-                            <Link to="/programs/high-school" className="btn btn-accent btn-lg btn-block">
-                                {t('home.featuredPrograms.highSchool.cta', 'View High School Pathways')}
-                            </Link>
-                        </div>
+                    <div className="featured-programs-table-wrapper">
+                        <table className="featured-programs-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Grade Band</th>
+                                    <th scope="col">
+                                        Non-Academic Ontario Record
+                                        <small>Self-paced · No Ontario student record</small>
+                                    </th>
+                                    <th scope="col">
+                                        Upgrade to Ontario Record
+                                        <small>Credit-bearing · Add-on path</small>
+                                    </th>
+                                    <th scope="col">
+                                        Academic Ontario Record — Self-paced
+                                        <small>Credit-bearing · Ontario student record</small>
+                                    </th>
+                                    <th scope="col">
+                                        Academic Ontario Record — Live Teacher
+                                        <small>Live online classes · OCT teachers</small>
+                                    </th>
+                                    <th scope="col">Fees</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" className="grade-band">
+                                        <strong>Grades 1 – 5</strong>
+                                        <Link to="/programs/elementary" className="grade-band-link">Elementary →</Link>
+                                    </th>
+                                    <td>
+                                        <strong>{formatCurrency(elem.nonAcademicOntarioRecord.perCourse)}</strong> per course<br/>
+                                        <strong>{formatCurrency(elem.nonAcademicOntarioRecord.bundle6)}</strong> for 6 courses
+                                    </td>
+                                    <td>
+                                        <strong>+{formatCurrency(elem.upgradeToOntarioRecord.addOnPerCourse)}</strong> per course<br/>
+                                        <em>(total {formatCurrency(elem.upgradeToOntarioRecord.totalPerCourse)})</em><br/>
+                                        <strong>{formatCurrency(elem.upgradeToOntarioRecord.bundle6)}</strong> for 6 courses
+                                    </td>
+                                    <td>
+                                        <strong>{formatCurrency(elem.academicOntarioRecord.selfPaced.perCourse)}</strong> per course<br/>
+                                        <strong>{formatCurrency(elem.academicOntarioRecord.selfPaced.bundle6)}</strong> for 6 courses
+                                    </td>
+                                    <td>
+                                        <strong>{formatCurrency(elem.academicOntarioRecord.liveTeacher.annual)}</strong> / year<br/>
+                                        <em>({elem.academicOntarioRecord.liveTeacher.courses} courses included)</em>
+                                    </td>
+                                    <td>
+                                        Registration: {feeRow(elem).registration}<br/>
+                                        Entrance Test: {feeRow(elem).entranceTest}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" className="grade-band">
+                                        <strong>Grades 6 – 8</strong>
+                                        <Link to="/programs/middle-school" className="grade-band-link">Middle School →</Link>
+                                    </th>
+                                    <td>
+                                        <strong>{formatCurrency(mid.nonAcademicOntarioRecord.perCourse)}</strong> per course<br/>
+                                        <strong>{formatCurrency(mid.nonAcademicOntarioRecord.bundle6)}</strong> for 6 courses
+                                    </td>
+                                    <td>
+                                        <strong>+{formatCurrency(mid.upgradeToOntarioRecord.addOnPerCourse)}</strong> per course<br/>
+                                        <em>(total {formatCurrency(mid.upgradeToOntarioRecord.totalPerCourse)})</em><br/>
+                                        <strong>{formatCurrency(mid.upgradeToOntarioRecord.bundle6)}</strong> for 6 courses
+                                    </td>
+                                    <td>
+                                        <strong>{formatCurrency(mid.academicOntarioRecord.selfPaced.perCourse)}</strong> per course<br/>
+                                        <strong>{formatCurrency(mid.academicOntarioRecord.selfPaced.bundle6)}</strong> for 6 courses
+                                    </td>
+                                    <td>
+                                        <strong>{formatCurrency(mid.academicOntarioRecord.liveTeacher.annual)}</strong> / year<br/>
+                                        <em>({mid.academicOntarioRecord.liveTeacher.courses} courses included)</em>
+                                    </td>
+                                    <td>
+                                        Registration: {feeRow(mid).registration}<br/>
+                                        Entrance Test: {feeRow(mid).entranceTest}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" className="grade-band">
+                                        <strong>Grades 9 – 12</strong>
+                                        <Link to="/programs/high-school" className="grade-band-link">High School →</Link>
+                                    </th>
+                                    <td>
+                                        <strong>{formatCurrency(hs.nonAcademicOntarioRecord.perCourse)}</strong> per course<br/>
+                                        <strong>{formatCurrency(hs.nonAcademicOntarioRecord.bundle6)}</strong> for 6 courses
+                                    </td>
+                                    <td>
+                                        <strong>+{formatCurrency(hs.upgradeToOntarioRecord.addOnPerCourse)}</strong> per course<br/>
+                                        <em>(total {formatCurrency(hs.upgradeToOntarioRecord.totalPerCourse)})</em><br/>
+                                        <strong>{formatCurrency(hs.upgradeToOntarioRecord.bundle6)}</strong> for 6 courses
+                                    </td>
+                                    <td>
+                                        <strong>{formatCurrency(hs.academicOntarioRecord.selfPaced.perCourse)}</strong> per course<br/>
+                                        <strong>{formatCurrency(hs.academicOntarioRecord.selfPaced.bundle6)}</strong> for 6 courses<br/>
+                                        <em>Single credit: {formatCurrency(hs.academicOntarioRecord.selfPaced.singleCreditStandalone)}</em>
+                                    </td>
+                                    <td>
+                                        <strong>{formatCurrency(hs.academicOntarioRecord.liveTeacher.annual)}</strong> / year<br/>
+                                        <em>({hs.academicOntarioRecord.liveTeacher.courses} courses included)</em>
+                                    </td>
+                                    <td>
+                                        Registration: {feeRow(hs).registration}<br/>
+                                        Entrance Test: {feeRow(hs).entranceTest}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+
+                    <p className="featured-programs-footnote">
+                        All prices in CAD. Registration and entrance test fees are non-refundable. The G9–12 single-credit standalone rate of {formatCurrency(hs.academicOntarioRecord.selfPaced.singleCreditStandalone)} applies only when purchasing one Academic Ontario Record credit on its own; two or more credits revert to the {formatCurrency(hs.academicOntarioRecord.selfPaced.perCourse)}/course rate, and six or more are capped at the {formatCurrency(hs.academicOntarioRecord.selfPaced.bundle6)} bundle.
+                    </p>
 
                     {/* V2: Compare + Calendar quick links */}
                     <div className="home-v2-quicklinks">
