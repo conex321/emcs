@@ -54,7 +54,7 @@ const UPGRADE_TO_ONTARIO = {
   totalPerCourse: 400,          // $50 + $350 for display
   bundle6: 1800,
 };
-const LIVE_TEACHER = { annual: 4500, courses: 6, perCourseShare: 750 };
+const LIVE_TEACHER = { annual: 4500, courses: 6 };
 
 // Non-Academic learning-outcome blurbs (unchanged)
 const NON_ACADEMIC_WHAT_YOU_GET = [
@@ -80,6 +80,10 @@ const OFFICIAL_WHAT_YOU_GET_HIGH = [
 /**
  * Build a grade-band config with both the new canonical shape and
  * the legacy aliases for backward compatibility.
+ *
+ * Upgrade tier (Non-Academic → Ontario Record) is offered for G9-12 only.
+ * G1-5 and G6-8 go directly into the Academic Ontario Record self-paced
+ * pathway instead of upgrading from Non-Academic.
  */
 function buildBand({
   registration,
@@ -89,6 +93,7 @@ function buildBand({
   selfPacedBundle6,       // $1,800 across all bands
   singleCreditStandalone, // $450 for G9-12, null otherwise
   officialWhatYouGet,
+  hasUpgradeTier = false, // only G9-12
   // optional overrides
   fullYearFallback = null,
   notes,
@@ -101,6 +106,7 @@ function buildBand({
     subjects,
     notes,
     frenchNote,
+    hasUpgradeTier,
 
     // ---- New canonical pricing ----
     nonAcademicOntarioRecord: {
@@ -108,10 +114,9 @@ function buildBand({
       delivery: 'Self-Learning via LMS Platform',
       whatYouGet: NON_ACADEMIC_WHAT_YOU_GET,
     },
-    upgradeToOntarioRecord: {
-      ...UPGRADE_TO_ONTARIO,
-      delivery: 'Upgrade existing Non-Academic course to credit-bearing Ontario Record',
-    },
+    upgradeToOntarioRecord: hasUpgradeTier
+      ? { ...UPGRADE_TO_ONTARIO, delivery: 'Upgrade existing Non-Academic course to credit-bearing Ontario Record' }
+      : null,
     academicOntarioRecord: {
       selfPaced: {
         perCourse: selfPacedPerCourse,
@@ -203,6 +208,7 @@ export const GRADE_LEVEL_PRICING = {
     selfPacedBundle6: 1800,
     singleCreditStandalone: null,
     officialWhatYouGet: OFFICIAL_WHAT_YOU_GET_ELEM,
+    hasUpgradeTier: false,
   }),
   '6-8': buildBand({
     registration: 50,
@@ -212,6 +218,7 @@ export const GRADE_LEVEL_PRICING = {
     selfPacedBundle6: 1800,
     singleCreditStandalone: null,
     officialWhatYouGet: OFFICIAL_WHAT_YOU_GET_ELEM,
+    hasUpgradeTier: false,
   }),
   '9-12': buildBand({
     registration: 100,
@@ -221,6 +228,7 @@ export const GRADE_LEVEL_PRICING = {
     selfPacedBundle6: 1800,
     singleCreditStandalone: 450,
     officialWhatYouGet: OFFICIAL_WHAT_YOU_GET_HIGH,
+    hasUpgradeTier: true,
     fullYearFallback: 300,   // Non-Academic bundle6 for high-school grade pages
   }),
 
@@ -247,6 +255,7 @@ export const GRADE_LEVEL_PRICING = {
       ],
     }),
     subjects: ELEM_MID_SUBJECTS,
+    hasUpgradeTier: true,
     nonAcademicOntarioRecord: { ...NON_ACADEMIC, delivery: 'Self-Learning via LMS Platform', whatYouGet: NON_ACADEMIC_WHAT_YOU_GET },
     upgradeToOntarioRecord: { ...UPGRADE_TO_ONTARIO, delivery: 'Upgrade existing Non-Academic course to credit-bearing Ontario Record' },
     academicOntarioRecord: {
@@ -277,6 +286,7 @@ export const GRADE_LEVEL_PRICING = {
         { code: 'TIJ2O', name: 'Exploring Technologies, Grade 10 (Open)', type: 'Optional', credit: 1 },
       ],
     }),
+    hasUpgradeTier: true,
     nonAcademicOntarioRecord: { ...NON_ACADEMIC, delivery: 'Self-Learning via LMS Platform', whatYouGet: NON_ACADEMIC_WHAT_YOU_GET },
     upgradeToOntarioRecord: { ...UPGRADE_TO_ONTARIO, delivery: 'Upgrade existing Non-Academic course to credit-bearing Ontario Record' },
     academicOntarioRecord: {
@@ -304,6 +314,7 @@ export const GRADE_LEVEL_PRICING = {
         { code: 'ICS3U', name: 'Introduction to Computer Science, Grade 11 (University)', type: 'Optional', credit: 1 },
       ],
     }),
+    hasUpgradeTier: true,
     nonAcademicOntarioRecord: { ...NON_ACADEMIC, delivery: 'Self-Learning via LMS Platform', whatYouGet: NON_ACADEMIC_WHAT_YOU_GET },
     upgradeToOntarioRecord: { ...UPGRADE_TO_ONTARIO, delivery: 'Upgrade existing Non-Academic course to credit-bearing Ontario Record' },
     academicOntarioRecord: {
@@ -333,6 +344,7 @@ export const GRADE_LEVEL_PRICING = {
         { code: 'BBB4M', name: 'International Business Fundamentals, Grade 12 (University or College)', type: 'Optional', credit: 1 },
       ],
     }),
+    hasUpgradeTier: true,
     nonAcademicOntarioRecord: { ...NON_ACADEMIC, delivery: 'Self-Learning via LMS Platform', whatYouGet: NON_ACADEMIC_WHAT_YOU_GET },
     upgradeToOntarioRecord: { ...UPGRADE_TO_ONTARIO, delivery: 'Upgrade existing Non-Academic course to credit-bearing Ontario Record' },
     academicOntarioRecord: {

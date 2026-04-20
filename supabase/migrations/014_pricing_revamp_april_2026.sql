@@ -32,15 +32,16 @@ SET list_price       = 50,
 WHERE storefront IN ('academic-prep', 'non-credit');
 
 -- Academic Ontario Record self-paced, Grades 1-8: $350/course
+-- The `grade` column is TEXT formatted "Grade N" (see migration 002), so we
+-- extract the numeric portion via regex.
 UPDATE public.courses
 SET list_price       = 350,
     base_price       = 350,
     sale_price       = NULL,
     per_course_price = 350
 WHERE storefront IN ('official-ontario', 'credit')
-  AND grade_level IS NOT NULL
-  AND grade_level::text ~ '^[0-9]+$'
-  AND grade_level::int BETWEEN 1 AND 8;
+  AND grade ~ 'Grade\s+\d+'
+  AND substring(grade FROM 'Grade\s+(\d+)')::int BETWEEN 1 AND 8;
 
 -- Academic Ontario Record self-paced, Grades 9-12: $400/course
 -- (The $450 single-credit standalone rate and $1,800 bundle cap are applied
@@ -51,12 +52,11 @@ SET list_price       = 400,
     sale_price       = NULL,
     per_course_price = 400
 WHERE storefront IN ('official-ontario', 'credit')
-  AND grade_level IS NOT NULL
-  AND grade_level::text ~ '^[0-9]+$'
-  AND grade_level::int BETWEEN 9 AND 12;
+  AND grade ~ 'Grade\s+\d+'
+  AND substring(grade FROM 'Grade\s+(\d+)')::int BETWEEN 9 AND 12;
 
 -- Sanity check: any rows left untouched in these storefronts?
--- (Will surface in logs if any courses have a non-numeric grade_level.)
+-- (Will surface in logs if any courses have a non-numeric grade.)
 DO $$
 DECLARE
   untouched_count int;
@@ -64,9 +64,9 @@ BEGIN
   SELECT COUNT(*) INTO untouched_count
   FROM public.courses
   WHERE storefront IN ('academic-prep', 'non-credit', 'official-ontario', 'credit')
-    AND (grade_level IS NULL OR grade_level::text !~ '^[0-9]+$');
+    AND (grade IS NULL OR grade !~ 'Grade\s+\d+');
   IF untouched_count > 0 THEN
-    RAISE NOTICE 'pricing revamp: % courses have non-numeric grade_level and were not updated', untouched_count;
+    RAISE NOTICE 'pricing revamp: % courses have non-numeric grade and were not updated', untouched_count;
   END IF;
 END $$;
 

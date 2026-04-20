@@ -80,13 +80,13 @@ function Courses() {
                                     <td>$50 CAD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Upgrade to Ontario Record (Elementary)</strong></td>
+                                    <td><strong>Academic Ontario Record — Self-paced (Elementary)</strong></td>
                                     <td>1 to 5</td>
-                                    <td>Guided with Ontario student record</td>
+                                    <td>Self-Paced, credit-bearing</td>
                                     <td>Ontario student record</td>
                                     <td>Ontario Academic Report Card</td>
                                     <td>$1,800 CAD (6 courses)</td>
-                                    <td>$400 CAD (includes +$350 upgrade delta)</td>
+                                    <td>$350 CAD</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Academic Ontario Record — Live Teacher (Elementary)</strong></td>
@@ -107,13 +107,22 @@ function Courses() {
                                     <td>$50 CAD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Upgrade to Ontario Record (Middle School)</strong></td>
+                                    <td><strong>Academic Ontario Record — Self-paced (Middle School)</strong></td>
                                     <td>6 to 8</td>
-                                    <td>Guided with Ontario student record</td>
+                                    <td>Self-Paced, credit-bearing</td>
                                     <td>Ontario student record</td>
                                     <td>Ontario Academic Report Card</td>
                                     <td>$1,800 CAD (6 courses)</td>
-                                    <td>$400 CAD (includes +$350 upgrade delta)</td>
+                                    <td>$350 CAD</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Academic Ontario Record — Live Teacher (Middle School)</strong></td>
+                                    <td>6 to 8</td>
+                                    <td>Live Online, 6 hrs/week</td>
+                                    <td>Ontario student record</td>
+                                    <td>Ontario Report Card</td>
+                                    <td>$4,500 CAD/year (6 courses)</td>
+                                    <td>Included in bundle</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Non-Academic Ontario Record (High School)</strong></td>
@@ -159,16 +168,17 @@ function Courses() {
                             <div className="decision-group">
                                 <h4>For Elementary Students (Grades 1 to 5)</h4>
                                 <ul>
-                                    <li>Want curriculum-aligned learning without assessments? → <strong>Academic Preparation Program (Non-Ontario student record)</strong></li>
-                                    <li>Want an Ontario student record at the upgrade tier? → <strong>Upgrade to Ontario Record ($1,800/year for 6 courses)</strong></li>
+                                    <li>Want curriculum-aligned learning without assessments? → <strong>Non-Academic Ontario Record ($50/course, no Ontario record)</strong></li>
+                                    <li>Want an Ontario student record right away? → <strong>Academic Ontario Record — Self-paced ($350/course, $1,800/year for 6)</strong></li>
                                     <li>Want the premium live teacher-led experience with full Ontario report card? → <strong>Academic Ontario Record — Live Teacher ($4,500/year)</strong></li>
                                 </ul>
                             </div>
                             <div className="decision-group">
                                 <h4>For Middle School Students (Grades 6 to 8)</h4>
                                 <ul>
-                                    <li>Preparing to transition into Ontario high school? → <strong>Academic Preparation Program</strong></li>
-                                    <li>Need an Ontario student record to transfer into an Ontario day school? → <strong>Upgrade to Official Ontario Program</strong></li>
+                                    <li>Preparing to transition into Ontario high school? → <strong>Non-Academic Ontario Record</strong></li>
+                                    <li>Need an Ontario student record now? → <strong>Academic Ontario Record — Self-paced ($350/course, $1,800/year for 6)</strong></li>
+                                    <li>Want live teacher support with full Ontario report card? → <strong>Academic Ontario Record — Live Teacher ($4,500/year)</strong></li>
                                 </ul>
                             </div>
                             <div className="decision-group">

@@ -1,8 +1,8 @@
 # Project Notes — EMCS
 
-**Last updated:** 2026-04-19
-**Last agent:** Claude
-**Session summary:** Executed the April 2026 pricing revamp end-to-end and removed phone/address from the live site. Collapsed the former tiered pricing (Academic Prep $75/$325, Official Ontario $250/$600, HS $700/$3,800, Primary Foundation Legacy $3,500+$2,000) into a uniform three-tier model: Non-Academic Ontario Record ($50/course, $300/6), Upgrade to Ontario Record (+$350 delta = $400/course, $1,800/6), and Academic Ontario Record (self-paced $350 G1-8 / $400 G9-12, bundle $1,800, Live Teacher $4,500/yr, G9-12 single-credit $450). Retired `PRIMARY_FOUNDATION_LEGACY`. Added a cart/edge-function rule enforcing the $450 single-credit standalone surcharge and $1,800 bundle cap for G9-12 Academic Ontario self-paced. Swept all config, locales, components, pages, DB migration (014_pricing_revamp_april_2026.sql), seed, marketing decks, Vietnam deck, and docs/website-content. Removed EMCS phone (+1 (416) 882-6571) and address (10 Gurney Crescent, North York, ON M6B 1S8) from Footer, Contact page, LegalPage, and AuthPage phone placeholder.
+**Last updated:** 2026-04-20T04:16:08Z
+**Last agent:** Codex
+**Session summary:** Live site condition was re-validated on production. Codex confirmed the public route surface is healthy and reran the full production free-order workflow with document upload, parent portal, admin approval/account creation, and student portal login successfully. The website-side flow remains healthy; the last dedicated Moodle test from earlier on 2026-04-20 still remains the authoritative status for LMS provisioning failure.
 
 ## Current State
 - Production frontend is deployed on Vercel project `emcs` and serving `https://www.canadaemcs.com` and `https://www.canadaemcs.com/admin/dashboard`.
@@ -15,8 +15,11 @@
 - A production verification pass on 2026-04-19 also passed end-to-end against `https://www.canadaemcs.com` using the same proof script and live Supabase project: disposable coupon + parent checkout, two uploaded proof files, parent portal, school-admin document review, student approval, student portal account creation, registration email trigger, student login, and cleanup.
 - Local public-route smoke verification also passed on 2026-04-19 for `/`, `/courses`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, and `/official-ontario/course/ENG1D`; each route loaded without browser errors and without placeholder `a[href="#"]` links.
 - Production public-route smoke verification also passed on 2026-04-19 for `/`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, and `/admin`; each route loaded without browser errors and without placeholder `a[href="#"]` links, and `/admin` now correctly resolves to the auth flow for unauthenticated users instead of falling through to the public homepage.
+- Production public-route smoke verification was rerun on 2026-04-20 for `/`, `/courses`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, `/official-ontario/course/ENG1D`, and `/admin`; all routes loaded without browser errors and without placeholder `a[href="#"]` links.
 - Paid card checkout is still intentionally blocked because Stripe is not configured end-to-end. The frontend shows the pending Stripe state instead of performing a real charge.
-- Moodle is still not configured end-to-end. Registration emails generate and store Moodle-style credentials in `students.moodle_username` and `students.moodle_password`, but no real Moodle account is created and `students.moodle_user_id` remains `null` until Moodle integration is finished.
+- Moodle secrets now exist in the live Supabase function environment (`MOODLE_WS_ENDPOINT`, `MOODLE_WS_TOKEN`), and the production flow now generates/stores Moodle-style credentials plus sets `registration_email_sent = true`. However, real Moodle provisioning is still failing in production: `students.moodle_user_id` remains `null`, `enrollments.moodle_enrolment_id` remains `null`, generated LMS credentials do not log into `https://app.canadaemcs.com`, and `audit-moodle-courses` found 0 course matches by `idnumber`.
+- Production post-checkout / post-admin email functions are now configured with `verify_jwt = false` and were redeployed on 2026-04-20 around 01:04 UTC: `send-registration-email` v4, `send-purchase-receipt` v3, `send-enrollment-email` v5.
+- Production checkout now reaches the point of generating Moodle credentials automatically after enrollment (`students.moodle_username`, `students.moodle_password`, `moodle_credentials_generated = true`, `registration_email_sent = true`), but `email_log` rows for registration/admin notifications were not visible in the tested Supabase rows during the same runs.
 - Student portal, parent portal, and agent portal are live dashboards backed by Supabase tables. They are no longer placeholder pages.
 - Admin dashboard is live at `/admin/dashboard` and was production-tested with a disposable `school_admin` login. Verified actions: view registration, view report-card metadata, approve student, create student portal account, send registration email, and confirm student login.
 - `/admin` is now deployed correctly. For unauthenticated users it resolves to the auth flow (`/auth`); for authenticated admins it continues to route to `/admin/dashboard`.
@@ -90,7 +93,7 @@
 - `/Users/matthews/EMCS/src/pages/portals/AgentPortal.jsx` — referral, commission, and partner stats dashboard.
 - `/Users/matthews/EMCS/src/pages/admin/AdminDashboard.jsx` — admin and `school_admin` dashboard for registrations, documents, account creation, email activity, and audit history.
 - `/Users/matthews/EMCS/src/pages/portals/PortalPages.css` — shared portal styling plus admin dashboard layout/styles.
-- `/Users/matthews/EMCS/supabase/config.toml` — Supabase function config; `createProfile`, `process-payment`, `enroll-student`, `manage-user`, `webhook-stripe`, and `sync-school` all have `verify_jwt = false`.
+- `/Users/matthews/EMCS/supabase/config.toml` — Supabase function config; `createProfile`, `process-payment`, `enroll-student`, `manage-user`, `webhook-stripe`, `sync-school`, `send-registration-email`, `send-purchase-receipt`, and `send-enrollment-email` all have `verify_jwt = false`.
 - `/Users/matthews/EMCS/supabase/functions/process-payment/index.ts` — creates orders/order_items and applies coupon/payment logic.
 - `/Users/matthews/EMCS/supabase/functions/upload-student-document/index.ts` — receives multipart proof-document uploads, stores file bytes in Supabase Storage, and inserts `student_documents` metadata rows.
 - `/Users/matthews/EMCS/supabase/functions/enroll-student/index.ts` — creates students and enrollments, links order items, and triggers post-purchase email functions.
@@ -161,6 +164,19 @@
 - Confirmed the production browser flow passed with order `EMCS-20260419-0001`, two uploaded proof files, student creation, enrollment creation, parent portal visibility, admin review/approval, student portal account creation, registration email trigger, and student login.
 - Verified cleanup after the production run: the disposable parent/admin/student `profiles`, `students`, `orders`, and coupon row returned to zero, confirming the production proof left no retained test data.
 
+### Session on 2026-04-20 — Production Moodle verification and email-function auth fix
+- Ran multiple production browser proofs against `https://www.canadaemcs.com` covering parent checkout, document upload, admin approval, admin “Email Student”, Supabase state, and direct Moodle login attempts.
+- Found that the live `send-registration-email` / `send-purchase-receipt` path was still blocked by the edge JWT gate because those functions were missing from `/Users/matthews/EMCS/supabase/config.toml`.
+- Updated `/Users/matthews/EMCS/supabase/config.toml` to add `send-registration-email`, `send-purchase-receipt`, and `send-enrollment-email` with `verify_jwt = false`, then redeployed those three functions. Live versions after the redeploy: `send-registration-email` v4, `send-purchase-receipt` v3, `send-enrollment-email` v5.
+- Re-tested production after the redeploy. Result: checkout and admin actions now generate Moodle credentials and set `registration_email_sent = true`, but Moodle provisioning still does not create a real LMS user or enrolment (`moodle_user_id` and `moodle_enrolment_id` remain `null`).
+- Verified directly that generated Moodle credentials fail on `https://app.canadaemcs.com/login/index.php` with “Invalid login, please try again”.
+- Invoked `/Users/matthews/EMCS/supabase/functions/audit-moodle-courses/index.ts` in dry-run mode against production and confirmed 0/12 Moodle course matches by `idnumber`, including `ENG1D`, so even successful user provisioning would not currently auto-enrol students into courses.
+
+### Session on 2026-04-20 — Current site condition validation
+- Re-ran a Playwright smoke check directly against `https://www.canadaemcs.com` for `/`, `/courses`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, `/official-ontario/course/ENG1D`, and `/admin`; every route loaded cleanly with no console/page errors and no placeholder anchor links.
+- Re-ran `/Users/matthews/EMCS/scripts/document-workflow-check.mjs` against production. The website-side workflow passed again end to end: checkout, document upload, order creation, student creation, enrollment creation, parent portal, admin registration review, approval, student portal account creation, registration-email action, student login, and cleanup.
+- The 2026-04-20 site-condition pass did not re-test direct Moodle login. The earlier 2026-04-20 Moodle verification remains the latest authoritative LMS status.
+
 ## Failures & Resolutions
 
 ### Protected routes hung on full reload
@@ -207,6 +223,26 @@
 **Fix:** `/Users/matthews/EMCS/supabase/config.toml` sets `verify_jwt = false` for affected functions, and each function verifies permissions internally.
 
 **Guardrail:** When changing auth behavior, verify with a real production call rather than assuming the platform default matches the current token format.
+
+### Post-enrollment email functions were omitted from the JWT-gate workaround
+**Issue:** Production checkout and admin “Email Student” actions were not creating email-log rows, Moodle credentials, or Moodle users even though the main enrollment flow succeeded.
+
+**Root cause:** `send-registration-email`, `send-purchase-receipt`, and `send-enrollment-email` were missing from `/Users/matthews/EMCS/supabase/config.toml`, so they still used the legacy edge JWT gate while the rest of the system had already been moved to `verify_jwt = false`.
+
+**Fix:** Added those three functions to `/Users/matthews/EMCS/supabase/config.toml` and redeployed them on 2026-04-20.
+
+**Guardrail:** Whenever one edge function calls another via service-role authorization or a browser can invoke it as a fallback path, ensure both functions are covered by the same auth-gate policy in `config.toml`.
+
+### Moodle integration is partially wired but still not operational
+**Issue:** After the 2026-04-20 function-auth fix, production checkout/admin flows generated Moodle credentials and marked `registration_email_sent = true`, but no real LMS account or enrolment was created.
+
+**Root cause:** Two live Moodle-side gaps were proven:
+1. Generated credentials do not authenticate on `https://app.canadaemcs.com`, so Moodle user creation is failing or not being persisted.
+2. `audit-moodle-courses` dry-run found 0/12 course matches by `idnumber`, including `ENG1D`, so automatic course enrolment cannot resolve Moodle course IDs from the current catalog.
+
+**Fix:** None yet. The issue is beyond the website/browser flow and now isolated to Moodle web-service provisioning and Moodle course metadata alignment.
+
+**Guardrail:** Treat Moodle as “connected” only after all four are true in production for a disposable test student: `moodle_username/password` generated, `students.moodle_user_id` populated, `enrollments.moodle_enrolment_id` populated, and direct Moodle login succeeds with course access.
 
 ### Coupon validation diverged between client and backend
 **Issue:** The browser could accept coupons the backend rejected, or miss coupons that existed in Supabase.
@@ -304,7 +340,12 @@
 - Keep `/Users/matthews/EMCS/scripts/document-workflow-check.mjs` as the regression proof for future production releases that touch checkout, admin approvals, student documents, or portals.
 - Decide whether admin and student portals should expose signed download links for uploaded documents. The current implementation surfaces metadata and file paths only.
 - Finish Stripe integration: set `STRIPE_SECRET_KEY`, wire the frontend confirmation flow, and test `webhook-stripe`.
-- Finish Moodle integration: connect `sync-school`, create Moodle users for registrations, and replace placeholder LMS account generation with real provisioning.
+- Finish Moodle integration:
+  `send-registration-email` now runs in production, but real Moodle provisioning still fails.
+  Confirm the live `MOODLE_WS_TOKEN` has permission to create users and manual enrolments.
+  Align Moodle course `idnumber` values with EMCS course codes (`ENG1D`, `MHF4U`, etc.) or extend the provisioning lookup beyond `idnumber`.
+  Re-run a disposable production proof until `moodle_user_id`, `moodle_enrolment_id`, and direct Moodle login all pass.
+- Investigate why `email_log` rows were still absent during the 2026-04-20 Moodle proofs even when `registration_email_sent = true`.
 - Investigate why `createProfile` still returns ES256 auth errors after redeploy even though the DB trigger covers profile creation.
 - Decide whether `/Users/matthews/EMCS/scripts/document-workflow-check.mjs` should be wired into `package.json` as a formal script and/or CI smoke test once secrets handling is settled.
 
@@ -320,11 +361,15 @@
   - `node --input-type=module` with Playwright `chromium` for disposable production walkthroughs
   - `TEST_BASE_URL=http://127.0.0.1:4173 TEST_SUPABASE_URL=https://gbclamtkotqcdcgveget.supabase.co TEST_SUPABASE_SERVICE_ROLE_KEY=<service-role-key> node /Users/matthews/EMCS/scripts/document-workflow-check.mjs`
   - `TEST_BASE_URL=http://127.0.0.1:4173 TEST_SUPABASE_SERVICE_ROLE_KEY="$(npx supabase projects api-keys --project-ref gbclamtkotqcdcgveget -o json | node -e 'let s="";process.stdin.on("data",d=>s+=d);process.stdin.on("end",()=>{const rows=JSON.parse(s);const key=(rows.find(r=>String(r.name||r.type||"").toLowerCase().includes("service_role"))||rows.find(r=>String(r.name||r.type||"").toLowerCase().includes("service")))?.api_key;if(!key) process.exit(1);process.stdout.write(key)})')\" node /Users/matthews/EMCS/scripts/document-workflow-check.mjs`
+  - `npx supabase secrets list --project-ref gbclamtkotqcdcgveget`
+  - `npx supabase functions list --project-ref gbclamtkotqcdcgveget`
+  - `POST https://gbclamtkotqcdcgveget.supabase.co/functions/v1/audit-moodle-courses` with `Authorization: Bearer <service-role-key>` and `{ "dry_run": true }`
 - The repo contains unrelated untracked files at `/Users/matthews/EMCS/emcs-brand-marketing.json`, `/Users/matthews/EMCS/emcs-complete-site-data.json`, and `/Users/matthews/EMCS/extract-site-data.mjs`. Leave them alone unless explicitly asked.
 - The current live admin proof used disposable accounts and records, then cleaned them up. Follow the same pattern for future live tests: seed minimal data, verify, then delete `auth.users`, `profiles`, `students`, `orders`, `order_items`, `enrollments`, `report_cards`, `email_log`, and `audit_log` rows tied to the test.
 - For email testing, plus-address aliases under `matthew@schoolconex.com` worked well for disposable runs without polluting a primary mailbox.
 - The final local document-workflow proof succeeded, but `browserErrors` still captured a non-blocking `createProfile` 401 plus some aborted REST requests caused by reload/navigation during the browser run. Treat those aborted requests as harness noise unless they reproduce without a route change.
 - The 2026-04-19 verification rerun also succeeded and again produced non-blocking diagnostics only: one `401` resource load during parent signup plus aborted portal/profile requests caused by navigation. No blocking browser errors were observed on the public route sweep.
+- The 2026-04-20 Moodle proof isolated the remaining live LMS blockers: website checkout/admin flows work, student portal account creation works, Moodle credentials are generated, but direct Moodle login with those credentials fails and no Moodle user/enrolment IDs are written back to Supabase.
 - The agent portal and student/parent portals are real dashboards now, but teacher workflows are still absent. `teacher` still redirects to `/teacher/dashboard`, which does not exist yet.
 - `school_admin` is authorized in code and RLS, but not yet constrained by school ownership. Treat it as powerful and potentially over-broad until schema scoping is added.
 - When updating these notes, merge changes into the existing sections instead of appending a new dated block at the end.

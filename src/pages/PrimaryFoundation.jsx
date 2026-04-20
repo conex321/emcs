@@ -129,6 +129,9 @@ function PrimaryFoundation() {
                                     <span className="price">{t('primaryFoundation.selfLearning.pricing.frenchPrice')}</span>
                                 </div>
                                 <p className="optional-record">{t('primaryFoundation.selfLearning.optionalRecord')}</p>
+                                <p className="optional-record" style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>
+                                    Many international families (especially students in Vietnam) pick up a single course like Math or Science at {formatCurrency(band.nonAcademicOntarioRecord.perCourse)} to build familiarity with English — no commitment, no Ontario record required.
+                                </p>
                             </div>
 
                             <div className="pathway-fees">
@@ -142,10 +145,10 @@ function PrimaryFoundation() {
                             </Link>
                         </div>
 
-                        {/* Upgrade to Ontario Record */}
+                        {/* Academic Ontario Record — Self-paced (credit-bearing, direct enrol) */}
                         <div className="pathway-option card">
                             <span className="pathway-badge" style={{ background: '#d4af37', color: '#fff' }}>Credit-Bearing</span>
-                            <h3>Upgrade to Ontario Record ({formatCurrency(band.upgradeToOntarioRecord.bundle6)}/year)</h3>
+                            <h3>Academic Ontario Record — Self-paced ({formatCurrency(band.academicOntarioRecord.selfPaced.bundle6)}/year)</h3>
 
                             <div className="pathway-whats-included">
                                 <h4>What's Included:</h4>
@@ -153,31 +156,27 @@ function PrimaryFoundation() {
                                     <li><span className="check">✓</span> Ontario student record</li>
                                     <li><span className="check">✓</span> All 6 subjects covered</li>
                                     <li><span className="check">✓</span> Official Ontario Academic Report Card</li>
-                                    <li><span className="check">✓</span> Upgradeable from Non-Academic at any time</li>
+                                    <li><span className="check">✓</span> Self-paced on the LMS — start anytime</li>
                                 </ul>
                             </div>
 
                             <div className="pathway-pricing">
                                 <h4>Pricing:</h4>
                                 <div className="price-row highlight">
-                                    <span>Full Year (6 subjects, upgrade bundle)</span>
-                                    <span className="price">{formatCurrency(band.upgradeToOntarioRecord.bundle6)} CAD</span>
+                                    <span>Full Year (6 subjects)</span>
+                                    <span className="price">{formatCurrency(band.academicOntarioRecord.selfPaced.bundle6)} CAD</span>
                                 </div>
                                 <div className="price-row">
-                                    <span>Upgrade delta per course</span>
-                                    <span className="price">+{formatCurrency(band.upgradeToOntarioRecord.addOnPerCourse)} CAD</span>
-                                </div>
-                                <div className="price-row">
-                                    <span>Total per course after upgrade</span>
-                                    <span className="price">{formatCurrency(band.upgradeToOntarioRecord.totalPerCourse)} CAD</span>
+                                    <span>Per course</span>
+                                    <span className="price">{formatCurrency(band.academicOntarioRecord.selfPaced.perCourse)} CAD</span>
                                 </div>
                                 <p className="optional-record">
-                                    Upgrade converts a Non-Academic course (${formatCurrency(band.nonAcademicOntarioRecord.perCourse)}) into a credit-bearing Ontario Record course at any time.
+                                    Credit-bearing Ontario Record from day one — no separate upgrade step needed for Grades 1 – 5.
                                 </p>
                             </div>
 
-                            <Link to="/academic-prep/group/elementary" className="btn btn-primary btn-lg btn-block">
-                                View Upgrade Pathway
+                            <Link to="/official-ontario/group/elementary" className="btn btn-primary btn-lg btn-block">
+                                View Academic Ontario Record
                             </Link>
                         </div>
 

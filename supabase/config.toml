@@ -18,3 +18,12 @@ verify_jwt = false
 
 [functions.upload-student-document]
 verify_jwt = false
+
+[functions.send-registration-email]
+verify_jwt = false
+
+[functions.send-purchase-receipt]
+verify_jwt = false
+
+[functions.send-enrollment-email]
+verify_jwt = false

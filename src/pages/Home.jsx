@@ -321,7 +321,7 @@ function Home() {
                                     </th>
                                     <th scope="col">
                                         Upgrade to Ontario Record
-                                        <small>Credit-bearing · Add-on path</small>
+                                        <small>Credit-bearing · Add-on path (Grades 9 – 12 only)</small>
                                     </th>
                                     <th scope="col">
                                         Academic Ontario Record — Self-paced
@@ -344,14 +344,13 @@ function Home() {
                                         <strong>{formatCurrency(elem.nonAcademicOntarioRecord.perCourse)}</strong> per course<br/>
                                         <strong>{formatCurrency(elem.nonAcademicOntarioRecord.bundle6)}</strong> for 6 courses
                                     </td>
-                                    <td>
-                                        <strong>+{formatCurrency(elem.upgradeToOntarioRecord.addOnPerCourse)}</strong> per course<br/>
-                                        <em>(total {formatCurrency(elem.upgradeToOntarioRecord.totalPerCourse)})</em><br/>
-                                        <strong>{formatCurrency(elem.upgradeToOntarioRecord.bundle6)}</strong> for 6 courses
+                                    <td className="tier-not-available">
+                                        <em>Not available for Grades 1 – 5</em><br/>
+                                        <small>Upgrade tier is Grades 9 – 12 only</small>
                                     </td>
                                     <td>
                                         <strong>{formatCurrency(elem.academicOntarioRecord.selfPaced.perCourse)}</strong> per course<br/>
-                                        <strong>{formatCurrency(elem.academicOntarioRecord.selfPaced.bundle6)}</strong> for 6 courses
+                                        <strong>{formatCurrency(elem.academicOntarioRecord.selfPaced.bundle6)}</strong> / year (6 courses)
                                     </td>
                                     <td>
                                         <strong>{formatCurrency(elem.academicOntarioRecord.liveTeacher.annual)}</strong> / year<br/>
@@ -371,14 +370,13 @@ function Home() {
                                         <strong>{formatCurrency(mid.nonAcademicOntarioRecord.perCourse)}</strong> per course<br/>
                                         <strong>{formatCurrency(mid.nonAcademicOntarioRecord.bundle6)}</strong> for 6 courses
                                     </td>
-                                    <td>
-                                        <strong>+{formatCurrency(mid.upgradeToOntarioRecord.addOnPerCourse)}</strong> per course<br/>
-                                        <em>(total {formatCurrency(mid.upgradeToOntarioRecord.totalPerCourse)})</em><br/>
-                                        <strong>{formatCurrency(mid.upgradeToOntarioRecord.bundle6)}</strong> for 6 courses
+                                    <td className="tier-not-available">
+                                        <em>Not available for Grades 6 – 8</em><br/>
+                                        <small>Upgrade tier is Grades 9 – 12 only</small>
                                     </td>
                                     <td>
                                         <strong>{formatCurrency(mid.academicOntarioRecord.selfPaced.perCourse)}</strong> per course<br/>
-                                        <strong>{formatCurrency(mid.academicOntarioRecord.selfPaced.bundle6)}</strong> for 6 courses
+                                        <strong>{formatCurrency(mid.academicOntarioRecord.selfPaced.bundle6)}</strong> / year (6 courses)
                                     </td>
                                     <td>
                                         <strong>{formatCurrency(mid.academicOntarioRecord.liveTeacher.annual)}</strong> / year<br/>
@@ -405,7 +403,7 @@ function Home() {
                                     </td>
                                     <td>
                                         <strong>{formatCurrency(hs.academicOntarioRecord.selfPaced.perCourse)}</strong> per course<br/>
-                                        <strong>{formatCurrency(hs.academicOntarioRecord.selfPaced.bundle6)}</strong> for 6 courses<br/>
+                                        <strong>{formatCurrency(hs.academicOntarioRecord.selfPaced.bundle6)}</strong> / year (6 courses)<br/>
                                         <em>Single credit: {formatCurrency(hs.academicOntarioRecord.selfPaced.singleCreditStandalone)}</em>
                                     </td>
                                     <td>
@@ -422,7 +420,10 @@ function Home() {
                     </div>
 
                     <p className="featured-programs-footnote">
-                        All prices in CAD. Registration and entrance test fees are non-refundable. The G9–12 single-credit standalone rate of {formatCurrency(hs.academicOntarioRecord.selfPaced.singleCreditStandalone)} applies only when purchasing one Academic Ontario Record credit on its own; two or more credits revert to the {formatCurrency(hs.academicOntarioRecord.selfPaced.perCourse)}/course rate, and six or more are capped at the {formatCurrency(hs.academicOntarioRecord.selfPaced.bundle6)} bundle.
+                        All prices in CAD. Registration and entrance test fees are non-refundable.
+                        The {formatCurrency(elem.nonAcademicOntarioRecord.perCourse)} per-course Non-Academic rate is a popular option for students (many from Vietnam) who want to study Math or Science to build familiarity with English.
+                        The Upgrade to Ontario Record tier is only available for Grades 9 – 12; younger students enrol directly in the Academic Ontario Record pathway.
+                        The G9–12 single-credit standalone rate of {formatCurrency(hs.academicOntarioRecord.selfPaced.singleCreditStandalone)} applies only when purchasing one Academic Ontario Record credit on its own; two or more credits revert to the {formatCurrency(hs.academicOntarioRecord.selfPaced.perCourse)}/course rate, and six or more are capped at the {formatCurrency(hs.academicOntarioRecord.selfPaced.bundle6)} bundle.
                     </p>
 
                     {/* V2: Compare + Calendar quick links */}

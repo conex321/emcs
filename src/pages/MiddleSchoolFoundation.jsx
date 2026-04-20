@@ -41,23 +41,27 @@ function MiddleSchoolFoundation() {
                         <thead>
                             <tr>
                                 <th>Item</th>
-                                <th>Academic Preparation</th>
-                                <th>Upgrade to Official Ontario</th>
+                                <th>Non-Academic Ontario Record</th>
+                                <th>Academic Ontario Record — Self-paced</th>
+                                <th>Academic Ontario Record — Live Teacher</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Per Course</td>
-                                <td>${pricing.academicPrep.salePrice} <s>${pricing.academicPrep.listPrice}</s> (50% off)</td>
-                                <td>${pricing.officialOntario.perCourse}</td>
+                                <td>${pricing.nonAcademicOntarioRecord.perCourse}</td>
+                                <td>${pricing.academicOntarioRecord.selfPaced.perCourse}</td>
+                                <td>Included in bundle</td>
                             </tr>
                             <tr>
                                 <td>Full Year (6 subjects)</td>
-                                <td>${pricing.academicPrep.fullYear}</td>
-                                <td>${pricing.officialOntario.fullYear}</td>
+                                <td>${pricing.nonAcademicOntarioRecord.bundle6}</td>
+                                <td>${pricing.academicOntarioRecord.selfPaced.bundle6}</td>
+                                <td>${pricing.academicOntarioRecord.liveTeacher.annual}/year</td>
                             </tr>
                             <tr>
                                 <td>Registration Fee</td>
+                                <td>${pricing.registration}</td>
                                 <td>${pricing.registration}</td>
                                 <td>${pricing.registration}</td>
                             </tr>
@@ -65,9 +69,13 @@ function MiddleSchoolFoundation() {
                                 <td>Entrance Test Fee</td>
                                 <td>${pricing.entranceTest} (non-refundable)</td>
                                 <td>${pricing.entranceTest} (non-refundable)</td>
+                                <td>${pricing.entranceTest} (non-refundable)</td>
                             </tr>
                         </tbody>
                     </table>
+                    <p className="msf-pricing-note" style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#5c6f65' }}>
+                        The "Upgrade to Ontario Record" add-on path is offered for Grades 9 – 12 only. Grades 6 – 8 enrol directly in the Academic Ontario Record pathway for a credit-bearing Ontario student record.
+                    </p>
                 </div>
             </section>
 

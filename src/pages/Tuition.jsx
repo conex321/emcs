@@ -38,17 +38,19 @@ function Tuition() {
                 </ul>
             </div>
 
-            <div className="pricing-card pricing-card--official" id={bandLabel === 'elementary' ? 'official-ontario' : undefined}>
-                <h3>Upgrade to Ontario Record</h3>
-                <p>Convert an existing Non-Academic course into the credit-bearing Ontario Record at any time.</p>
-                <ul className="pricing-breakdown">
-                    <li><span>Upgrade delta (per course)</span> <strong>+{formatCurrency(band.upgradeToOntarioRecord.addOnPerCourse)}</strong></li>
-                    <li><span>Total per course after upgrade</span> <strong>{formatCurrency(band.upgradeToOntarioRecord.totalPerCourse)}</strong></li>
-                    <li><span>Full year upgrade (6 courses)</span> <strong>{formatCurrency(band.upgradeToOntarioRecord.bundle6)}</strong></li>
-                    <li><span>Registration Fee</span> <strong>{formatCurrency(band.registration)}</strong></li>
-                    <li><span>Entrance Test Fee</span> <strong>{band.entranceTest === 0 ? 'Waived' : formatCurrency(band.entranceTest)}</strong></li>
-                </ul>
-            </div>
+            {band.hasUpgradeTier && band.upgradeToOntarioRecord && (
+                <div className="pricing-card pricing-card--official" id={bandLabel === 'high' ? 'official-ontario' : undefined}>
+                    <h3>Upgrade to Ontario Record</h3>
+                    <p>Convert an existing Non-Academic course into the credit-bearing Ontario Record at any time (Grades 9 – 12 only).</p>
+                    <ul className="pricing-breakdown">
+                        <li><span>Upgrade delta (per course)</span> <strong>+{formatCurrency(band.upgradeToOntarioRecord.addOnPerCourse)}</strong></li>
+                        <li><span>Total per course after upgrade</span> <strong>{formatCurrency(band.upgradeToOntarioRecord.totalPerCourse)}</strong></li>
+                        <li><span>Full year upgrade (6 courses)</span> <strong>{formatCurrency(band.upgradeToOntarioRecord.bundle6)}</strong></li>
+                        <li><span>Registration Fee</span> <strong>{formatCurrency(band.registration)}</strong></li>
+                        <li><span>Entrance Test Fee</span> <strong>{band.entranceTest === 0 ? 'Waived' : formatCurrency(band.entranceTest)}</strong></li>
+                    </ul>
+                </div>
+            )}
 
             <div className="pricing-card pricing-card--academic-ontario">
                 <h3>Academic Ontario Record</h3>
@@ -149,14 +151,6 @@ function Tuition() {
                                         </tr>
                                         <tr>
                                             <td>Grades 1–5</td>
-                                            <td>Upgrade to Ontario Record</td>
-                                            <td>{formatCurrency(elem.registration)}</td>
-                                            <td>Waived</td>
-                                            <td>{formatCurrency(elem.upgradeToOntarioRecord.totalPerCourse)} <small>(+{formatCurrency(elem.upgradeToOntarioRecord.addOnPerCourse)} delta)</small></td>
-                                            <td>{formatCurrency(elem.upgradeToOntarioRecord.bundle6)}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Grades 1–5</td>
                                             <td>Academic Ontario Record — Self-paced</td>
                                             <td>{formatCurrency(elem.registration)}</td>
                                             <td>Waived</td>
@@ -179,14 +173,6 @@ function Tuition() {
                                             <td>{formatCurrency(mid.entranceTest)}</td>
                                             <td>{formatCurrency(mid.nonAcademicOntarioRecord.perCourse)}</td>
                                             <td>{formatCurrency(mid.nonAcademicOntarioRecord.bundle6)}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Grades 6–8</td>
-                                            <td>Upgrade to Ontario Record</td>
-                                            <td>{formatCurrency(mid.registration)}</td>
-                                            <td>{formatCurrency(mid.entranceTest)}</td>
-                                            <td>{formatCurrency(mid.upgradeToOntarioRecord.totalPerCourse)} <small>(+{formatCurrency(mid.upgradeToOntarioRecord.addOnPerCourse)} delta)</small></td>
-                                            <td>{formatCurrency(mid.upgradeToOntarioRecord.bundle6)}</td>
                                         </tr>
                                         <tr>
                                             <td>Grades 6–8</td>

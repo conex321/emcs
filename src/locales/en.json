@@ -182,7 +182,7 @@
                 "teacherLed": "Live Teacher: $4,500 CAD per year (6 courses)",
                 "cta": "Learn More About Elementary Programs",
                 "bullet1": "Non-Academic Ontario Record (Self-Learning): $50 CAD per course, or $300 CAD for the full-year 6-course bundle.",
-                "bullet2": "Upgrade to Ontario Record (credit-bearing): +$350 CAD per course (total $400/course), or $1,800 CAD for the full 6-course year.",
+                "bullet2": "Academic Ontario Record — Self-paced (credit-bearing, Ontario student record): $350 CAD per course, or $1,800 CAD for the full 6-course year.",
                 "bullet3": "Academic Ontario Record — Live Teacher: $4,500 CAD per year (6 courses)."
             },
             "middleSchool": {
@@ -190,7 +190,7 @@
                 "title": "Middle School Foundation (Grades 6 to 8)",
                 "desc": "Grades 6 to 8 Ontario Curriculum-aligned preparation with an optional upgrade to an Ontario student record.",
                 "bullet1": "Non-Academic Ontario Record: $50 per course, or $300 CAD for the full-year 6-course bundle.",
-                "bullet2": "Upgrade to Ontario Record (credit-bearing): +$350 per course (total $400/course), or $1,800 CAD per year (6 courses).",
+                "bullet2": "Academic Ontario Record — Self-paced (credit-bearing, Ontario student record): $350 per course, or $1,800 CAD per year (6 courses). Live Teacher pathway: $4,500 CAD per year.",
                 "bullet3": "Entrance Test Fee: $50 CAD (non-refundable). Registration Fee: $50 CAD.",
                 "cta": "Explore Middle School Foundation"
             },
@@ -489,7 +489,7 @@
                 "entrance": "Entrance Test Fee: $50 CAD (non-refundable)",
                 "registration": "Registration Fee: $50 CAD (non-refundable)"
             },
-            "optionalRecord": "Upgrade to Ontario Record at any time: an additional $350 CAD per course (total $400/course), or $1,800 CAD for the full 6-course year.",
+            "optionalRecord": "Want the Ontario student record from day one? Academic Ontario Record — Self-paced: $350 CAD per course, or $1,800 CAD for the full 6-course year. Live Teacher pathway: $4,500 CAD / year.",
             "cta": "Enroll in Self-Learning Program"
         },
         "teacherLed": {
@@ -921,6 +921,7 @@
             "package": {
                 "title": "OSSD Package",
                 "bestValue": "Best Value",
+                "perYear": "year",
                 "contactQuote": "Contact for customized quote",
                 "features": [
                     "Custom credit plan based on your needs",
@@ -2077,17 +2078,17 @@
         "bands": {
             "elementary": {
                 "heading": "Elementary Pricing (Grades 1 to 5)",
-                "subtitle": "Two pathways: Academic Preparation (self-learning) and an optional Upgrade to the Official Ontario Program (Ontario student record).",
-                "academicPrep": "Academic Preparation (Non-Credit) — $50 per course , $300 CAD for the full-year 6-subject bundle.",
-                "upgrade": "Upgrade to Ontario Official Program — $400 per course, $1,800 CAD per year (all 6 subjects).",
-                "legacy": "Live Teacher-Led Primary Foundation — $4,500 CAD per year (premium pathway with Ontario report card).",
+                "subtitle": "Three pathways: Non-Academic (self-learning, no Ontario record), Academic Ontario Record — Self-paced (credit-bearing), and Live Teacher (credit-bearing).",
+                "academicPrep": "Non-Academic Ontario Record (self-learning) — $50 per course, $300 CAD for the full-year 6-subject bundle.",
+                "upgrade": "Academic Ontario Record — Self-paced (credit-bearing, Ontario student record) — $350 per course, $1,800 CAD per year (all 6 subjects).",
+                "legacy": "Live Teacher — Academic Ontario Record — $4,500 CAD per year (premium pathway with Ontario report card).",
                 "fees": "Registration Fee: $50 CAD. Entrance Test Fee: waived for Grades 1 to 5."
             },
             "middle": {
                 "heading": "Middle School Pricing (Grades 6 to 8)",
                 "subtitle": "Same structure as Elementary, with a $50 CAD entrance test fee.",
-                "academicPrep": "Academic Preparation (Non-Credit) — $50 per course , $300 CAD for the full-year 6-subject bundle.",
-                "upgrade": "Upgrade to Ontario Official Program — $400 per course, $1,800 CAD per year (all 6 subjects).",
+                "academicPrep": "Non-Academic Ontario Record (self-learning) — $50 per course, $300 CAD for the full-year 6-subject bundle.",
+                "upgrade": "Academic Ontario Record — Self-paced (credit-bearing, Ontario student record) — $350 per course, $1,800 CAD per year (all 6 subjects). Live Teacher pathway: $4,500 CAD / year.",
                 "fees": "Registration Fee: $50 CAD. Entrance Test Fee: $50 CAD (non-refundable)."
             },
             "high": {

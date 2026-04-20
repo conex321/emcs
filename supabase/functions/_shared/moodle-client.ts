@@ -111,6 +111,21 @@ export class MoodleClient {
     })
   }
 
+  // ─── LOOKUPS (for provisioning) ────────────────────────
+  async getUserByEmail(email: string): Promise<any | null> {
+    const params: MoodleWSParams = { field: 'email', 'values[0]': email }
+    const result = await this.call<any[]>('core_user_get_users_by_field', params)
+    return Array.isArray(result) && result.length > 0 ? result[0] : null
+  }
+
+  async getCourseByIdnumber(idnumber: string): Promise<any | null> {
+    const result = await this.call<{ courses?: any[] }>('core_course_get_courses_by_field', {
+      field: 'idnumber',
+      value: idnumber,
+    })
+    return result?.courses?.[0] || null
+  }
+
   // ─── SITE INFO ─────────────────────────────────────────
   async getSiteInfo(): Promise<any> {
     return this.call('core_webservice_get_site_info')

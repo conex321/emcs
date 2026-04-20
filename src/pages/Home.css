@@ -1816,6 +1816,24 @@
     font-style: normal;
 }
 
+.featured-programs-table tbody td.tier-not-available {
+    background: rgba(148, 163, 184, 0.08);
+    color: #6b7280;
+}
+
+.featured-programs-table tbody td.tier-not-available em {
+    color: #6b7280;
+    font-style: italic;
+    font-size: 0.88rem;
+}
+
+.featured-programs-table tbody td.tier-not-available small {
+    display: inline-block;
+    margin-top: 0.25rem;
+    color: #94a3b8;
+    font-size: 0.78rem;
+}
+
 .featured-programs-footnote {
     font-size: 0.85rem;
     color: #5c6f65;

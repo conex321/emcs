@@ -102,17 +102,17 @@ export function generateMoodleUsername(firstName: string, lastName: string): str
 
 /**
  * Generate a secure temporary password.
- * 12 characters: uppercase + lowercase + digits
+ * 12 chars meeting Moodle default policy: upper, lower, digit, non-alphanumeric.
  */
 export function generateTempPassword(): string {
   const upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ'
   const lower = 'abcdefghjkmnpqrstuvwxyz'
   const digits = '23456789'
-  const all = upper + lower + digits
+  const symbols = '!@#$%&*?-'
+  const all = upper + lower + digits + symbols
 
   const pick = (set: string) => set[Math.floor(Math.random() * set.length)]
 
-  // Ensure at least 1 of each category
   const parts = [
     pick(upper),
     pick(upper),
@@ -122,13 +122,12 @@ export function generateTempPassword(): string {
     pick(lower),
     pick(digits),
     pick(digits),
-    pick(all),
+    pick(symbols),
     pick(all),
     pick(all),
     pick(all),
   ]
 
-  // Shuffle
   for (let i = parts.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [parts[i], parts[j]] = [parts[j], parts[i]]

@@ -135,29 +135,21 @@ serve(async (req) => {
 
       for (const courseData of studentCourses) {
         const courseCode = courseData.course_code || courseData.code
+        const courseStorefront = courseData.storefront || null
 
-        // Look up course by code
-        const { data: course } = await supabaseAdmin
-          .from('courses')
-          .select('id')
-          .eq('code', courseCode)
-          .single()
-
-        if (!course) {
-          skippedCourses.push(courseCode)
-          continue
-        }
-
-        // Find the order item
+        // Find the order item — it carries the authoritative course_id, which uniquely
+        // identifies the (code, storefront) row in the catalog (course_id is unique even
+        // though `code` no longer is). This avoids the storefront-ambiguity problem entirely.
         const { data: unassignedOrderItem } = await supabaseAdmin
           .from('order_items')
-          .select('id')
+          .select('id, course_id')
           .eq('order_id', order_id)
           .eq('course_code', courseCode)
           .is('student_id', null)
           .maybeSingle()
 
         let orderItemId = unassignedOrderItem?.id || null
+        let courseId: string | null = unassignedOrderItem?.course_id || null
 
         if (unassignedOrderItem?.id) {
           await supabaseAdmin
@@ -167,13 +159,28 @@ serve(async (req) => {
         } else {
           const { data: existingOrderItem } = await supabaseAdmin
             .from('order_items')
-            .select('id')
+            .select('id, course_id')
             .eq('order_id', order_id)
             .eq('course_code', courseCode)
             .eq('student_id', studentId)
             .maybeSingle()
 
           orderItemId = existingOrderItem?.id || null
+          courseId = existingOrderItem?.course_id || courseId
+        }
+
+        // Fall back to courses lookup if the order_item didn't carry a course_id
+        // (legacy orders, or order created before process-payment populated course_id).
+        if (!courseId) {
+          let q = supabaseAdmin.from('courses').select('id').eq('code', courseCode)
+          if (courseStorefront) q = q.eq('storefront', courseStorefront)
+          const { data: course } = await q.maybeSingle()
+
+          if (!course) {
+            skippedCourses.push(courseCode)
+            continue
+          }
+          courseId = course.id
         }
 
         // Create enrollment (upsert to handle idempotency)
@@ -181,7 +188,7 @@ serve(async (req) => {
           .from('enrollments')
           .upsert({
             student_id: studentId,
-            course_id: course.id,
+            course_id: courseId,
             order_item_id: orderItemId,
             status: 'active',
             enrolled_at: new Date().toISOString(),
@@ -190,7 +197,7 @@ serve(async (req) => {
           .single()
 
         if (enrollError) {
-          console.error(`Enrollment error for student ${studentId}, course ${course.id}:`, enrollError)
+          console.error(`Enrollment error for student ${studentId}, course ${courseId}:`, enrollError)
           continue
         }
 

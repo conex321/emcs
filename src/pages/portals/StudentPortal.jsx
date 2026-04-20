@@ -63,9 +63,11 @@ function StudentPortal() {
                                 enrolled_at,
                                 final_grade,
                                 progress_pct,
+                                moodle_enrolment_id,
                                 courses (
                                     id, title, code, grade,
-                                    storefront, description
+                                    storefront, description,
+                                    moodle_course_id
                                 ),
                                 students (
                                     id, first_name, last_name
@@ -114,9 +116,11 @@ function StudentPortal() {
                                 enrolled_at,
                                 final_grade,
                                 progress_pct,
+                                moodle_enrolment_id,
                                 courses (
                                     id, title, code, grade,
-                                    storefront, description
+                                    storefront, description,
+                                    moodle_course_id
                                 ),
                                 students (
                                     id, first_name, last_name
@@ -266,6 +270,16 @@ function StudentPortal() {
                                                 <span className="course-card-date">
                                                     {t('portal.student.enrolledOn', 'Enrolled')}: {formatPortalDate(enrollment.enrollment_date)}
                                                 </span>
+                                                {enrollment.moodle_enrolment_id && enrollment.courses?.moodle_course_id && (
+                                                    <a
+                                                        href={`${import.meta.env.VITE_MOODLE_URL || 'https://app.canadaemcs.com'}/course/view.php?id=${enrollment.courses.moodle_course_id}`}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="btn btn-accent btn-sm"
+                                                    >
+                                                        {t('portal.student.launchCourse', 'Launch Course')} →
+                                                    </a>
+                                                )}
                                             </div>
                                         </div>
                                     ))}

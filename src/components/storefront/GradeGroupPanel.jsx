@@ -175,19 +175,34 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
                     </div>
 
                     <div className="grade-group-panel__price-card grade-group-panel__price-card--featured">
-                        <div className="price-row">
-                            <span>{t('gradePage.upgradePerCourse', 'Upgrade — per course (adds {{addOn}})', { addOn: formatCurrency(upgradeAddOn) })}</span>
-                            <strong>{formatCurrency(upgradeTotalPerCourse)}</strong>
-                        </div>
-                        <div className="price-row">
-                            <span>{t('gradePage.upgradeFullYear', 'Upgrade — full year (6 courses)')}</span>
-                            <strong>{formatCurrency(upgradeBundle)}</strong>
-                        </div>
-                        {isHighSchool && singleCreditStandalone && (
-                            <div className="price-row price-row--muted">
-                                <span>{t('gradePage.singleCreditStandalone', 'Single credit (standalone, self-paced)')}</span>
-                                <span>{formatCurrency(singleCreditStandalone)}</span>
-                            </div>
+                        {isHighSchool ? (
+                            <>
+                                <div className="price-row">
+                                    <span>{t('gradePage.upgradePerCourse', 'Upgrade — per course (adds {{addOn}})', { addOn: formatCurrency(upgradeAddOn) })}</span>
+                                    <strong>{formatCurrency(upgradeTotalPerCourse)}</strong>
+                                </div>
+                                <div className="price-row">
+                                    <span>{t('gradePage.upgradeFullYear', 'Upgrade — full year (6 courses)')}</span>
+                                    <strong>{formatCurrency(upgradeBundle)}</strong>
+                                </div>
+                                {singleCreditStandalone && (
+                                    <div className="price-row price-row--muted">
+                                        <span>{t('gradePage.singleCreditStandalone', 'Single credit (standalone, self-paced)')}</span>
+                                        <span>{formatCurrency(singleCreditStandalone)}</span>
+                                    </div>
+                                )}
+                            </>
+                        ) : (
+                            <>
+                                <div className="price-row">
+                                    <span>Self-paced — per course</span>
+                                    <strong>{formatCurrency(selfPacedOntario?.perCourse ?? 350)}</strong>
+                                </div>
+                                <div className="price-row">
+                                    <span>Self-paced — full year (6 courses)</span>
+                                    <strong>{formatCurrency(selfPacedOntario?.bundle6 ?? 1800)}</strong>
+                                </div>
+                            </>
                         )}
                         <div className="price-row price-row--highlight">
                             <span>{t('gradePage.liveTeacherAnnual', 'Live Teacher — per year (6 courses)')}</span>
@@ -196,14 +211,18 @@ function GradeGroupPanel({ groupSlug = 'elementary', context = 'both' }) {
                     </div>
 
                     <p className="grade-group-panel__upgrade-note">
-                        {t('storefronts.gradeGroupPanel.upgradeNote')}
+                        {isHighSchool
+                            ? t('storefronts.gradeGroupPanel.upgradeNote')
+                            : 'Grades 1 – 8 enrol directly in the Academic Ontario Record for a credit-bearing Ontario student record. No separate upgrade step needed.'}
                     </p>
 
                     <button
                         className="btn btn-accent btn-lg btn-block"
                         onClick={() => navigate(`/official-ontario/grade/${firstGrade}`)}
                     >
-                        {t('storefronts.gradeGroupPanel.rightCta', 'Upgrade to Ontario Record')}
+                        {isHighSchool
+                            ? t('storefronts.gradeGroupPanel.rightCta', 'Upgrade to Ontario Record')
+                            : 'Enrol in Academic Ontario Record'}
                     </button>
                 </div>
             </div>

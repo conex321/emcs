@@ -8,6 +8,7 @@ import { corsHeaders, handleCors } from '../_shared/cors.ts'
 import { createServiceClient } from '../_shared/supabase-client.ts'
 import { sendEmail, generateMoodleUsername, generateTempPassword } from '../_shared/resend-client.ts'
 import { buildRegistrationEmail, buildAdminNotificationEmail } from '../_shared/email-templates.ts'
+import { getMoodleClient, provisionMoodleUser, enrolStudentInActiveCourses } from '../_shared/moodle-provisioning.ts'
 
 const ADMIN_EMAIL = 'admin@canadaemcs.com'
 
@@ -108,9 +109,37 @@ serve(async (req) => {
       }
 
       console.log(`[send-registration-email] Generated credentials for ${student.first_name}: ${moodleUsername}`)
+    }
 
-      // TODO: When Moodle Web Services are configured, call core_user_create_users here
-      // to create the actual Moodle account. For now, credentials are stored locally.
+    // ── Provision in Moodle (idempotent, runs every invocation) ──
+    const moodle = getMoodleClient()
+    if (moodle) {
+      try {
+        await provisionMoodleUser(supabase, moodle, {
+          id: student_id,
+          first_name: student.first_name,
+          last_name: student.last_name,
+          email: student.email || null,
+          moodle_user_id: student.moodle_user_id ?? null,
+          moodle_username: moodleUsername,
+          moodle_password: moodlePassword,
+        })
+        await enrolStudentInActiveCourses(supabase, moodle, student_id)
+      } catch (moodleErr) {
+        const msg = moodleErr instanceof Error ? moodleErr.message : String(moodleErr)
+        console.error('[send-registration-email] Moodle provisioning failed (continuing):', moodleErr)
+        await supabase.from('sync_errors').insert({
+          sync_type: 'provision',
+          severity: 'error',
+          message: `send-registration-email provisioning failed for student ${student_id}: ${msg}`,
+        })
+      }
+    } else {
+      await supabase.from('sync_errors').insert({
+        sync_type: 'provision',
+        severity: 'warning',
+        message: `send-registration-email: Moodle client unavailable (MOODLE_WS_ENDPOINT/MOODLE_WS_TOKEN not configured). Student ${student_id} not provisioned.`,
+      })
     }
 
     // ── Determine recipient email ──
@@ -153,7 +182,7 @@ serve(async (req) => {
     })
 
     // Log registration email
-    await supabase.from('email_log').insert({
+    const { error: regLogErr } = await supabase.from('email_log').insert({
       recipient: recipientEmail,
       template: 'registration',
       email_type: 'registration',
@@ -169,6 +198,14 @@ serve(async (req) => {
         course: courseCode,
       },
     })
+    if (regLogErr) {
+      console.error('[send-registration-email] email_log insert failed (registration):', regLogErr)
+      await supabase.from('sync_errors').insert({
+        sync_type: 'email_log',
+        severity: 'warning',
+        message: `email_log insert failed for registration email to ${recipientEmail} (student ${student_id}): ${regLogErr.message}`,
+      })
+    }
 
     // ── Send admin notification ──
     const adminEmail = Deno.env.get('ADMIN_EMAIL') || ADMIN_EMAIL
@@ -194,7 +231,7 @@ serve(async (req) => {
     })
 
     // Log admin notification
-    await supabase.from('email_log').insert({
+    const { error: adminLogErr } = await supabase.from('email_log').insert({
       recipient: adminEmail,
       template: 'admin_notification',
       email_type: 'admin_notification',
@@ -208,6 +245,14 @@ serve(async (req) => {
         student_name: `${student.first_name} ${student.last_name}`,
       },
     })
+    if (adminLogErr) {
+      console.error('[send-registration-email] email_log insert failed (admin):', adminLogErr)
+      await supabase.from('sync_errors').insert({
+        sync_type: 'email_log',
+        severity: 'warning',
+        message: `email_log insert failed for admin notification to ${adminEmail} (student ${student_id}): ${adminLogErr.message}`,
+      })
+    }
 
     // ── Update student flags ──
     await supabase
