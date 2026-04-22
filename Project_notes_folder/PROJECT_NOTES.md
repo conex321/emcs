@@ -1,8 +1,8 @@
 # Project Notes — EMCS
 
-**Last updated:** 2026-04-20T04:16:08Z
-**Last agent:** Codex
-**Session summary:** Live site condition was re-validated on production. Codex confirmed the public route surface is healthy and reran the full production free-order workflow with document upload, parent portal, admin approval/account creation, and student portal login successfully. The website-side flow remains healthy; the last dedicated Moodle test from earlier on 2026-04-20 still remains the authoritative status for LMS provisioning failure.
+**Last updated:** 2026-04-22T11:09:07-04:00
+**Last agent:** Antigravity
+**Session summary:** Remediated widespread layout issues causing horizontal overflow and content clipping on mobile devices. Enforced mobile-defensive CSS strategy, fluid layouts, and specific breakpoints (768px, 480px, 375px) across all major pages. Verified changes locally and pushed to the `main` branch.
 
 ## Current State
 - Production frontend is deployed on Vercel project `emcs` and serving `https://www.canadaemcs.com` and `https://www.canadaemcs.com/admin/dashboard`.
@@ -17,15 +17,17 @@
 - Production public-route smoke verification also passed on 2026-04-19 for `/`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, and `/admin`; each route loaded without browser errors and without placeholder `a[href="#"]` links, and `/admin` now correctly resolves to the auth flow for unauthenticated users instead of falling through to the public homepage.
 - Production public-route smoke verification was rerun on 2026-04-20 for `/`, `/courses`, `/contact`, `/privacy-policy`, `/terms-of-service`, `/auth`, `/cart`, `/official-ontario/course/ENG1D`, and `/admin`; all routes loaded without browser errors and without placeholder `a[href="#"]` links.
 - Paid card checkout is still intentionally blocked because Stripe is not configured end-to-end. The frontend shows the pending Stripe state instead of performing a real charge.
-- Moodle secrets now exist in the live Supabase function environment (`MOODLE_WS_ENDPOINT`, `MOODLE_WS_TOKEN`), and the production flow now generates/stores Moodle-style credentials plus sets `registration_email_sent = true`. However, real Moodle provisioning is still failing in production: `students.moodle_user_id` remains `null`, `enrollments.moodle_enrolment_id` remains `null`, generated LMS credentials do not log into `https://app.canadaemcs.com`, and `audit-moodle-courses` found 0 course matches by `idnumber`.
+- Moodle secrets now exist in the live Supabase function environment (`MOODLE_WS_ENDPOINT`, `MOODLE_WS_TOKEN`), and production Moodle provisioning is partially working: disposable production tests now create a real Moodle user (`students.moodle_user_id` populated), generate Moodle credentials, and those credentials successfully log into `https://app.canadaemcs.com`.
 - Production post-checkout / post-admin email functions are now configured with `verify_jwt = false` and were redeployed on 2026-04-20 around 01:04 UTC: `send-registration-email` v4, `send-purchase-receipt` v3, `send-enrollment-email` v5.
 - Production checkout now reaches the point of generating Moodle credentials automatically after enrollment (`students.moodle_username`, `students.moodle_password`, `moodle_credentials_generated = true`, `registration_email_sent = true`), but `email_log` rows for registration/admin notifications were not visible in the tested Supabase rows during the same runs.
+- Moodle auto-enrolment is still incomplete for the high-school/storefront catalog used in production proofs. In the latest run, `enrollments.moodle_enrolment_id` stayed `null` for `ENG1D`, and `audit-moodle-courses` dry-run reported `110/122` catalog matches with `12` missing mappings: `EMCS-AP-ENG-G1`, `EMCS-AP-MATH-G1`, `EMCS-AP-SCI-G1`, `EMCS-NC-ESL-A1`, `EMCS-NC-ESL-A2`, `EMCS-NC-IELTS`, `ENG1D`, `ENG4U`, `MCV4U`, `MHF4U`, `MPM1D`, and `SNC1D`.
 - Student portal, parent portal, and agent portal are live dashboards backed by Supabase tables. They are no longer placeholder pages.
 - Admin dashboard is live at `/admin/dashboard` and was production-tested with a disposable `school_admin` login. Verified actions: view registration, view report-card metadata, approve student, create student portal account, send registration email, and confirm student login.
+- Parent, student, admin, and agent portals were all re-tested on 2026-04-20 in production with disposable users. Each portal loaded correctly, had no placeholder `#` links on entry routes, and completed its tested role workflow successfully.
 - `/admin` is now deployed correctly. For unauthenticated users it resolves to the auth flow (`/auth`); for authenticated admins it continues to route to `/admin/dashboard`.
 - `createProfile` still returns `UNAUTHORIZED_UNSUPPORTED_TOKEN_ALGORITHM` in browser-triggered signup calls even after redeploy. This is non-blocking because the `on_auth_user_created` DB trigger continues to create the `profiles` row correctly.
 - `school_admin` currently has platform-wide access because the schema has no school-scoping relationship on `profiles`, `students`, `orders`, or `report_cards`. Migration `012` enables the role, but it does not limit records by school.
-- Current local worktree status after this session includes unreleased frontend changes in `/Users/matthews/EMCS/src/App.jsx`, `/Users/matthews/EMCS/src/pages/Checkout.jsx`, `/Users/matthews/EMCS/src/components/Footer.jsx`, `/Users/matthews/EMCS/src/pages/Contact.jsx`, `/Users/matthews/EMCS/src/pages/admin/AdminDashboard.jsx`, `/Users/matthews/EMCS/src/pages/portals/StudentPortal.jsx`, plus new files for legal pages, document upload backend, migration `013`, and `/Users/matthews/EMCS/scripts/document-workflow-check.mjs`. Unrelated untracked files still exist at `/Users/matthews/EMCS/emcs-brand-marketing.json`, `/Users/matthews/EMCS/emcs-complete-site-data.json`, and `/Users/matthews/EMCS/extract-site-data.mjs`.
+- Current local worktree status after this session includes unreleased frontend changes in `/Users/matthews/EMCS/src/App.jsx`, `/Users/matthews/EMCS/src/pages/Checkout.jsx`, `/Users/matthews/EMCS/src/components/Footer.jsx`, `/Users/matthews/EMCS/src/pages/Contact.jsx`, `/Users/matthews/EMCS/src/pages/admin/AdminDashboard.jsx`, `/Users/matthews/EMCS/src/pages/portals/StudentPortal.jsx`, plus new files for legal pages, document upload backend, migration `013`, and `/Users/matthews/EMCS/scripts/document-workflow-check.mjs`. Unrelated untracked files still exist at `/Users/matthews/EMCS/emcs-brand-marketing.json`, `/Users/matthews/EMCS/emcs-complete-site-data.json`, `/Users/matthews/EMCS/extract-site-data.mjs`, and `Project_notes_folder/CHANGELOG.md`. The mobile layout CSS fixes have been pushed to `main`.
 
 ## Architecture & Key Decisions
 
@@ -77,6 +79,11 @@
 **Why:** The earlier admin proof showed that only `report_cards` metadata existed. The user needed actual proof-document upload on the checkout form, persistence in Supabase, and visibility in admin/student workflows.
 
 **Alternatives considered:** Reuse `report_cards` for admissions documents or keep document data out of Supabase until a later backend pass. Rejected because `report_cards` is semantically wrong for admissions proofs, and delaying persistence would keep the workflow unverifiable.
+
+### 2026-04-22 — Fluid Mobile-First Layouts over Fixed Pixel Constraints
+**Decided:** Replace rigid `min-width` pixel constraints on tables and components with fluid container limits (max 560px min-width). Enforce `overflow-x: hidden` on HTML/Body and `word-break: break-word` globally to defend against content overflow.
+**Why:** The platform had numerous hardcoded constraints (e.g. 780px+ `min-width` on tables, fixed-height heroes) that caused layout clipping and horizontal scrolling on devices between 320px and 768px.
+**Alternatives considered:** Using scrollable table wrappers exclusively. Rejected in favor of a combination of narrower minimal widths, stacked grids for CTAs, and global boundary protections to provide a superior native-feeling UX.
 
 ## File & Directory Map
 - `/Users/matthews/EMCS/src/App.jsx` — top-level route table for public pages, storefront, portals, and admin dashboard; currently also holds the unreleased `/admin` redirect patch.
@@ -177,6 +184,21 @@
 - Re-ran `/Users/matthews/EMCS/scripts/document-workflow-check.mjs` against production. The website-side workflow passed again end to end: checkout, document upload, order creation, student creation, enrollment creation, parent portal, admin registration review, approval, student portal account creation, registration-email action, student login, and cleanup.
 - The 2026-04-20 site-condition pass did not re-test direct Moodle login. The earlier 2026-04-20 Moodle verification remains the latest authoritative LMS status.
 
+### Session on 2026-04-20 — Full portal sweep and Moodle retest
+- Re-ran a full production portal sweep covering parent, student, admin, and agent flows. Parent, student, and admin were verified through `/Users/matthews/EMCS/scripts/document-workflow-check.mjs`; agent was verified with a disposable auth user linked to a disposable `agents` row and live login to `https://www.canadaemcs.com/portal/agent`.
+- Confirmed the agent portal renders correctly in production with referral-link UI, dashboard cards, and no placeholder `#` links. The disposable agent landed on `/portal/agent` successfully and was cleaned up after the run.
+- Ran a focused production Moodle proof from checkout through admin approval and direct LMS login. Verified that the test student received `students.moodle_user_id = 8`, generated credentials (`moodle_username = moodle.learner7356` in the disposable run), and a successful direct login to `https://app.canadaemcs.com/`.
+- Confirmed the remaining Moodle blocker is course enrolment rather than user creation: the same production run left `enrollments.moodle_enrolment_id = null` for the purchased `ENG1D` enrollment even though the Moodle user existed and could sign in.
+- Ran `audit-moodle-courses` in production dry-run mode and confirmed the catalog is mostly mapped (`110/122` matched) but still missing the 12 storefront/high-school entries that currently block automatic enrolment for real checkout proofs.
+- Cleanup note: Supabase cleanup completed for all disposable website-side records after the portal/Moodle proofs. Disposable Moodle users may remain in Moodle because no delete endpoint was exercised during cleanup.
+
+### Session on 2026-04-22 — Mobile Responsiveness Optimization
+- Hardened global CSS (`src/index.css`) with defensive mobile styling: `overflow-x: hidden` on `html`/`body` and `word-break: break-word` to prevent layout breaking from long text. Optimized `.container` padding for sub-375px screens.
+- Overhauled page-specific CSS (`Home.css`, `GradePage.css`, `Tuition.css`, `Courses.css`, `PrimaryFoundation.css`, `InternationalStudents.css`, `HighSchoolPathways.css`) by replacing fixed-width constraints with fluid grid structures and stacking action buttons.
+- Lowered hardcoded `min-width` constraints on comparison tables from 780px+ down to 560px to ensure full visibility on small viewports without horizontal scrolling.
+- Introduced explicit mobile breakpoint tiers (768px, 480px, 375px) where missing to properly scale heroes, typography, and card grids.
+- Verified changes locally and pushed the 8 updated CSS files to the `main` branch.
+
 ## Failures & Resolutions
 
 ### Protected routes hung on full reload
@@ -233,16 +255,14 @@
 
 **Guardrail:** Whenever one edge function calls another via service-role authorization or a browser can invoke it as a fallback path, ensure both functions are covered by the same auth-gate policy in `config.toml`.
 
-### Moodle integration is partially wired but still not operational
-**Issue:** After the 2026-04-20 function-auth fix, production checkout/admin flows generated Moodle credentials and marked `registration_email_sent = true`, but no real LMS account or enrolment was created.
+### Moodle integration is partially operational but not fully course-ready
+**Issue:** Production checkout/admin flows now create real Moodle users and valid Moodle credentials, but the student is not automatically enrolled into the purchased high-school/storefront course in Moodle.
 
-**Root cause:** Two live Moodle-side gaps were proven:
-1. Generated credentials do not authenticate on `https://app.canadaemcs.com`, so Moodle user creation is failing or not being persisted.
-2. `audit-moodle-courses` dry-run found 0/12 course matches by `idnumber`, including `ENG1D`, so automatic course enrolment cannot resolve Moodle course IDs from the current catalog.
+**Root cause:** The live gap is now narrowed to course mapping/enrolment, not user creation. `audit-moodle-courses` dry-run reported `110/122` matched courses and `12` missing mappings. The missing set includes the storefront high-school courses used in proofs (`ENG1D`, `ENG4U`, `MCV4U`, `MHF4U`, `MPM1D`, `SNC1D`) plus six academic-prep/non-credit entries. When those codes cannot resolve to a Moodle course, `enrollments.moodle_enrolment_id` remains `null`.
 
-**Fix:** None yet. The issue is beyond the website/browser flow and now isolated to Moodle web-service provisioning and Moodle course metadata alignment.
+**Fix:** None yet. Website-side provisioning is now working far enough to create the Moodle user and confirm direct login; remaining work is on Moodle course metadata alignment and/or enrolment lookup logic.
 
-**Guardrail:** Treat Moodle as “connected” only after all four are true in production for a disposable test student: `moodle_username/password` generated, `students.moodle_user_id` populated, `enrollments.moodle_enrolment_id` populated, and direct Moodle login succeeds with course access.
+**Guardrail:** Treat Moodle as “fully connected” only after all four are true in production for a disposable test student: `moodle_username/password` generated, `students.moodle_user_id` populated, `enrollments.moodle_enrolment_id` populated, and direct Moodle login lands the student in the purchased course.
 
 ### Coupon validation diverged between client and backend
 **Issue:** The browser could accept coupons the backend rejected, or miss coupons that existed in Supabase.
@@ -341,10 +361,9 @@
 - Decide whether admin and student portals should expose signed download links for uploaded documents. The current implementation surfaces metadata and file paths only.
 - Finish Stripe integration: set `STRIPE_SECRET_KEY`, wire the frontend confirmation flow, and test `webhook-stripe`.
 - Finish Moodle integration:
-  `send-registration-email` now runs in production, but real Moodle provisioning still fails.
-  Confirm the live `MOODLE_WS_TOKEN` has permission to create users and manual enrolments.
+  User creation and direct Moodle login now pass in production.
   Align Moodle course `idnumber` values with EMCS course codes (`ENG1D`, `MHF4U`, etc.) or extend the provisioning lookup beyond `idnumber`.
-  Re-run a disposable production proof until `moodle_user_id`, `moodle_enrolment_id`, and direct Moodle login all pass.
+  Re-run a disposable production proof until `moodle_enrolment_id` is populated and direct Moodle login lands the student in the purchased course.
 - Investigate why `email_log` rows were still absent during the 2026-04-20 Moodle proofs even when `registration_email_sent = true`.
 - Investigate why `createProfile` still returns ES256 auth errors after redeploy even though the DB trigger covers profile creation.
 - Decide whether `/Users/matthews/EMCS/scripts/document-workflow-check.mjs` should be wired into `package.json` as a formal script and/or CI smoke test once secrets handling is settled.
@@ -369,10 +388,12 @@
 - For email testing, plus-address aliases under `matthew@schoolconex.com` worked well for disposable runs without polluting a primary mailbox.
 - The final local document-workflow proof succeeded, but `browserErrors` still captured a non-blocking `createProfile` 401 plus some aborted REST requests caused by reload/navigation during the browser run. Treat those aborted requests as harness noise unless they reproduce without a route change.
 - The 2026-04-19 verification rerun also succeeded and again produced non-blocking diagnostics only: one `401` resource load during parent signup plus aborted portal/profile requests caused by navigation. No blocking browser errors were observed on the public route sweep.
-- The 2026-04-20 Moodle proof isolated the remaining live LMS blockers: website checkout/admin flows work, student portal account creation works, Moodle credentials are generated, but direct Moodle login with those credentials fails and no Moodle user/enrolment IDs are written back to Supabase.
+- The latest 2026-04-20 Moodle proof changed the LMS status materially: website checkout/admin flows work, student portal account creation works, Moodle credentials are generated, `students.moodle_user_id` is populated, and direct Moodle login succeeds. The remaining live LMS blocker is automatic course enrolment for the 12 catalog entries still missing Moodle mapping; in the tested `ENG1D` run, `enrollments.moodle_enrolment_id` remained `null`.
+- The latest production portal sweep also verified the agent portal directly with a disposable live agent account. That portal is functional even though some request-aborted diagnostics still appear during navigation.
 - The agent portal and student/parent portals are real dashboards now, but teacher workflows are still absent. `teacher` still redirects to `/teacher/dashboard`, which does not exist yet.
 - `school_admin` is authorized in code and RLS, but not yet constrained by school ownership. Treat it as powerful and potentially over-broad until schema scoping is added.
 - When updating these notes, merge changes into the existing sections instead of appending a new dated block at the end.
 - Supabase CLI version observed working in this environment: `2.90.0`. `supabase migration list` and `supabase functions list` are safe read-only diagnostics when auditing deploy drift.
 - For Claude agents specifically: `supabase db push` is blocked by this workspace's permission hook (see Failures & Resolutions). Always confirm with the user and expect interactive `[Y/n]` prompting from the CLI after approval.
-- Recent session commits for quick reference: `4bdcdfb` (portal reload + free-order checkout fixes, config.toml, vercel.json), `2eeb6fc` (Checkout password-leak fix), `9397a4e` (admin dashboard + migration 012 + manage-user admin actions).
+- Any future components using tables must be wrapped in a container with `overflow-x: auto` and a `min-width` no greater than 560px to remain mobile-friendly without breaking the layout. Rely on fluid width and stacking rather than fixed pixels for mobile breakpoints (768px, 480px, 375px).
+- Recent session commits for quick reference: Mobile responsiveness optimization for CSS files (most recent commit on `main`), `4bdcdfb` (portal reload + free-order checkout fixes, config.toml, vercel.json), `2eeb6fc` (Checkout password-leak fix), `9397a4e` (admin dashboard + migration 012 + manage-user admin actions).
