@@ -195,6 +195,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -204,6 +205,8 @@ body {
   color: var(--color-neutral-800);
   background-color: var(--bg-primary);
   min-height: 100vh;
+  overflow-x: hidden;
+  word-break: break-word;
 }
 
 h1,
@@ -309,6 +312,13 @@ ol {
   margin-right: auto;
   padding-left: var(--space-4);
   padding-right: var(--space-4);
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
 }
 
 @media (min-width: 640px) {

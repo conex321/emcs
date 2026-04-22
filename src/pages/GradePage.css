@@ -770,6 +770,18 @@
    Responsive - Timetable
    =================================== */
 @media (max-width: 768px) {
+    .grade-hero {
+        padding: 2rem 0 1.5rem;
+    }
+
+    .grade-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .grade-hero .hero-subtitle {
+        font-size: 1rem;
+    }
+
     .timetable {
         font-size: 0.8rem;
     }
@@ -781,6 +793,83 @@
 
     .discount-tuition-price {
         font-size: 1.5rem;
+    }
+
+    .schedule-info {
+        padding: 1.25rem;
+    }
+
+    .schedule-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .program-column {
+        padding: 1.25rem;
+    }
+
+    .full-year-package {
+        padding: 1rem;
+    }
+
+    .full-year-package h3 {
+        font-size: 1rem;
+    }
+
+    .hs-timetable-section {
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .grade-hero h1 {
+        font-size: 1.35rem;
+    }
+
+    .program-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .sale-price,
+    .price {
+        font-size: 1.5rem;
+    }
+
+    .package-price .price {
+        font-size: 1.75rem;
+    }
+
+    .per-course-price {
+        gap: 0.5rem;
+    }
+
+    .list-price {
+        font-size: 1rem;
+    }
+
+    .discount-tuition-price {
+        font-size: 1.25rem;
+    }
+
+    .pricing-card {
+        padding: 1rem;
+    }
+
+    .program-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .course-card {
+        padding: 1rem;
+    }
+
+    .course-card h4 {
+        font-size: 1rem;
+    }
+
+    .promo-banner {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
     }
 }
 
@@ -798,6 +887,18 @@
     .timetable th,
     .timetable td {
         padding: 0.35rem 0.25rem;
+    }
+
+    .two-column-comparison-section {
+        padding: 1.5rem 0;
+    }
+
+    .single-course-listing-section {
+        padding: 1.5rem 0;
+    }
+
+    .single-course-listing-section h2 {
+        font-size: 1.5rem;
     }
 }
 
@@ -839,3 +940,4 @@
 .grade-schedule-section {
     padding: 1rem 0 2rem;
 }
+

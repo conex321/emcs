@@ -259,3 +259,93 @@
     justify-content: center;
     margin-bottom: 1.5rem;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hsp-hero {
+        padding: 2.5rem 0 2rem !important;
+    }
+
+    .hsp-hero__subtitle {
+        font-size: 1.25rem;
+    }
+
+    .hsp-pathway-card {
+        padding: 1.25rem;
+    }
+
+    .hsp-hero__ctas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hsp-hero__ctas .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hsp-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hsp-cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hsp-official-heading {
+        padding: 2rem 0 0.75rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hsp-hero {
+        padding: 2rem 0 1.5rem !important;
+    }
+
+    .hsp-hero__subtitle {
+        font-size: 1.125rem;
+    }
+
+    .hsp-hero__tagline {
+        font-size: 0.9375rem;
+    }
+
+    .hsp-pathway-card {
+        padding: 1rem;
+    }
+
+    .hsp-pathway-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .hsp-grade-tab {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
+    }
+
+    .hsp-dual-card {
+        padding: 1.25rem 1rem;
+    }
+
+    .hsp-fee-card {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hsp-hero h1 {
+        font-size: 1.375rem;
+    }
+
+    .hsp-hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .hsp-grade-tab {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.75rem;
+    }
+}

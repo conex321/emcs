@@ -525,7 +525,7 @@
 /* Responsive Adjustments */
 @media (max-width: 767px) {
     .pf-hero {
-        padding: var(--space-16) 0;
+        padding: var(--space-12) 0;
     }
 
     .pathway-option {
@@ -540,5 +540,35 @@
     .pf-cta-buttons .btn {
         width: 100%;
         max-width: 300px;
+    }
+
+    .pf-cta {
+        padding: var(--space-10) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .pf-hero {
+        padding: var(--space-8) 0;
+    }
+
+    .pf-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .pathway-option {
+        padding: var(--space-4);
+    }
+
+    .pathway-option h3 {
+        font-size: 1.25rem;
+    }
+
+    .disclaimer-card {
+        padding: var(--space-4);
+    }
+
+    .pf-overview-content h2 {
+        font-size: 1.5rem;
     }
 }

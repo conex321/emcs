@@ -432,6 +432,35 @@
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    .international-hero {
+        padding: var(--space-12) 0;
+    }
+
+    .partnership-card {
+        padding: var(--space-5);
+    }
+
+    .documents-section {
+        padding: var(--space-10) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .international-hero {
+        padding: var(--space-8) 0;
+    }
+
+    .hero-highlight {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-sm);
+    }
+
+    .document-card {
+        padding: var(--space-4);
+    }
+}
+
 @media (max-width: 375px) {
     .hero-flag {
         font-size: 36px;

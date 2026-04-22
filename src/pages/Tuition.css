@@ -181,7 +181,7 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 0.875rem;
-    min-width: 720px;
+    min-width: 520px;
 }
 
 .fee-schedule-table thead th {
@@ -263,4 +263,52 @@
         padding: 0.625rem 0.75rem;
         font-size: 0.875rem;
     }
+
+    .fee-schedule-table thead th,
+    .fee-schedule-table tbody td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .tuition-cta-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .tuition-cta-section {
+        padding: 2rem 0;
+    }
+
+    .tuition-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tuition-cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
 }
+
+@media (max-width: 375px) {
+    .tuition-hero {
+        padding: 2rem 0 1.5rem;
+    }
+
+    .tuition-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .tuition-tabs {
+        gap: 0.25rem;
+    }
+
+    .tuition-tab {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.8rem;
+    }
+
+    .pricing-card {
+        padding: 1rem;
+    }
+}
+
